@@ -11,8 +11,5 @@ define('DB_HOST', 		'localhost');
 $lcl = 'http://localhost:8888/theagsc/';
 define('WP_HOME',	 $lcl );
 define('WP_SITEURL', $lcl );
- 
-// Turn on debug for local environment
-define('WP_DEBUG', true);
 
 define('WP_LOCAL_DEV', true );  // Used by disable plugin for local dev plugin in /mu-plugins
