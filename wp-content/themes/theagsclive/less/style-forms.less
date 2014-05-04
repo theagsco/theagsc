@@ -1,0 +1,95 @@
+input, textarea {
+/* 	-webkit-appearance: none; */
+	border-radius: 0;
+}
+form { position:relative;}
+
+input, textarea, input.agsc-field {
+	display:block;
+	border:@border;
+	font-size:1.05em;
+	padding:14px;
+	font-family:"brandon-grotesque" sans-serif;
+	color:@dark-grey;
+	letter-spacing:0.03em;
+	font-weight: 400;
+	.shadow;
+}
+#footer-sub div form div input[type="email"] {
+	position:relative;
+	display:block;
+	width:91%;
+	padding:4.5%;
+}
+input[type="submit"] {
+	position:relative;
+	background: none;
+	font-size:0.9em;
+	cursor:pointer;
+	.agsc_button;
+	.no-shadow;
+	margin-top: 30px;
+}
+input[type="submit"]:hover {
+	border:solid 2px @red; 
+	background-color:@red; 
+	color: @white !important; 
+	font-weight: 700;
+}
+::-webkit-input-placeholder 	{color: @light-grey;}
+:-moz-placeholder 				{color: @light-grey;}
+::-moz-placeholder 				{color: @light-grey;}
+:-ms-input-placeholder 			{color: @light-grey;}
+
+@input-focus-fade:15%;
+
+input:focus::-webkit-input-placeholder 		{color: fade(@light-grey, @input-focus-fade);}
+input:focus:-moz-placeholder 				{color: fade(@light-grey, @input-focus-fade);}
+input:focus::-moz-placeholder 				{color: fade(@light-grey, @input-focus-fade);}
+input:focus:-ms-input-placeholder 			{color: fade(@light-grey, @input-focus-fade);}
+
+.mc-field-group { position:relative;}
+
+input[type="checkbox"] {
+	display: inline;
+	padding: 10px;
+}
+
+
+/* !---------WPCF7---------- */
+
+
+
+.wpcf7-form {
+	position: relative;
+	padding:30px;
+	width:60%;
+	margin: 0 auto;
+	border:@border;
+	.shadow;
+}
+.wpcf7-form input, .wpcf7-form textarea, .wpcf7-form select {
+	width:94.5%;
+	margin-bottom: 30px;
+}
+.wpcf7-form input[type='submit'] {
+	width:auto;
+}
+div.wpcf7 img.ajax-loader {
+	position: absolute;
+	visibility:visible;
+}
+div.wpcf7-mail-sent-ok {border:0;}
+
+
+
+
+
+
+
+
+
+
+
+
+

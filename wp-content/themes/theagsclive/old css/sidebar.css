@@ -1,0 +1,91 @@
+/*!	Main */
+
+#sidebar {
+	float:left;
+	width:337px;
+}
+
+/*!	Hide Sidebar - 'h' */
+
+
+.hide-sidebar #sidebar {display:none;}
+
+
+
+
+
+
+.square {width:300px; height: 300px; border:solid 1px #d2d2d2;}
+
+section {position: relative;}
+
+section { margin-bottom:50px;}
+section:last-child { margin-bottom:0;}
+
+
+/*!	About */
+
+#about {text-align: center;}
+#about img, #about a {position: absolute;}
+#about a {
+	display:inline-block;
+	width:140px;
+	top:116px;
+	left:50%;
+	margin: 0 0 0 -96px;
+	background:#fff;
+	padding:13px 24px 13px 24px;
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	border-radius: 3px; 
+	letter-spacing:0.07em;
+	font-size:0.97em;
+	font-weight:400;
+}
+#about img {
+	z-index: -1;
+	display: block;
+}
+
+/*!	Instagram */
+
+#instafeed a, #instafeed a img, #instagram span {
+	width:300px;
+	height: 300px;
+}
+#instafeed a img {
+	display: block;
+	margin:0 auto;
+}
+#instagram span {
+	position: absolute;
+	display: block;
+}
+
+
+@media only screen 
+and (max-width : 1220px) {
+
+}
+@media only screen 
+and (max-width : 1065px) {
+
+#sidebar {
+	float:none;
+	width:100%;
+}
+
+}
+@media only screen 
+and (max-width : 985px) {
+
+}
+@media only screen 
+and (max-width : 700px) {
+
+}
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) {
+
+}
