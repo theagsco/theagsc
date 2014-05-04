@@ -24,6 +24,7 @@ function MyBreadcrumb() {
 /*   Disable admin bar for all 
 /*-----------------------------------------------------------------------------------*/  
 
+/*
 function my_init() {
     if (!is_admin()) {
         // comment out the next two lines to load the local copy of jQuery
@@ -35,6 +36,7 @@ function my_init() {
     }
 }
 add_action('init', 'my_init');
+*/
 
 // removes related products
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
@@ -433,7 +435,6 @@ function query_post_type($query) {
 
 
 // Prevent access to dev areas
-<?php
 function password_protected(){
     if(!is_user_logged_in() && (ENVIRONMENT == 'development' || ENVIRONMENT == 'staging')){
         wp_redirect(get_option('siteurl') .'/wp-login.php');

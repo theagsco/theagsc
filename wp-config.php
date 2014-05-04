@@ -15,8 +15,8 @@
 
 // Define Environments - may be a string or array of options for an environment
 $environments = array(
-	'local'       => array('.local', 'local.'),
-	'development' => '.dev',
+	'local'       => 'localhost',
+	'development' => 'dev.',
 );
 
 // Get Server name
@@ -170,10 +170,6 @@ if(!defined('WPLANG'))
 if(!defined('WP_DEBUG'))
 	define('WP_DEBUG', false);
 	
-/** Disable WP File Editor */
-define('DISALLOW_FILE_EDIT', true);
-
-
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
