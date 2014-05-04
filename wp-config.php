@@ -24,16 +24,16 @@
   
 } else {
 
-define('DB_NAME', 'theagsc_dev');
+define('DB_NAME', 'db173785_theagsc_dev');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', '1clk_wp_MESHP33');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'meshp33');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $_ENV{DATABASE_SERVER});
 
 }
 
