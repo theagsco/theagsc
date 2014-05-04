@@ -78,7 +78,7 @@ switch(ENVIRONMENT){
 		define('DB_USER', '1clk_wp_MESHP33');
 		define('DB_PASSWORD', 'starwars');
 		define('DB_HOST', $_ENV{DATABASE_SERVER});
-		define('WP_DEBUG', true);
+		define('WP_DEBUG', false);
 
 		break;
 
