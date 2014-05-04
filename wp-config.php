@@ -18,25 +18,16 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
  
- if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
-  include( dirname( __FILE__ ) . '/local-config.php' );
-  define( 'WP_LOCAL_DEV', true ); // We'll talk about this later
-  
+ if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
+    include dirname( __FILE__ ) . '/wp-config-local.php';
 } else {
-
-define('DB_NAME', 'db173785_theagsc_dev');
-
-/** MySQL database username */
-define('DB_USER', '1clk_wp_MESHP33');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'meshp33');
-
-/** MySQL hostname */
-define('DB_HOST', $_ENV{DATABASE_SERVER});
-
+    define('DB_NAME', 'db173785_theagsc_dev');
+    define('DB_USER', '1clk_wp_MESHP33');
+    define('DB_PASSWORD', 'meshp33');
+	define('DB_HOST', $_ENV{DATABASE_SERVER});
+    $table_prefix  = 'wp_';
 }
-
+ 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
@@ -64,12 +55,6 @@ define('NONCE_SALT',       'put your unique phrase here');
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix  = 'wp_';
 
 /**
  * WordPress Localized Language, defaults to English.
@@ -88,7 +73,12 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+if ( !defined('WP_DEBUG') )
+	define('WP_DEBUG', false);
+	
+/** Disable WP File Editor */
+define('DISALLOW_FILE_EDIT', true);
+
 
 /* That's all, stop editing! Happy blogging. */
 
