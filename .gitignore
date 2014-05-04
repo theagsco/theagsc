@@ -1,1 +1,11 @@
-local-config.php
+# Don't add the Local settings file to the repository #
+wp-config-local.php
+
+# No need to add the upgrade folder to the repo #
+htdocs/wp-content/upgrade/*
+ 
+# no need for these #
+readme.html
+license.txt
+.log
+.DS_Store
