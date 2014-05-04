@@ -59,11 +59,11 @@ switch(ENVIRONMENT){
 
 	case 'local':
 
-		define('DB_NAME', 'theagsc_dev');
+		define('DB_NAME', 'theagsc_local');
 		define('DB_USER', 'root');
 		define('DB_PASSWORD', 'root');
 		define('DB_HOST', 'localhost');
-		define('WP_DEBUG', true);
+		define('WP_DEBUG', false);
 
 		define('WP_SITEURL', 'http://localhost:8888/theagsc');
 		define('WP_HOME', 'http://localhost:8888/theagsc');

@@ -24,7 +24,6 @@ function MyBreadcrumb() {
 /*   Disable admin bar for all 
 /*-----------------------------------------------------------------------------------*/  
 
-/*
 function my_init() {
     if (!is_admin()) {
         // comment out the next two lines to load the local copy of jQuery
@@ -36,7 +35,6 @@ function my_init() {
     }
 }
 add_action('init', 'my_init');
-*/
 
 // removes related products
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
