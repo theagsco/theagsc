@@ -21,9 +21,9 @@
 if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
 	include( dirname( __FILE__ ) . '/wp-config-local.php' );
 } else {
-    define('DB_NAME', 		'db173785_theagsc_dev');
-    define('DB_USER', 		'1clk_wp_MESHP33');
-    define('DB_PASSWORD', 	'meshp33');
+    define('DB_NAME', 		'db173785_theagsc_live');
+    define('DB_USER', 		'db173785');
+    define('DB_PASSWORD', 	'bumfluff88');
 	define('DB_HOST', 		$_ENV{DATABASE_SERVER});
 }
  
