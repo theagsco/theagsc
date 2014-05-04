@@ -75,8 +75,8 @@ switch(ENVIRONMENT){
 	case 'development':
 
 		define('DB_NAME', 'db173785_theagsc_dev');
-		define('DB_USER', 'db173785');
-		define('DB_PASSWORD', 'bumfluff88');
+		define('DB_USER', '1clk_wp_MESHP33');
+		define('DB_PASSWORD', 'starwars');
 		define('DB_HOST', $_ENV{DATABASE_SERVER});
 		define('WP_DEBUG', true);
 
