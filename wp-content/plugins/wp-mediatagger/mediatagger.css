@@ -1,0 +1,15 @@
+hr {color:#ccc; background-color:#ccc; height:1px; border:0; }
+h3 {padding:10px 0px 0px 0px;}
+.option_highlight {background-color:#FFB;color:#000; }
+.label {display:inline-block;float:left;line-height:2em;vertical-align:middle;width:400px;margin:0;padding:0 0 0 15px;}
+input {padding:1px 5px;margin:0;}
+select {margin:0;}
+textarea {margin:0;}
+submit {padding-top:5px;}
+pre {font-size:0.9em;}
+.legend {clear:both;font-size:0.8em;font-style:italic;margin:0;padding:0 0 5px 30px; }
+.post_list {clear:both;font-size:0.9em;margin:0;padding:0 0 0 30px; }
+.comment {clear:both;font-size:1em;margin:0;padding:0 0 0 30px; }
+
+div.media_list{clear:both;margin:0;padding:0;height:32px;line-height:32px;}
+.media_list p{float:left;margin:0;padding:0;height:32px;line-height:32px;}

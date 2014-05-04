@@ -1,0 +1,2486 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP MediaTagger\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-imagetagger\n"
+"POT-Creation-Date: 2014-02-10 17:35+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: phd38 <contact@photos-dauphie.com>\n"
+"Language-Team: phd <http://www.photos-dauphine.com/ecrire>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-Basepath: C:\\Users\\bruno.bourgeois\\Documents\\HOME\\phd\\phd\\wp-"
+"content\\plugins\\wp-mediatagger\\languages\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Generator: Poedit 1.6.2\n"
+"X-Poedit-SearchPath-0: C:\\Users\\bruno.bourgeois\\Documents\\HOME\\phd\\phd"
+"\\wp-content\\plugins\\wp-mediatagger\\languages\n"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:3
+msgid "Activation"
+msgstr "Activation"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:4
+msgid "Taxonomy table detected in database - not created"
+msgstr ""
+"Table de taxinomie détectée dans la base de donnée - conservée en l'état"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:5
+msgid "Taxonomy table detected in database - converted."
+msgstr "Table de taxinomie détectée dans la base de donnée - convertie."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:6
+msgid "Taxonomy table not detected in database - created"
+msgstr "Table de taxinomie non détectée dans la base de données - créée."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:7
+msgid "Loading"
+msgstr "Chargement"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:8
+msgid ""
+"Plugin options detected in database in <b>serialized</b> format - RELOADED "
+"successfully."
+msgstr ""
+"Options plugin détectées dans la base de données au format <b>série</b> - "
+"CHARGEES avec succès."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:9
+msgid ""
+"Plugin options detected in database in <b>itemized</b> format - RELOADED and "
+"SERIALIZED successfully."
+msgstr ""
+"Options plugin détectées dans la base de données au format <b>enuméré</b> - "
+"CHARGEES et SERIALISEES avec succès."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:10
+msgid ""
+"No plugin options detected in database from former versions - INITIALIZED "
+"successfully."
+msgstr ""
+"Absence d'options plugin dans la base de données - INITIALISEES avec succès."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:11
+msgid ""
+"<b>No tag detected in your blog - Start by adding tags to your blog before "
+"tagging media.</b>"
+msgstr ""
+"<b>Aucun tag détecté sur votre blog - Commencez par en créer avant de tagger "
+"vos média.</b>"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:12
+msgid "Select at least one media in the list for tagging."
+msgstr "Sélectionner au moins un média dans la liste avant de taguer."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:13
+msgid "Displaying"
+msgstr "Affichage"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:14
+msgid "View"
+msgstr "Afficher"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:15
+msgid "Editor"
+msgstr "Editeur"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:16
+msgid "File"
+msgstr "Fichier"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:17
+msgid "Tag"
+msgstr "Taguer"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:18
+msgid "< Tag"
+msgstr "< Taguer"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:19
+msgid "Tag >"
+msgstr "Taguer >"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:20
+msgid "Clear"
+msgstr "Effacer"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:21
+msgid "Explorer"
+msgstr "Explorateur"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:22
+msgid "All media"
+msgstr "Tous les médias"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:23
+msgid "List all media"
+msgstr "Afficher tous les médias"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:24
+msgid "Tagged media"
+msgstr "Médias taggés"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:25
+msgid "List tagged media"
+msgstr "Afficher les médas taggés"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:26
+msgid "Untagged media"
+msgstr "Médias non taggés"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:27
+msgid "List untagged media"
+msgstr "Afficher les médias non taggés"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:28
+msgid "List"
+msgstr "Liste"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:29
+msgid "List media added to the custom list"
+msgstr "Afficher les médias inclus dans la liste personnalisée"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:30
+msgid "Search all media"
+msgstr "Rechercher parmi tous les médias"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:31
+msgid "Display"
+msgstr "Afficher"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:32
+msgid "Display depth"
+msgstr "Nombre de médias à afficher"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:33
+msgid "media starting from"
+msgstr "médias à partir de"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:34
+msgid "Start display index"
+msgstr "Offset index"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:35
+msgid "No media detected in your blog - Start by adding media before tagging."
+msgstr ""
+"Aucun tag détecté sur votre blog - Commencez par en créer avant de tagger "
+"vos médias."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:36
+msgid "Add to list"
+msgstr "Ajouter à la liste"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:37
+msgid "Remove from list"
+msgstr "Retirer de la liste"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:38
+msgid "Reset list"
+msgstr "Effacer la liste"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:39
+msgid ""
+"No media to display in this range - Start / stop indexes reset to default."
+msgstr ""
+"Aucun média compris dans la fenêtre sélectionnée. Indices de début et de fin "
+"remis à leur valeur par défaut.  "
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:40
+msgid ""
+"None of the selected tag(s) match existing tags. The media search URL should "
+"be composed as http://www.mysite.com/library?tags=tag1+tag2+...+tagN, where "
+"http://www.mysite.com/library is the search result page. Check the spelling "
+"of the tag slugs"
+msgstr ""
+"Aucun des tags recherchés n'est reconnu sur le site. L'URL de recherche de "
+"médias doit être composée de la manière suivante :  http://www.mysite.com/"
+"library?tags=tag1+tag2+...+tagN, où  http://www.mysite.com/library "
+"correspond à la page d'affichage du résultat de la recherche. Vérifier la "
+"syntaxe des identifiants de tags (slugs)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:41
+msgid "You can search a media by theme with the tag cloud above."
+msgstr ""
+"La recherche peut s'effectuer par thème grâce au nuages de tags ci-dessus."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:42
+msgid ""
+"You can search a media by theme by selecting appropriate keywords below and "
+"clicking OK."
+msgstr ""
+"Pour effectuer une recherche par thème, sélectionner les mots-clefs "
+"appropriés et cliquer sur OK."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:43
+msgid ""
+"You can search a media by theme either with the tag cloud above or selecting "
+"appropriate keywords below and clicking OK."
+msgstr ""
+"La recherche peut s'effectuer par thème grâce au nuages de tags ci-dessus ou "
+"par la sélection des mots-clefs appropriés ci-dessous."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:44
+msgid ""
+"You can search a media entering a keyword above that will be searched as "
+"part of the medias name."
+msgstr ""
+"Pour effectuer une recherche, saisissez un mot clé dans le champ texte ci-"
+"dessus. Ce mot clé sera recherché parmi les noms de médias."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:45
+msgid ""
+"You can search a media by theme with the tag cloud above or entering a "
+"keyword above that will be searched as part of the medias name."
+msgstr ""
+"La recherche peut s'effectuer par thème grâce au nuages de tags ci-dessus ou "
+"en saisissant un mot clé dans le champ texte ci-dessus. Ce mot clé sera "
+"recherché parmi les noms de médias."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:46
+msgid ""
+"You can search a media by theme by selecting appropriate keywords below and "
+"clicking OK or entering a keyword above that will be searched as part of the "
+"medias name."
+msgstr ""
+"Pour effectuer une recherche par thème, sélectionner les mots-clefs "
+"appropriés et cliquer sur OK. Ou saisissez un mot clé dans le champ texte ci-"
+"dessus. Ce mot clé sera recherché parmi les noms de médias."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:47
+msgid ""
+"You can search a media by theme either with the tag cloud above or selecting "
+"appropriate keywords below and clicking OK or entering a keyword above that "
+"will be searched as part of the medias name."
+msgstr ""
+"La recherche peut s'effectuer par thème grâce au nuages de tags ci-dessus ou "
+"par la sélection des mots-clefs appropriés ci-dessous. Ou saisissez un mot "
+"clé dans le champ texte ci-dessus. Ce mot clé sera recherché parmi les noms "
+"de médias."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:48
+msgid "no media found matching this criteria list"
+msgstr "aucun média trouvé correspondant à ces critères"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:49
+msgid "Results display"
+msgstr "Format résultat"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:50
+msgid "Display the results as an image gallery"
+msgstr "Afficher les résultats sous forme de galerie"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:51
+msgid "Gallery"
+msgstr "Galerie"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:52
+msgid "Display the results as an itemized image list"
+msgstr "Afficher les résultats sous forme de liste d'images"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:53
+msgid "Itemized"
+msgstr "Liste d'images"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:54
+msgid "Display the results as an image title list"
+msgstr "Afficher les résultats sous forme de liste d'images"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:55
+msgid "Titles"
+msgstr "Liste de titres"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:56
+msgid "not attached to any post"
+msgstr "rattaché à aucun post"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:57
+msgid "Go to page"
+msgstr "Aller à la page"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:58
+msgid "Access to media"
+msgstr "Accéder au média"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:59
+msgid "Click to display previous page"
+msgstr "Aller à la page précédente"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:60
+msgid "previous"
+msgstr "précédente"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:61
+msgid "Click to display next page"
+msgstr "Aller à la page suivante"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:62
+msgid "next"
+msgstr "suivante"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:63
+msgid "Offer a media search engine to your blog with"
+msgstr "Offrez à votre blog un moteur de recherche de médias avec"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:64
+msgid "Invalid values restored to the last correct settings :"
+msgstr "Valeurs d'options incorrectes et non prises en compte"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:65
+msgid "Parameters saved."
+msgstr "Paramètres sauvegardés."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:66
+msgid "not available"
+msgstr "non disponible"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:67
+msgid "Tags detected from the image taxonomy"
+msgstr "Tags dérivés de la taxinomie image"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:68
+msgid "post"
+msgstr "post"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:69
+msgid "Search attachment like..."
+msgstr "Chercher média contenant..."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:70
+msgid "Toggle tag cloud"
+msgstr "Permuter l'affichage du nuage de tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:71
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:307
+msgid "Tag cloud"
+msgstr "Nuage de tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:72
+msgid "Toggle form"
+msgstr "Permuter l'affichage du formulaire de recherche"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:73
+msgid "Form"
+msgstr "Formulaire"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:74
+msgid "Toggle search field"
+msgstr "Permuter l'affichage du champ de recherche"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:75
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:309
+msgid "Search field"
+msgstr "Champ de recherche"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:76
+msgid ""
+"Type here the keyword that will be searched in the media names database, "
+"rather than filtering on the tags attached to the medias."
+msgstr ""
+"Entrer ici le mot clé à rechercher parmi les noms de médias de la base de "
+"données."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:77
+msgid "Orphean media, not linked to any post"
+msgstr "Média orphelin, lié à aucun post"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:78
+msgid "No tag associated to this media"
+msgstr "Aucun tag associé à ce média"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:79
+msgid "Search display"
+msgstr "Format de recherche"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:80
+#, php-format
+msgid ""
+"PHP Version %.2f is the minimum required on your server to run the %s plugin."
+msgstr ""
+"Le serveur hébergeant le blog doit être équipé au minimum de la version PHP "
+"%.2f pour pouvoir faire fonctionner le plugin %s."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:81
+#, php-format
+msgid "Version %s was detected on the server."
+msgstr "La version %s a été détectée sur ce serveur."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:82
+msgid "Update options"
+msgstr "Enregistrer les options"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:83
+msgid "Others"
+msgstr "Autres"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:84
+msgid ""
+"If you experience this plugin brings value to your site, you are free to "
+"make a donation for supporting the development and maintenance."
+msgstr ""
+"Si vous trouvez ce plugin utile, vous êtes libre d'effectuer un don afin de "
+"soutenir l'effort de développement et de maintenance."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:85
+msgid "Even small donations matter and are encouraging !"
+msgstr "Même les petits dons sont importants et encourageants !"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:86
+msgid ""
+"Display your MediaTagger tag cloud in the sidebar. Before that, you need to "
+"have properly tagged your medias in the MediaTagger plugin Admin Panel and "
+"have as well setup a result page that you will use as your tag cloud target "
+"page"
+msgstr ""
+"Affichez le nuage de tags MediaTagger dans la colonne latérale. Avant tout, "
+"vous devez avoir taggé vos médias dans le panneau d'administration du plugin "
+"MediaTagger, et avoir également défini une page résultat qui sera utilisée "
+"comme page cible pour le nuage de tags."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:87
+msgid "media associated to tag"
+msgid_plural "medias associated to tag"
+msgstr[0] "média associé à ce tag"
+msgstr[1] "médias associés à ce tag"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:88
+msgid "media found"
+msgid_plural "medias found"
+msgstr[0] "média trouvé"
+msgstr[1] "médias trouvés"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:89
+#, php-format
+msgid "image %d to %d"
+msgid_plural "images %d to %d"
+msgstr[0] "image %d à %d"
+msgstr[1] "images %d à %d"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:90
+msgid "Original tag"
+msgid_plural "Original tags"
+msgstr[0] "Tag d'origine"
+msgstr[1] "Tags d'origine"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:91
+msgid "New tag"
+msgid_plural "New tags"
+msgstr[0] "Nouveau tag"
+msgstr[1] "Nouveaux tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:92
+msgid "occurence"
+msgid_plural "occurences"
+msgstr[0] "occurence"
+msgstr[1] "occurences"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:104
+msgid "General"
+msgstr "Général"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:111
+msgid "File formats for tagging"
+msgstr "Formats de fichiers à prendre en compte pour la classification"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:112
+msgid ""
+"This defines the set of files available for tagging (admin) and searching "
+"(visitors)"
+msgstr ""
+"Les fichiers correspondant à ces formats seront listés pour la "
+"classification (admin) et la recherche (visiteurs)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:115
+msgid "At least one file format has to be selected (General)."
+msgstr "Un format de fichier doit au minimum être sélectionné (Général)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:122
+msgid "Tagging source"
+msgstr "Tags définis à partir des"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:123
+msgid ""
+"You can tag medias either with your blog tags, with your categories, or with "
+"your tags and categories merged together"
+msgstr ""
+"Les médias peuvent être classifiés par mots-clefs correspondant aux tags de "
+"votre blog, aux catégories, ou à l'ensemble des tags et catégories."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:124
+msgid "Tags"
+msgstr "Tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:125
+msgid "Tags and categories"
+msgstr "Tags et catégories"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:126
+msgid "Categories"
+msgstr "Catégories"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:137
+msgid "Tags groups"
+msgstr "Groupements de tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:138
+msgid ""
+"Optional : you can regroup tags by groups so that those tags are displayed "
+"together. This applies to the tagging panel form as well as to the search "
+"form. If you do not need to categorize your tags, keep this field empty. "
+"Otherwise, use the following CSV syntax, one group definition per line :\n"
+"\n"
+"   my_group1_name=tag1,tag2,tag5,tag7, ... ,tag n\n"
+"   my_group2_name=tag3,tag4,tag6, ... , tag m\n"
+"   ...\n"
+"\n"
+"Spaces do not matter - The tags not listed in these groups will be listed at "
+"the end in the default category. Optionnally, you can name this default "
+"category by adding as last line - do not add anything after '=' :\n"
+"\n"
+"   my_default_group_name=\n"
+"\n"
+"By default the tags are disposed by column automatically ; you can override "
+"this rule by leaving a blank line before the group you want to start to the "
+"next column."
+msgstr ""
+"Optionnel : vous pouvez rassembler les tags par groupe pour que ces tags "
+"soient affichés selon les groupes définis. Ce réglage concerne le panneau de "
+"classification et le formulaire de recherche. Par défaut, laissez ce champ "
+"vide. Sinon, utilisez une syntaxe CSV avec une définition de groupe par "
+"ligne :\n"
+"\n"
+"   mon_groupe_1=tag1,tag2,tag5,tag7, ... ,tag n\n"
+"   mon_groupe_2=tag3,tag4,tag6, ... , tag m\n"
+"   ...\n"
+"\n"
+"Les espaces n'influent pas - Les tags n'apparaissant dans aucun groupe sont "
+"regroupés à la fin dans une catégorie par défaut. Optionnellement, cette "
+"catégorie peut être nommée en ajoutant en dernière ligne - ne rien mettre "
+"après '=' :\n"
+"\n"
+"   mon_groupe_par_défaut= \n"
+"\n"
+"Par défaut les tags sont disposés en colonne automatiquement ; les colonnes "
+"peuvent être formattées manuellement en insérant une ligne vide avant le "
+"groupe à reporter à la colonne suivante."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:150
+msgid "Tag group definition : incorrect syntax (General)."
+msgstr "Définition incorrecte des groupes de tags (Général)."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:158
+msgid "Fields background color"
+msgstr "Couleur de fond des titres au format hexadécimal"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:159
+msgid ""
+"This color is used for the fields background in the tagging panel and search "
+"form"
+msgstr "Couleur de fond pour les champs titres"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:161
+msgid ""
+"The fields background color must be a valid hexadecimal color code as 3ff or "
+"a1b160 (General)."
+msgstr ""
+"La couleur d'arrière-plan doit être codée sous un format hexadécimal valide, "
+"de type 3ff ou 1b160 (Général)."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:168
+msgid "Media taxonomy"
+msgstr "Taxinomie média"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:175
+msgid "Override original post taxonomy with media taxonomy"
+msgstr "Déduire les tags des posts de l'union des tags médias"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:176
+msgid ""
+"Carefully read this note :\n"
+"\n"
+"This option allows to let the media taxonomy defined with MediaTagger "
+"supersede the post taxonomy provided as standard by WordPress.\n"
+"If you activate this feature : every time you tag a media from the "
+"MediaTagger editor, the post containing this media will be associated to the "
+"tag list formed from a logical OR between all the tags set on the medias "
+"contained in the post. \n"
+"\n"
+"Any former tag manually set on the post will be lost and supersed by this "
+"logical media taxonomy combination. For that reason it is recommended to "
+"backup your WordPress database before the first activation of this feature."
+msgstr ""
+"Lire attentivement ce qui suit :\n"
+"\n"
+"Cette option une fois activée déduira de la taxinomie média la taxinomie du "
+"post auquel ces médias sont rattachés. Les tags associés au post seront "
+"formés par un OU logique entre tous les tags des médias de ce post. \n"
+"\n"
+"Les tags associés précédemment aux posts seront écrasés par cette taxinomie "
+"média. Pour cette raison une sauvegarde de la base de données WordPress peut "
+"être une bonne idée avant d'activer cette fonctionnalité."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:182
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:323
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:457
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:474
+msgid "Yes"
+msgstr "Oui"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:183
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:324
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:458
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:475
+msgid "No"
+msgstr "Non"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:192
+msgid "Preview the Media Taxonomy scheme"
+msgstr "Prévisualiser la taxinomie média"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:193
+msgid ""
+"This preview function lets you evaluate what would the media taxonomy be "
+"compared to your current posts tagging.\n"
+"\n"
+"After clicking this link you will be directed to the preview page. From this "
+"page you will then have the choice to run an automatic retagging batch."
+msgstr ""
+"Le lien vous conduira sur la page de prévisualisation.A partir de là vous "
+"pourrez accepter de continuer grâce à un processus de re-tagging automatique"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:196
+msgid "Preview"
+msgstr "Prévisualisation"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:205
+msgid "Tag editor"
+msgstr "Editeur de tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:213
+msgid "Tagging excluded tags"
+msgstr "Tags exclus de la classification"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:214
+msgid ""
+"List of comma separated tag names defined in your blog and that will not "
+"appear in the Tag Editor"
+msgstr ""
+"Liste de noms de tags définis dans le blog et qui seront exclus de l'éditeur "
+"de tags ci-dessus, à séparer par une virgule"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:216
+msgid ""
+"The tag exclusion list must contain available tags separated by commas (Tag "
+"Editor)."
+msgstr ""
+"La liste de noms de tags exclus doit comprendre des noms de tags existants "
+"séparés par une virgule (Editeur de tags)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:223
+msgid "Number of tags displayed per column"
+msgstr "Nombre de tags affichés par colonne"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:224
+msgid ""
+"Set this number to have a convenient columnar display of your tags in the "
+"Tag Editor, properly spread over the above available horizontal space"
+msgstr ""
+"Régler cette valeur de manière à avoir un affichage des tags par colonne "
+"équitablement réparti dans l'espace disponible ci-dessus."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:226
+msgid ""
+"The number of tags displayed by column must be an integer greater than 0 "
+"(Tag Editor)."
+msgstr ""
+"Le nombre de tags affichés par colonne doit être un entier positif (Editeur "
+"de tags)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:233
+msgid "Maximum image pixel height"
+msgstr "Largeur ou hauteur d'image maximale (px)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:234
+msgid "Used to scale the images displayed in the Tag Editor"
+msgstr ""
+"Utilisé pour redimensionner les images affichées dans l'Editeur de Tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:236
+msgid ""
+"The maximum image pixel height must be an integer greater than 100 (Tag "
+"Editor)."
+msgstr ""
+"La hauteur d'image maximale doit être un entier supérieur à 100 (Editeur de "
+"tags)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:243
+msgid "Maximum image pixel height for group display"
+msgstr "Hauteur d'image maximale pour l'affichage groupé"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:244
+msgid "Used to scale the images displayed in the Tag Editor for group tagging"
+msgstr ""
+"Utilisé pour dimensionner les images affichées dans l'Editeur de Tags en "
+"mode groupe"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:246
+msgid ""
+"The maximum image pixel height must be an integer greater than 10 (Tag "
+"Editor)."
+msgstr ""
+"La hauteur d'image maximale doit être un entier supérieur à 10 (Editeur de "
+"tags)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:253
+msgid "Maximum number of media displayed per page"
+msgstr "Nombre maximal de médias affichés par page"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:254
+msgid "Maximum number of media that can be displayed on one page"
+msgstr "Nombre maximal de médias affichés par page"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:256
+msgid ""
+"The maximum number of media per page must be greater than 10 and less than "
+"500 (Tag Editor)."
+msgstr ""
+"Le nombre maximal de médias affichés par page doit être compris entre 10 et "
+"500 (Editeur de tags)."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:285
+msgid "Search format"
+msgstr "Format de recherche"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:293
+msgid "Search excluded tags"
+msgstr "Tags exclus de la recherche"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:294
+msgid ""
+"List of comma separated tag names defined in your blog and that will not "
+"appear in the list of searchable tags"
+msgstr ""
+"Liste de noms de tags définis dans le blog et qui seront exclus de la liste "
+"de tags affichés sur la page de recherche, à séparer par une virgule"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:296
+msgid ""
+"The tag exclusion list must contain available tags separated by commas "
+"(Search format)."
+msgstr ""
+"La liste de noms de tags exclus doit comprendre des noms de tags existants "
+"séparés par une virgule (Format de recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:303
+msgid "Default search display mode"
+msgstr "Mode d'affichage de la recherche par défaut"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:304
+msgid ""
+"Tag cloud is more compact but does not allow the multi-criteria search "
+"provided by the check boxes form.\n"
+"Tag form offers multiple key search.\n"
+"Search field manages search based on media name."
+msgstr ""
+"Le nuage de tags est plus compact, mais ne permet pas la recherche "
+"multicritères.\n"
+"Le formulaire de tags permet la recherche multiple.\n"
+"La recherche par le champ est effectuée sur les noms de médias."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:308
+msgid "Tag form"
+msgstr "Formulaire de tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:312
+msgid "At least one default display mode needs to be selected (Search format)."
+msgstr ""
+"Au moins un format d'affichage de recherche doit être sélectionné (Format de "
+"recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:319
+msgid "Visitors can switch between available search formats"
+msgstr "Mode d'affichage de recherche modifiable par les visiteurs"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:320
+msgid ""
+"If 'yes' is selected, the result page allows the user to dynamically select "
+"the most appropriate search format.\n"
+"Otherwise, format is fixed to default display style set above.\n"
+"Javascript must be enabled in the navigator to use this capability"
+msgstr ""
+"Sinon, le mode d'affichage est fixe et déterminé par le paramétrage ci-"
+"dessus - Le visiteur doit avoir accepté l'exécution de Javascript dans son "
+"navigateur"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:333
+msgid "Number of tags displayed per column in form mode"
+msgstr "Nombre de tags affichés par colonne en mode formulaire"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:334
+msgid ""
+"Set this number to have a convenient columnar display of your tags in the "
+"search section, properly spread over the available horizontal space"
+msgstr ""
+"Régler cette valeur de manière à avoir un affichage des tags par colonne "
+"équitablement réparti dans le formulaire de recherche"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:336
+msgid ""
+"The number of tags displayed by column must be an integer greater than 0 "
+"(Search format)."
+msgstr ""
+"Le nombre de tags affichés par colonne doit être un entier positif (Format "
+"de recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:344
+msgid "Search form font size (pt)"
+msgstr "Taille de fonte du formulaire de recherche (pt)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:345
+msgid "Font size to be used for the search form made of check boxes and tags"
+msgstr "Taille de la fonte à utiliser pour le formulaire de recherche"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:347
+msgid ""
+"The search form font must be a positive integer expressed in pt (Search "
+"format)."
+msgstr ""
+"La taille de fonte du formulaire doit être un entier positif (Format de "
+"recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:354
+msgid "Number of tags displayed in the tag cloud"
+msgstr "Nombre de tags affichés dans le nuage de tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:355
+msgid ""
+"Number of tags selected among the highest ranked displayed in the tag "
+"cloud ; put 0 to get all the tags"
+msgstr ""
+"Nombre de tags à afficher parmi les occurences les plus fortes ; pour avoir "
+"tous les tags, mettre 0"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:357
+msgid ""
+"The number of tags displayed in the tag cloud must be an integer greater "
+"than 0 ; if 0 all the tags are displayed (Search format)"
+msgstr ""
+"Le nombre de tags dans le nuage de tags doit être un entier positif ; pour "
+"afficher tous les tags mettre 0 (Format de recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:364
+msgid "Tag cloud order"
+msgstr "Classement du nuage de  tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:365
+msgid ""
+"Select the appropriate option to have the tags ordered aphabetically, by "
+"occurence or randomly, depending on your application.\n"
+"Note that this ordering is applied after having selected the highest ranking "
+"tags according to the parameter just above"
+msgstr ""
+"Sélectionner l'option appropriée pour ordonner les tags alphabétiquement, "
+"par occurence ou aléatoirement."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:367
+msgid "Alphabetical"
+msgstr "Alphabétique"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:368
+msgid "Rank"
+msgstr "Occurence"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:369
+msgid "Random"
+msgstr "Aléatoire"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:378
+msgid "Tag cloud minimum font size (pt)"
+msgstr "Taille de fonte minimum pour le nuage de tags (pt)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:379
+msgid "This parameter sets the font size for the least used tag"
+msgstr "Règle la taille de fonte correspondant au tag le moins utilisé"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:381
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:391
+msgid "Tag cloud minimum font size must be a positive integer (Search format)"
+msgstr ""
+"La taille de fonte minimum du nuage de tags doit être un entier positif "
+"(Format de recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:388
+msgid "Tag cloud maximum font size (pt)"
+msgstr "Taille de fonte maximum pour le nuage de tags (pt)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:389
+msgid "This parameter sets the font size for the most used tag"
+msgstr "Règle la taille de fonte correspondant au tag le plus utilisé"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:399
+msgid "Minimum tag cloud color in hex format"
+msgstr "Couleur de fonte minimale pour le nuage de tags (hex)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:400
+msgid ""
+"Tag cloud dynamic colors : this font color will be used for the tags with "
+"the lowest use. Set to -1 to not use dynamic colors"
+msgstr ""
+"Coloration graduelle du nuage de tags : cette couleur de fonte sera utilisée "
+"pour les tags les moins utilisés. Régler à -1 pour ne pas utiliser de "
+"couleurs graduelles"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:402
+msgid ""
+"The minimum tagcloud color must be a valid hexadecimal color code as 3ff or "
+"a1b160, or -1 for not using dynamic colors (Search format)"
+msgstr ""
+"La couleur minimale du nuage de tags doit être codée sous un format "
+"hexadécimal valide, de type 3ff ou 1b160, ou -1 pour désactiver la "
+"coloration graduelle (Format de recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:410
+msgid "Maximum tag cloud color in hex format"
+msgstr "Couleur de fonte maximale pour le nuage de tags (hex)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:411
+msgid ""
+"Tag cloud dynamic colors : this font color will be used for the tags with "
+"the highest use. Set to -1 to not use dynamic colors"
+msgstr ""
+"Coloration graduelle du nuage de tags : cette couleur de fonte sera utilisée "
+"pour les tags les plus utilisés. Régler à -1 pour ne pas utiliser de "
+"couleurs graduelles"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:413
+msgid ""
+"The maximum tagcloud color must be a valid hexadecimal color code as 3ff or "
+"a1b160, or -1 for not using dynamic colors (Search format)"
+msgstr ""
+"La couleur maximale du nuage de tags doit être codée sous un format "
+"hexadécimal valide, de type 3ff ou 1b160, ou -1 pour désactiver la "
+"coloration graduelle (Format de recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:421
+msgid "Tag cloud highlighting font color in hex format"
+msgstr "Couleur de fonte de mise en valeur pour le nuage de tags"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:422
+msgid ""
+"This font color is used to highlight the tags selected for a search ; used "
+"also for the tag cloud hover effect when dynamic colors are used for the tag "
+"cloud.\n"
+"Set to -1 if you don't want hover effect in your tag cloud with dynamic "
+"colors and if you don't want to highlight the selected tag"
+msgstr ""
+"Couleur de fonte destinée à la mise en valeur du tag selectionné pour la "
+"recherche ; également pour la couleur de fonte hover pour le nuage de tags "
+"en couleurs graduelles. \n"
+"Règler à -1 pour ne pas avoir d'effet de survol avec couleurs dynamiques."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:425
+msgid ""
+"The tag cloud highlighting font color must be a valid hexadecimal color code "
+"as 3ff or a1b160, or -1 for no higlighting effect (Search format)"
+msgstr ""
+"La couleurde mise en valeur du nuage de tags doit être codée sous un format "
+"hexadécimal valide, de type 3ff ou 1b160, ou -1 pour désactiver la mise en "
+"valeur (Format de recherche)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:432
+msgid "Output format"
+msgstr "Format résultat"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:439
+msgid "Default result display mode"
+msgstr "Mode d'affichage des résultats par défaut"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:440
+msgid ""
+"Select gallery style for a condensed graphical output, title list for pure "
+"text.\n"
+"Images will be scaled in both cases using maximum image pixel width or "
+"height specified below"
+msgstr ""
+"Sélectionner le style galerie pour un affichage dense des résultats sous "
+"forme graphique, liste de titre pour du texte pur.Les images seront "
+"redimensionnées dans tous les cas en fonction du paramètre largeur ou "
+"hauteur maximale d'image ci-dessous"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:442
+msgid "Image gallery"
+msgstr "Galerie d'images"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:443
+msgid "Image list"
+msgstr "Liste d'images"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:444
+msgid "Title list"
+msgstr "Liste de titres"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:453
+msgid "Visitors can switch between available output formats"
+msgstr "Mode d'affichage des résultats modifiable par les visiteurs"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:454
+msgid ""
+"If 'yes' is selected, the result page allows the user to dynamically select "
+"the most appropriate output format.\n"
+"Otherwise, format is fixed to default output style set above.\n"
+"Javascript must be enabled in the navigator to use this capability."
+msgstr ""
+"Sinon, le mode d'affichage résultat est fixe et déterminé par le paramétrage "
+"ci-dessus - Le visiteur doit avoir accepté l'exécution de Javascript dans "
+"son navigateur"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:467
+msgid "Optimize thumbnail transfer"
+msgstr "Optimiser le transfert d'images (galerie, liste d'images)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:468
+msgid ""
+"If 'Yes' is selected, the GD graphic library will be used server side to "
+"resize the images to the exact dimension used for displaying in the client "
+"browser.\n"
+"Otherwise, the images will be transferred in full format and directly "
+"resized in the browser.\n"
+"For given server configurations, this optimization does not produce the "
+"expected result.\n"
+"When activating this option, check on your search page that the result "
+"gallery or image list is displayed correctly.\n"
+"If not, disable this option as proposed by default.\n"
+"This option is selectable only if the GD library is detected on the server "
+"(check in the footnote below)."
+msgstr ""
+"Si 'Oui' est sélectionné, la librairie graphique GD sera utilisée côté "
+"serveur pour redimensionner les images avant transfert vers le navigateur "
+"client.\n"
+"Sinon, les images seront transférées dans leur format d'origine et "
+"redimensionnée dans le navigateur.\n"
+"Si vous activez cette option, assurez-vous que les vignettes images sont "
+"affichées correctement dans la galerie résultat. Dans le cas contraire, "
+"désactiver l'option, comme proposé par défaut.\n"
+"Cette option n'est sélectionnable que si la librairie GD est détectée sur le "
+"serveur (vérifier en pied de page)."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:485
+msgid "Gallery output format"
+msgstr "Format résultat - Galerie"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:492
+msgid "Number of images per gallery page"
+msgstr "Nombre d'images par page galerie"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:493
+msgid ""
+"Number of images to be listed on the search result page in case the display "
+"format is set to 'Gallery'."
+msgstr ""
+"Nombre d'images à afficher par page de résultat en mode d'affichage \"galerie"
+"\""
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:495
+msgid "The number of images per page must be positive (Gallery output format)"
+msgstr ""
+"Le nombre d'images par page doit être entier positif (Format résultat - "
+"Galerie)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:502
+msgid "Link on the gallery thumbnails points to"
+msgstr "Les images présentées en mode galerie pointent vers"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:503
+msgid ""
+"Select 'Plain size image' to link the gallery thumbnails to the full size "
+"image.\n"
+"Otherwise the thumbnails will be linked to the post where the image was "
+"posted."
+msgstr ""
+"Sélectionner 'Image grand format' pour faire pointer les vignettes vers "
+"l'image plein format.\n"
+"Sinon les vignettes pointeront vers le post dans lequel les images "
+"apparaissent"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:505
+msgid "Plain size image"
+msgstr "Image grand format"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:506
+msgid "Post containing the image"
+msgstr "Post contenant l'image"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:515
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:565
+msgid "Maximum image pixel width or height"
+msgstr "Largeur ou hauteur d'image maximale (px)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:516
+msgid ""
+"Used to scale the images displayed in gallery display mode on the Image Tag "
+"Search Result Page. The largest of the (width, height) will be scaled to "
+"this number"
+msgstr ""
+"Utilisé pour redimensionner les images affichées sur la page résultat en "
+"mode galerie. Le max(H,L) sera mis à l'échelle avec ce chiffre"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:518
+msgid ""
+"The maximum image pixel width or height must be an integer greater than 10 "
+"(Gallery output format)"
+msgstr ""
+"La largeur ou hauteur d'image maximale doint être un entier supérieur à 10 "
+"(Format résultat - Galerie)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:525
+msgid "Image frame pixel width"
+msgstr "Epaisseur de la bordure (px)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:526
+msgid ""
+"Image border width used for the gallery display style. If border is set to "
+"0, images are displayed border to border.\n"
+"In case an image framing plugin or theme is activated, this setting will be "
+"generally superseded by the specific framing theme or plugin."
+msgstr ""
+"Bordure d'image utilisée pour le mode galerie.\n"
+"Si la bordure des images est gérée par un plugin ou thème spécifique, le "
+"réglage effectué par le plugin ou thème en question l'emportera probablement "
+"sur ce paramètre."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:529
+msgid ""
+"The image frame pixel width must be an integer greater than 0 (Gallery "
+"output format)"
+msgstr ""
+"L'épaisseur de bordure doit être un entier positif (Format résultat - "
+"Galerie)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:537
+msgid "Image border color in hex format"
+msgstr "Couleur de la bordure en format hexadécimal"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:538
+msgid ""
+"Image border color used to frame each gallery image. This parameter is "
+"significant only if the image border set above is greater than 0.\n"
+"In case an image framing plugin or theme is activated, this setting will be "
+"generally superseded by the specific framing theme or plugin."
+msgstr ""
+"Couleur de bordure d'image en mode galerie. Ce paramètre n'a d'effet que "
+"pour une épaisseur de bordure  (ci-dessus) supérieure à 0"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:541
+msgid ""
+"The image frame color must be a valid hexadecimal color code as 3ff or "
+"a1b160 (Gallery output format)"
+msgstr ""
+"La couleur de bordure d'image doit être codée sous un format hexadécimal "
+"valide, de type 3ff ou 1b160 (Format résultat - Galerie)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:548
+msgid "Image list output format"
+msgstr "Format résultat - Liste d'images"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:555
+msgid "Number of images per list page"
+msgstr "Nombre d'images par page"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:556
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:583
+msgid ""
+"Number of images to be listed on the search result page in case the display "
+"format is set to 'Image list'"
+msgstr ""
+"Nombre d'images à afficher par page de résultat en mode d'affichage \"liste "
+"d'images\""
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:558
+msgid ""
+"The number of images per page must be positive (Image list output format)"
+msgstr ""
+"Le nombre d'images par page doit être strictement positif (Format résultat - "
+"Liste d'images)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:566
+msgid ""
+"Number of image titles to be listed on the search result page in case the "
+"display format is set to 'Title list'"
+msgstr ""
+"Nombre de titres d''images à afficher par page de résultats en mode "
+"d'affichage \"liste d'images\""
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:568
+msgid ""
+"The maximum image pixel width or height must be an integer greater than 10 "
+"(Image list output format)"
+msgstr ""
+"La taille normalisée d'image doit être un entier positif supérieur à 10 "
+"(Format résultat - Liste d'images)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:575
+msgid "Title list output format"
+msgstr "Format résultat - Liste de titres"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:582
+msgid "Number of image titles per list page"
+msgstr "Nombre de titres d'images par page"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:585
+msgid ""
+"The number of image titles per page must be positive (Title list output "
+"format)"
+msgstr ""
+"Le nombre de titres d'images par page doit être strictement positif (Format "
+"résultat - Liste de titres)"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:592
+msgid "Misceallenous"
+msgstr "Divers"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:599
+msgid "Audit database integrity"
+msgstr "Vérification de l'intégrité de la base de données"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:600
+msgid ""
+"This preview function lets you evaluate the inconsistencies detected in your "
+"WordPress database.\n"
+"\n"
+"After clicking this link you will be directed to the preview page. From this "
+"page you will then have the choice to run automatic cleanup batches.\n"
+"This function involves heavy SQL computation. Depending on your hosting "
+"plan, this checker can be aborted if you exceed the maximum number of SQL "
+"queries allowed in your plan."
+msgstr ""
+"Le lien vous conduira sur la page de prévisualisation. A partir de là vous "
+"pourrez accepter de continuer grâce à un processus de re-tagging automatique."
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:604
+msgid "Audit"
+msgstr "Vérifier"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:613
+msgid "Display credit line"
+msgstr "Afficher la référence au plugin MediaTagger"
+
+#: C:\Users\bruno.bourgeois\Documents\HOME\phd\phd\wp-content\plugins\wp-mediatagger\languages/mediatagger-def-i18n.php:614
+msgid ""
+"A possibility is offered to not display the very tiny MediaTagger credit "
+"line shown below the search form in plain format (not in widget).\n"
+"Anyhow, be aware of the very significative work that was required to develop "
+"this plugin to push it to what you can enjoy today.\n"
+"If you decide not to show this line and assuming you like this plugin, I let "
+"to your good willingness the possibility to include anywhere else on your "
+"site a credit line linking back to my home site (http://www.photos-dauphine."
+"com)"
+msgstr ""
+"Vous pouvez choisir de ne pas afficher la très discrète référence au plugin "
+"MediaTagger située sous le formulaire de recherche.\n"
+"Soyez toutefois conscient de l'effort de développement considérable "
+"entrepris pour aboutir au plugin tel que vous l'utilisez aujourd'hui.\n"
+"Si vous souhaitez ne pas afficher cette référence, vous pouvez encore "
+"établir un lien vers le site http://www.photos-dauphine.com sur la page de "
+"votre choix."
+
+#, fuzzy
+#~ msgid ""
+#~ "PHP Version 4 is the minimum required on your server to run the "
+#~ "MediaTagger plugin."
+#~ msgstr ""
+#~ "Le serveur hébergeant le blog doit être équipé au minimum de la version "
+#~ "PHP %.2f pour pouvoir faire fonctionner le plugin %s."
+
+#, fuzzy
+#~ msgid "At least one file format must be selected (General)"
+#~ msgstr "Un format de fichier doit au minimum être sélectionné (Général)"
+
+#, fuzzy
+#~ msgid "Tag group definition : incorrect syntax (General)"
+#~ msgstr "Définition incorrecte des groupes de tags (Général)."
+
+#, fuzzy
+#~ msgid ""
+#~ "The fields background color must be a valid hexadecimal color code as 3ff "
+#~ "or a1b160 (General)"
+#~ msgstr ""
+#~ "La couleur d'arrière-plan doit être codée sous un format hexadécimal "
+#~ "valide, de type 3ff ou 1b160 (Général)."
+
+#~ msgid ""
+#~ "The image frame pixel width must be an integer greater than 0 (Tag Editor)"
+#~ msgstr ""
+#~ "La taille de bordure d'image doit être un entier positif (Editeur de tags)"
+
+#~ msgid ""
+#~ "The image frame color must be a valid hexadecimal color code as 3ff or "
+#~ "a1b160 (Tag Editor)"
+#~ msgstr ""
+#~ "La couleur de bordure d'image doit être codée sous un format hexadécimal "
+#~ "valide, de type 3ff ou 1b160 (Editeur de tags)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The number of tags displayed by column must be an integer greater than 0 "
+#~ "(Tag Editor)"
+#~ msgstr ""
+#~ "Le nombre de tags affichés par colonne doit être un entier positif "
+#~ "(Editeur de tags)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The tag exclusion list must contain available tags separated by commas "
+#~ "(Tag Editor)"
+#~ msgstr ""
+#~ "La liste de noms de tags exclus doit comprendre des noms de tags "
+#~ "existants séparés par une virgule (Editeur de tags)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The maximum image pixel width or height must be an integer greater than "
+#~ "100 (Tag Editor)"
+#~ msgstr ""
+#~ "La taille d'image normalisée, égale à max(largeur, hauteur), doit être un "
+#~ "entier supérieur à 100 (Editeur de tags)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The number of tags displayed by column must be an integer greater than 0 "
+#~ "(Search format)"
+#~ msgstr ""
+#~ "Le nombre de tags affichés par colonne doit être un entier positif "
+#~ "(Format de recherche)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The search form font must be a positive integer expressed in pt (Search "
+#~ "format)"
+#~ msgstr ""
+#~ "La taille de fonte du formulaire doit être un entier positif (Format de "
+#~ "recherche)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The tag exclusion list must contain available tags separated by commas "
+#~ "(Search format)"
+#~ msgstr ""
+#~ "La liste de noms de tags exclus doit comprendre des noms de tags "
+#~ "existants séparés par une virgule (Format de recherche)"
+
+#, fuzzy
+#~ msgid ""
+#~ "At least one default display mode needs to be selected (Search format)"
+#~ msgstr ""
+#~ "Au moins un format d'affichage de recherche doit être sélectionné (Format "
+#~ "de recherche)"
+
+#~ msgid ""
+#~ "Tag cloud maximum font size must be a positive integer (Search format)"
+#~ msgstr ""
+#~ "La taille de fonte maximum du nuage de tags doit être un entier positif "
+#~ "(Format de recherche)"
+
+#~ msgid ""
+#~ "Maximum tag cloud color forced to -1 to disable dynamic tag cloud colors "
+#~ "(minimum tag cloud color was manually set to -1)"
+#~ msgstr ""
+#~ "La couleur maximale du nuage de tags a été forcée à -1 pour désactiver la "
+#~ "coloration graduelle du nuage de tags (la valeur minimale a manuellement "
+#~ "été passée à -1)"
+
+#~ msgid ""
+#~ "Minimum tag cloud color forced to -1 to disable dynamic tag cloud colors "
+#~ "(maximum tag cloud color was manually set to -1)"
+#~ msgstr ""
+#~ "La couleur minimale du nuage de tags a été forcée à -1 pour désactiver la "
+#~ "coloration graduelle du nuage de tags (la valeur maximale a manuellement "
+#~ "été passée à -1)"
+
+#, fuzzy
+#~ msgid "Total number of medias"
+#~ msgstr "Nombre total de médias"
+
+#, fuzzy
+#~ msgid "Number of medias tagged"
+#~ msgstr "Nombre de médias taggés"
+
+#, fuzzy
+#~ msgid "Number of medias remaining untagged"
+#~ msgstr "Nombre de médias restant à associer aux tags"
+
+#~ msgid "Switch to "
+#~ msgstr "Passer en mode "
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Media tags"
+#~ msgstr "Tags média"
+
+#~ msgid "None"
+#~ msgstr "Aucun"
+
+#~ msgid "Set and Next"
+#~ msgstr "Associer et traiter média suivant"
+
+#~ msgid "Set"
+#~ msgstr "Associer"
+
+#~ msgid "Get"
+#~ msgstr "Relire"
+
+#~ msgid "Media"
+#~ msgstr "Média"
+
+#~ msgid "tagged with theme"
+#~ msgid_plural "tagged with themes"
+#~ msgstr[0] "associé au thème"
+#~ msgstr[1] "associé aux thèmes"
+
+#~ msgid "tags reset"
+#~ msgstr ": thèmes associés réinitialisés"
+
+#~ msgid "Post"
+#~ msgstr "Post"
+
+#~ msgid " tagged with theme"
+#~ msgid_plural " tagged with themes"
+#~ msgstr[0] " associé au thème"
+#~ msgstr[1] " associé aux thèmes"
+
+#, fuzzy
+#~ msgid "media tags read from database."
+#~ msgstr "thèmes associés relus depuis la base de données."
+
+#, fuzzy
+#~ msgid "No media matching this search."
+#~ msgstr "Aucune média ne correspond à cette recherche."
+
+#~ msgid "Displaying medias"
+#~ msgstr "Afficher les médias"
+
+#~ msgid "tagged"
+#~ msgstr "taggés"
+
+#~ msgid "untagged"
+#~ msgstr "non taggés"
+
+#~ msgid "all"
+#~ msgstr "tous"
+
+#, fuzzy
+#~ msgid ""
+#~ "The search currently supports single keyword pattern - Search will be "
+#~ "done on media title and hosting post or page title"
+#~ msgstr ""
+#~ "La recherche fonctionne dans cette version avec un mot-clef unique - La "
+#~ "recherche est effectuée dans les titres de médias ou noms des posts ou "
+#~ "pages contenant le média."
+
+#~ msgid "Medias"
+#~ msgstr "Médias"
+
+#~ msgid "to"
+#~ msgstr "à"
+
+#~ msgid "Previous"
+#~ msgstr "Précédent"
+
+#~ msgid "Next"
+#~ msgstr "Suivant"
+
+#~ msgid "Tag media"
+#~ msgstr "Tags média"
+
+#, fuzzy
+#~ msgid "MediaTagger Options"
+#~ msgstr "MediaTagger - Options"
+
+#~ msgid "Hide"
+#~ msgstr "Masquer"
+
+#~ msgid "Show"
+#~ msgstr "Afficher"
+
+#~ msgid "options setup panel"
+#~ msgstr "le panneau de paramétrage d'options"
+
+#, fuzzy
+#~ msgid "Options saved."
+#~ msgstr "Options"
+
+#~ msgid ""
+#~ "Optional : you can regroup the above tags by groups so that those tags "
+#~ "are displayed by groups. This applies to the tagging panel form as well "
+#~ "as to the search form. If you do not need to categorize your tags, keep "
+#~ "this field empty. Otherwise, use the following CSV syntax, one group "
+#~ "definition per line : "
+#~ msgstr ""
+#~ "Optionnel : vous pouvez rassembler les tags par groupe que ces tags "
+#~ "soient affichés selon les groupes définis. Ce réglage concerne le panneau "
+#~ "de classification et le formulaire de recherche. Par défaut, laissez ce "
+#~ "champ vide. Sinon, utilisez une syntaxe CSV avec une définition de groupe "
+#~ "par ligne :"
+
+#~ msgid "my_group1_name"
+#~ msgstr "mon_groupe_1"
+
+#~ msgid "my_group2_name"
+#~ msgstr "mon_groupe_2"
+
+#~ msgid ""
+#~ "Spaces do not matter - The tags not listed in these groups will be listed "
+#~ "at the end in the default category. Optionnally, you can name this "
+#~ "default category by adding as last line"
+#~ msgstr ""
+#~ "Les espaces n'influent pas - Les tags n'apparaissant dans aucun groupe "
+#~ "sont regroupés à la fin dans une catégorie par défaut. Optionnellement, "
+#~ "cette catégorie peut être nommée en ajoutant en dernière ligne"
+
+#~ msgid "my_default_group_name"
+#~ msgstr "mon_groupe_par_défaut"
+
+#~ msgid "(do not add anything after \"=\")"
+#~ msgstr "(ne rien mettre après  \"=\")"
+
+#~ msgid ""
+#~ "By default the tags are disposed by column automatically ; you can "
+#~ "override this rule by leaving a blank line before the group you want to "
+#~ "start to the next column."
+#~ msgstr ""
+#~ "Par défaut les tags sont disposés en colonne automatiquement ; les "
+#~ "colonnes peuvent être formattées manuellement en insérant une ligne vide "
+#~ "avant le groupe à reporter à la colonne suivante."
+
+#~ msgid "Carefully read this note"
+#~ msgstr "Lire ces informations avec attention"
+
+#, fuzzy
+#~ msgid ""
+#~ "This option allows to let the media taxonomy defined with MediaTagger "
+#~ "supersede the post taxonomy provided as standard by WordPress"
+#~ msgstr ""
+#~ "Cette option permet de paramétrer automatiquement les tags associés aux "
+#~ "posts à partir des tags associés aux médias de ces posts par MediaTagger"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you activate this feature : every time you tag a media from the "
+#~ "MediaTagger editor"
+#~ msgstr ""
+#~ "Si vous activez cette fonctionnalité : chaque fois que vous taggez un "
+#~ "média dans l'éditeur de tag MediaTagger"
+
+#, fuzzy
+#~ msgid ""
+#~ "the post containing this media will be associated to the tag list formed "
+#~ "from a logical OR between all the tags set on the medias contained in the "
+#~ "post"
+#~ msgstr ""
+#~ "le post contenant cette image sera associé à la liste de tags égale à "
+#~ "l'union de tous les tags associés aux médias contenus dans le post"
+
+#, fuzzy
+#~ msgid ""
+#~ "Any former tag manually set on the post will be lost and supersed by this "
+#~ "logical media taxonomy combination"
+#~ msgstr ""
+#~ "Les tags manuellement associés au post seront écrasés par cette "
+#~ "combinaison de taxinomies médias"
+
+#~ msgid ""
+#~ "For that reason you should backup your WordPress database before the "
+#~ "first activation of this feature"
+#~ msgstr ""
+#~ "Pour cette raison, il est fortement conseillé de sauvegarder la base de "
+#~ "données avant les premiers essais de cette fonctionnalité"
+
+#, fuzzy
+#~ msgid ""
+#~ "This preview function lets you evaluate what would the media taxonomy be "
+#~ "compared to your current posts tagging"
+#~ msgstr ""
+#~ "Cette fonction permet d'évaluer les changements qui seraient apportés si "
+#~ "on applique aux posts la taxinomie média"
+
+#, fuzzy
+#~ msgid ""
+#~ "After clicking this link you will be directed to the preview page. From "
+#~ "this page you will then have the choice to run an automatic retagging "
+#~ "batch"
+#~ msgstr ""
+#~ "Cliquer sur le lien lancera l'évaluation. A partir de là vous pourrez "
+#~ "accepter de corriger les anomalies par des fonctions appropriées"
+
+#, fuzzy
+#~ msgid ""
+#~ "List of comma separated tag names defined in your blog and that will not "
+#~ "appear in the Tag Editor above"
+#~ msgstr ""
+#~ "Liste de noms de tags définis dans le blog et qui seront exclus de "
+#~ "l'éditeur de tags ci-dessus, à séparer par une virgule"
+
+#, fuzzy
+#~ msgid ""
+#~ "Set this number to have a convenient columnar display of your tags in the "
+#~ "Tag Editor above, properly spread over the above available horizontal "
+#~ "space"
+#~ msgstr ""
+#~ "Régler cette valeur de manière à avoir un affichage des tags par colonne "
+#~ "équitablement réparti dans l'espace disponible ci-dessus."
+
+#, fuzzy
+#~ msgid ""
+#~ "Used to scale the images displayed on the Tag Editor above. The largest "
+#~ "of the (width, height) will be scaled to this number"
+#~ msgstr ""
+#~ "Utilisé pour redimensionner les images affichées sur la page résultat en "
+#~ "mode galerie. Le max(H,L) sera mis à l'échelle avec ce chiffre"
+
+#~ msgid "This parameter sets the image border width"
+#~ msgstr "Règle la taille de bordure d'image"
+
+#~ msgid "Image frame color in hex format"
+#~ msgstr "Couleur de la bordure au format hexadécimal"
+
+#, fuzzy
+#~ msgid ""
+#~ "Tag cloud is more compact but does not allow the multi-criteria search "
+#~ "provided by the check boxes form."
+#~ msgstr ""
+#~ "Le nuage de tags est plus compact, mais ne permet pas la recherche "
+#~ "multicritères."
+
+#~ msgid ""
+#~ "The combined mode permits to refine the initial search done with the "
+#~ "cloud thanks to the form."
+#~ msgstr ""
+#~ "Le mode de recherche combiné permet d'affiner une recherche par le "
+#~ "formulaire après une recherche initiale par le nuage de tags."
+
+#~ msgid ""
+#~ "If \"yes\" is selected, the result page allows the user to dynamically "
+#~ "select the most appropriate search format"
+#~ msgstr ""
+#~ "Si \"oui\" est sélectionné, un lien sera présent pour basculer d'un mode "
+#~ "d'affichage de recherche vers un autre"
+
+#, fuzzy
+#~ msgid ""
+#~ "Otherwise, format is fixed to default display style set above - "
+#~ "Javascript must be enabled in the navigator to use this capability"
+#~ msgstr ""
+#~ "Sinon, le mode d'affichage est fixe et déterminé par le paramétrage ci-"
+#~ "dessus - Le visiteur doit avoir accepté l'exécution de Javascript dans "
+#~ "son navigateur"
+
+#, fuzzy
+#~ msgid ""
+#~ "Select the appropriate option to have the tags ordered aphabetically, by "
+#~ "occurence or randomly, depending on your application"
+#~ msgstr ""
+#~ "Sélectionner l'option appropriée pour ordonner les tags alphabétiquement, "
+#~ "par occurence ou aléatoirement"
+
+#~ msgid ""
+#~ "Note that this ordering is applied after having selected the highest "
+#~ "ranking tags according to the parameter just above"
+#~ msgstr ""
+#~ "Cet ordonnancement intervient après avoir sélectionné les n tags les plus "
+#~ "utilisés, confirmément au paramètre ci-dessus"
+
+#, fuzzy
+#~ msgid ""
+#~ "This font color is used to highlight the tags selected for a search ; "
+#~ "used also for the tag cloud hover effect when dynamic colors are used for "
+#~ "the tag cloud"
+#~ msgstr ""
+#~ "Couleur de fonte destinée à la mise en valeur du tag selectionné pour la "
+#~ "recherche ; également pour la couleur de fonte hover pour le nuage de "
+#~ "tags en couleurs graduelles"
+
+#~ msgid ""
+#~ "Set to -1 if you don't want hover effect in your tag cloud with dynamic "
+#~ "colors and if you don't want to highlight the selected tag"
+#~ msgstr ""
+#~ "Régler à -1 pour ne pas avoir d'effet de survol sur le nuage de tags avec "
+#~ "couleurs graduelles et si vous ne souhaitez pas mettre en valeur le tag "
+#~ "sélectionné"
+
+#~ msgid ""
+#~ "Select gallery style for a condensed graphical output, title list for "
+#~ "pure text."
+#~ msgstr ""
+#~ "Sélectionner le style galerie pour un affichage graphique compact, la "
+#~ "liste de titre pour un résultat textuel."
+
+#, fuzzy
+#~ msgid ""
+#~ "Images will be scaled in both cases using maximum image pixel width or "
+#~ "height specified below"
+#~ msgstr ""
+#~ "Les images seront redimensionnées dans tous les cas en fonction du "
+#~ "paramètre largeur ou hauteur maximale d'image ci-dessous"
+
+#~ msgid ""
+#~ "If \"yes\" is selected, the result page allows the user to dynamically "
+#~ "select the most appropriate output format"
+#~ msgstr ""
+#~ "Si \"oui\" est sélectionné, un lien sera présent pour basculer d'un mode "
+#~ "d'affichage des résultats vers un autre"
+
+#, fuzzy
+#~ msgid ""
+#~ "Otherwise, format is fixed to default output style set above - Javascript "
+#~ "must be enabled in the navigator to use this capability"
+#~ msgstr ""
+#~ "Sinon, le mode d'affichage résultat est fixe et déterminé par le "
+#~ "paramétrage ci-dessus - Le visiteur doit avoir accepté l'exécution de "
+#~ "Javascript dans son navigateur"
+
+#~ msgid ""
+#~ "If \"Yes\" is selected, the GD graphic library will be used server side "
+#~ "to resize the images to the exact dimension used for displaying in the "
+#~ "client browser"
+#~ msgstr ""
+#~ "Si \"Oui\" est sélectionné, la librairie graphique GD est utilisée pour "
+#~ "redimensionner les images côté serveur à la taille d'affichage utilisée "
+#~ "dans le navigateur"
+
+#~ msgid ""
+#~ "Otherwise, the images will be transferred in full format and directly "
+#~ "resized in the browser"
+#~ msgstr ""
+#~ "Sinon les images sont transferrées en taille maxi et redimensionnées dans "
+#~ "le navigateur"
+
+#~ msgid ""
+#~ "For given server configurations, this optimization does not produce the "
+#~ "expected result"
+#~ msgstr ""
+#~ "Dans certains cas, cette optimisation ne donne pas les résultats attendus"
+
+#~ msgid ""
+#~ "When activating this option, check on your search page that the result "
+#~ "gallery or image list is displayed correctly"
+#~ msgstr ""
+#~ "En cas d'activation de cette option, vérifier sur la page résultat que "
+#~ "les galeries ou listes d'images sont correctement affichées"
+
+#~ msgid "If not, disable this option as proposed by default"
+#~ msgstr "Sinon, désactiver cette option comme proposé par défaut."
+
+#~ msgid ""
+#~ "This option is selectable only if the GD library is detected on the "
+#~ "server (check in the footnote below)"
+#~ msgstr ""
+#~ "Cette option n'est accessible que lorsque la librairie GD est détectée "
+#~ "sur le serveur (vérifier en bas de page le setup serveur)"
+
+#, fuzzy
+#~ msgid "Number of images per gallery page "
+#~ msgstr "Nombre d'images par page galerie"
+
+#, fuzzy
+#~ msgid ""
+#~ "Number of images to be listed on the search result page in case the "
+#~ "display format is set to \"Gallery\""
+#~ msgstr ""
+#~ "Nombre d'images à afficher par page de résultat en mode d'affichage "
+#~ "\"galerie\""
+
+#, fuzzy
+#~ msgid "Link on the gallery thumbnails points to "
+#~ msgstr "Les images présentées en mode galerie pointent vers"
+
+#~ msgid ""
+#~ "Select \"Plain size image\" to link the gallery thumbnails to the full "
+#~ "size image"
+#~ msgstr ""
+#~ "Sélectionner \"Image grand format\" pour que le lien des images vignettes "
+#~ "de la galerie pointe vers l'image pleine taille."
+
+#, fuzzy
+#~ msgid ""
+#~ "Otherwise the thumbnails will be linked to the post where the image was "
+#~ "posted"
+#~ msgstr ""
+#~ "Sinon les vignettes pointeront vers le post dans lequel les images "
+#~ "apparaissent"
+
+#, fuzzy
+#~ msgid "Maximum image pixel width or height "
+#~ msgstr "Largeur ou hauteur d'image maximale (px)"
+
+#~ msgid "Image frame pixel width "
+#~ msgstr "Epaisseur de la bordure (px)"
+
+#~ msgid ""
+#~ "Image border width used for the gallery display style. If border is set "
+#~ "to 0, images are displayed border to border"
+#~ msgstr ""
+#~ "Epaisseur de la bordure d'image en mode galerie. Si égal à 0, les images "
+#~ "seront présentées bord à bord"
+
+#, fuzzy
+#~ msgid ""
+#~ "In case an image framing plugin or theme is activated, this setting will "
+#~ "be likely superseded by the specific framing theme or plugin"
+#~ msgstr ""
+#~ "Si la bordure des images est gérée par un plugin ou thème spécifique, le "
+#~ "réglage effectué par le plugin ou thème en question l'emportera "
+#~ "probablement sur ce paramètre."
+
+#, fuzzy
+#~ msgid "Image border color in hex format "
+#~ msgstr "Couleur de la bordure en format hexadécimal"
+
+#, fuzzy
+#~ msgid ""
+#~ "Image border color used to frame each gallery image. This parameter is "
+#~ "significant only if the image border set above is greater than 0"
+#~ msgstr ""
+#~ "Couleur de bordure d'image en mode galerie. Ce paramètre n'a d'effet que "
+#~ "pour une épaisseur de bordure  (ci-dessus) supérieure à 0"
+
+#, fuzzy
+#~ msgid "Number of images per list page "
+#~ msgstr "Nombre d'images par page"
+
+#, fuzzy
+#~ msgid ""
+#~ "Number of images to be listed on the search result page in case the "
+#~ "display format is set to \"Image list\""
+#~ msgstr ""
+#~ "Nombre d'images à afficher par page de résultat en mode d'affichage "
+#~ "\"liste d'images\""
+
+#~ msgid ""
+#~ "Used to scale the images displayed in itemized display mode on the Image "
+#~ "Tag Search Result Page. The largest of the (width, height) will be scaled "
+#~ "to this number"
+#~ msgstr ""
+#~ "Utilisé pour redimensionner les images affichées sur la page résultat en "
+#~ "mode liste d'images. Le max(H,L) sera mis à l'échelle avec ce chiffre"
+
+#, fuzzy
+#~ msgid "Number of image titles per list page "
+#~ msgstr "Nombre de titres d'images  par page"
+
+#, fuzzy
+#~ msgid ""
+#~ "Number of image titles to be listed on the search result page in case the "
+#~ "display format is set to \"Title list\""
+#~ msgstr ""
+#~ "Nombre de titres d''images à afficher par page de résultats en mode "
+#~ "d'affichage \"liste d'images\""
+
+#~ msgid ""
+#~ "This preview function lets you evaluate the inconsistencies detected in "
+#~ "your WordPress database"
+#~ msgstr ""
+#~ "Cette fonction permet d'évaluer les anomalies détectées dans la base de "
+#~ "données WordPress"
+
+#~ msgid ""
+#~ "After clicking this link you will be directed to the preview page. From "
+#~ "this page you will then have the choice to run automatic cleanup batches"
+#~ msgstr ""
+#~ "Cliquer sur le lien lancera l'évaluation. A partir de là vous pourrez "
+#~ "accepter de corriger les anomalies par des fonctions appropriées"
+
+#~ msgid ""
+#~ "This function involves heavy SQL computation. Depending on your hosting "
+#~ "plan, this checker can be aborted if you exceed the maximum number of SQL "
+#~ "queries allowed in your plan"
+#~ msgstr ""
+#~ "Cette fonction déclenche un calcul important sur la base de données. En "
+#~ "fonction des spécificités de votre plan d'hébergement, l'exécution "
+#~ "pourrait être abortée si le nombre maximum de requêtes autorisées dans "
+#~ "votre plan est dépassé"
+
+#, fuzzy
+#~ msgid ""
+#~ "A possibility is offered to not display the very tiny MediaTagger credit "
+#~ "line shown below the search form in plain format (not in widget)"
+#~ msgstr ""
+#~ "Il est possible de ne pas afficher la ligne de crédit MediaTagger sous le "
+#~ "formulaire de recherche (hors version widget)"
+
+#~ msgid ""
+#~ "Anyhow, be aware of the very significative work that was required to "
+#~ "develop this plugin to push it to what you can enjoy today"
+#~ msgstr ""
+#~ "Conservez toutefois à l'esprit que ce plugin représente un travail "
+#~ "important, qui a permis de parvenir au résultat que vous voyez aujourd'hui"
+
+#~ msgid ""
+#~ "If you decide not to show this line and assuming you like this plugin, I "
+#~ "let to your good willingness the possibility to include anywhere else on "
+#~ "your site"
+#~ msgstr ""
+#~ "Si vous décidez de ne pas afficher cette référence, je vous laisse juge "
+#~ "de la possibilité d'insérer ailleurs sur votre site"
+
+#~ msgid ""
+#~ "a credit line linking back to my home site (http://www.photos-dauphine."
+#~ "com)"
+#~ msgstr ""
+#~ "une mention relative au plugin MediaTagger, pointant vers la page "
+#~ "d'accueil http://www.photos-dauphine.com"
+
+#, fuzzy
+#~ msgid "Update Options"
+#~ msgstr "Enregistrer les options"
+
+#, fuzzy
+#~ msgid ""
+#~ "Review below the results you would get by applying the media taxonomy to "
+#~ "your posts"
+#~ msgstr ""
+#~ "Vérifiez les résultats ci-dessous ; ils vous montrent les changements qui "
+#~ "seront apportés"
+
+#, fuzzy
+#~ msgid ""
+#~ "Only the posts showing discrepancies between original post tagging and "
+#~ "media taxonomy are listed"
+#~ msgstr ""
+#~ "Seuls les posts présentant des différences entre les tags d'origine et la "
+#~ "taxinomie média sont listés"
+
+#~ msgid ""
+#~ "If you agree with the tagging scheme modification, click the Update "
+#~ "button below"
+#~ msgstr "Si vous souhaitez poursuivre, cliquer sur le bouton Mettre à jour"
+
+#~ msgid ""
+#~ "The update process will modify the posts taxonomy and therefore your "
+#~ "WordPress database"
+#~ msgstr ""
+#~ "La mise à jour modifiera les tags associés aux posts et par là même "
+#~ "affectera la base de données WordPress"
+
+#~ msgid ""
+#~ "For this reason it is recommended to backup your database before to be "
+#~ "able to revert to the original setup if needed"
+#~ msgstr ""
+#~ "Pour cette raison un backup est recommandé. Cela fournira un point de "
+#~ "retour si vous souhaitez revenir à la taxinomie d'origine"
+
+#~ msgid "post needs to have its taxonomy updated."
+#~ msgid_plural "posts need to have their taxonomy updated."
+#~ msgstr[0] "post doit subir une mise à jour de sa taxinomie."
+#~ msgstr[1] "post doivent subir une mise à jour de leur taxinomie."
+
+#, fuzzy
+#~ msgid "Update posts tags using media taxonomy"
+#~ msgstr "Mettre à jours les tags posts à partir de la taxinomie média"
+
+#~ msgid "Cancel"
+#~ msgstr "Abandonner"
+
+#, fuzzy
+#~ msgid ""
+#~ "No update is required, the post taxonomy is already aligned on the media "
+#~ "taxonomy."
+#~ msgstr ""
+#~ "La taxinomie post est déjà alignée sur la taxinomie média. Une mise à "
+#~ "jour n'est pas requise."
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Return"
+#~ msgstr "Retour"
+
+#~ msgid "Clean post revisions"
+#~ msgstr "Nettoyer les révisions de posts"
+
+#~ msgid "Clean post attachments"
+#~ msgstr "Nettoyer les images disjointes des posts"
+
+#~ msgid "Clean post taxonomy"
+#~ msgstr "Nettoyer la taxinomie post"
+
+#~ msgid "Clean media taxonomy"
+#~ msgstr "Nettoyer la taxinomie média"
+
+#, fuzzy
+#~ msgid "This blog does not hold any media."
+#~ msgstr "Le blog ne contient pas de médias."
+
+#, fuzzy
+#~ msgid ""
+#~ "Start to populate the WordPress Media Library before trying to tag those "
+#~ "medias."
+#~ msgstr ""
+#~ "Commencez par insérer des médias dans la Librairie de Médias WordPress "
+#~ "avant de pouvoir associer ces médias à des tags."
+
+#, fuzzy
+#~ msgid "Medias are already all tagged."
+#~ msgstr "Les médias ont tous été associés à des tags."
+
+#, fuzzy
+#~ msgid ""
+#~ "To modify tagging, go to the Media Explorer view and select \"tagged "
+#~ "medias\" or \"all medias\"."
+#~ msgstr ""
+#~ "Pour modifier les affectations, passer en mode Explorateur de Médias et "
+#~ "afficher les médias taggés ou tous les médias."
+
+#, fuzzy
+#~ msgid "There is no tagged media yet."
+#~ msgstr "Aucun média n'a encore été taggé."
+
+#, fuzzy
+#~ msgid ""
+#~ "To start tagging, go to the Tag Editor view or select \"untagged medias\" "
+#~ "or \"all medias\" in the Media Explorer view."
+#~ msgstr ""
+#~ "Pour commencer à tagger, passer en mode Editeur de tags ou sélectionner "
+#~ "les médias non taggés, ou tous les médias dans l'Explorateur de Médias."
+
+#~ msgid "No tag was found in this blog"
+#~ msgstr "Aucun tag n'a été trouvé sur ce blog."
+
+#, fuzzy
+#~ msgid "Start to create a list of tag that you will use to tag your medias"
+#~ msgstr ""
+#~ "Commencez par créer une liste de tags auxquels vous pourrez ensuite "
+#~ "associer des médias"
+
+#~ msgid "Post revision cleanup : nothing to clean"
+#~ msgstr "Purge des révisions de posts : rien à purger"
+
+#~ msgid "Cleaning up table %s from post revisions"
+#~ msgstr "Purge des révisions de posts dans la table %s"
+
+#~ msgid "Running SQL : %s"
+#~ msgstr "Exécution de la requête SQL : %s"
+
+#~ msgid "Done"
+#~ msgstr "Effectué"
+
+#~ msgid "Post attachment cleanup : nothing to clean"
+#~ msgstr "Purge des inclusions post : rien à purger"
+
+#~ msgid "Cleaning up table %s from unused attachments"
+#~ msgstr "Purge des inclusions non référencées dans la table %s"
+
+#~ msgid "Post taxonomy cleanup : nothing to clean"
+#~ msgstr "Purge de la taxinomie post : rien à purger"
+
+#~ msgid ""
+#~ "Cleaning up table %s from entries referring to posts not having anymore "
+#~ "an entry in the posts table"
+#~ msgstr ""
+#~ "Purge de la table %s des entrées reliées à des posts n'étant plus "
+#~ "référencés dans la table posts"
+
+#~ msgid "Image taxonomy cleanup : nothing to clean"
+#~ msgstr "Purge de la taxinomie image : rien à purger"
+
+#~ msgid ""
+#~ "Cleaning up table %s from entries referring to media not having anymore "
+#~ "an entry in the posts table"
+#~ msgstr ""
+#~ "Purge de la table %s des entrées reliées aux médias n'étant plus "
+#~ "référencés dans la table posts"
+
+#~ msgid "Check below the possibly detected database inconsistencies"
+#~ msgstr "Vérifier ci-dessous les anomalies potentiellement détectées"
+
+#~ msgid ""
+#~ "If you go for the cleanup, the process will delete some entries in the "
+#~ "posts, post taxonomy and image taxonomy table(s)"
+#~ msgstr ""
+#~ "Si vous choisissez de nettoyer, le process supprimera certaines entrées "
+#~ "dans les tables posts, taxinomie post et taxinomie image"
+
+#~ msgid ""
+#~ "For this reason it is mandatory to backup your database before to be able "
+#~ "to revert to the original database setup if needed"
+#~ msgstr ""
+#~ "Pour cette raison un backup est recommandé afin de garder la possibilité "
+#~ "de revenir à l'état d'origine si nécessaire"
+
+#~ msgid ""
+#~ "In any case, read entirely the list of impacted entries shown in the "
+#~ "analysis below before deciding to cleaning up"
+#~ msgstr ""
+#~ "Il est indispensable de lire dans le détail l'analyse de la liste "
+#~ "d'entrées impactées, fournie ci-dessous"
+
+#~ msgid ""
+#~ "Given the dependencies, execute the following sequence partially or "
+#~ "totally, assuming you have the proper understanding of the consequences "
+#~ "on your database"
+#~ msgstr ""
+#~ "En raison des dépendances, exécuter la séquence suivante partiellement ou "
+#~ "totallement, partant du principe que vous avez la bonne compréhension des "
+#~ "implications sur votre base de données"
+
+#~ msgid "If any doubt, do not run the cleanup sequence you are not clear with"
+#~ msgstr "En cas de doute, ne pas exécuter la purge correspondante"
+
+#~ msgid "Left-over post revisions (table %s)"
+#~ msgstr "Révisions de posts (table %s)"
+
+#~ msgid ""
+#~ "This step does not induce any risk of data loss. It will erase posts "
+#~ "revisions automatically created and not needed anymore"
+#~ msgstr ""
+#~ "Cette purge n'induit pas de risque de perte de données. Les révisions de "
+#~ "posts créées automatiquement seront effacées"
+
+#~ msgid "Media library elements not included in any post content (table %s)"
+#~ msgstr ""
+#~ "Elements de la librairie de médias n'apparaissant dans aucun contenu de "
+#~ "post (table %s)"
+
+#~ msgid ""
+#~ "This step might present risk of data loss and requires proper "
+#~ "understanding and judgment ; it will remove attachments from the table if "
+#~ "this attachment does not appear anywhere in any of the posts content. Do "
+#~ "not use it if you created a media library with items not included in the "
+#~ "posts, and still want to keep this library unchanged"
+#~ msgstr ""
+#~ "Cette purge peut conduire dans certains cas à une perte de données, et "
+#~ "requiert une bonne compréhension des mécanismes sous-jacents ; les pièces "
+#~ "jointes (\"attachments\") de la table seront supprimés si ces pièces "
+#~ "jointes n'apparaissent pas dans aucun des contenus des posts. Ne pas "
+#~ "utiliser si les fichiers chargés dans la librairie média ne sont pas "
+#~ "inclus dans les posts et si vous souhaitez garder votre bibliothèque de "
+#~ "médias intacte"
+
+#~ msgid "Left-over post taxonomies (table %s)"
+#~ msgstr "Taxinomies de posts orphelines (table %s)"
+
+#~ msgid ""
+#~ "This step does not induce any risk of data loss. It will erase from the "
+#~ "post taxonomy table post IDs still tagged but not present anymore in the "
+#~ "posts table as attachment entries"
+#~ msgstr ""
+#~ "Cette purge ne présente pas de risque de perte de données. Elle "
+#~ "supprimera de la table de taxinomie posts les IDs correspondant aux posts "
+#~ "encores taggés bien que n'ayant plus d'entrée associée plus dans la table "
+#~ "post"
+
+#~ msgid "Left-over medias taxonomies (table %s)"
+#~ msgstr "Taxinomies médias orphelines (table %s)"
+
+#~ msgid ""
+#~ "This step does not induce any risk of data loss. It will erase from the "
+#~ "media taxonomy table image IDs still tagged but not present anymore in "
+#~ "the posts table as attachment entries"
+#~ msgstr ""
+#~ "Cette purge ne présente pas de risque de perte de données. Elle "
+#~ "supprimera de la table de taxinomie média les IDs correspondant aux "
+#~ "médias encores taggés bien que n'ayant plus d'entrée associée plus dans "
+#~ "la table post"
+
+#~ msgid "Information only : Medias remaining untagged (table %s)"
+#~ msgstr "A titre d'information : médias non taggés (table %s)"
+
+#~ msgid ""
+#~ "This analysis provides you the list of untagged images. To fix situation "
+#~ "where medias would remain untagged, go to the MediaTagger Tag Editor and "
+#~ "complete the job"
+#~ msgstr ""
+#~ "Cette analyse présente la liste des médias non taggés. Si des médias ne "
+#~ "sont pas encore taggés, aller dans l'Editeur de Tags MédiaTagger pour "
+#~ "leur associer des tags"
+
+#~ msgid ""
+#~ "The benefit of this cleanup is to reduce your database to the only "
+#~ "required information, therefore improving site reactivity and decreasing "
+#~ "required processing power"
+#~ msgstr ""
+#~ "L'intérêt de ce nettoyage consiste à réduire la base de données à la "
+#~ "somme des informations utiles. Cela améliorera la réactivité du site et "
+#~ "réduira la puissance de calcul demandée"
+
+#~ msgid "Analysis result"
+#~ msgstr "Résultat de l'analyse"
+
+#~ msgid "No left-over post revision found - No cleanup needed"
+#~ msgstr "Aucune révision de post détectée - Nettoyage non requis"
+
+#~ msgid "Media library elements not included in any post (table %s)"
+#~ msgstr ""
+#~ "Elements de la librairie média non inclus dans aucun des posts (table %s)"
+
+#~ msgid "No orphean attachment found - no cleanup needed"
+#~ msgstr "Pas d'inclusion orpheline détectée - Nettoyage non requis"
+
+#~ msgid "No left-over post taxonomy found - no cleanup needed"
+#~ msgstr "Pas de taxinomie post orpheline détectée - Nettoyage non requis"
+
+#~ msgid "Left-over media taxonomies (table %s)"
+#~ msgstr "Taxinomies média orphelines (table %s)"
+
+#~ msgid "No left-over media taxonomy found - no cleanup needed"
+#~ msgstr "Pas de taxinomie média orpheline détectée - Nettoyage non requis"
+
+#~ msgid "All the medias are tagged, you made it well !"
+#~ msgstr "Tous les médias sont taggés, bravo !"
+
+#~ msgid "Title"
+#~ msgstr "Titre"
+
+#~ msgid "Text"
+#~ msgstr "Texte"
+
+#, fuzzy
+#~ msgid "Number of displayed tags"
+#~ msgstr "Nombre de tags affichés"
+
+#~ msgid "Minimum font size"
+#~ msgstr "Taille de fonte minimum"
+
+#~ msgid "Maximum font size"
+#~ msgstr "Taille de fonte maximum"
+
+#~ msgid "Minimum font color (-1 to disable)"
+#~ msgstr "Couleur de fonte min (-1 : inactif)"
+
+#~ msgid "Maximum font color (-1 to disable)"
+#~ msgstr "Couleur de fonte max (-1 : inactif)"
+
+#~ msgid "Result page address"
+#~ msgstr "Adresse de la page résultat"
+
+#, fuzzy
+#~ msgid ""
+#~ "The direct PHP call to the MediaTagger plugin core function "
+#~ "wpit_multisort_insert() is deprecated starting version 2.5.2 of this "
+#~ "plugin."
+#~ msgstr ""
+#~ "L'appel direct à la fonction PHP du plugin wpit_multisort_insert() est "
+#~ "obsolète à partir de la version 2.5.2."
+
+#, fuzzy
+#~ msgid ""
+#~ "It is finally disabled starting version 2.5.4.5 and needs to be replaced "
+#~ "by its shortcode equivalent. This does not require anymore running PHP in "
+#~ "your page."
+#~ msgstr ""
+#~ "Cette syntaxe est désactivée à partir de la version 2.5.4.5 et doit être "
+#~ "remplacée par la forme équivalente shortcode. Cela ne nécessite plus "
+#~ "d'exécuter du code PHP dans la page."
+
+#, fuzzy
+#~ msgid ""
+#~ "That's a very simple modification, please refer for this purpose to the "
+#~ "WP MediaTagger "
+#~ msgstr ""
+#~ "La modification à apporter est très simple et rapide, se reporter au WP "
+#~ "MediaTagger "
+
+#~ msgid "installation guide"
+#~ msgstr "guide d'installation"
+
+#~ msgid " and "
+#~ msgstr " du plugin WP ImageTagger ainsi qu'à la "
+
+#~ msgid "FAQ"
+#~ msgstr "FAQ"
+
+#~ msgid "Settings"
+#~ msgstr "Paramètres"
+
+#~ msgid "Donate"
+#~ msgstr "Faire un don"
+
+#, fuzzy
+#~ msgid "Média taggés"
+#~ msgstr "Tags média"
+
+#, fuzzy
+#~ msgid "Média non taggés"
+#~ msgstr "Tags média"
+
+#, fuzzy
+#~ msgid "Liste"
+#~ msgstr "Liste"
+
+#, fuzzy
+#~ msgid "La version %s a été détectée sur ce serveur."
+#~ msgstr "La version %s a été détectée sur ce serveur."
+
+#~ msgid "Options"
+#~ msgstr "Options"
+
+#, fuzzy
+#~ msgid "Number of displayed tags (all = 0)"
+#~ msgstr "Nombre de tags affichés"
+
+#~ msgid "Photo"
+#~ msgstr "Photo"
+
+#, fuzzy
+#~ msgid "Tags image"
+#~ msgstr "Tagger l'image"
+
+#~ msgid "Image"
+#~ msgstr "Image"
+
+#, fuzzy
+#~ msgid "Displaying images"
+#~ msgstr "Afficher l'image"
+
+#, fuzzy
+#~ msgid "Display all images"
+#~ msgstr "Afficher l'image"
+
+#~ msgid "Images"
+#~ msgstr "Images"
+
+#~ msgid "Tag image"
+#~ msgstr "Tagger l'image"
+
+#, fuzzy
+#~ msgid "Image taxonomy"
+#~ msgstr "Taxinomie média"
+
+#, fuzzy
+#~ msgid "Search form"
+#~ msgstr "Format de recherche"
+
+#~ msgid "Combined"
+#~ msgstr "Combiné"
+
+#~ msgid "Display the search form as a tag cloud"
+#~ msgstr "Effectuer la recherche à partir d'un nuage de tags"
+
+#~ msgid "Display the search form as a check boxes form"
+#~ msgstr "Effectuer la recherche à partir d'un formulaire multicritères"
+
+#~ msgid ""
+#~ "Display the search form as a combination of the tag cloud and check boxed "
+#~ "form"
+#~ msgstr ""
+#~ "Effectuer la recherche à partir d'un nuage de tags couplé à un formulaire "
+#~ "multicritères"
+
+#~ msgid "Before tagging select media to be tagged in the Explorer view."
+#~ msgstr ""
+#~ "Sélectionner au moins un media dans l'interface Explorer avant de tagger."
+
+#~ msgid ""
+#~ "Place your mouse over the option fields to display detailed option "
+#~ "description."
+#~ msgstr ""
+#~ "Survoler les champs d'entrée avec la souris pour obtenir une description "
+#~ "du paramètre."
+
+#~ msgid "mp3"
+#~ msgstr "MP7"
+
+#~ msgid "Search tag starting with..."
+#~ msgstr "Mot-clé commençant par..."
+
+#~ msgid "Tags media"
+#~ msgstr "Tags média"
+
+#~ msgid "Orphean image, not linked to any post"
+#~ msgstr "Image orpheline, contenue dans aucun post"
+
+#~ msgid "Tags glouglou"
+#~ msgstr "Tags glagla"
+
+#~ msgid ""
+#~ "Given the dependencies, proceed in order 1 (posts revision cleanup), 2 "
+#~ "(post attachment cleanup), 3 (post taxonomy cleanup) and 4 (image "
+#~ "taxonomy cleanup)"
+#~ msgstr ""
+#~ "En raison des dépendances entre tables, effectuer dans l'ordre 1 "
+#~ "(nettoyage révisions posts), 2 (nettoyage images incluses posts), 3 "
+#~ "(nettoyage taxinomie post) et 4 (nettoyage taxinomie image)"
+
+#~ msgid ""
+#~ "These table entries are automated post backups saved every time you "
+#~ "created a post"
+#~ msgstr ""
+#~ "Cette entrées de table correspondent à des sauvegardes de posts sauvées à "
+#~ "chaque édition de post"
+
+#~ msgid ""
+#~ "Depending on your WordPress configuration, you can have multiple backup "
+#~ "revisions for a given post (which is a problem this consistently grows "
+#~ "the database with un-needed information)"
+#~ msgstr ""
+#~ "En fonction de votre configuration WordPress, vous pouvez vous retrouver "
+#~ "avec plusieurs révisions par post (ce qui peut devenir problématique en "
+#~ "raison de l'encombrement produit par la quantité d'information inutile)"
+
+#~ msgid "They can be removed without risk of data loss from the POSTS table"
+#~ msgstr ""
+#~ "Ces entrées peuvent être supprimées de la table POSTS sans risque de "
+#~ "perte de données"
+
+#~ msgid "Left-over post attachments"
+#~ msgstr "Inclusions de posts orphelines"
+
+#~ msgid "These attachments were originally part of a post that was deleted"
+#~ msgstr ""
+#~ "Ces inclusions faisaient originellement partie d'un post supprimé entre "
+#~ "temps"
+
+#~ msgid ""
+#~ "It might also be possible that the originally referring post is still "
+#~ "there, but the reference to the attachment was removed"
+#~ msgstr ""
+#~ "Il se peut également que le post originel soit là, mais que la référence "
+#~ "au document ait été supprimée"
+
+#~ msgid ""
+#~ "Note that the attachment file itself will remain in the upload directory"
+#~ msgstr ""
+#~ "Noter que le fichier lui-même restera physiquement dans le répertoire "
+#~ "d'upload"
+
+#~ msgid ""
+#~ "These post IDs are still tagged although they do not appear anymore in "
+#~ "the POST table"
+#~ msgstr ""
+#~ "Ces IDs de posts sont encore taggés alors qu'ils ne sont plus présents "
+#~ "dans la table POST"
+
+#~ msgid ""
+#~ "The corresponding entries can be removed without risk of data loss from "
+#~ "the post taxonomy table"
+#~ msgstr ""
+#~ "Les entrées correspondantes peuvent être supprimées sans risque de perte "
+#~ "de données de la table de taxinomies posts"
+
+#~ msgid ""
+#~ "These image IDs are still tagged although they do not appear anymore in "
+#~ "the POST table"
+#~ msgstr ""
+#~ "Ces IDs images sont encore taggés alors qu'ils ne sont plus présents dans "
+#~ "la table POST"
+
+#~ msgid ""
+#~ "The corresponding entries can be removed without risk of data loss from "
+#~ "the image taxonomy table"
+#~ msgstr ""
+#~ "Les entrées correspondantes peuvent être supprimées sans risque de perte "
+#~ "de données de la table de taxinomies images"
+
+#~ msgid "Information only"
+#~ msgstr "Pour information"
+
+#~ msgid "These images can be tagged in the ImageTagger admin panel"
+#~ msgstr ""
+#~ "Ces images peuvent être taggées depuis l'éditeur de tags ImageTagger"
+
+#~ msgid ""
+#~ "No pain, these images will simply not appear in the image search results"
+#~ msgstr ""
+#~ "Rien de grave, ces images n'apparaitront simplement pas dans les "
+#~ "résultats de recherche d'images"
