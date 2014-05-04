@@ -25,7 +25,6 @@ if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
     define('DB_USER', 		'1clk_wp_MESHP33');
     define('DB_PASSWORD', 	'meshp33');
 	define('DB_HOST', 		$_ENV{DATABASE_SERVER});
-    $table_prefix  = 'wp_';
 }
  
 /** Database Charset to use in creating database tables. */
@@ -54,6 +53,9 @@ define('NONCE_SALT',       'put your unique phrase here');
 
 /**#@-*/
 
+$table_prefix  = 'wp_';
+
+
 /**
 
 /**
@@ -78,6 +80,7 @@ if ( !defined('WP_DEBUG') )
 	
 /** Disable WP File Editor */
 define('DISALLOW_FILE_EDIT', true);
+
 
 
 /* That's all, stop editing! Happy blogging. */
