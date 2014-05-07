@@ -13,7 +13,7 @@
 
 r_user=theagsc.com
 r_host=s173785.gridserver.com
-r_web_dir=/nfs/c07/h03/mnt/173785/domains/dev.theagsc.com/html/
+r_web_dir=domains/dev.theagsc.com/html
 r_port=
 
 r_web_addr=dev.theagsc.com
