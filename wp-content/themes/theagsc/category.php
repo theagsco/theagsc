@@ -7,7 +7,7 @@
     <?php // echo get_new_royalslider(1); ?>
     
 	    	<?php if ( !is_category( 'community' )) { ?>
-	    		<h2 class="viewing">Viewing posts from <?php single_cat_title(''); ?> | <a href="<?php bloginfo('home'); ?>/community">View all</a></h2>
+	    		<h2 class="viewing">Viewing posts from <?php get_cat_name( $cat_id ); ?> | <a href="<?php bloginfo('home'); ?>/community">View all</a></h2>
 			<?php } ?>
 			
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

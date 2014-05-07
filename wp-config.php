@@ -65,8 +65,10 @@ switch(ENVIRONMENT){
 		define('DB_HOST', 'localhost');
 		define('WP_DEBUG', false);
 
-		define('WP_SITEURL', 'http://localhost:8888/theagsc');
-		define('WP_HOME', 'http://localhost:8888/theagsc');
+/*
+		define('WP_SITEURL', 'http://localhost:8888/theagsc/');
+		define('WP_HOME', 'http://localhost:8888/theagsc/');
+*/
 		
 		define('WP_LOCAL_DEV', true );  // Used by disable plugin for local dev plugin in /mu-plugins
 
