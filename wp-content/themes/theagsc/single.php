@@ -9,7 +9,7 @@
 	    .post_thumb img {margin-top: 0 !important;}
     </style>
     
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 		
 			<div id="single-post" class="post
 			
@@ -59,12 +59,7 @@
 			
         <?php endwhile; // end while ?>
         
-        <?php else : // end while ?>
-        
-				<?php get_template_part('no-post'); ?>
-        
-        <?php endif; // end if ?>
-        
+                
     </div><!--community-wrapper-->
     
 </div><!--community-->

@@ -1,29 +1,5 @@
 <?php
 
-function MyBreadcrumb() {
-    if (!is_home()) {
-        echo '<a class="homecrumb" href="';
-        echo get_option('home');
-        echo '">';
-        echo 'Home';;
-        echo "</a> >  ";
-        if (is_category() || is_single()) {
-            the_category(' / ');
-            if (is_single()) {
-                echo " > ";
-                the_title();
-            }
-        } elseif (is_page()) {
-            echo the_title();
-        }
-    }
-}
-
-
-/*-----------------------------------------------------------------------------------*/  
-/*   Disable admin bar for all 
-/*-----------------------------------------------------------------------------------*/  
-
 function my_init() {
     if (!is_admin()) {
         // comment out the next two lines to load the local copy of jQuery
@@ -48,11 +24,7 @@ add_filter( 'woocommerce_checkout_fields' , 'woo_remove_billing_checkout_fields'
 // declares theme support for woocommerce
 add_theme_support( 'woocommerce' ); 
 
-/**
- * Remove unwanted checkout fields
- *
- * @return $fields array
-*/
+// Remove unwanted checkout fields
 function woo_remove_billing_checkout_fields( $fields ) {
     
     if( woo_cart_has_virtual_product() == true ) {
@@ -74,11 +46,7 @@ function woo_remove_billing_checkout_fields( $fields ) {
     return $fields;
 }
  
-/**
- * Check if the cart contains virtual product
- *
- * @return bool
-*/
+// Check if the cart contains virtual product
 function woo_cart_has_virtual_product() {
   
   global $woocommerce;
@@ -111,9 +79,7 @@ function woo_cart_has_virtual_product() {
  
 }
 
-
-
-
+// removes admin bar
 show_admin_bar(false);  
 
 // Post Thumbs
@@ -127,8 +93,6 @@ return 76;
 }
 //
 
-//remove_filter('the_content', 'wpautop');
-
 // Register Menu
 function register_my_menus() {
   register_nav_menus(
@@ -136,7 +100,6 @@ function register_my_menus() {
   );
 }
 add_action( 'init', 'register_my_menus' );
-
 //
 
 
@@ -166,29 +129,6 @@ function new_royalslider_add_custom_skin($skins) {
       );
       return $skins;
 }
-
-/*
-if ( ! is_single()) { 
-
-// define hooks for WooCommerce
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
-
-function my_theme_wrapper_start() {
-  echo '<div class="content">';
-}
-
-function my_theme_wrapper_end() {
-  echo '</div>';
-}
-add_theme_support( 'woocommerce' );
-
-}
-*/
-
 
 
 // Ensure cart contents update when products are added to the cart via AJAX 
@@ -257,13 +197,6 @@ add_action('wp_print_styles', 'deregister_style');
 wp_deregister_style("agscslider-css");
 }
 
-
-
-
-
-
-
-
 // This tip solves the issue of WooCommerce stylesheets being loaded after your custom ones.
     
 // Which means that if you need to override any WooCommerce styling you have to add '!important'
@@ -285,18 +218,6 @@ function my_custom_scripts() {
 
 }
 add_action('wp_enqueue_scripts', 'my_custom_scripts');
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**
@@ -377,13 +298,6 @@ function child_remove_woocommerce_styles() {
 }
 
 
-
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
-
-
-
 // posts per page based on CPT
 function iti_custom_posts_per_page($query)
 {
@@ -403,18 +317,6 @@ if( !is_admin() )
 {
     add_filter( 'pre_get_posts', 'iti_custom_posts_per_page' );
 }
-
-
-
-/*
-
-
-//get royal slider to load files when needed
-register_new_royalslider_files(2);
-
-*/
-
-
 
 
 

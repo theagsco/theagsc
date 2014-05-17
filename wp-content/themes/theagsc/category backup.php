@@ -51,6 +51,8 @@
         
         <?php endif; // end if ?>
         
+        <?php wp_pagenavi(); ?>
+        
     </div><!--community-wrapper-->
     
 </div><!--community-->
