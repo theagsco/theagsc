@@ -7,3 +7,4 @@ license.txt
 .DS_Store
 wp-content/uploads/wp-less/
 output.txt
+wp-content/themes/theagsc/less/style-local.less

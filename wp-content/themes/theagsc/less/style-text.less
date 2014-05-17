@@ -54,13 +54,21 @@ blockquote p {
 	border-left:solid 3px @red;
 	background-color:@faint-grey;
 }
-figcaption {
+figcaption p, figcaption {
 	text-align: center;
 	color:@light-grey;
 	margin-top: -40px;
 	margin-bottom: 10px;
+	font-family: @brandon;
+	font-size: 1em;
 }
 p + figcaption {margin-bottom: 60px}
+
+figcaption img {
+	padding-top: 40px;
+	padding-bottom: 30px;
+	margin: 0 auto;
+}
 
 #work-home h2 {
 	font-size: 0.9em;
@@ -231,8 +239,8 @@ sup {
 
 a {color:#121111; font-weight:inherit; text-shadow:none}
 
-p a 		{color:#000; border-bottom:solid 1px rgba(51,48,48,0.2); padding-bottom:2px;}
-p a:hover 	{color:#f72f19; border-bottom:solid 1px rgba(51,48,48,0.3);}
+p a, .post ul li a 		{color:#000; border-bottom:solid 1px rgba(51,48,48,0.2); padding-bottom:2px;}
+p a:hover, .post ul li a:hover 	{color:#f72f19; border-bottom:solid 1px rgba(51,48,48,0.3);}
 
 a:hover, .footer-row a:hover, post-details a:hover, h2.viewing span a:hover {color:#f72f19;}
 
@@ -251,6 +259,8 @@ a:hover, .footer-row a:hover, post-details a:hover, h2.viewing span a:hover {col
 	font-size:1.05em;
 	font-weight:700;
 	.border-radius;
+	background-color:transparent;
+	font-family: @brandon;
 	
 	&:hover {border:solid 2px @red !important; background-color:@red !important; color: @white !important; font-weight: 700 !important;}
 }
