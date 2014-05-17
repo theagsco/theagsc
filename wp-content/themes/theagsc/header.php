@@ -85,7 +85,7 @@ var disqus_config = function () {
 <!-- Please call pinit.js only once per page -->
 <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 
-
+<div id="local"></div>
 
 <div id="header_wrapper">
 <header id="header">
