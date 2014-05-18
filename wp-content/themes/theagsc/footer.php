@@ -139,6 +139,9 @@ jQuery(document).ready(function() {
 	<?php } ?>
 		
 <script>
+
+
+// Preview Pattern Button
 	
 jQuery(document).ready(function() {
 	
@@ -146,10 +149,10 @@ jQuery(document).ready(function() {
 	jQuery(".preview_pattern_button").click(function() {
 		
 		if (jQuery(this).hasClass("previewButtonSelected")) {
-			jQuery("body").css("background-image", "");
+			jQuery("body").css("background-image", "").removeClass("pattern-on");
 			jQuery(this).removeClass("previewButtonSelected");
 		} else {
-			jQuery("body").css("background-image", "url('" + jQuery(this).attr("img") + "')");
+			jQuery("body").css("background-image", "url('" + jQuery(this).attr("img") + "')").addClass("pattern-on");
 			jQuery(this).addClass("previewButtonSelected");		
 		}
 	});

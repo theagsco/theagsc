@@ -52,6 +52,7 @@
         <?php endif; wp_reset_query(); // end if ?>
         
 			</div><!--work-->
+			<div style="clear:both"></div>
 			<a href="<?php bloginfo('home'); ?>/work" class="agsc_button">Browse all projects</a>
 		</div>
 

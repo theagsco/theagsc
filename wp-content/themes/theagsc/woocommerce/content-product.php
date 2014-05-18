@@ -41,10 +41,15 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 
 	<a href="<?php the_permalink(); ?>" class="agsc_button product_link"><?php the_title(); ?></a>
 	
-    <?php if( get_field('pattern') ) { ?>
-	<a href="javascript:void(0)" class="preview_pattern_button agsc_button icon-eye" img="<?PHP echo the_field('pattern') ?>"></a>
+    <?php 
     
-    <?PHP } ?>
+    $preview = get_field("pattern");
+    
+    if( $preview ) { ?>
+    
+		<a href="javascript:void(0)" class="preview_pattern_button agsc_button icon-eye" img="<?PHP echo the_field('pattern') ?>"></a>
+    
+    <?php } ?>
 	
 
 	
