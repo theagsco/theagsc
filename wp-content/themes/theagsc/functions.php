@@ -298,40 +298,74 @@ function child_remove_woocommerce_styles() {
 }
 
 
-// posts per page based on CPT
-function iti_custom_posts_per_page($query)
-{
-    switch ( $query->query_vars['post_type'] )
-    {
-        case 'work':  // Post Type named 'iti_cpt_1'
-            $query->query_vars['posts_per_page'] = 100;
-            break;
-
-        default:
-            break;
-    }
-    return $query;
-}
-
-if( !is_admin() )
-{
-    add_filter( 'pre_get_posts', 'iti_custom_posts_per_page' );
-}
 
 
 
-add_filter('pre_get_posts', 'query_post_type');
-function query_post_type($query) {
-  if ( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
-    $post_type = get_query_var('post_type');
-    if($post_type)
-        $post_type = $post_type;
-    else
-        $post_type = array('post','work'); // replace cpt to your custom post type
-    $query->set('post_type',$post_type);
-    return $query;
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	// posts per page based on CPT
+	function iti_custom_posts_per_page($query)
+	{
+	    switch ( $query->query_vars['post_type'] )
+	    {
+	        case 'work':  // Post Type named 'iti_cpt_1'
+	            $query->query_vars['posts_per_page'] = 100;
+	            break;
+	
+	        default:
+	            break;
+	    }
+	    return $query;
+	}
+	
+	if( !is_admin() )
+	{
+	    add_filter( 'pre_get_posts', 'iti_custom_posts_per_page' );
+	}
+	
+	
+	
+	add_filter('pre_get_posts', 'query_post_type');
+	function query_post_type($query) {
+	  if ( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+	    $post_type = get_query_var('post_type');
+	    if($post_type)
+	        $post_type = $post_type;
+	    else
+	        $post_type = array('post','work'); // replace cpt to your custom post type
+	    $query->set('post_type',$post_type);
+	    return $query;
+	    }
+	}
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Prevent access to dev areas

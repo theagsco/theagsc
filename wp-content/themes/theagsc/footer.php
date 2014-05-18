@@ -100,10 +100,10 @@ jQuery(document).ready(function() {
 	
 		// make home header fixed
 		jQuery(window).scroll(function() {
-			if (jQuery(this).scrollTop() > 160) {
+			if (jQuery(this).scrollTop() > 100) {
 				jQuery('body').addClass('fixed_header');
 			}
-			else if (jQuery(this).scrollTop() < 160) {
+			else if (jQuery(this).scrollTop() < 100) {
 				jQuery('body').removeClass('fixed_header');
 			}
 			
@@ -119,10 +119,10 @@ jQuery(document).ready(function() {
 	
 		// make page header fixed
 		jQuery(window).scroll(function() {
-			if (jQuery(this).scrollTop() > 101) {
+			if (jQuery(this).scrollTop() > 100) {
 				jQuery('body').addClass('fixed_header');
 			}
-			else if (jQuery(this).scrollTop() < 101) {
+			else if (jQuery(this).scrollTop() < 100) {
 				jQuery('body').removeClass('fixed_header');
 			}
 			

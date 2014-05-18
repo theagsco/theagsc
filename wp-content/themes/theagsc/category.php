@@ -3,12 +3,8 @@
 <div id="community-wrapper">
 
     <div id="community">
-    
-    <?php // echo get_new_royalslider(1); ?>
-    
-	    	<?php if ( !is_category( 'community' )) { ?>
-	    		<h2 class="viewing">Viewing posts from <?php get_cat_name( $cat_id ); ?> | <a href="<?php bloginfo('home'); ?>/community">View all</a></h2>
-			<?php } ?>
+        
+<!-- 		<h2 class="viewing">Viewing posts from <?php get_cat_name( $cat_id ) ?> | <a href="<?php bloginfo('home'); ?>/community">View all</a></h2> -->
 			
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
@@ -16,10 +12,6 @@
 		
                 <?php if (has_post_thumbnail()) { ?>
                 	<a href="<?php the_permalink(); ?>" class="post_thumb"><?php the_post_thumbnail(); ?></a>
-                <?php } else { ?>
-	                
-	                <style></style>
-	                
                 <?php } ?>
 
                 <div class="title_details">
@@ -33,7 +25,6 @@
 				    	<span class="date-day"><?php the_time('d'); ?></span>
 				    	<span class="date-month"><?php the_time('M'); ?></span>
 					</div>
-
                 
                 <?php the_excerpt(); ?>
                 
@@ -47,7 +38,7 @@
         
         <?php else : // end while ?>
         
-				<?php get_template_part( 'no-post' ); ?>
+			<?php get_template_part( 'no-post' ); ?>
         
         <?php endif; // end if ?>
         

@@ -100,11 +100,6 @@ var disqus_config = function () {
         <div id="menus-wrapper">
         	<div id="menus">
         	
-        	<?
-				$wp_query = NULL;
-				$wp_query = new WP_Query(array('post_type' => 'post'));
-			?>
-        
 			<?php wp_nav_menu( array(
 				'container'		=> 'nav',
 				'theme_location' 	=> 'header-menu',
