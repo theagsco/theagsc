@@ -81,12 +81,13 @@ jQuery(document).ready(function() {
 	jQuery('.button').removeClass('button').addClass('agsc_button');
 
 	//adding classes to Community menu for icons
-	jQuery('.menu-item-32 a').addClass('icon-articles');
-	jQuery('.menu-item-33 a').addClass('icon-interviews');
-	jQuery('.menu-item-35 a').addClass('icon-resources');
-	jQuery('.menu-item-37 a').addClass('icon-tutorials');
-	jQuery('.menu-item-36 a').addClass('icon-spotlight');
-	jQuery('.menu-item-34 a').addClass('icon-news');
+	jQuery('.menu-item-32 a').addClass('icon-articles icon-item');
+	jQuery('.menu-item-33 a').addClass('icon-interviews icon-item');
+	jQuery('.menu-item-35 a').addClass('icon-resources icon-item');
+	jQuery('.menu-item-37 a').addClass('icon-tutorials icon-item');
+	jQuery('.menu-item-36 a').addClass('icon-spotlight icon-item');
+	jQuery('.menu-item-34 a').addClass('icon-news icon-item');
+	jQuery('.menu-item-1205 a').addClass('icon-image icon-item');
 
 });
 
