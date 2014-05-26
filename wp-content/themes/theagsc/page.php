@@ -71,7 +71,7 @@
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	
-	<div class="post">
+	<div class="page-block">
 	
         <div class="title_details">
 	        <h1 class="page_title"><?php the_title(); ?></h1>
