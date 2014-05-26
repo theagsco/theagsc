@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/acf5-beta"]
+	path = wp-content/plugins/acf5-beta
+	url = https://github.com/AdvancedCustomFields/acf5-beta.git
