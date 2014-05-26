@@ -17,7 +17,7 @@
 				if( get_field('remove_drop_cap') )
 				{ ?>
 				
-                      no_drop_cap
+					no_drop_cap
                                 
 				<?php }	else { ?>
 				
@@ -27,6 +27,8 @@
 			
 			
 			">
+			
+
 		
 				<div class="post_thumb"><?php the_post_thumbnail(); ?></div>
 				
@@ -48,6 +50,29 @@
 				<?php get_template_part('share-button'); ?>
                 
                 <?php the_content(); ?>
+                							<?php
+ 
+// check if the repeater field has rows of data
+if( have_rows('tagged_image') ):
+ 
+ 	// loop through the rows of data
+    while ( have_rows('tagged_image') ) : the_row();
+ 
+        // display a sub field value
+        ?> <img src="<?php the_sub_field('image');?>" /> <?php
+        the_sub_field('tag');
+ 
+    endwhile;
+ 
+else :
+ 
+    // no rows found
+ 
+endif;
+ 
+?>
+				
+
                 
                 <?php get_template_part('follow-buttons'); ?>
 

@@ -1,10 +1,10 @@
 local-config.php
-wp-content/upgrade/*
-.bak/*
+wp-content/upgrade/
+.bak/
 readme.html
 license.txt
 .log
 .DS_Store
-wp-content/uploads/wp-less/*
+wp-content/uploads/
 output.txt
 wp-content/themes/theagsc/less/style-local.less
