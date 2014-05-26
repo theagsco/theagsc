@@ -71,7 +71,14 @@
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	
-	<div class="page-block">
+	<div class="
+	
+	<?php if (is_page('contact')) { ?>
+			page-block
+		<?php } else { ?>
+			post
+		<?php } ?>
+	">
 	
         <div class="title_details">
 	        <h1 class="page_title"><?php the_title(); ?></h1>
