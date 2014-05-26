@@ -86,7 +86,10 @@ var disqus_config = function () {
 <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 
 <div id="local"></div>
+
+<?php if(function_exists('c2c_reveal_template')) {?>
 <div id="reveal_template"><?php c2c_reveal_template(); ?></div>
+<?php } ?>
 
 <div id="header_wrapper">
 <header id="header">
