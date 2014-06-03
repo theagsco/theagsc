@@ -3,7 +3,7 @@ Contributors: violetcharm
 Donate link: http://ziming.org
 Tags: post,views,analytics,post-views,coverage
 Requires at least: 2.8
-Tested up to: 3.5.1
+Tested up to: 3.9.1
 
 A plugin logging how many times your post/page has been visited, supporting cache plugin, with detailed analysis pages and powerful external invoking functions. (import views data from wp-postviews if used.)
 

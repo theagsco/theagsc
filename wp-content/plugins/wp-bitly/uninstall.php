@@ -13,20 +13,14 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) )
 
 /**
  * Some people just don't know how cool this plugin is. When they realize
- * it and come back later, let's make sure they have to start all over.
- *
- * @return void
+ * it and come back later, let's make sure they have to start all over. CLEAN SLATE!
  */
-function wpbitly_uninstall()
-{
-    // Delete associated options
+function wpbitly_uninstall() {
+
     delete_option( 'wpbitly-options' );
 
-    // Grab all posts with an attached shortlink
     $posts = get_posts( 'numberposts=-1&post_type=any&meta_key=_wpbitly' );
 
-    // And remove our meta information from them
-    // @TODO benchmark this against deleting it with a quick SQL query. Probably quicker, any conflict?
     foreach ( $posts as $post )
         delete_post_meta( $post->ID, '_wpbitly' );
 

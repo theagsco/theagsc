@@ -2,8 +2,9 @@
 /**
  * WP Bitly
  *
- * This plugin can be used to generate shortlinks for your websites posts, pages, and custom post types.
- * Extremely lightweight and easy to set up, give it your Bitly oAuth token and go!
+ * This plugin can be used to generate shortlinks for your WordPress posts, pages, and custom post types.
+ * Extremely lightweight and easy to set up, WP Bitly is the quickest way to get started and the fastest solution
+ * currently available.
  *
  * ಠ_ಠ
  *
@@ -17,8 +18,8 @@
  * @wordpress-plugin
  * Plugin Name:       WP Bitly
  * Plugin URI:        http://wordpress.org/plugins/wp-bitly
- * Description:       WP Bitly can be used to generate shortlinks for your websites posts, pages, and custom post types. Extremely lightweight and easy to set up, give it your Bitly oAuth token and go!
- * Version:           2.2.6
+ * Description:       WP Bitly can be used to generate shortlinks for your sites posts, pages, and custom post types. Extremely lightweight and easy to set up, WP Bitly is the quickest way to get started and the fastest solution currently available.
+ * Version:           2.2.9
  * Author:            <a href="http://mark.watero.us/">Mark Waterous</a> & <a href="http://www.chipbennett.net/">Chip Bennett</a>
  * Text Domain:       wp-bitly
  * License:           GPL-2.0+
@@ -32,7 +33,7 @@ if ( ! defined( 'WPINC' ) )
     die;
 
 
-define( 'WPBITLY_VERSION',  '2.2.6' );
+define( 'WPBITLY_VERSION',  '2.2.9' );
 
 define( 'WPBITLY_DIR',  WP_PLUGIN_DIR.'/'.basename( dirname( __FILE__ ) ) );
 define( 'WPBITLY_URL',  plugins_url().'/'.basename( dirname( __FILE__ ) ) );
@@ -41,6 +42,7 @@ define( 'WPBITLY_LOG', WPBITLY_DIR . '/log/debug.txt' );
 define( 'WPBITLY_ERROR', __( 'WP Bitly Error: No such option %1$s','wp-bitly' ) );
 
 define( 'WPBITLY_BITLY_API', 'https://api-ssl.bitly.com' );
+
 
 /**
  * The primary controller class for everything wonderful that WP Bitly does.
@@ -57,12 +59,7 @@ final class WP_Bitly {
     /**
      * @var $_instance An instance of ones own instance
      */
-    private static $_instance;
-
-    /**
-     * @var string Used for our text domain, and other goodness
-     */
-    public static $slug = 'wp-bitly';
+    private static $_instance = null;
 
     /**
      * @var array The WP Bitly configuration is stored in here
@@ -85,8 +82,7 @@ final class WP_Bitly {
      * @return  WP_Bitly
      */
     public static function get_in() {
-
-        if ( !isset( self::$_instance ) && !( self::$_instance instanceof WP_Bitly ) ) {
+        if ( null === self::$_instance ) {
             self::$_instance = new self;
             self::$_instance->populate_options();
             self::$_instance->include_files();
@@ -98,7 +94,13 @@ final class WP_Bitly {
     }
 
 
-    /**
+	/**
+	 * Prevent construction crews with improper building permits.
+	 */
+	protected function __construct() {}
+
+
+	/**
      * Populate WP_Bitly::$options with the configuration settings stored in 'wpbitly-options',
      * using an array of default settings as our fall back.
      *
@@ -205,11 +207,15 @@ final class WP_Bitly {
 
         add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'add_action_links' ) );
 
-        add_action( 'save_post',         'wpbitly_generate_shortlink' );
-        add_filter( 'pre_get_shortlink', 'wpbitly_get_shortlink' );
+        add_action( 'save_post', 'wpbitly_generate_shortlink', 5 );
+
+        add_filter( 'pre_get_shortlink',    'wpbitly_get_shortlink' );
+//        add_filter( 'post_link',       'wpbitly_get_post_link' );
+//        add_filter( 'post_type_link',  'wpbitly_get_post_link' );
 
         add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-        //add_action( 'admin_bar_menu', 'wp_admin_bar_shortlink_menu', 90 );
+
+        add_action( 'admin_bar_menu', 'wp_admin_bar_shortlink_menu', 90 );
 
         add_shortcode( 'wpbitly', 'wpbitly_shortlink' );
 
@@ -236,7 +242,7 @@ final class WP_Bitly {
     public function add_action_links( $links ) {
 
         return array_merge(
-            array( 'settings' => '<a href="' . admin_url( 'options-writing.php' ) . '">' . __( 'Settings', WP_Bitly::$slug ) . '</a>' ),
+            array( 'settings' => '<a href="' . admin_url( 'options-writing.php' ) . '">' . __( 'Settings', 'wp-bitly' ) . '</a>' ),
             $links
         );
 
@@ -251,13 +257,13 @@ final class WP_Bitly {
     public function load_plugin_textdomain() {
 
         $languages = apply_filters( 'wpbitly_languages_dir', WPBITLY_DIR . '/languages/' );
-        $locale    = apply_filters( 'plugin_locale', get_locale(), self::$slug );
+        $locale    = apply_filters( 'plugin_locale', get_locale(), 'wp-bitly' );
         $mofile    = $languages . $locale . '.mo';
 
         if ( file_exists( $mofile ) ) {
-            load_textdomain( self::$slug, $mofile );
+            load_textdomain( 'wp-bitly', $mofile );
         } else {
-            load_plugin_textdomain( self::$slug, false, $languages );
+            load_plugin_textdomain( 'wp-bitly', false, $languages );
         }
 
     }

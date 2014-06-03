@@ -3,7 +3,7 @@
 Plugin Name: post-views
 Plugin URI: http://ziming.org/dev/post-views
 Description: Record how many times the post have been views and show it. <a href= "http://ziming.org/dev/post-views" target="_blank"> [Usage]</a>
-Version: 2.6.2.1
+Version: 2.6.3
 Author: Suny Tse
 Author URI: http://ziming.org
 */
@@ -352,7 +352,8 @@ function post_views(){
 	
 	if($_REQUEST['pv_page'] == 'content-analytics' ) post_views_analytics();
 	else if($_REQUEST['pv_page'] == 'summary' ) 	post_views_summary();
-	else if($_REQUEST['pv_page'] == 'ranking' )   post_views_list();				
+	else if($_REQUEST['pv_page'] == 'ranking' )   post_views_list();		
+	else if($_REQUEST['pv_page'] == 'category' )   post_category_list();			
 	else if($_REQUEST['pv_page'] == 'analytics' ) post_views_analytics();					
 	else if($_REQUEST['pv_page'] == 'options' )   post_views_options();
 	else if($_REQUEST['pv_page'] == 'detail' )   post_views_detail();	
@@ -677,6 +678,7 @@ $pv_menu = "
 							<a href=\"".PV_ADMIN_URL."&pv_page=analytics\">".__('Analytics', 'post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=summary\">".__('Summary','post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=ranking\">".__('Ranking','post-views')."</a>&nbsp;|&nbsp;
+							<a href=\"".PV_ADMIN_URL."&pv_page=category\">".__('Category','post-views')."</a>&nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\">".__('Donation','post-views')."</a>&nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\" target=\"_blank\">".__('Help','post-views')."</a>
 	            ";
@@ -1103,6 +1105,7 @@ $pv_menu = "
 							<a href=\"".PV_ADMIN_URL."&pv_page=analytics\">".__('Analytics','post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=summary\">".__('Summary','post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=ranking\">".__('Ranking', 'post-views')."</a> &nbsp;|&nbsp;
+							<a href=\"".PV_ADMIN_URL."&pv_page=category\">".__('Category', 'post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=options\">".__('Options', 'post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\">".__('Donation','post-views')."</a>&nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\" target=\"_blank\">".__('Help','post-views')."</a>
@@ -1274,6 +1277,7 @@ $pv_menu = "
 							<a href=\"".PV_ADMIN_URL."&pv_page=analytics\">".__('Analytics','post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=summary\">".__('Summary','post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=ranking\">".__('Ranking', 'post-views')."</a> &nbsp;|&nbsp;
+							<a href=\"".PV_ADMIN_URL."&pv_page=category\">".__('Category', 'post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\">".__('Donation','post-views')."</a>&nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\" target=\"_blank\">".__('Help','post-views')."</a>
 	            ";
@@ -1413,6 +1417,7 @@ $pv_menu = "
 							<a href=\"".PV_ADMIN_URL."&pv_page=analytics\">".__('Analytics', 'post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=summary\">".__('Summary','post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=ranking\">".__('Ranking','post-views')."</a> &nbsp;|&nbsp;
+							<a href=\"".PV_ADMIN_URL."&pv_page=category\">".__('Category','post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\">".__('Donation','post-views')."</a>&nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\" target=\"_blank\">".__('Help','post-views')."</a>
 	            ";
@@ -1481,6 +1486,114 @@ echo $pv_menu;
 	echo '</table></div>';
 }
 
+/********************************** Post Views Ranking *************************************/
+
+function post_category_list(){
+	global $wpdb;
+	
+	if(empty($_GET['view_type'])){
+  		$view_type = 'normal';
+  }else{
+  		$view_type = $_GET['view_type'];
+  }
+  
+  if(empty($_GET['order_type'])){
+  		$order_type = 'most';
+  }else{
+  		$order_type = $_GET['order_type'];
+  }
+  
+  if(empty($_GET['output_type'])){
+  		$output_type = 'content';
+  }else{
+  		$output_type = $_GET['output_type'];
+  }
+  
+  if($_GET['cat'] != 0 ){
+  		$cat = $_GET['cat'];
+  }else{
+  		$cat = 0;
+  		$mode = 'both';
+  }
+  
+  if(empty($_GET['per_page'])){
+  		$per_page = 15;  	
+  }else{
+  		$per_page = $_GET['per_page'];
+  }
+?>
+<div class="wrap">
+<?php screen_icon('users');?>
+<h2><?php _e('Categories','post-views');?></h2>
+<?php
+$pv_menu = "
+							<a href=\"".PV_ADMIN_URL."&pv_page=analytics\">".__('Analytics', 'post-views')."</a> &nbsp;|&nbsp;
+							<a href=\"".PV_ADMIN_URL."&pv_page=summary\">".__('Summary','post-views')."</a> &nbsp;|&nbsp;
+							<a href=\"".PV_ADMIN_URL."&pv_page=ranking\">".__('Ranking','post-views')."</a> &nbsp;|&nbsp;
+							<a href=\"".PV_ADMIN_URL."&pv_page=category\">".__('Category','post-views')."</a> &nbsp;|&nbsp;
+							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\">".__('Donation','post-views')."</a>&nbsp;|&nbsp;
+							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\" target=\"_blank\">".__('Help','post-views')."</a>
+	            ";
+
+echo $pv_menu; 
+?>
+<p>
+<div align="right">
+<form name="filterform" id="filterform" method="get" action="<?php echo admin_url('index.php'); ?>">
+<input type="hidden" name="page" value="post-views">
+<input type="hidden" name="pv_page" value="category">
+<select name="view_type" id="view_type">
+		<option <?php selected($view_type, "normal" ); ?> value="normal"><?php _e('Visitor', 'post-views'); ?></option>
+		<option <?php selected($view_type, "robot" ); ?> value="robot"><?php _e('Robot', 'post-views'); ?></option>
+</select>
+
+<select name="order_type" id="order_type">
+		<option <?php selected($order_type, "most" ); ?> value="most"><?php _e('Most', 'post-views'); ?></option>
+		<option <?php selected($order_type, "least" ); ?> value="least"><?php _e('Least', 'post-views'); ?></option>
+</select>
+<select name="output_type" id="output_type">
+		<option <?php selected($output_type, "content" ); ?> value="content"><?php _e('Read', 'post-views'); ?></option>
+		<option <?php selected($output_type, "excerpt" ); ?> value="excerpt"><?php _e('Preview', 'post-views'); ?></option>
+</select>
+<select name="per_page" id="per_page">
+		<option <?php selected($per_page, "10" ); ?> value="10">10</option>
+		<option <?php selected($per_page, "15" ); ?> value="15">15</option>
+		<option <?php selected($per_page, "20" ); ?> value="20">20</option>
+		<option <?php selected($per_page, "30" ); ?> value="30">30</option>
+</select>
+<input type="submit" value="<?php echo _e('Switch','post-views'); ?>" class="button" />
+</form>
+</div>
+</p>
+<table class="widefat page fixed" width="100%" cellpadding="0" cellspacing="0">
+<?php
+	if($order_type == 'least'){
+			$order_type = 'ASC';
+	}else{
+			$order_type = 'DESC';		
+	}                                                                     
+ 	$pv_total = get_post_category_list($mode, $view_type, $output_type, 'total','views',$order_type, $per_page, 40);
+ 	$pv_year = get_post_category_list($mode, $view_type, $output_type, 'year','views',$order_type, $per_page, 40);
+ 	$pv_halfyear = get_post_category_list($mode,$view_type, $output_type, 'halfyear','views',$order_type, $per_page, 40);
+ 	$pv_month = get_post_category_list($mode, $view_type, $output_type, 'month','views',$order_type, $per_page, 40);
+ 	$pv_week = get_post_category_list($mode, $view_type, $output_type, 'week','views',$order_type, $per_page, 40);
+ 	$pv_today = get_post_category_list($mode, $view_type, $output_type, 'today','views',$order_type, $per_page, 40);
+ 
+	echo '<thead><tr><th width="20%">'.__('By Total','post-views').'</th><th width="13%">'.__('Views','post-views').'</th><th width="20%">'.__('By Year','post-views').'</th><th width="13%">'.__('Views','post-views').'</th><th width="20%">'.__('By Half Year','post-views').'</th><th width="14%">'.__('Views','post-views').'</th></tr></thead>';
+  
+ 	for($i=0;$i < $per_page;$i++){
+ 		if(!empty($pv_total[$i]['title']) || !empty($pv_year[$i]['title']) || !empty($pv_halfyear[$i]['title'])){
+ 			echo '<tr><td width="20%">'.$pv_total[$i]['title'].'</td><td width="13%"><a href="'.PV_ADMIN_URL.'&pv_page=detail&view_type='.$view_type.'&output_type='.$output_type.'&post_id='.$pv_total[$i]['post_id'].'" target="_blank">'.$pv_total[$i]['views'].'</a></td><td width="20%">'.$pv_year[$i]['title'].'</td><td width="13%"><a href="'.PV_ADMIN_URL.'&pv_page=detail&view_type='.$view_type.'&output_type='.$output_type.'&post_id='.$pv_year[$i]['post_id'].'" target="_blank">'.$pv_year[$i]['views'].'</a></td><td width="20%">'.$pv_halfyear[$i]['title'].'</td><td width="14%"><a href="'.PV_ADMIN_URL.'&pv_page=detail&view_type='.$view_type.'&output_type='.$output_type.'&post_id='.$pv_halfyear[$i]['post_id'].'" target="_blank">'.$pv_halfyear[$i]['views'].'</a></td></tr>';
+ 		}
+ 	}
+ 	echo '<thead><tr><th width="20%">'.__('By Month','post-views').'</th><th width="13%">'.__('Views','post-views').'</th><th width="20%">'.__('By Week','post-views').'</th><th width="13%">'.__('Views','post-views').'</th><th width="20%">'.__('By Today','post-views').'</th><th width="14%">'.__('Views','post-views').'</th></tr></thead>';
+ 	for($i=0;$i < $per_page;$i++){
+ 		if(!empty($pv_month[$i]['title']) || !empty($pv_week[$i]['title']) || !empty($pv_today[$i]['title'])){
+ 			echo '<tr><td>'.$pv_month[$i]['title'].'</td><td><a href="'.PV_ADMIN_URL.'&pv_page=detail&view_type='.$view_type.'&output_type='.$output_type.'&post_id='.$pv_month[$i]['post_id'].'" target="_blank">'.$pv_month[$i]['views'].'</a></td><td width="20%">'.$pv_week[$i]['title'].'</td><td width="13%"><a href="'.PV_ADMIN_URL.'&pv_page=detail&view_type='.$view_type.'&output_type='.$output_type.'&post_id='.$pv_week[$i]['post_id'].'" target="_blank">'.$pv_week[$i]['views'].'</a></td><td width="20%">'.$pv_today[$i]['title'].'</td><td width="14%"><a href="'.PV_ADMIN_URL.'&pv_page=detail&view_type='.$view_type.'&output_type='.$output_type.'&post_id='.$pv_today[$i]['post_id'].'" target="_blank">'.$pv_today[$i]['views'].'</a></td></tr>';
+    }
+ 	}
+	echo '</table></div>';
+}
 /********************************** Post Views Detail *************************************/
 function post_views_detail(){
 	global $wpdb;
@@ -1521,6 +1634,7 @@ $pv_menu = "
 							<a href=\"".PV_ADMIN_URL."&pv_page=analytics\">".__('Analytics', 'post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=summary\">".__('Summary', 'post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"".PV_ADMIN_URL."&pv_page=ranking\">".__('Ranking','post-views')."</a> &nbsp;|&nbsp;
+							<a href=\"".PV_ADMIN_URL."&pv_page=category\">".__('Category','post-views')."</a> &nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\">".__('Donation','post-views')."</a>&nbsp;|&nbsp;
 							<a href=\"http://ziming.org/dev/post-views\" target=\"_blank\" target=\"_blank\">".__('Help','post-views')."</a>
 	            ";
@@ -2273,6 +2387,18 @@ function show_post_views_list($mode = '', $view_type = 'normal', $output_type = 
 			echo $output;
 		}
 }
+function show_post_category_list($mode = '', $view_type = 'normal', $output_type = 'content', $time_span = 'total', $order_type = 'views', $order_by = 'DESC', $limit = 10, $chars = 0, $before = '<li>', $after = '</li>'){
+		$output='';
+		$post_views_list = get_post_category_list($mode, $view_type, $output_type, $time_span, $order_type, $order_by, $limit, $chars);
+		if($post_views_list){
+			for($i=0;$i < $limit;$i++){
+			 	if(!empty($post_views_list[$i]['title'])){
+			 		$output .= $before.' '.$post_views_list[$i]['title'].' '.$after;
+			 	}
+			}
+			echo $output;
+		}
+}
 function get_post_views_list($mode = '', $view_type = 'normal', $output_type = 'content', $time_span = 'total', $order_type = 'views', $order_by = 'DESC', $limit = 10, $chars = 0, $category_id = 0, $tag_id = 0){
 		global $wpdb, $post;
 		for($i=0;$i < $limit;$i++){
@@ -2404,6 +2530,60 @@ function get_post_views_list($mode = '', $view_type = 'normal', $output_type = '
 						}
 				}
 				$pv_views[$count] = array('title' => '<a href="'.get_permalink().'"  class="dashedline" >'.$post_title.'</a>', 'views' => number_format($post_views), 'time' => $view_time, 'post_id' => $post->ID );
+				$count++;
+			}
+		}
+		return $pv_views;
+}
+
+function get_post_category_list($mode = '', $view_type = 'normal', $output_type = 'content', $time_span = 'total', $order_type = 'views', $order_by = 'DESC', $limit = 10, $chars = 0){
+		global $wpdb, $post;
+		for($i=0;$i < $limit;$i++){
+				$pv_views[$i] = array('title' => '', 'views' => '', 'time' => '' );
+		}
+		
+		if(!empty($mode) && $mode != 'both') {
+			$mode = "post_type = '$mode'";
+		} else {
+			$mode = '1=1';
+		}
+		if($time_span == 'today'){
+			$time_span = 'post_views_today';
+		}else if($time_span == 'week'){
+			$time_span = 'post_views_week';
+		}else if($time_span == 'month'){
+			$time_span = 'post_views_month';
+		}else if($time_span == 'halfyear'){
+			$time_span = 'post_views_halfyear';
+		}else if($time_span == 'year'){
+			$time_span = 'post_views_year';
+		}else{
+			$time_span = 'post_views_total';
+		}
+
+		$user_cat_tag = "INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) INNER JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id and $wpdb->term_taxonomy.taxonomy = 'category') INNER JOIN $wpdb->terms ON ( $wpdb->terms.term_id = $wpdb->term_taxonomy.term_id) ";
+		$groupby = " group by $wpdb->term_taxonomy.term_id";
+
+		$order_by = strtolower($order_by);
+		if($orderby != 'asc') {
+				$orderby = 'desc';
+		}
+	
+		$sql= "SELECT $wpdb->terms.term_id as id, $wpdb->terms.name as name, sum(".$time_span." + 0) AS views, latest_view_time FROM $wpdb->posts LEFT JOIN ".WP_POST_VIEWS_TABLE." ON ".WP_POST_VIEWS_TABLE.".post_id = $wpdb->posts.ID  $user_cat_tag  WHERE  post_date < '".current_time('mysql')."' AND post_status = 'publish' AND ".WP_POST_VIEWS_TABLE.".view_type = '".$view_type."' AND ".WP_POST_VIEWS_TABLE.".output_type = '".$output_type."' AND $mode AND post_password = '' $groupby ORDER  BY $order_type $order_by LIMIT $limit";
+		$post_viewed = $wpdb->get_results($sql);
+		$count=0;
+		if($post_viewed) {
+			foreach ($post_viewed as $post) {
+				$post_views = intval($post->views);
+				$post_title = $post->name;
+				if($chars > 0) {
+						if(!function_exists('cut_str')){
+								$post_title = snippet_text($post_title, $chars);
+						}else{
+								$post_title = cut_str($post_title, $chars);
+						}
+				}
+				$pv_views[$count] = array('title' => '<a href="'.get_category_link($post->id).'"  class="dashedline" >'.$post_title.'</a>', 'views' => number_format($post_views), 'time' => "", 'post_id' => "" );
 				$count++;
 			}
 		}

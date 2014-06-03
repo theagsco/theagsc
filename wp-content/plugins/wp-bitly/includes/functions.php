@@ -50,7 +50,7 @@ function wpbitly_api( $api_call ) {
     );
 
     if ( !array_key_exists( $api_call, $api_links ) )
-        trigger_error( __( 'WP Bitly Error: No such API endpoint.', WP_Bitly::$slug ) );
+        trigger_error( __( 'WP Bitly Error: No such API endpoint.', 'wp-bitly' ) );
 
     return WPBITLY_BITLY_API . $api_links[ $api_call ];
 }
@@ -87,11 +87,30 @@ function wpbitly_generate_shortlink( $post_id ) {
 
     $wpbitly = wpbitly();
 
+    $permalink = get_the_permalink( $post_id );
+
+    $authorized = $wpbitly->get_option( 'authorized' );
+
+    if ( !$authorized )
+        return $permalink;
+
     $token      = $wpbitly->get_option( 'oauth_token' );
     $post_types = $wpbitly->get_option( 'post_types' );
 
-    if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || !$wpbitly->get_option( 'authorized' )  )
-        return;
+
+    if ( defined( 'WP_IMPORTING' ) && WP_IMPORTING  )
+        return $permalink;
+
+    // Gleefully ripped from the pages of Publicize. They know more than me, what can I say?
+    if ( defined( 'DOING_AJAX' ) && DOING_AJAX &&
+        !did_action( 'p2_ajax' ) &&
+        !did_action( 'wp_ajax_json_quickpress_post' ) &&
+        !did_action( 'wp_ajax_instapost_publish' ) &&
+        !did_action( 'wp_ajax_post_reblog' ) )
+        return $permalink;
+
+    if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )  )
+        return $permalink;
 
     // Do we need to generate a shortlink for this post yet?
     if ( $parent = wp_is_post_revision( $post_id ) )
@@ -100,12 +119,10 @@ function wpbitly_generate_shortlink( $post_id ) {
     $post_status = get_post_status( $post_id );
     $post_type   = get_post_type( $post_id );
 
-    if ( !in_array( $post_status, array( 'publish', 'future', 'private') ) || !in_array( $post_type, $post_types ) )
-        return;
+    if ( !in_array( $post_status, array( 'publish', 'future' ) ) || !in_array( $post_type, $post_types ) )
+        return $permalink;
 
 
-    // Link to be generated
-    $permalink = get_permalink( $post_id );
     $shortlink = get_post_meta( $post_id, '_wpbitly', true );
 
     if ( !empty( $shortlink ) ) {
@@ -124,11 +141,13 @@ function wpbitly_generate_shortlink( $post_id ) {
 
     wpbitly_debug_log( $response, '/shorten/' );
 
+    // @TODO We're not error checking, we're assuming? Whyyy? Because lazy?
     if ( is_array( $response ) ) {
         $shortlink = $response['data']['url'];
         update_post_meta( $post_id, '_wpbitly', $shortlink );
     }
 
+    // @TODO wpbitly_is_shortlink()? HMM?
     return $shortlink;
 }
 
@@ -137,13 +156,17 @@ function wpbitly_generate_shortlink( $post_id ) {
  * Short circuits the `pre_get_shortlink` filter.
  *
  * @since   0.1
- * @param   bool   $shortlink False is passed in by default.
+ * @param   bool   $permalink Depending on the filter this could be false, or a standard permalink
  * @param   int    $post_id   Current $post->ID, or 0 for the current post.
  * @return  string            A shortlink
  */
-function wpbitly_get_shortlink( $shortlink, $post_id = 0 ) {
+function wpbitly_get_shortlink( $shortlink, $post = 0 ) {
 
-    $post = get_post( $post_id );
+    if ( !is_object( $post ) ) {
+        $post = get_post( $post );
+        if ( !( $post instanceof WP_Post ) )
+            return $shortlink;
+    }
 
     $wpbitly = wpbitly();
 
@@ -151,17 +174,11 @@ function wpbitly_get_shortlink( $shortlink, $post_id = 0 ) {
     $post_types = $wpbitly->get_option( 'post_types' );
 
     if ( $authorized && in_array( $post->post_type, $post_types ) ) {
-        // Needs post id.
-        if ( $post_id == 0 && is_object( $post ) ) {
-            $post_id = $post->ID;
-        } else {
-            return $shortlink;
-        }
 
-        $shortlink = get_post_meta( $post_id, '_wpbitly', true );
+        $shortlink = get_post_meta( $post->ID, '_wpbitly', true );
 
         if ( !$shortlink )
-            $shortlink = wpbitly_generate_shortlink( $post_id );
+            $shortlink = wpbitly_generate_shortlink( $post->ID );
 
     }
 
@@ -170,7 +187,44 @@ function wpbitly_get_shortlink( $shortlink, $post_id = 0 ) {
 
 
 /**
- * This is our shortcode handler, which could also be called directly.
+ * Hook the post_link and post_type_link filters so that a shortlink is returned by plugins
+ * requesting get_the_permalink(). This should satisfy social media plugins that post to twitter, facebook
+ * et al without directly requesting the_shortlink(). If it doesn't, then shhhit.
+ *
+ * @since 2.2.8
+ * @param $permalink Passed by the filter, return this if we're not in a plugin
+ * @param int $post WP_Post passed via filter
+ * @return string One of the permalink (not in a plugin) or shortlink (in a plugin)
+ */
+function wpbitly_get_post_link( $permalink, $post = 0 ) {
+
+    $inside_of_a_plugin_maybe = false;
+    $trace = debug_backtrace();
+
+    foreach ( $trace as $line ) {
+        if ( array_key_exists( 'file', $line ) ) {
+
+            if ( false !== strpos( $line['file'], 'wp-content/plugins' ) )
+                $inside_of_a_plugin_maybe = true;
+
+            if ( false !== strpos( $line['file'], 'wp-bitly' ) ) {
+                $inside_of_a_plugin_maybe = false;
+                break;
+            }
+
+        }
+
+    }
+
+    if ( $inside_of_a_plugin_maybe )
+        return wpbitly_get_shortlink( $permalink, $post );
+
+    return $permalink;
+}
+
+
+/**
+ * This is our shortcode handler, feel free to call it directly as well.
  *
  * @since   0.1
  * @param   array $atts Default shortcode attributes.
@@ -190,7 +244,7 @@ function wpbitly_shortlink( $atts = array() ) {
     extract( shortcode_atts( $defaults, $atts ) );
 
     if ( empty( $text ) )
-        $text = __( 'This is the short link.', WP_Bitly::$slug );
+        $text = __( 'This is the short link.', 'wp-bitly' );
 
     if ( empty( $title ) )
         $title = the_title_attribute( array( 'echo' => false ) );
