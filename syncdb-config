@@ -12,11 +12,11 @@ r_web_addr=dev.theagsc.com
 r_web_addr_alt=theagsc.com
 
 
-# $r_user is your FTP username. It is used to ssh into your site: `ssh
-# $r_user@ftp.mywebsite.com`.
+    # $r_user is your FTP username. It is used to ssh into your site: `ssh
+    # $r_user@ftp.mywebsite.com`.
 
-# $r_host is your FTP hostname. It is used to ssh into your site: `ssh
-# myusername@$r_host`.
+    # $r_host is your FTP hostname. It is used to ssh into your site: `ssh
+    # myusername@$r_host`.
 
     # $r_web_dir is the directory in which your remote site is located (relative to
     # the user root). It's usually public_html, www, www/mywebsite.com/public_html
@@ -34,10 +34,10 @@ r_web_addr_alt=theagsc.com
     # search and replace your database.
     #
     # $r_web_addr_alt is for those who, rather than running site pairs, run
-    # triplets: local, dev, and production. $r_web_addr_alt is a slot for
+    # triplets: local, dev, and production/live. $r_web_addr_alt is a slot for
     # another search string. If you set this variable, the Search and Replace
-    # function will prompt you each time which remote site you are trying to syncing
-    # with, your dev or your production/live site.
+    # function will prompt you each time to ask which remote site you are trying to
+    # sync with, your dev or your production/live site.
 
 l_upload_dir=wp-content/uploads/
 r_upload_dir=wp-content/uploads/
@@ -78,4 +78,14 @@ l_mysqldump=/Applications/MAMP/Library/bin/mysqldump
     # `which mysql` to see where they're located). 
     #
     # If you run your own AMP stack, then leave these variables blank.
+    # ---------------------------------------------------------
+
+auto_update=true
+
+    # ---------------------------------------------------------
+    # Auto-Update Flag
+    # For the sake of convenience, whenever SyncDB runs it automatically checks for
+    # newer versions of itself. If a newer version exists, it prompts the user to
+    # download. If you prefer to disable this feature, set auto_update=false or
+    # leave it blank.
     # ---------------------------------------------------------
