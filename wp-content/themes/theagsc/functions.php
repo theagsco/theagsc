@@ -1,8 +1,10 @@
 <?php
 
+/*
 remove_filter ('the_content', 'wpautop');
 remove_filter ('the_excerpt', 'wpautop');
 
+*/
 function my_init() {
     if (!is_admin()) {
         // comment out the next two lines to load the local copy of jQuery
