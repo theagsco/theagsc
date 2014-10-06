@@ -9,3 +9,6 @@ wp-content/uploads/
 output.txt
 wp-content/themes/theagsc/less/style-local.less
 wp-content/plugins/reveal-template/
+db/live
+config.codekit
+wp-content/themes/theagsc/less/local.less
