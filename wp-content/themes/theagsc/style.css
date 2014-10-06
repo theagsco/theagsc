@@ -2149,6 +2149,10 @@ html.inverted {
   height: auto;
   margin-bottom: auto;
 }
+#local:before,
+#reveal_template {
+  display: block;
+}
 /* !---------GLOBAL---------- */
 /*
 a.top {
