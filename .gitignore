@@ -9,3 +9,6 @@ wp-content/uploads/
 output.txt
 wp-content/themes/theagsc/less/style-local.less
 wp-content/plugins/reveal-template/
+db
+db/live/db173785_theagsc_live-migrate-20141006065547.sql
+db/live/db173785_theagsc_live-migrate-20141006065547.sql.gz

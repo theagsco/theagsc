@@ -248,9 +248,11 @@ jQuery(document).ready(function() {
 	else if 	( e.keyCode === 84 && !jQuery("input, textarea").is(":focus") )  { // t
 		jQuery(".tag_wrapper").toggleClass("on");
 	}
+/*
 	else if 	( e.keyCode === 72 && !jQuery("input, textarea").is(":focus") ) { // h
 		jQuery(".content").toggleClass("hide-sidebar");
 	}
+*/
 	else if 	( e.keyCode === 73 && !jQuery("input, textarea").is(":focus") ) { // i
 		jQuery("html").toggleClass("inverted");
 	}
