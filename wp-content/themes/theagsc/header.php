@@ -10,19 +10,16 @@
 elseif (is_single() || is_page() || is_archive()) {wp_title(false); echo ' | '; bloginfo('name');}
 
 else { bloginfo('name'); } ?></title>
-	
+	   
 <!--WP-HEAD-->
 
 <?php wp_head(); ?>
-   
+
+
 <!--STYLES-->
 
-<!--
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/form.css" />
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style_text.css" />
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts.css" />
--->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
+
 
 <?php if ( !is_home()) {?>
 
@@ -59,6 +56,7 @@ nav.menu-header-menu-container, nav#account {bottom:12px;}
 <script src="<?php bloginfo('template_directory'); ?>/scripts/isotope.js"></script>
 
 </head>
+
 <body <?php body_class($class); ?>>
 
 <script>
@@ -85,7 +83,7 @@ var disqus_config = function () {
 <!-- Please call pinit.js only once per page -->
 <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 
-<div id="local"></div>
+<!-- <div id="local"></div> -->
 
 <?php if(function_exists('c2c_reveal_template')) {?>
 <div id="reveal_template"><?php c2c_reveal_template(); ?></div>
@@ -96,8 +94,6 @@ var disqus_config = function () {
 <a href="javascript:void(0)" class="menu-button icon-menu"></a>
     <div class="container">
     <div class="content">
-    
-    	
     
         <a href="<?php bloginfo('home'); ?>" id="logo"><?php bloginfo('name'); ?></a>
         
@@ -217,5 +213,5 @@ var disqus_config = function () {
 <?php } ?>
 
 <div class="container">
-<div class="content body_content">
+<div class="content body_content hide-sidebar">
 

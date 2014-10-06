@@ -1,6 +1,14 @@
+/*  
+Theme Name: The AGSC
+Theme URI: http://theagsc.com/
+Description: Wordpress Theme
+Author: Dave Coleman 
+Author URI: http://theagsc.com/
+*/
 
 /* !---------Imports---------- */
 
+<<<<<<< HEAD:wp-content/themes/theagsc/style.less
 @import "less/style-tables";
 @import "less/style-local";
 @import "less/style-fonts";
@@ -13,6 +21,19 @@
 @import "less/style-home";
 @import "less/style-menu";
 @import "less/style-text";
+=======
+@import "fonts";
+@import "forms";
+@import "sidebar";
+@import "work";
+@import "woo";
+@import "community";
+@import "local";
+@import "page";
+@import "home";
+@import "menu";
+@import "typography";
+>>>>>>> origin/develop:wp-content/themes/theagsc/less/style.less
 
 
 /* !---------LESS Assets---------- */
@@ -104,6 +125,10 @@ html.inverted {-webkit-filter: invert(100%)}
 .page .post img {width: 100%; height: auto; margin-bottom: 50px;}
 .woocommerce-checkout .post img {width: auto; height: auto; margin-bottom: auto;}
 
+#local:before, #reveal_template {
+	display: none;
+}
+
 
 /* !---------GLOBAL---------- */
 
@@ -114,7 +139,7 @@ a.top {
 	right:40px;
 	width:40px;
 	height:40px;
-	background-image:url('@{stylesheet_directory_uri}/images/top.gif');
+	background-image:url('images/top.gif');
 	display: none;
 	text-indent:-9999px;
 	z-index:999;
@@ -133,7 +158,7 @@ a.top {
 	bottom:35px;
 	width:40px;
 	height:40px;
-	background-image:url('@{stylesheet_directory_uri}/images/top.gif');
+	background-image:url('images/top.gif');
 	display: none;
 	text-indent:-9999px;
 	z-index:999;
@@ -170,7 +195,7 @@ body.fixed_header #header #menus {margin-right: 127px;}
 	float:left;
 	width:177px;
 	height:88px;
-	background-image:url('@{stylesheet_directory_uri}/images/logo.png');
+	background-image:url('images/logo.png');
 	background-repeat:no-repeat;
 	background-position:left top;
 	margin-left:25px;
@@ -181,7 +206,7 @@ body.fixed_header #header #menus {margin-right: 127px;}
 .fixed_header #header #logo {
 	width:101px;
 	height:22px;
-	background-image:url('@{stylesheet_directory_uri}/images/logo-footer.png');
+	background-image:url('images/logo-footer.png');
 	margin-top: 13px;
 }
 .fixed_header #header #menus-wrapper {margin-top: 9px;}
@@ -329,7 +354,7 @@ input#s {margin-bottom: 40px;}
 a.logo-footer {
 	width:101px;
 	height:22px;
-	background-image:url('@{stylesheet_directory_uri}/images/logo-footer.png');
+	background-image:url('images/logo-footer.png');
 	text-indent:-9999px;
 }
 a.logo-footer:hover {background-position:bottom;
@@ -481,7 +506,7 @@ header, body.fixed_header header {
 #logo {
 	width:131px;
 	height:28px;
-	background-image:url('@{stylesheet_directory_uri}/images/logo-page.png');
+	background-image:url('images/logo-page.png');
 }
 nav.menu-header-menu-container, nav#account {bottom:12px;}
 
