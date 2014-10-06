@@ -1311,7 +1311,6 @@ nav#share a.btn {
   text-align: right;
   width: 99.2%;
   pointer-events: none;
-  display: block !important;
 }
 #reveal_template {
   margin-top: 14px;
