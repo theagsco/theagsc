@@ -3,7 +3,7 @@
 <?php echo get_new_royalslider(1); ?>
 
 <section class="blurb">
-
+	
     <?php query_posts( 'p=67&post_type=site_content' ); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 			<?php 

@@ -204,14 +204,14 @@ input[type="submit"] {
   margin-top: 30px;
 }
 input[type="submit"]:hover {
-  border: solid 2px #f72f19 !important;
-  background-color: #f72f19 !important;
+  border: solid 2px #fa3b19 !important;
+  background-color: #fa3b19 !important;
   color: #ffffff !important;
   font-weight: 700 !important;
 }
 input[type="submit"]:hover {
-  border: solid 2px #f72f19;
-  background-color: #f72f19;
+  border: solid 2px #fa3b19;
+  background-color: #fa3b19;
   color: #ffffff !important;
   font-weight: 700;
 }
@@ -456,7 +456,7 @@ section#categories ul.categories.stuck {
   color: #000000;
 }
 #filters a.selected {
-  color: #f72f19;
+  color: #fa3b19;
 }
 /*
 #filters {
@@ -540,9 +540,9 @@ section#categories ul.categories.stuck {
   background: #ffffff;
 }
 .preview_pattern_button.previewButtonSelected {
-  background: #f72f19 !important;
+  background: #fa3b19 !important;
   color: #ffffff !important;
-  border: solid 2px #f72f19;
+  border: solid 2px #fa3b19;
 }
 .preview_pattern_button.previewButtonSelected:hover:before {
   content: '\2013';
@@ -650,7 +650,7 @@ ul.products li .add_to_cart_button {
 }
 ul.products li .add_to_cart_button:hover,
 ul.products li a.product_link:hover {
-  background: #f72f19 !important;
+  background: #fa3b19 !important;
   color: #ffffff !important;
 }
 .single-product form {
@@ -712,7 +712,7 @@ a.wc-forward {
   width: 160px;
   text-align: center;
   color: #ffffff;
-  background: #f72f19;
+  background: #fa3b19;
   display: block;
   left: 50%;
   margin-left: -80px !important;
@@ -908,7 +908,7 @@ section.empty {
   height: 30px;
   text-align: center;
   z-index: 9;
-  background: #f72f19;
+  background: #fa3b19;
   color: #ffffff;
   padding: 8px 15px 4px 15px;
   font-weight: 500;
@@ -969,6 +969,10 @@ section.empty {
 */
 .category-community a.post_thumb img {
   padding: 0 0 20px 0;
+}
+.post span.inline-img img {
+  padding: 0 5px 0 5px;
+  display: inline;
 }
 /* !---------hide sidebar---------- */
 .hide-sidebar #community-wrapper {
@@ -1304,7 +1308,7 @@ nav#share a.btn {
   content: "Local";
   position: fixed;
   z-index: 999999;
-  color: #f72f19;
+  color: #fa3b19;
   padding-right: 12px;
   padding-top: 7px;
   font-size: 0.9em;
@@ -1360,7 +1364,7 @@ body.page #community,
   text-align: center;
 }
 .rsContent a.agsc_button:hover {
-  color: #f72f19;
+  color: #fa3b19;
 }
 .rsContent img.rsABImage {
   position: relative;
@@ -1402,7 +1406,7 @@ body.page #community,
   border: solid 2px #fff;
 }
 .rsSBlock .agsc_button:hover {
-  color: #f72f19;
+  color: #fa3b19;
 }
 .rsImg {
   position: absolute;
@@ -1549,7 +1553,7 @@ label.search-button {
   color: #211f1f;
 }
 ul.menu > li a:hover {
-  color: #f72f19 !important;
+  color: #fa3b19 !important;
 }
 ul.menu li:hover a {
   z-index: 100002;
@@ -1668,8 +1672,8 @@ ul.menu li a.create_account {
   padding: 7px 15px 8px 17px;
 }
 ul.menu li a.create_account:hover {
-  border: solid 2px #f72f19 !important;
-  background-color: #f72f19 !important;
+  border: solid 2px #fa3b19 !important;
+  background-color: #fa3b19 !important;
   color: #ffffff !important;
   font-weight: 700 !important;
 }
@@ -1771,6 +1775,10 @@ textarea {
   -webkit-font-smoothing: antialiased;
 }
 /* ---------TEXT STYLES---------- */
+hr {
+  margin-top: 45px;
+  margin-bottom: 35px;
+}
 div {
   text-shadow: none !important;
 }
@@ -1818,7 +1826,9 @@ p,
 }
 p strong,
 p b,
-p b em {
+p b em,
+strong,
+strong em {
   font-weight: 600;
 }
 blockquote p {
@@ -1829,7 +1839,7 @@ blockquote p {
   line-height: 1.45em;
   margin: 40px auto 45px auto;
   padding: 25px 30px 35px 35px;
-  border-left: solid 3px #f72f19;
+  border-left: solid 3px #fa3b19;
   background-color: #faf9f7;
 }
 figcaption p,
@@ -1843,11 +1853,14 @@ figcaption {
 }
 p + figcaption {
   margin-bottom: 60px;
+  margin-top: 0px;
 }
-figcaption img {
-  padding-top: 80px;
+figcaption img,
+.post img {
+  padding-top: 60px;
   padding-bottom: 60px;
   margin: 0 auto;
+  display: block;
 }
 #work-home h2 {
   font-size: 0.9em;
@@ -1864,6 +1877,9 @@ figcaption img {
 }
 .post p.wp-caption-text {
   padding-left: 25px;
+}
+.post table + p {
+  margin-top: 60px;
 }
 .category-community .post > p:first-of-type::first-line,
 .single-post .post > p:first-of-type::first-line {
@@ -1895,6 +1911,13 @@ figcaption img {
   font-weight: inherit;
 }
 code {
+  /* 	font-size: 115%; */
+  background-color: #faf9f7;
+  color: #211f1f;
+  padding: 0.4em;
+  font-style: normal;
+}
+span.note {
   /* 	font-size: 115%; */
   background-color: #faf9f7;
   color: #211f1f;
@@ -1962,8 +1985,13 @@ span.ai {
 	padding-bottom: 15px;
 }
 */
-.post ul {
-  padding: 20px 0 30px 40px;
+.post ul,
+.post ol {
+  padding: 20px 0 30px 60px;
+  font-family: 'ff-tisa-web-pro', serif;
+  font-size: 1.05em;
+  font-weight: 400;
+  line-height: 1.6em;
 }
 .post ul li {
   list-style: disc;
@@ -1973,6 +2001,9 @@ span.ai {
 }
 .post ul ul {
   padding: 0 0 0 20px;
+}
+.post ol li {
+  list-style-type: decimal;
 }
 /* ---------blurb---------- */
 .blurb h1 {
@@ -2017,7 +2048,8 @@ a {
   text-shadow: none;
 }
 p a,
-.post ul li a {
+.post ul li a,
+.post ol li a {
   color: #000;
   border-bottom: solid 1px rgba(51, 48, 48, 0.2);
   padding-bottom: 2px;
@@ -2051,8 +2083,8 @@ h2.viewing span a:hover {
   font-family: 'brandon-grotesque', sans-serif;
 }
 .agsc_button:hover {
-  border: solid 2px #f72f19 !important;
-  background-color: #f72f19 !important;
+  border: solid 2px #fa3b19 !important;
+  background-color: #fa3b19 !important;
   color: #ffffff !important;
   font-weight: 700 !important;
 }
@@ -2256,7 +2288,7 @@ body.fixed_header #header #menus {
 .popup h3 {
   display: inline-block;
   height: 30px;
-  background: #f72f19;
+  background: #fa3b19;
   color: #ffffff;
   padding: 8px 15px 4px 15px;
   font-weight: 500;
@@ -2359,7 +2391,7 @@ input#s {
   color: #000000;
 }
 .search .post p span {
-  background-color: #f72f19 !important;
+  background-color: #fa3b19 !important;
   color: #ffffff;
   font-family: "brandon-grotesque", sans-serif;
   font-weight: 700;
@@ -2561,7 +2593,7 @@ a.logo-footer:hover {
     margin: 0;
   }
   a.menu-button.menu-button-on {
-    color: #f72f19;
+    color: #fa3b19;
     position: fixed !important;
     background-color: #ffffff;
     border: solid 1px #d9d9d9;

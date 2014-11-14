@@ -214,7 +214,6 @@ function my_custom_scripts() {
 	}
     
 		   wp_enqueue_style('reset', 'http://dvclmn.com/css_reset.css');
-		   wp_enqueue_style('style', get_stylesheet_directory_uri().'/style.less');
 
 }
 add_action('wp_enqueue_scripts', 'my_custom_scripts');
