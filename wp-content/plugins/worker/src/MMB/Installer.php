@@ -40,6 +40,23 @@ class MMB_Installer extends MMB_Core
         }
     }
 
+    function install_remote_files($params)
+    {
+        $data = array();
+        foreach ($params['plugins'] as $theme) {
+            $dataTmp = $this->install_remote_file($theme);
+            $pluginName = key($dataTmp);
+            $data[$pluginName] = $dataTmp;
+        }
+        foreach ($params['themes'] as $theme) {
+            $dataTmp = $this->install_remote_file($theme);
+            $themeName = key($dataTmp);
+            $data[$themeName] = $dataTmp;
+        }
+
+        return $data;
+    }
+
     function install_remote_file($params)
     {
         global $wp_filesystem;
@@ -145,6 +162,26 @@ class MMB_Installer extends MMB_Core
         return $install_info;
     }
 
+    private function ithemes_updater_compatiblity()
+    {
+        // Check for the iThemes updater class
+        if (empty($GLOBALS['ithemes_updater_path']) ||
+            !file_exists($GLOBALS['ithemes_updater_path'].'/settings.php')) {
+            return;
+        }
+
+        // Include iThemes updater
+        require_once($GLOBALS['ithemes_updater_path'].'/settings.php');
+
+        // Check if the updater is instantiated
+        if (empty($GLOBALS['ithemes-updater-settings'])) {
+            return;
+        }
+
+        // Update the download link
+        $GLOBALS['ithemes-updater-settings']->flush('forced');
+    }
+
     function do_upgrade($params = null)
     {
 
@@ -176,6 +213,7 @@ class MMB_Installer extends MMB_Core
 
         if (!empty($upgrade_plugins)) {
             $plugin_files = array();
+            $this->ithemes_updater_compatiblity();
             foreach ($upgrade_plugins as $plugin) {
                 if (isset($plugin['file'])) {
                     $plugin_files[$plugin['file']] = $plugin['old_version'];
@@ -186,7 +224,7 @@ class MMB_Installer extends MMB_Core
             if (!empty($plugin_files)) {
                 $upgrades['plugins'] = $this->upgrade_plugins($plugin_files);
             }
-
+            $this->ithemes_updater_compatiblity();
         }
 
         if (!empty($upgrade_themes)) {
@@ -795,7 +833,8 @@ class MMB_Installer extends MMB_Core
             return false;
         }
 
-        extract($args);
+        $search = $args['search'];
+        $type = trim((string) $args['type']);
 
         if (!function_exists('get_plugins')) {
             include_once(ABSPATH.'wp-admin/includes/plugin.php');
@@ -811,37 +850,27 @@ class MMB_Installer extends MMB_Core
                 $activated_plugins = array();
             }
 
-            $br_a = 0;
-            $br_i = 0;
             foreach ($all_plugins as $path => $plugin) {
                 if ($plugin['Name'] != 'ManageWP - Worker') {
-                    if (in_array($path, $activated_plugins)) {
-                        $plugins['active'][$br_a]['path']    = $path;
-                        $plugins['active'][$br_a]['name']    = strip_tags($plugin['Name']);
-                        $plugins['active'][$br_a]['version'] = $plugin['Version'];
-                        $br_a++;
-                    }
+                    $status = in_array($path, $activated_plugins) ? 'active' : 'inactive';
 
-                    if (!in_array($path, $activated_plugins)) {
-                        $plugins['inactive'][$br_i]['path']    = $path;
-                        $plugins['inactive'][$br_i]['name']    = strip_tags($plugin['Name']);
-                        $plugins['inactive'][$br_i]['version'] = $plugin['Version'];
-                        $br_i++;
-                    }
+                    $plugin = array(
+                        'path'    => $path,
+                        'name'    => strip_tags($plugin['Name']),
+                        'version' => $plugin['Version']
+                    );
 
-                }
+                    // If type is set, it must be equal to the current plugin status
+                    $typeMatches = empty($type)
+                        || (!empty($type) && strcasecmp($type, $status) == 0);
 
-                if ($search) {
-                    foreach ($plugins['active'] as $k => $plugin) {
-                        if (!stristr($plugin['name'], $search)) {
-                            unset($plugins['active'][$k]);
-                        }
-                    }
+                    // If search is set, the term must be found in the plugin name
+                    $searchTermFound = empty($search)
+                        || (!empty($search) && stripos($plugin['name'], $search) !== false);
 
-                    foreach ($plugins['inactive'] as $k => $plugin) {
-                        if (!stristr($plugin['name'], $search)) {
-                            unset($plugins['inactive'][$k]);
-                        }
+                    if ($typeMatches && $searchTermFound) {
+                        $plugins[$status][] = $plugin;
+
                     }
                 }
             }

@@ -94,12 +94,45 @@ input[type="submit"]{
 	<h3>Configuration</h3>
 		<table class="form-table">
 			<tbody>
+			<tr valign="top">
+					<th scope="row" style="width: 100px;">Active</th>
+					<td>
+						<fieldset>
+							<legend class="hidden">Active</legend>
+							<label for="is_active"><input type="checkbox" name="is_active" value="1" <?php echo $settings['is_active']=="1"? 'checked="checked"': '' ; ?>  /> (auto place) </label>
+						</fieldset>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row" style="width: 100px;">Position</th>
+					<td>
+						<fieldset>
+							<legend class="hidden">Position</legend>
+							<label for="position">
+								<select name="position" id="position">
+									<option value="bottom" <?php echo $settings['position']=="bottom"? 'selected="selected"': '' ; ?>>Bottom</option>
+									<option value="top" <?php echo $settings['position']=="top"? 'selected="selected"': '' ; ?>>Top</option>
+									<option value="both" <?php echo $settings['position']=="both"? 'selected="selected"': '' ; ?>>Top &amp; Bottom</option>
+								</select>
+							</label>
+						</fieldset>
+					</td>
+				</tr>
 				<tr valign="top">
 					<th scope="row" style="width: 100px;">Navigate Within Category</th>
 					<td>
 						<fieldset>
 							<legend class="hidden">Navigate Within Category</legend>
 							<label for="nav_within_cat"><input type="checkbox" name="nav_within_cat" value="1" <?php echo $settings['nav_within_cat']=="1"? 'checked="checked"': '' ; ?>  /></label>
+						</fieldset>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row" style="width: 100px;">Reverse Navigation</th>
+					<td>
+						<fieldset>
+							<legend class="hidden">Reverse Navigation</legend>
+							<label for="is_reversed"><input type="checkbox" name="is_reversed" value="1" <?php echo $settings['is_reversed']=="1"? 'checked="checked"': '' ; ?>  /> (Reverse Next/Previous Position) </label>
 						</fieldset>
 					</td>
 				</tr>
@@ -192,6 +225,14 @@ input[type="submit"]{
 						Visit <a href="http://sharp-coders.com/category/plugins/wp-plugins/" target="_blank">sharp-coders.com</a> for more plugins.<br />
 						<strong>Author: </strong> <a href="https://plus.google.com/104763153154719100069" target="_blank">Anas Mir</a>
 						<br />
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYBa5sMXB+KM98wWYNkXZc+lNTqooi35H6Y/QcMMvmrYSzyW/hNcVxfojsuDPgOPXApYhs0cM9j2budiJiDC3vfilWqroKMQayqwIcX/+asVBA7VIXbk/lMB/oSzJkrhCpe/9Cq0+uoocGDZWOZteOAR/Ppt/OsvthW1053X9ytfFTELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIbFkOC3/sX32AgZDt/acrq70MG4mWP54RJQEQRp+1Xd+jZ4E27xAld1vSsjS3J2TgCTJx8lV5AsiZBdMbI7k+ju71F2wXcGc9JKECfbqeIuzf+udhfctKazz5hOad1xcqTDutJPu99A/V/HWadf+B/Rvyqw6qAn462DO8T/BtFGtALN2sbUlQ6vogxfGTIRORAOkRFvmWpsR6r92gggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzA5MTUyMDQ2MDZaMCMGCSqGSIb3DQEJBDEWBBRcn/waPQBHMeJ8rvRDZr7/LLB6IjANBgkqhkiG9w0BAQEFAASBgHqzgoJT/n25VyrPpW1xCSSfn4s1lml2GADRFZPemx02JMX5l4B1zRm3rnMmIQQfS0EUsKvAAlxtlgu5c21Zbq3ne+nZMmDN4UPKH0YesVgJ0sbyBbylP8kYF3oYZDLK3oJh4fzVIH3uy3G75Z+m7njELJOQVTB/p42T6BHSFEib-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<br /><br />
 						<strong>Support: </strong> <a href="http://sharp-coders.com/plugins/wp-plugins/wp-post-navigation" target="_blank">Open Support Page</a>
 						<br /><br />
 						<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fsharpcoders&amp;send=false&amp;layout=standard&amp;width=180&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:180px; height:35px;" allowTransparency="true"></iframe>
@@ -207,10 +248,9 @@ input[type="submit"]{
 						<a href="http://sharp-coders.com/plugins/wp-plugins/wp-ads-within-contents-wordpress-plugin" target="_blank">WP Ads Within Contents</a>
 						<hr style="max-width: 180px;" />
 						<strong>Friends</strong><br />
-						<a href="http://apnagoogle.com" target="_blank">http://apnagoogle.com</a>
+						<a href="http://scriptclerks.com" target="_blank">http://scriptclerks.com</a>
 						<br />
-						<a href="http://www.dosellit.com" target="_blank">http://www.dOSelliT.com</a>
-						
+						<a href="https://www.seoclerks.com/PHP/184793/SEOClerks-Affiliate-Store-Responsive" target="_blank">Auto Pilot Affiliate Store</a>
 						<br /><br />
 					</td>
 				</tr>

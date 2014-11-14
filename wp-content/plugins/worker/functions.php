@@ -94,12 +94,17 @@ function mwp_logger()
  *
  * @return Dropbox_Client
  */
-function mwp_dropbox_oauth1_factory($appKey, $appSecret, $token, $tokenSecret)
+function mwp_dropbox_oauth_factory($appKey, $appSecret, $token, $tokenSecret = null)
 {
-    $oauthToken ='OAuth oauth_version="1.0", oauth_signature_method="PLAINTEXT", oauth_consumer_key="'.$appKey.'", oauth_token="'.$token.'", oauth_signature="'.$appSecret.'&'.$tokenSecret.'"';
-    $client         = new Dropbox_Client($oauthToken, $token);
+    if ($tokenSecret) {
+        $oauthToken       = 'OAuth oauth_version="1.0", oauth_signature_method="PLAINTEXT", oauth_consumer_key="'.$appKey.'", oauth_token="'.$token.'", oauth_signature="'.$appSecret.'&'.$tokenSecret.'"';
+        $clientIdentifier = $token;
+    } else {
+        $oauthToken       = 'Bearer '.$token;
+        $clientIdentifier = 'PHP-ManageWp/1.0';
+    }
 
-    return $client;
+    return new Dropbox_Client($oauthToken, $clientIdentifier);
 }
 
 function mwp_format_memory_limit($limit)
@@ -360,18 +365,29 @@ function cleanup_delete_worker($params = array())
 function mmb_num_revisions($filter)
 {
     global $wpdb;
-    $sql           = "SELECT COUNT(*) FROM $wpdb->posts WHERE post_type = 'revision'";
-    $num_revisions = $wpdb->get_var($sql);
+
+    $allRevisions = $wpdb->get_results("SELECT ID, post_name FROM {$wpdb->posts} WHERE post_type = 'revision'", ARRAY_A);
+
+    $revisionsToDelete    = 0;
+    $revisionsToKeepCount = array();
+
     if (isset($filter['num_to_keep']) && !empty($filter['num_to_keep'])) {
         $num_rev = str_replace("r_", "", $filter['num_to_keep']);
-        if ($num_revisions < $num_rev) {
-            return 0;
-        }
 
-        return ($num_revisions - $num_rev);
+        foreach ($allRevisions as $revision) {
+            $revisionsToKeepCount[$revision['post_name']] = isset($revisionsToKeepCount[$revision['post_name']])
+                ? $revisionsToKeepCount[$revision['post_name']] + 1
+                : 1;
+
+            if ($revisionsToKeepCount[$revision['post_name']] > $num_rev) {
+                ++$revisionsToDelete;
+            }
+        }
     } else {
-        return $num_revisions;
+        $revisionsToDelete = count($allRevisions);
     }
+
+    return $revisionsToDelete;
 }
 
 function mmb_select_all_revisions()
@@ -387,55 +403,45 @@ function mmb_delete_all_revisions($filter)
 {
     global $wpdb;
     $where = '';
-    if (isset($filter['num_to_keep']) && !empty($filter['num_to_keep'])) {
-        $num_rev          = str_replace("r_", "", $filter['num_to_keep']);
-        $select_posts     = "SELECT ID FROM $wpdb->posts WHERE post_type = 'revision' ORDER BY post_date DESC LIMIT ".$num_rev;
-        $select_posts_res = $wpdb->get_results($select_posts);
-        $notin            = '';
-        $n                = 0;
-        foreach ($select_posts_res as $keep_post) {
-            $notin .= $keep_post->ID;
-            $n++;
-            if (count($select_posts_res) > $n) {
-                $notin .= ',';
+    $keep = isset($filter['num_to_keep']) ? $filter['num_to_keep'] : false;
+    if ($keep) {
+        $num_rev          = str_replace("r_", "", $keep);
+        $allRevisions = $wpdb->get_results("SELECT ID, post_name FROM {$wpdb->posts} WHERE post_type = 'revision' ORDER BY post_date DESC", ARRAY_A);
+        $revisionsToKeep = array(0 => 0);
+        $revisionsToKeepCount = array();
+
+        foreach ($allRevisions as $revision) {
+            $revisionsToKeepCount[$revision['post_name']] = isset($revisionsToKeepCount[$revision['post_name']])
+                ? $revisionsToKeepCount[$revision['post_name']] + 1
+                : 1;
+
+            if ($revisionsToKeepCount[$revision['post_name']] <= $num_rev) {
+                $revisionsToKeep[] = $revision['ID'];
             }
         }
-        $where = " AND a.ID NOT IN (".$notin.")";
+
+        $notInQuery = join(', ', $revisionsToKeep);
+
+        $where = "AND a.ID NOT IN ({$notInQuery})";
     }
 
-    $sql = "DELETE a,b,c FROM $wpdb->posts a LEFT JOIN $wpdb->term_relationships b ON (a.ID = b.object_id) LEFT JOIN $wpdb->postmeta c ON (a.ID = c.post_id) WHERE a.post_type = 'revision'".$where;
+    $sql = "DELETE a,b,c FROM $wpdb->posts a LEFT JOIN $wpdb->term_relationships b ON (a.ID = b.object_id) LEFT JOIN $wpdb->postmeta c ON (a.ID = c.post_id) WHERE a.post_type = 'revision' {$where}";
 
     $revisions = $wpdb->query($sql);
 
     return $revisions;
 }
 
-
-/* Optimize */
-
 function mmb_handle_overhead($clear = false)
 {
+    /** @var wpdb $wpdb */
     global $wpdb;
-    $tot_data     = 0;
-    $tot_idx      = 0;
-    $tot_all      = 0;
     $query        = 'SHOW TABLE STATUS';
     $tables       = $wpdb->get_results($query, ARRAY_A);
     $total_gain   = 0;
     $table_string = '';
     foreach ($tables as $table) {
-        if (isset($table['Engine']) && in_array(
-                $table['Engine'],
-                array(
-                    'MyISAM',
-                    'ISAM',
-                    'HEAP',
-                    'MEMORY',
-                    'ARCHIVE',
-                    //          'InnoDB'
-                )
-            )
-        ) {
+        if (isset($table['Engine']) && $table['Engine'] === 'MyISAM') {
             if ($wpdb->base_prefix != $wpdb->prefix) {
                 if (preg_match('/^'.$wpdb->prefix.'*/Ui', $table['Name'])) {
                     if ($table['Data_free'] > 0) {
@@ -453,28 +459,25 @@ function mmb_handle_overhead($clear = false)
                     }
                 }
             }
-        } elseif (isset($table['Engine']) && $table['Engine'] == 'InnoDB') {
-            $innodb_file_per_table = $wpdb->get_results("SHOW VARIABLES LIKE 'innodb_file_per_table'");
-            if ($innodb_file_per_table[0]->Value === "ON") {
-                if ($table['Data_free'] > 0) {
-                    $total_gain += $table['Data_free'] / 1024;
-                    $table_string .= $table['Name'].",";
-                }
-            }
-            //$total_gain +=  $table['Data_free'] > 100*1024*1024 ? $table['Data_free'] / 1024 : 0;
+            // @todo check if the cleanup was successful, if not, set a flag always skip innodb cleanup
+            //} elseif (isset($table['Engine']) && $table['Engine'] == 'InnoDB') {
+            //    $innodb_file_per_table = $wpdb->get_results("SHOW VARIABLES LIKE 'innodb_file_per_table'");
+            //    if (isset($innodb_file_per_table[0]->Value) && $innodb_file_per_table[0]->Value === "ON") {
+            //        if ($table['Data_free'] > 0) {
+            //            $total_gain += $table['Data_free'] / 1024;
+            //            $table_string .= $table['Name'].",";
+            //        }
+            //    }
         }
     }
 
     if ($clear) {
         $table_string = substr($table_string, 0, strlen($table_string) - 1); //remove last ,
-
         $table_string = rtrim($table_string);
-
         $query = "OPTIMIZE TABLE $table_string";
-
         $optimize = $wpdb->query($query);
 
-        return $optimize === false ? false : true;
+        return (bool)$optimize;
     } else {
         return round($total_gain, 3);
     }
@@ -494,13 +497,16 @@ function mmb_num_spam_comments()
 function mmb_delete_spam_comments()
 {
     global $wpdb;
-    $spams = 1;
+    $spam = 1;
     $total = 0;
-    while ($spams) {
-        $sql   = "DELETE FROM $wpdb->comments WHERE comment_approved = 'spam' LIMIT 200";
-        $spams = $wpdb->query($sql);
-        $total += $spams;
-        if ($spams) {
+    while (!empty($spam)) {
+        $getCommentIds = "SELECT comment_ID FROM $wpdb->comments WHERE comment_approved = 'spam' LIMIT 200";
+        $spam = $wpdb->get_results($getCommentIds);
+        foreach ($spam as $comment) {
+            wp_delete_comment($comment->comment_ID, true);
+        }
+        $total += count($spam);
+        if (!empty($spam)) {
             usleep(100000);
         }
     }
@@ -517,12 +523,41 @@ function mmb_get_spam_comments()
     return $spams;
 }
 
+function mwp_is_nio_shell_available()
+{
+    static $check;
+    if(isset($check)){
+        return $check;
+    }
+    try {
+        $process = new Symfony_Process_Process("cd .", dirname(__FILE__), array(), null, 1);
+        $process->run();
+        $check = $process->isSuccessful();
+    } catch (Exception $e) {
+        $check = false;
+    }
+    return $check;
+}
+
 function mwp_is_shell_available()
 {
     if (mwp_is_safe_mode()) {
         return false;
     }
     if (!function_exists('proc_open') || !function_exists('escapeshellarg')) {
+        return false;
+    }
+
+    if (extension_loaded('suhosin') && $suhosin = ini_get('suhosin.executor.func.blacklist')) {
+        $suhosin   = explode(',', $suhosin);
+        $blacklist = array_map('trim', $suhosin);
+        $blacklist = array_map('strtolower', $blacklist);
+        if (in_array('proc_open', $blacklist)) {
+            return false;
+        }
+    }
+
+    if (!mwp_is_nio_shell_available()) {
         return false;
     }
 

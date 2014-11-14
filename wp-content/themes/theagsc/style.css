@@ -1853,7 +1853,7 @@ figcaption {
 }
 p + figcaption {
   margin-bottom: 60px;
-  margin-top: 0px;
+  margin-top: -30px;
 }
 figcaption img,
 .post img {

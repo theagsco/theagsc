@@ -102,6 +102,7 @@ class MMB_Core extends MMB_Helper
             'change_post_status'               => 'mmb_change_post_status',
             'get_comment_stats'                => 'mmb_comment_stats_get',
             'install_addon'                    => 'mmb_install_addon',
+            'install_addons'                   => 'mmb_install_addons',
             'get_links'                        => 'mmb_get_links',
             'add_link'                         => 'mmb_add_link',
             'delete_link'                      => 'mmb_delete_link',
@@ -165,13 +166,15 @@ class MMB_Core extends MMB_Helper
 
         add_action('admin_init', array(&$this, 'admin_actions'));
         add_action('init', array(&$this, 'mmb_remote_action'), 9999);
-        add_action('setup_theme', 'mmb_run_backup_action', 1);
+        add_action('setup_theme', 'mmb_run_forked_action', 1);
         add_action('plugins_loaded', 'mmb_authenticate', 1);
         add_action('setup_theme', 'mmb_parse_request');
         add_action('set_auth_cookie', array(&$this, 'mmb_set_auth_cookie'));
         add_action('set_logged_in_cookie', array(&$this, 'mmb_set_logged_in_cookie'));
 
-
+        if(!get_option('_worker_nossl_key') && !get_option('_worker_public_key')){
+            add_action('init', array(&$this, 'deactivateWorkerIfNotAddedAfterTenMinutes'));
+        }
     }
 
     function mmb_remote_action()
@@ -368,12 +371,8 @@ EOF;
                     </form>
                     <div id="support_response_id" style="margin-top: 14px"></div>
                     <style scoped="scoped">
-                        .ui-widget-content {
+                        .mwp-support-dialog.ui-dialog {
                             z-index: 300002;
-                        }
-
-                        .ui-widget-overlay {
-                            background-repeat: repeat;
                         }
                     </style>
                 </div>
@@ -420,6 +419,7 @@ EOF;
                         width: '530px',
                         height: 'auto',
                         title: 'Contact Support',
+                        dialogClass: 'mwp-support-dialog',
                         close: function () {
                             $('#support_response_id').html('');
                             $(this).dialog("destroy");
@@ -622,6 +622,7 @@ EOF;
                 update_option("mwp_worker_configuration", $jsonConfiguration);
             }
         }
+        update_option('mmb_worker_activation_time', time());
     }
     /**
      * Saves the (modified) options into the database
@@ -689,6 +690,7 @@ EOF;
         wp_clear_scheduled_hook('mwp_notifications');
         wp_clear_scheduled_hook('mwp_datasend');
         delete_option('mwp_worker_configuration');
+        delete_option('mmb_worker_activation_time');
     }
 
 
@@ -789,6 +791,8 @@ EOF;
                 $siteurl = function_exists('get_site_option') ? get_site_option('siteurl') : get_option('siteurl');
                 $user    = $this->mmb_get_user_info($username);
                 wp_set_current_user($user->ID);
+                // Compatibility with All In One Security
+                update_user_meta($user->ID, 'last_login_time', current_time('mysql'));
 
                 if (!defined('COOKIEHASH') || (isset($this->mmb_multisite) && $this->mmb_multisite)) {
                     wp_cookie_constants();
@@ -877,5 +881,20 @@ EOF;
         }
 
         return $all_plugins;
+    }
+
+    function deactivateWorkerIfNotAddedAfterTenMinutes()
+    {
+        $workerActivationTime = get_option("mmb_worker_activation_time");
+        if((int)$workerActivationTime + 600 > time()){
+            return;
+        }
+        $activated_plugins = get_option('active_plugins');
+        $keyWorker = array_search("worker/init.php", $activated_plugins, true);
+        if($keyWorker === false){
+            return;
+        }
+        unset($activated_plugins[$keyWorker]);
+        update_option('active_plugins',$activated_plugins);
     }
 }

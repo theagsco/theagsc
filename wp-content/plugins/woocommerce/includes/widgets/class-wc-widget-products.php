@@ -9,7 +9,9 @@
  * @extends 	WC_Widget
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 class WC_Widget_Products extends WC_Widget {
 
@@ -190,5 +192,3 @@ class WC_Widget_Products extends WC_Widget {
 		$this->cache_widget( $args, $content );
 	}
 }
-
-register_widget( 'WC_Widget_Products' );

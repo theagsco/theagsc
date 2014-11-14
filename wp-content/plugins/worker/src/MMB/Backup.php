@@ -83,6 +83,7 @@ class MMB_Backup extends MMB_Core
             'ftp'          => 6,
             'email'        => 7,
             'google_drive' => 8,
+            'sftp'         => 9,
             'finished'     => 100
         );
 
@@ -190,7 +191,7 @@ class MMB_Backup extends MMB_Core
                 if (is_array($error)) {
                     $before[$task_name]['task_results'][count($before[$task_name]['task_results']) - 1]['error'] = $error['error'];
                 } else {
-                    $before[$task_name]['task_results'][count($before[$task_name]['task_results'])]['error'] = $error;
+                    $before[$task_name]['task_results'][count($before[$task_name]['task_results']) - 1]['error'] = $error;
                 }
             }
 
@@ -224,7 +225,7 @@ class MMB_Backup extends MMB_Core
     /**
      * Checks if scheduled task is ready for execution,
      * if it is ready master sends google_drive_token, failed_emails, success_emails if are needed.
-     *
+     * @deprecated deprecated since version 3.9.29
      * @return void
      */
     function check_backup_tasks()
@@ -422,7 +423,7 @@ class MMB_Backup extends MMB_Core
 
         @file_put_contents($new_file_path.'/index.php', ''); //safe
 
-        //Prepare .zip file name  
+        //Prepare .zip file name
         $hash        = md5(time());
         $label       = !empty($type) ? $type : 'manual';
         $backup_file = $new_file_path.'/'.$this->site_name.'_'.$label.'_'.$what.'_'.date('Y-m-d').'_'.$hash.'.zip';
@@ -586,6 +587,7 @@ class MMB_Backup extends MMB_Core
                 $pclzip_db_result = $this->pclzip_backup_db($task_name, $backup_file);
                 if (!$pclzip_db_result) {
                     @unlink(MWP_BACKUP_DIR.'/mwp_db/index.php');
+                    @unlink(MWP_BACKUP_DIR.'/mwp_db/info.json');
                     @unlink($db_result);
                     @rmdir(MWP_DB_DIR);
 
@@ -601,14 +603,24 @@ class MMB_Backup extends MMB_Core
         }
 
         @unlink(MWP_BACKUP_DIR.'/mwp_db/index.php');
+        @unlink(MWP_BACKUP_DIR.'/mwp_db/info.json');
         @unlink($db_result);
         @rmdir(MWP_DB_DIR);
 
         $remove  = array(
             trim(basename(WP_CONTENT_DIR))."/managewp/backups",
+            trim(basename(WP_CONTENT_DIR))."/infinitewp/backups",
             trim(basename(WP_CONTENT_DIR))."/".md5('mmb-worker')."/mwp_backups",
+            trim(basename(WP_CONTENT_DIR))."/backupwordpress",
+            trim(basename(WP_CONTENT_DIR))."/contents/cache",
+            trim(basename(WP_CONTENT_DIR))."/content/cache",
             trim(basename(WP_CONTENT_DIR))."/cache",
+            trim(basename(WP_CONTENT_DIR))."/old-cache",
+            trim(basename(WP_CONTENT_DIR))."/uploads/backupbuddy_backups",
             trim(basename(WP_CONTENT_DIR))."/w3tc",
+            "dbcache",
+            "pgcache",
+            "objectcache",
         );
         $exclude = array_merge($exclude, $remove);
 
@@ -1115,6 +1127,9 @@ class MMB_Backup extends MMB_Core
         );
 
         $include = array_merge($add, $include);
+        foreach ($include as &$value) {
+            $value = rtrim($value, '/');
+        }
 
         $filelist = array();
         if ($handle = opendir(ABSPATH)) {
@@ -1315,7 +1330,10 @@ class MMB_Backup extends MMB_Core
         if ($socket) {
             $processBuilder->add('--socket='.$host);
         } else {
-            $processBuilder->add('--host='.$host)->add('--port='.$port);
+            $processBuilder->add('--host='.$host);
+            if(!empty($port)){
+                $processBuilder->add('--port='.$port);
+            }
         }
 
         try {
@@ -1343,7 +1361,7 @@ class MMB_Backup extends MMB_Core
                 ));
             }
 
-            if (class_exists('PDO')) {
+            if (class_exists('PDO') && extension_loaded('pdo_mysql')) {
                 mwp_logger()->info('Using PHP dumper v2');
                 try {
                     $config = array(
@@ -1474,9 +1492,11 @@ class MMB_Backup extends MMB_Core
 
     function restore($params)
     {
+        global $wpdb;
         if (empty($params)) {
             return false;
         }
+
         if (isset($params['google_drive_token'])) {
             $this->tasks[$params['task_name']]['task_args']['account_info']['mwp_google_drive']['google_drive_token'] = $params['google_drive_token'];
         }
@@ -1511,6 +1531,15 @@ class MMB_Backup extends MMB_Core
             $this->unzipBackup($backupFile);
         } catch (Exception $e) {
             $unzipFailed = true;
+        }
+
+        if($unzipFailed &&  class_exists("ZipArchive")){
+            $unzipFailed = false;
+            try {
+                $this->unzipWithZipArchive($backupFile);
+            } catch (Exception $e) {
+                $unzipFailed = true;
+            }
         }
 
         if ($unzipFailed) {
@@ -1562,10 +1591,49 @@ class MMB_Backup extends MMB_Core
         @unlink($filePath.'/index.php');
         @rmdir($filePath);
         mwp_logger()->info('Restore successfully completed');
+
+        // Try to fetch old home and site url, as well as new ones for usage later in database updates
+        // Take fresh options
+        $homeOpt = $wpdb->get_row($wpdb->prepare("SELECT option_value FROM $wpdb->options WHERE option_name = %s LIMIT 1", 'home'));
+        $siteUrlOpt = $wpdb->get_row($wpdb->prepare("SELECT option_value FROM $wpdb->options WHERE option_name = %s LIMIT 1", 'siteurl'));
+        global $restoreParams;
+        $restoreParams = array (
+            'oldUrl'     => is_object($homeOpt) ? $homeOpt->option_value : null,
+            'oldSiteUrl'  => is_object($siteUrlOpt) ? $siteUrlOpt->option_value : null,
+            'tablePrefix' => $this->get_table_prefix(),
+            'newUrl'      => ''
+        );
+
         /* Replace options and content urls */
         $this->replaceOptionsAndUrls($params['overwrite'], $params['new_user'], $params['new_password'], $params['old_user'], $params['clone_from_url'], $params['admin_email'], $params['mwp_clone'], $oldCredentialsAndOptions, $home, $params['current_tasks_tmp']);
 
-        return true;
+        $newUrl = $wpdb->get_row($wpdb->prepare("SELECT option_value FROM $wpdb->options WHERE option_name = %s LIMIT 1", 'home'));
+        $restoreParams['newUrl'] = is_object($newUrl) ? $newUrl->option_value : null;
+        restore_migrate_urls();
+        restore_htaccess();
+        $this->w3tc_flush(true);
+        global $configDiff;
+        $result = array(
+            'status' => true,
+            'admins' => $this->getAdminUsers()
+        );
+        if (isset($configDiff)
+            && is_array($configDiff)
+        ) {
+            $result['configDiff'] = $configDiff;
+        }
+
+        return $result;
+    }
+
+    private function getAdminUsers(){
+        global $wpdb;
+        $users = get_users(array(
+                'role' => array('administrator'),
+                'fields' => array('user_login')
+            ));
+        return $users;
+
     }
 
     private function getBackup($taskName, $resultId, $backupUrl = null)
@@ -1718,6 +1786,21 @@ class MMB_Backup extends MMB_Core
         }
     }
 
+    private function unzipWithZipArchive($backupFile)
+    {
+        mwp_logger()->info('Falling back to ZipArchive Module');
+        $result = false;
+        $zipArchive = new ZipArchive();
+        $zipOpened = $zipArchive->open($backupFile);
+        if($zipOpened === true){
+            $result = $zipArchive->extractTo(ABSPATH);
+            $zipArchive->close();
+        }
+        if($result === false){
+            throw new Exception('Failed to unzip files with ZipArchive. Message: '. $zipArchive->getStatusString());
+        }
+    }
+
     private function pclUnzipIt($backupFile)
     {
         mwp_logger()->info('Falling back to PclZip Module');
@@ -1746,19 +1829,45 @@ class MMB_Backup extends MMB_Core
         if ($overwrite) {
             /* Get New Table prefix */
             $new_table_prefix = trim($this->get_table_prefix());
-            /* Retrieve old wp_config */
-            @unlink(ABSPATH.'wp-config.php');
-            /* Replace table prefix */
-            $lines = file(ABSPATH.'mwp-temp-wp-config.php');
 
+            $configPath            = ABSPATH . 'wp-config.php';
+            $sourceConfigCopyPath  = ABSPATH . 'wp-config.source.php';
+            $destinationConfigPath = ABSPATH . 'mwp-temp-wp-config.php';
+
+            @rename($configPath, $sourceConfigCopyPath);
+
+            /* Config keys diff */
+            $tokenizer                = new MWP_Parser_DefinitionTokenizer();
+            $destinationConfigContent = @file_get_contents($destinationConfigPath);
+            $sourceConfigContent      = @file_get_contents($sourceConfigCopyPath);
+
+            if (is_string($destinationConfigContent) && is_string($sourceConfigContent)) {
+                $sourceTokens      = $tokenizer->getDefinitions($sourceConfigContent);
+                $destinationTokens = $tokenizer->getDefinitions($destinationConfigContent);
+
+                if (is_array($sourceTokens) && is_array($destinationTokens)) {
+                    // First declaration of $configDiff
+                    global $configDiff;
+                    $configDiff = array(
+                        'additions'    => array_values(array_diff($sourceTokens, $destinationTokens)),
+                        'subtractions' => array_values(array_diff($destinationTokens, $sourceTokens))
+                    );
+                }
+            }
+            @unlink($sourceConfigCopyPath);
+
+            /* Retrieve old wp_config */
+            $lines = file($destinationConfigPath);
+
+            /* Replace table prefix */
             foreach ($lines as $line) {
                 if (strstr($line, '$table_prefix')) {
                     $line = '$table_prefix = "'.$new_table_prefix.'";'.PHP_EOL;
                 }
-                file_put_contents(ABSPATH.'wp-config.php', $line, FILE_APPEND);
+                file_put_contents($configPath, $line, FILE_APPEND);
             }
 
-            @unlink(ABSPATH.'mwp-temp-wp-config.php');
+            @unlink($destinationConfigPath);
 
             /* Replace options */
             $query = "SELECT option_value FROM ".$new_table_prefix."options WHERE option_name = 'home'";
@@ -1768,6 +1877,7 @@ class MMB_Backup extends MMB_Core
             $wpdb->query($wpdb->prepare($query, $home));
             $query = "UPDATE ".$new_table_prefix."options  SET option_value = %s WHERE option_name = 'siteurl'";
             $wpdb->query($wpdb->prepare($query, $home));
+
             /* Replace content urls */
             $regexp1 = 'src="(.*)$old(.*)"';
             $regexp2 = 'href="(.*)$old(.*)"';
@@ -1811,7 +1921,7 @@ class MMB_Backup extends MMB_Core
                     if (!empty($key)) {
                         $query = "SELECT option_value FROM ".$new_table_prefix."options WHERE option_name = %s";
                         $res   = $wpdb->get_var($wpdb->prepare($query, $key));
-                        if ($res == false) {
+                        if ($res === false) {
                             $query = "INSERT INTO ".$new_table_prefix."options  (option_value,option_name) VALUES(%s,%s)";
                             $wpdb->query($wpdb->prepare($query, $option, $key));
                         } else {
@@ -1827,7 +1937,7 @@ class MMB_Backup extends MMB_Core
             $wpdb->query($query);
 
             /* Restore previous backups */
-            $wpdb->query("UPDATE ".$new_table_prefix."options SET option_value = ".serialize($currentTasksTmp)." WHERE option_name = 'mwp_backup_tasks'");
+            $wpdb->query("UPDATE ".$new_table_prefix."options SET option_value = '".serialize($currentTasksTmp)."' WHERE option_name = 'mwp_backup_tasks'");
 
             /* Check for .htaccess permalinks update */
             $this->replace_htaccess($home);
@@ -1863,7 +1973,10 @@ class MMB_Backup extends MMB_Core
         if ($socket) {
             $connection = array('--socket='.$host);
         } else {
-            $connection = array('--host='.$host, '--port='.$port);
+            $connection = array('--host='.$host);
+            if (!empty($port)) {
+                $connection[] = '--port='.$port;
+            }
         }
 
         $mysql     = mwp_container()->getExecutableFinder()->find('mysql', 'mysql');
@@ -1995,12 +2108,30 @@ class MMB_Backup extends MMB_Core
 
     }
 
+    public function getServerInformationForStats()
+    {
+        $serverInfo              = array();
+        $serverInfo['zip']       = $this->zipExists();
+        $serverInfo['unzip']     = $this->unzipExists();
+        $serverInfo['proc']      = $this->procOpenExists();
+        $serverInfo['mysql']     = $this->mySqlExists();
+        $serverInfo['mysqldump'] = $this->mySqlDumpExists();
+        $serverInfo['curl']      = false;
+        $serverInfo['shell']     = mwp_is_shell_available();
+
+        if (function_exists('curl_init') && function_exists('curl_exec')) {
+            $serverInfo['curl'] = true;
+        }
+
+        return $serverInfo;
+    }
+
     /**
      * Check if proc_open exists
      *
      * @return    string|bool    exec if exists, then system, then passthru, then false if no one exist
      */
-    function procOpenExists()
+    private function procOpenExists()
     {
         if ($this->mmb_function_exists('proc_open') && $this->mmb_function_exists('escapeshellarg')) {
             return true;
@@ -2153,24 +2284,24 @@ class MMB_Backup extends MMB_Core
         $file_path = MWP_BACKUP_DIR;
         $reqs['Backup Folder']['status'] .= ' ('.$file_path.')';
 
-        $reqs['Execute Function']['status'] = 'exists';
-        $reqs['Execute Function']['pass']   = true;
+        $reqs['Function `proc_open`']['status'] = 'exists';
+        $reqs['Function `proc_open`']['pass']   = true;
         if (!$this->procOpenExists()) {
-            $reqs['Execute Function']['status'] = "not found";
-            $reqs['Execute Function']['pass']   = false;
+            $reqs['Function `proc_open`']['status'] = "not found";
+            $reqs['Function `proc_open`']['pass']   = false;
         }
 
         $reqs['Zip']['status'] = 'exists';
         $reqs['Zip']['pass']   = true;
         if (!$this->zipExists()) {
-            $reqs['Zip']['status'] = 'not found.';
+            $reqs['Zip']['status'] = 'not found';
             //$reqs['Zip']['info']   = 'We\'ll use ZipArchive replacement';
             $reqs['Zip']['pass'] = false;
 
             $reqs['ZipArchive']['status'] = 'exists';
             $reqs['ZipArchive']['pass']   = true;
             if (!class_exists('ZipArchive')) {
-                $reqs['ZipArchive']['status'] = 'not found.';
+                $reqs['ZipArchive']['status'] = 'not found';
                 $reqs['ZipArchive']['info']   = 'We\'ll use PclZip replacement (PclZip takes up the memory that is equal to size of your site)';
                 $reqs['ZipArchive']['pass']   = false;
             }
@@ -2179,7 +2310,7 @@ class MMB_Backup extends MMB_Core
         $reqs['Unzip']['status'] = 'exists';
         $reqs['Unzip']['pass']   = true;
         if (!$this->unzipExists()) {
-            $reqs['Unzip']['status'] = 'not found.';
+            $reqs['Unzip']['status'] = 'not found';
             $reqs['Unzip']['info']   = 'We\'ll use PclZip replacement (PclZip takes up the memory that is equal to size of your site)';
             $reqs['Unzip']['pass']   = false;
         }
@@ -2378,7 +2509,7 @@ class MMB_Backup extends MMB_Core
     private function ftpErrorMessage($message, $additionalMessage = null)
     {
         if ($additionalMessage) {
-            $message .= ' The server returned an error: '.$additionalMessage.'.';
+            $message .= ' Message: '.$additionalMessage.'.';
         }
 
         return $message;
@@ -2404,7 +2535,7 @@ class MMB_Backup extends MMB_Core
         }
 
         if ($ftp === false) {
-            throw new Exception($this->ftpErrorMessage('Failed connecting to the FTP server.', $errorCatcher->yieldErrorMessage()));
+            throw new Exception($this->ftpErrorMessage('Failed connecting to the FTP server, please check FTP host and port.', $errorCatcher->yieldErrorMessage()));
         }
 
         $errorCatcher->register('ftp_login');
@@ -2412,7 +2543,7 @@ class MMB_Backup extends MMB_Core
         $errorCatcher->unRegister();
 
         if ($login === false) {
-            throw new Exception($this->ftpErrorMessage('FTP login failed.', $errorCatcher->yieldErrorMessage()));
+            throw new Exception($this->ftpErrorMessage('FTP login failed, please check your FTP login details.', $errorCatcher->yieldErrorMessage()));
         }
 
         if ($passive) {
@@ -2829,7 +2960,7 @@ class MMB_Backup extends MMB_Core
     {
         mwp_logger()->info('Acquiring Dropbox token to start uploading the backup file');
         try {
-            $dropbox = mwp_dropbox_oauth1_factory($args['consumer_key'], $args['consumer_secret'], $args['oauth_token'], $args['oauth_token_secret']);
+            $dropbox = mwp_dropbox_oauth_factory($args['consumer_key'], $args['consumer_secret'], $args['oauth_token'], $args['oauth_token_secret']);
         } catch (Exception $e) {
             mwp_logger()->error('Error while acquiring Dropbox token', array(
                 'exception' => $e,
@@ -2902,7 +3033,7 @@ class MMB_Backup extends MMB_Core
     {
         mwp_logger()->info('Acquiring Dropbox token to remove a backup file');
         try {
-            $dropbox = mwp_dropbox_oauth1_factory($args['consumer_key'], $args['consumer_secret'], $args['oauth_token'], $args['oauth_token_secret']);
+            $dropbox = mwp_dropbox_oauth_factory($args['consumer_key'], $args['consumer_secret'], $args['oauth_token'], $args['oauth_token_secret']);
         } catch (Exception $e) {
             mwp_logger()->error('Error while acquiring Dropbox token', array(
                 'exception' => $e,
@@ -2947,7 +3078,7 @@ class MMB_Backup extends MMB_Core
     {
         mwp_logger()->info('Acquiring Dropbox token to download the backup file');
         try {
-            $dropbox = mwp_dropbox_oauth1_factory($args['consumer_key'], $args['consumer_secret'], $args['oauth_token'], $args['oauth_token_secret']);
+            $dropbox = mwp_dropbox_oauth_factory($args['consumer_key'], $args['consumer_secret'], $args['oauth_token'], $args['oauth_token_secret']);
         } catch (Exception $e) {
             mwp_logger()->error('Error while acquiring Dropbox token', array(
                 'exception' => $e,
@@ -3714,7 +3845,7 @@ class MMB_Backup extends MMB_Core
         $tasks = $this->tasks;
         if (is_array($tasks) && !empty($tasks)) {
             foreach ($tasks as $task_name => $info) {
-                if (is_array($info['task_results']) && !empty($info['task_results'])) {
+                if (!empty($info['task_results']) && is_array($info['task_results'])) {
                     foreach ($info['task_results'] as $key => $result) {
                         if (isset($result['server']) && !isset($result['error'])) {
                             if (isset($result['server']['file_path']) && !$info['task_args']['del_host_file']) {
@@ -3724,8 +3855,6 @@ class MMB_Backup extends MMB_Core
                             }
                         }
                     }
-                }
-                if (is_array($info['task_results'])) {
                     $stats[$task_name] = $info['task_results'];
                 }
             }
@@ -3790,7 +3919,7 @@ class MMB_Backup extends MMB_Core
                     $this->remove_ftp_backup($args);
                 }
                 if (isset($backups[$task_name]['task_results'][$i]['sftp']) && isset($backups[$task_name]['task_args']['account_info']['mwp_sftp'])) {
-                    $ftp_file            = $backups[$task_name]['task_results'][$i]['fstp'];
+                    $sftp_file           = $backups[$task_name]['task_results'][$i]['sftp'];
                     $args                = $backups[$task_name]['task_args']['account_info']['mwp_sftp'];
                     $args['backup_file'] = $sftp_file;
                     $this->remove_sftp_backup($args);
@@ -3873,9 +4002,9 @@ class MMB_Backup extends MMB_Core
             $this->remove_ftp_backup($args);
         }
         if (isset($backup['sftp'])) {
-            $ftp_file            = $backup['ftp'];
+            $sftp_file           = $backup['sftp'];
             $args                = $tasks[$task_name]['task_args']['account_info']['mwp_sftp'];
-            $args['backup_file'] = $ftp_file;
+            $args['backup_file'] = $sftp_file;
             $this->remove_sftp_backup($args);
         }
 
@@ -3994,6 +4123,12 @@ class MMB_Backup extends MMB_Core
      */
     function remote_backup_now($args)
     {
+        /**
+         * Remember if this is called as a forked http request, or a connection to the dasboard is persistent
+         */
+        global $forkedRequest;
+        $forkedRequest = isset($args['forked']) ? $args['forked'] : false;
+
         $this->set_memory();
         if (!empty($args)) {
             extract($args);
@@ -4101,6 +4236,7 @@ class MMB_Backup extends MMB_Core
                 'error' => 'Backup file not found on your server. Please try again.'
             );
         }
+        $this->sendDataToMaster();
 
         return $return;
     }
@@ -4361,9 +4497,10 @@ class MMB_Backup extends MMB_Core
         // Belows code follows logic from check_backup
         $return    = "PONG";
         $task_name = $args['task_name'];
-
+        $sendDataToMaster = false;
         if (is_array($this->tasks) && !empty($this->tasks) && !empty($this->tasks[$task_name])) {
             $task = $this->tasks[$task_name];
+            $sendDataToMaster = isset($task['task_args']['account_info']) ? false : true;
             if ($task['task_args']['task_id'] && $task['task_args']['site_key']) {
                 $potential_token = !empty($args['google_drive_token']) ? $args['google_drive_token'] : false;
                 if ($potential_token) {
@@ -4406,30 +4543,24 @@ class MMB_Backup extends MMB_Core
         } else {
             $return = array("error" => "Unknown task name");
         }
-
+        if ($sendDataToMaster) {
+            $this->sendDataToMaster();
+        }
         return $return;
+    }
+
+    public function sendDataToMaster()
+    {
+        $this->notifyMyself('mwp_datasend');
     }
 
     public function mwp_remote_upload($task_name)
     {
-
-        $nonce         = substr(wp_hash(wp_nonce_tick().'mmb-backup-nonce'. 0, 'nonce'), -12, 10);
-        $cron_url      = site_url('index.php');
         $backup_file   = $this->tasks[$task_name]['task_results'][count($this->tasks[$task_name]['task_results']) - 1]['server']['file_url'];
         $del_host_file = $this->tasks[$task_name]['task_args']['del_host_file'];
-        $public_key    = get_option('_worker_public_key');
-        $args          = array(
-            'body'      => array(
-                'backup_cron_action' => 'mmb_remote_upload',
-                'args'               => json_encode(array('task_name' => $task_name, 'backup_file' => $backup_file, 'del_host_file' => $del_host_file)),
-                'mmb_backup_nonce'   => $nonce,
-                'public_key'         => $public_key,
-            ),
-            'timeout'   => 0.01,
-            'blocking'  => false,
-            'sslverify' => apply_filters('https_local_ssl_verify', true)
-        );
-        wp_remote_post($cron_url, $args);
+        $args = array('task_name' => $task_name, 'backup_file' => $backup_file, 'del_host_file' => $del_host_file);
+
+        $this->notifyMyself('mmb_remote_upload', $args);
     }
 
 }
@@ -4500,4 +4631,182 @@ if (!function_exists('get_all_files_from_dir_recursive')) {
         }
         @closedir($dh);
     }
+}
+
+/**
+ * Retrieves a value from an array by key, or a specified default if given key doesn't exist
+ *
+ * @param array $array
+ * @param       $key
+ * @param null  $default
+ *
+ * @return mixed
+ */
+function getKey($key, array $array, $default = null)
+{
+    return array_key_exists($key, $array) ? $array[$key] : $default;
+}
+
+function recursiveUrlReplacement(&$value, $index, $data)
+{
+    if (is_string($value)) {
+        if (is_string($data['regex'])) {
+            $expressions = array($data['regex']);
+        } else if (is_array($data['regex'])) {
+            $expressions = $data['regex'];
+        } else {
+            return;
+        }
+
+        foreach ($expressions as $exp) {
+            $value = preg_replace($exp, $data['newUrl'], $value);
+        }
+    }
+}
+
+/**
+ * This should mirror database replacements in cloner.php
+ */
+function restore_migrate_urls()
+{
+    // ----- DATABASE REPLACEMENTS
+
+    /**
+     * Finds all urls that begin with $oldSiteUrl AND
+     * end either with OPTIONAL slash OR with MANDATORY slash following any number of any characters
+     */
+
+    //     Get all options that contain old urls, then check if we can replace them safely
+    // Now check for old urls without WWW
+    global $restoreParams, $wpdb;
+    $oldSiteUrl  = $restoreParams['oldSiteUrl'];
+    $oldUrl      = $restoreParams['oldUrl'];
+    $tablePrefix = $restoreParams['tablePrefix'];
+    $newUrl      = $restoreParams['newUrl'];
+
+    if(!isset($oldSiteUrl) || !isset($oldUrl)){
+        return false;
+    }
+
+    $parsedOldSiteUrl      = parse_url(strpos($oldSiteUrl, '://') === false ? "http://$oldSiteUrl" : $oldSiteUrl);
+    $parsedOldUrl          = parse_url(strpos($oldUrl, '://') === false ? "http://$oldUrl" : $oldUrl);
+    $host                  = getKey('host', $parsedOldSiteUrl, '');
+    $path                  = getKey('path', $parsedOldSiteUrl, '');
+    $oldSiteUrlNoWww       = preg_replace('#^www\.(.+\.)#i', '$1', $host) . $path;
+    $parsedOldSiteUrlNoWww = parse_url(strpos($oldSiteUrlNoWww, '://') === false
+            ? "http://$oldSiteUrlNoWww"
+            : $oldSiteUrlNoWww
+    );
+    if (isset($parse['scheme'])) {
+        $oldSiteUrlNoWww = "{$parse['scheme']}://$oldSiteUrlNoWww";
+    }
+
+    // Modify the database for two variants of url, one with and one without WWW
+    $oldUrls = array('oldSiteUrl' => $oldSiteUrl);
+    $tmp1 = @"{$parsedOldUrl['host']}/{$parsedOldUrl['path']}";
+    $tmp2 = @"{$parsedOldSiteUrlNoWww['host']}/{$parsedOldSiteUrlNoWww['path']}";
+    if ($oldSiteUrlNoWww != $oldSiteUrl && $tmp1 != $tmp2) {
+        $oldUrls['oldSiteUrlNoWww'] = $oldSiteUrlNoWww;
+    }
+    if (strpos($oldSiteUrl, $oldUrl
+        ) !== false && $oldSiteUrl != $oldUrl && $parsedOldUrl['host'] != $parsedOldSiteUrl['host']
+    ) {
+        $oldUrls['oldUrl'] = $oldUrl;
+    }
+    foreach ($oldUrls as $key => $url) {
+        if (empty($url) || strlen($url) <= 1) {
+            continue;
+        }
+
+        if ($key == 'oldSiteUrlNoWww') {
+            $amazingRegex = "~http://{$url}(?=(((/.*)+)|(/?$)))~";
+        } else {
+            $amazingRegex = "~{$url}(?=(((/.*)+)|(/?$)))~";
+        }
+        // Check options
+        $query     = "SELECT option_id, option_value FROM {$tablePrefix}options WHERE option_value LIKE '%{$url}%';";
+        $selection = $wpdb->get_results($query, ARRAY_A);
+        foreach ($selection as $row) {
+            // Set a default value untouched
+            $replaced = $row['option_value'];
+
+            if (is_serialized($row['option_value'])) {
+                $unserialized = unserialize($row['option_value']);
+                if (is_array($unserialized)) {
+                    array_walk_recursive($unserialized, 'recursiveUrlReplacement', array(
+                            'newUrl' => $newUrl,
+                            'regex'  => $amazingRegex
+                        )
+                    );
+                    $replaced = serialize($unserialized);
+                }
+            } else {
+                $replaced = preg_replace($amazingRegex, $newUrl, $replaced);
+            }
+
+            $escapedReplacement = $wpdb->_escape($replaced);
+
+            $optId = $row['option_id'];
+            if ($row['option_value'] != $replaced) {
+                $query = "UPDATE {$tablePrefix}options SET option_value = '{$escapedReplacement}' WHERE option_id = {$optId}";
+                $wpdb->query($query);
+            }
+        }
+
+        // Check post meta
+        $query     = "SELECT meta_id, meta_value FROM {$tablePrefix}postmeta WHERE meta_value LIKE '%{$url}%'";
+        $selection = $wpdb->get_results($query, ARRAY_A);
+        foreach ($selection as $row) {
+            $replacement = $row['meta_value'];
+            if (is_serialized($replacement)) {
+                $unserialized = unserialize($replacement);
+                if (is_array($unserialized)) {
+                    array_walk_recursive($unserialized, 'recursiveUrlReplacement', array(
+                            'newUrl' => $newUrl,
+                            'regex'  => $amazingRegex
+                        )
+                    );
+                }
+                $replacement = serialize($unserialized);
+            } else {
+                $replacement = preg_replace($amazingRegex, $newUrl, $replacement);
+            }
+
+            if ($replacement != $row['meta_value']) {
+                $escapedReplacement = $wpdb->_escape($replacement);
+                $id                 = $row['meta_id'];
+                $query              = "UPDATE {$tablePrefix}postmeta SET meta_value = '{$escapedReplacement}' WHERE meta_id = '$id'";
+                $wpdb->query($query);
+            }
+
+        }
+
+        // Do the same with posts
+        $query     = "SELECT ID, post_content, guid FROM {$tablePrefix}posts WHERE post_content LIKE '%{$url}%' OR guid LIKE '%{$url}%'";
+        $selection = $wpdb->get_results($query, ARRAY_A);
+        foreach ($selection as &$row) {
+            $postContent = preg_replace($amazingRegex, $newUrl, $row['post_content']);
+            $guid        = preg_replace($amazingRegex, $newUrl, $row['guid']);
+
+
+            if ($postContent != $row['post_content'] || $guid != $row['guid']) {
+                $postContent = $wpdb->_escape($postContent);
+                $guid        = $wpdb->_escape($guid);
+                $postId      = $row['ID'];
+                $q           = "UPDATE {$tablePrefix}posts SET post_content = '$postContent', guid = '$guid' WHERE ID = {$postId}";
+                $wpdb->query($q);
+            }
+        }
+    }
+}
+
+function restore_htaccess()
+{
+    $htaccessRealpath = realpath(ABSPATH . '.htaccess');
+
+    if ($htaccessRealpath) {
+        @rename($htaccessRealpath, "$htaccessRealpath.old");
+    }
+    @include(ABSPATH . 'wp-admin/includes/admin.php');
+    @flush_rewrite_rules(true);
 }

@@ -3,7 +3,7 @@ Contributors: Anas Mir
 Donate Link: http://sharp-coders.com
 Tags: next post link, previous post link, post navigation, wp post navigation, next and previous post
 Requires at least: 3.0
-Tested up to: 3.8
+Tested up to: 3.9.1
 Stable tag: trunk
 
 Show Next and Previous Post Links at Posts.
@@ -11,17 +11,13 @@ Show Next and Previous Post Links at Posts.
 == Description ==
 
 WP Post Navigation Plugin gives you facility to show Previous and Next Post Links at the Top or Bottom of a Post.
-You can set to navigate within category or date wise navigation.
-You've the option to set Post Navigation Bar at Bottom, Top or both Top & Bottom.
-You can apply CSS style to Previous and Next Post Links.
-You can set custom text instead of Next and Previous Post Titles.
+You can set to navigate within category or date wise navigation. You've the option to set Post Navigation Bar at Bottom, Top or both Top & Bottom.
+You can apply CSS style to Previous and Next Post Links. You can set custom text instead of Next and Previous Post Titles.
 You can set custom Image for Next and Previous Post Links.
-Manually Place Post Navigation in single.php, just
-Copy & paste following code anywhere in single.php page under get_header();
-	&lt;?php
-	echo isset($WPPostNavigation)?$WPPostNavigation->WP_Custom_Post_Navigation():'';
-	?&gt;
+Manually Place Post Navigation in single.php, just Copy & paste following code anywhere in single.php page under get_header(); 
+<?php echo isset($WPPostNavigation)?$WPPostNavigation->WP_Custom_Post_Navigation():''; ?>
 For Help visit: http://sharp-coders.com/plugins/wp-plugins/wp-post-navigation
+
 == Installation ==
 
 = Step 1 =
@@ -38,11 +34,7 @@ For Help visit: http://sharp-coders.com/plugins/wp-plugins/wp-post-navigation
 4. If you want to use Images for Previous and Next post links instead of text, you can enable Use Images Options and give complete url of the images.
 
 == Frequently Asked Questions ==
-= How can I show Post Navigation Manually in single.php page? =
-Copy & paste following code anywhere in single.php page under get_header();
-	&lt;?php
-	echo isset($WPPostNavigation)?$WPPostNavigation->WP_Custom_Post_Navigation():'';
-	?&gt;
+
 = Which is the good place to show Post Navigation? =
 
 In my opinion, at the Bottom of the Content. 
@@ -50,9 +42,14 @@ In my opinion, at the Bottom of the Content.
 == Screenshots ==
 1. Admin Panel Setting
 2. WP Post Navigation
-3. Custom Placement of Navigation
 
 == Changelog ==
+= 1.2.3
+* Post Next/Previous position Reseverse option added
+* Disable Auto place navigation option is added (You can disable auto and can place navigation manually)
+* On updation you'll not lose your previous settings
+* Bugs Fixed
+
 = 1.2.2 =
 * Bugs Fixed
 * Position option is removed, by default shows at the bottom

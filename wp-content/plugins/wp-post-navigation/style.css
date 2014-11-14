@@ -5,8 +5,7 @@
 }
 .wp-post-navigation div{
 	display: block;
-	width: auto;
-	max-width: 245px;
+	width: 245px;
 	position: relative;
 	font-size: 14px;
 	color: #999;
@@ -16,14 +15,12 @@
 	float: left;
 	line-height: 16px;
 	padding-left: 40px;
-	margin-right: 5px;
 }
 .wp-post-navigation-next{
 	float: right;
 	text-align: right;
 	line-height: 16px;
 	padding-right: 40px;
-	margin-left: 5px;
 }
 .wp-post-navigation > div > a > span{
 	font-size: 26px;

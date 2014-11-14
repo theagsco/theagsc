@@ -85,9 +85,10 @@ function wp_pagenavi( $args = array() ) {
 
 			// Previous
 			if ( $paged > 1 && !empty( $options['prev_text'] ) ) {
-				$out .= "<span class='keyboardleft'>". $instance->get_single( $paged - 1, $options['prev_text'], array(
+				$out .= $instance->get_single( $paged - 1, $options['prev_text'], array(
 					'class' => 'previouspostslink',
-				) ) . "</span>";
+					'rel'	=> 'prev'
+				) );
 			}
 
 			if ( $start_page >= 2 && $pages_to_show < $total_pages ) {
@@ -152,9 +153,10 @@ function wp_pagenavi( $args = array() ) {
 
 			// Next
 			if ( $paged < $total_pages && !empty( $options['next_text'] ) ) {
-				$out .= "<span class='keyboardright'>".$instance->get_single( $paged + 1, $options['next_text'], array(
+				$out .= $instance->get_single( $paged + 1, $options['next_text'], array(
 					'class' => 'nextpostslink',
-				) ) . "</span>";
+					'rel'	=> 'next'
+				) );
 			}
 
 			if ( $end_page < $total_pages ) {
@@ -288,7 +290,7 @@ class PageNavi_Core {
 	static function init( $options ) {
 		self::$options = $options;
 
-		add_action( 'wp_print_styles', array( __CLASS__, 'stylesheets' ) );
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'stylesheets' ) );
 	}
 
 	static function stylesheets() {

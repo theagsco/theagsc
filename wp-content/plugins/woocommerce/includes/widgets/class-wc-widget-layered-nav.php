@@ -9,7 +9,9 @@
  * @extends 	WC_Widget
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 class WC_Widget_Layered_Nav extends WC_Widget {
 
@@ -169,7 +171,7 @@ class WC_Widget_Layered_Nav extends WC_Widget {
 
 					$found = false;
 
-					echo '<select id="dropdown_layered_nav_' . $taxonomy_filter . '">';
+					echo '<select class="dropdown_layered_nav_' . $taxonomy_filter . '">';
 
 					echo '<option value="">' . sprintf( __( 'Any %s', 'woocommerce' ), wc_attribute_label( $taxonomy ) ) .'</option>';
 
@@ -180,7 +182,7 @@ class WC_Widget_Layered_Nav extends WC_Widget {
 							continue;
 
 						// Get count based on current view - uses transients
-						$transient_name = 'wc_ln_count_' . md5( sanitize_key( $taxonomy ) . sanitize_key( $term->term_id ) );
+						$transient_name = 'wc_ln_count_' . md5( sanitize_key( $taxonomy ) . sanitize_key( $term->term_taxonomy_id ) );
 
 						if ( false === ( $_products_in_term = get_transient( $transient_name ) ) ) {
 
@@ -219,9 +221,9 @@ class WC_Widget_Layered_Nav extends WC_Widget {
 
 					wc_enqueue_js("
 
-						jQuery('#dropdown_layered_nav_$taxonomy_filter').change(function(){
+						jQuery('.dropdown_layered_nav_$taxonomy_filter').change(function(){
 
-							location.href = '" . esc_url_raw( preg_replace( '%\/page/[0-9]+%', '', add_query_arg('filtering', '1', remove_query_arg( array( 'page', 'filter_' . $taxonomy_filter ) ) ) ) ) . "&filter_$taxonomy_filter=' + jQuery('#dropdown_layered_nav_$taxonomy_filter').val();
+							location.href = '" . esc_url_raw( preg_replace( '%\/page/[0-9]+%', '', add_query_arg('filtering', '1', remove_query_arg( array( 'page', 'filter_' . $taxonomy_filter ) ) ) ) ) . "&filter_$taxonomy_filter=' + jQuery(this).val();
 
 						});
 
@@ -237,7 +239,7 @@ class WC_Widget_Layered_Nav extends WC_Widget {
 				foreach ( $terms as $term ) {
 
 					// Get count based on current view - uses transients
-					$transient_name = 'wc_ln_count_' . md5( sanitize_key( $taxonomy ) . sanitize_key( $term->term_id ) );
+					$transient_name = 'wc_ln_count_' . md5( sanitize_key( $taxonomy ) . sanitize_key( $term->term_taxonomy_id ) );
 
 					if ( false === ( $_products_in_term = get_transient( $transient_name ) ) ) {
 
@@ -383,5 +385,3 @@ class WC_Widget_Layered_Nav extends WC_Widget {
 		}
 	}
 }
-
-register_widget( 'WC_Widget_Layered_Nav' );
