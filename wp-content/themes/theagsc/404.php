@@ -1,5 +1,13 @@
-<?php get_header(); ?>
+<?php get_template_part('templates/page', 'header'); ?>
 
-<h1 class="fourohfour">Oh dear, we don't seem to have that page.</h1>
+<div class="alert alert-warning">
+  <?php _e('Sorry, but the page you were trying to view does not exist.', 'roots'); ?>
+</div>
 
-<?php get_footer(); ?>
+<p><?php _e('It looks like this was the result of either:', 'roots'); ?></p>
+<ul>
+  <li><?php _e('a mistyped address', 'roots'); ?></li>
+  <li><?php _e('an out-of-date link', 'roots'); ?></li>
+</ul>
+
+<?php get_search_form(); ?>
