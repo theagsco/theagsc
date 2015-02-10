@@ -5,10 +5,10 @@ Tags: contact form,database,contact form database,save contact form,form databas
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 3.2.1
-Tested up to: 4.0
-Stable tag: 2.8.16
+Tested up to: 4.1
+Stable tag: 2.8.29
 
-Saves submitted form data to the database. Export the data to a file and or short codes to display it.
+Saves submitted form data to the database. Export the data to a file or use short codes to display it.
 
 == Description ==
 
@@ -21,6 +21,7 @@ By simply installing the plugin, it will automatically begin to capture submissi
 * Contact Form 7 (CF7) plugin
 * Fast Secure Contact Form (FSCF) plugin
 * Gravity Forms plugin
+* WR ContactForm plugin (BETA)
 
 Other form submissions can be saved with the addition of the <a href="http://cfdbplugin.com/?page_id=508">[cfdb-save-form-post]</a> short code on the target submission page.
 
@@ -80,6 +81,49 @@ You can always deactivate the plugin without loosing data.
 1. Admin Panel view of submitted form data
 
 == Changelog ==
+
+= 2.8.30 =
+* Minor fix to short code builder page
+
+= 2.8.29 =
+* Tweak to install procedure
+
+= 2.8.28 =
+* Security patch
+
+= 2.8.27 =
+* Minor tweak to allow edit mode in short code to be set via $_GET and $_POST
+
+= 2.8.26 =
+* Encoding fix on administration page
+
+= 2.8.25 =
+* Now captures data from WR ContactForm (BETA)
+* New option to allow only Administrators to see CFDB administration screens
+* New option to send CFDB errors to a file to email
+* Bug fix to avoid rare instances of duplicate submit_time
+
+= 2.8.24 =
+* Bug fix related to displaying form names in administration panel with certain characters
+
+= 2.8.23 =
+* Bug fix for Gravity Form integration. Sometimes field value was not captured where there are multiple fields of the same name but only one shown based on conditional field definition.
+
+= 2.8.22 =
+* Changed icon in admin panel
+* Dutch translation update
+
+= 2.8.21 =
+* Added icons to admin panel
+
+= 2.8.20 =
+* Additional XSS protection for admin panels
+
+= 2.8.19 =
+* Swedish translation update
+
+= 2.8.18 =
+* Better XSS protection for admin panels
 
 = 2.8.17 =
 * Bug fix in [cfdb-html] variable substitution when data for column is not present.

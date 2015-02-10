@@ -410,14 +410,18 @@ class WC_Admin_Post_Types {
 				else
 					echo '&ndash;';
 			break;
-			case "usage" :
-				$usage_count = absint( get_post_meta( $post->ID, 'usage_count', true ) );
-				$usage_limit = esc_html( get_post_meta($post->ID, 'usage_limit', true) );
+			case 'usage' :
+			$usage_count = absint( get_post_meta( $post->ID, 'usage_count', true ) );
+			if( $usage_count ) {
+				$usage_count = sprintf( '<a href="%s">%s</a>', admin_url( sprintf( 'edit.php?s=%s&post_status=all&post_type=shop_order', esc_html( $post->post_title ) ) ), $usage_count );
+			}
+			$usage_limit = esc_html( get_post_meta( $post->ID, 'usage_limit', true ) );
 
-				if ( $usage_limit )
-					printf( __( '%s / %s', 'woocommerce' ), $usage_count, $usage_limit );
-				else
-					printf( __( '%s / &infin;', 'woocommerce' ), $usage_count );
+			if ( $usage_limit ) {
+				printf( __( '%s / %s', 'woocommerce' ), $usage_count, $usage_limit );
+			} else {
+				printf( __( '%s / &infin;', 'woocommerce' ), $usage_count );
+			}
 			break;
 			case "expiry_date" :
 				$expiry_date = get_post_meta($post->ID, 'expiry_date', true);
@@ -711,8 +715,8 @@ class WC_Admin_Post_Types {
 		$class            = ( isset( $wp_query->query['orderby'] ) && $wp_query->query['orderby'] == 'menu_order title' ) ? 'current' : '';
 		$query_string     = remove_query_arg(array( 'orderby', 'order' ));
 		$query_string     = add_query_arg( 'orderby', urlencode('menu_order title'), $query_string );
-		$query_string     = add_query_arg( 'order', urlencode('ASC'), $query_string );
-		$views['byorder'] = '<a href="'. $query_string . '" class="' . esc_attr( $class ) . '">' . __( 'Sort Products', 'woocommerce' ) . '</a>';
+		$query_string     = add_query_arg( 'order', urlencode( 'ASC' ), $query_string );
+		$views['byorder'] = '<a href="' . esc_url( $query_string ) . '" class="' . esc_attr( $class ) . '">' . __( 'Sort Products', 'woocommerce' ) . '</a>';
 
 		return $views;
 	}
@@ -908,7 +912,19 @@ class WC_Admin_Post_Types {
 
 		// Handle stock status
 		if ( isset( $_REQUEST['_stock_status'] ) ) {
-			wc_update_product_stock_status( $post_id, wc_clean( $_REQUEST['_stock_status'] ) );
+			$stock_status = wc_clean( $_REQUEST['_stock_status'] );
+
+			if ( $product->is_type( 'variable' ) ) {
+				foreach ( $product->get_children() as $child_id ) {
+					if ( 'yes' !== get_post_meta( $child_id, '_manage_stock', true ) ) {
+						wc_update_product_stock_status( $child_id, $stock_status );
+					}
+				}
+
+				WC_Product_Variable::sync_stock_status( $post_id );
+			} else {
+				wc_update_product_stock_status( $post_id, $stock_status );
+			}
 		}
 
 		// Handle stock
@@ -968,7 +984,19 @@ class WC_Admin_Post_Types {
 		}
 
 		if ( ! empty( $_REQUEST['_stock_status'] ) ) {
-			wc_update_product_stock_status( $post_id, wc_clean( $_REQUEST['_stock_status'] ) );
+			$stock_status = wc_clean( $_REQUEST['_stock_status'] );
+
+			if ( $product->is_type( 'variable' ) ) {
+				foreach ( $product->get_children() as $child_id ) {
+					if ( 'yes' !== get_post_meta( $child_id, '_manage_stock', true ) ) {
+						wc_update_product_stock_status( $child_id, $stock_status );
+					}
+				}
+
+				WC_Product_Variable::sync_stock_status( $post_id );
+			} else {
+				wc_update_product_stock_status( $post_id, $stock_status );
+			}
 		}
 
 		if ( ! empty( $_REQUEST['_visibility'] ) ) {
@@ -1340,18 +1368,12 @@ class WC_Admin_Post_Types {
 	public function restrict_manage_posts() {
 		global $typenow, $wp_query;
 
-		switch ( $typenow ) {
-			case 'product' :
-				$this->product_filters();
-				break;
-			case 'shop_coupon' :
-				$this->shop_coupon_filters();
-				break;
-			case 'shop_order' :
-				$this->shop_order_filters();
-				break;
-			default :
-				break;
+		if ( in_array( $typenow, wc_get_order_types( 'order-meta-boxes' ) ) ) {
+			$this->shop_order_filters();
+		} elseif ( 'product' == $typenow ) {
+			$this->product_filters();
+		} elseif( 'shop_coupon' == $typenow ) {
+			$this->shop_coupon_filters();
 		}
 	}
 
@@ -1533,7 +1555,7 @@ class WC_Admin_Post_Types {
 				$vars['meta_value'] = wc_clean( $_GET['coupon_type'] );
 			}
 
-		} elseif ( 'shop_order' === $typenow ) {
+		} elseif ( in_array( $typenow, wc_get_order_types( 'order-meta-boxes' ) ) ) {
 
 			// Filter the orders by the posted customer.
 			if ( isset( $_GET['_customer_user'] ) && $_GET['_customer_user'] > 0 ) {
@@ -1774,7 +1796,7 @@ class WC_Admin_Post_Types {
 
 			$post_type = get_post_type( $id );
 
-			if ( 'shop_order' == $post_type ) {
+			if ( in_array( $post_type, wc_get_order_types( 'order-count' ) ) ) {
 
 				// Delete count - meta doesn't work on trashed posts
 				$user_id = get_post_meta( $id, '_customer_user', true );
@@ -1810,7 +1832,7 @@ class WC_Admin_Post_Types {
 
 			$post_type = get_post_type( $id );
 
-			if ( 'shop_order' == $post_type ) {
+			if ( in_array( $post_type, wc_get_order_types( 'order-count' ) ) ) {
 
 				// Delete count - meta doesn't work on trashed posts
 				$user_id = get_post_meta( $id, '_customer_user', true );
@@ -1841,7 +1863,7 @@ class WC_Admin_Post_Types {
 	public function delete_order_items( $postid ) {
 		global $wpdb;
 
-		if ( get_post_type( $postid ) == 'shop_order' ) {
+		if ( in_array( get_post_type( $postid ), wc_get_order_types() ) ) {
 			do_action( 'woocommerce_delete_order_items', $postid );
 
 			$wpdb->query( "
@@ -1930,7 +1952,7 @@ class WC_Admin_Post_Types {
 	function change_insert_into_post( $strings ) {
 		global $post_type;
 
-		if ( in_array( $post_type, array( 'product', 'shop_order', 'shop_coupon' ) ) ) {
+		if ( in_array( $post_type, array( 'product', 'shop_coupon' ) ) || in_array( $post_type, wc_get_order_types() ) ) {
 			$obj = get_post_type_object( $post_type );
 
 			$strings['insertIntoPost']     = sprintf( __( 'Insert into %s', 'woocommerce' ), $obj->labels->singular_name );
