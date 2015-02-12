@@ -148,7 +148,7 @@ function cptui_manage_taxonomies() {
 							 */
 							echo $ui->get_check_input( array(
 								'checkvalue'        => $post_type->name,
-								'checked'           => ( !empty( $current['object_type'] ) && is_array( $current['object_type'] ) && in_array( $post_type->name, $current['object_type'] ) ) ? 'true' : 'false',
+								'checked'           => ( !empty( $current['object_types'] ) && is_array( $current['object_types'] ) && in_array( $post_type->name, $current['object_types'] ) ) ? 'true' : 'false',
 								'name'              => $post_type->name,
 								'namearray'         => 'cpt_post_types',
 								'textvalue'         => $post_type->name,
@@ -600,7 +600,7 @@ function cptui_update_taxonomy( $data = array() ) {
 	 *
 	 * @param array $data Array of taxonomy data we are updating.
 	 */
-	do_action( 'cptui_before_delete_taxonomy', $data );
+	do_action( 'cptui_before_update_taxonomy', $data );
 
 	# They need to provide a name
 	if ( empty( $data['cpt_custom_tax']['name'] ) ) {
@@ -669,7 +669,7 @@ function cptui_update_taxonomy( $data = array() ) {
 		'labels'               => $data['cpt_tax_labels']
 	);
 
-	$taxonomies[ $data['cpt_custom_tax']['name'] ]['object_type'] = $data['cpt_post_types'];
+	$taxonomies[ $data['cpt_custom_tax']['name'] ]['object_types'] = $data['cpt_post_types'];
 
 	$success = update_option( 'cptui_taxonomies', $taxonomies );
 
@@ -680,7 +680,7 @@ function cptui_update_taxonomy( $data = array() ) {
 	 *
 	 * @param array $data Array of taxonomy data that was updated.
 	 */
-	do_action( 'cptui_after_delete_taxonomy', $data );
+	do_action( 'cptui_after_update_taxonomy', $data );
 
 	flush_rewrite_rules();
 

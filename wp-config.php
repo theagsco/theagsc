@@ -15,7 +15,7 @@
 
 // Define Environments - may be a string or array of options for an environment
 $environments = array(
-	'local'       => 'localhost',
+	'local'       => '192.168.1.10',
 	'development' => 'dev.',
 );
 
@@ -66,10 +66,8 @@ switch(ENVIRONMENT){
 		define('WP_DEBUG', false);
 		define('WP_ENV', 'development');
 
-/*
-		define('WP_SITEURL', 'http://localhost:8888/theagsc/');
-		define('WP_HOME', 'http://localhost:8888/theagsc/');
-*/
+		define('WP_SITEURL', 'http://192.168.1.10:8888/theagsc/');
+		define('WP_HOME', 'http://192.168.1.10:8888/theagsc/');
 		
 		define('WP_LOCAL_DEV', true );  // Used by disable plugin for local dev plugin in /mu-plugins
 

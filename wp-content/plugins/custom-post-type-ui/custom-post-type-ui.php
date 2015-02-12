@@ -4,7 +4,7 @@ Plugin Name: Custom Post Type UI
 Plugin URI: https://github.com/WebDevStudios/custom-post-type-ui/
 Description: Admin panel for creating custom post types and custom taxonomies in WordPress
 Author: WebDevStudios.com
-Version: 1.0.0
+Version: 1.0.2
 Author URI: http://webdevstudios.com/
 Text Domain: cpt-plugin
 License: GPLv2
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CPT_VERSION', '1.0.0' );
+define( 'CPT_VERSION', '1.0.2' );
 define( 'CPTUI_WP_VERSION', get_bloginfo( 'version' ) );
 
 /**
@@ -113,7 +113,7 @@ function cptui_register_single_post_type( $post_type = array() ) {
 	 * @param string $name      Post type name being registered.
 	 * @param array  $post_type All parameters for post type registration.
 	 */
-	$post_type['map_meta_cap'] = apply_filters( 'cptui_map_meta_cap', 'true', $post_type['name'], $post_type );
+	$post_type['map_meta_cap'] = apply_filters( 'cptui_map_meta_cap', true, $post_type['name'], $post_type );
 
 	/**
 	 * Filters custom supports parameters for 3rd party plugins.
@@ -158,9 +158,9 @@ function cptui_register_single_post_type( $post_type = array() ) {
 			$rewrite['slug'] = $post_type['rewrite_slug'];
 		}
 
-		$withfront = disp_boolean( $post_type['rewrite_withfront'] );
+		$withfront = ( !empty( $post_type['rewrite_withfront'] ) ) ? disp_boolean( $post_type['rewrite_withfront'] ) : '';
 		if ( !empty( $withfront ) ) {
-			$rewrite['with_front'] = $post_type['rewrite_withfront'];
+			$rewrite['with_front'] = get_disp_boolean( $post_type['rewrite_withfront'] );
 		}
 	}
 
@@ -170,6 +170,19 @@ function cptui_register_single_post_type( $post_type = array() ) {
 		$post_type['query_var'] = get_disp_boolean( $post_type['query_var'] );
 	}
 
+	$menu_position = '';
+	if ( !empty( $post_type['menu_position'] ) ) {
+		$menu_position = (int) $post_type['menu_position'];
+	}
+
+
+	if ( ! empty( $post_type['exclude_from_search'] ) ) {
+		$exclude_from_search = get_disp_boolean( $post_type['exclude_from_search'] );
+	} else {
+		$public = get_disp_boolean( $post_type['public'] );
+		$exclude_from_search = ( false === $public ) ? true : false;
+	}
+
 	$args = array(
 		'labels'              => $labels,
 		'description'         => $post_type['description'],
@@ -177,12 +190,12 @@ function cptui_register_single_post_type( $post_type = array() ) {
 		'show_ui'             => get_disp_boolean( $post_type['show_ui'] ),
 		'has_archive'         => get_disp_boolean( $post_type['has_archive'] ),
 		'show_in_menu'        => $show_in_menu,
-		'exclude_from_search' => get_disp_boolean( $post_type['exclude_from_search'] ),
+		'exclude_from_search' => $exclude_from_search,
 		'capability_type'     => $post_type['capability_type'],
 		'map_meta_cap'        => $post_type['map_meta_cap'],
 		'hierarchical'        => get_disp_boolean( $post_type['hierarchical'] ),
 		'rewrite'             => $rewrite,
-		'menu_position'       => $post_type['menu_position'],
+		'menu_position'       => $menu_position,
 		'menu_icon'           => $menu_icon,
 		'query_var'           => $post_type['query_var'],
 		'supports'            => $post_type['supports'],
@@ -238,8 +251,8 @@ function cptui_register_single_taxonomy( $taxonomy = array() ) {
 		}
 	}
 
-	$rewrite = get_disp_boolean( $taxonomy['rewrite' ] );
-	if ( false !== get_disp_boolean( $taxonomy['rewrite' ] ) ) {
+	$rewrite = get_disp_boolean( $taxonomy['rewrite'] );
+	if ( false !== get_disp_boolean( $taxonomy['rewrite'] ) ) {
 		$rewrite = array();
 		if ( !empty( $taxonomy['rewrite_slug'] ) ) {
 			$rewrite['slug'] = $taxonomy['rewrite_slug'];
@@ -259,7 +272,9 @@ function cptui_register_single_taxonomy( $taxonomy = array() ) {
 	if ( in_array( $taxonomy['query_var'], array( 'true', 'false', '0', '1' ) ) ) {
 		$taxonomy['query_var'] = get_disp_boolean( $taxonomy['query_var'] );
 	}
-	$query_var_slug = ( !empty( $taxonomy['query_var_slug'] ) ) ? $taxonomy['query_var_slug'] : '';
+	if ( true === $taxonomy['query_var'] && !empty( $taxonomy['query_var_slug'] ) ) {
+		$taxonomy['query_var'] = $taxonomy['query_var_slug'];
+	}
 
 	$args = array(
 		'labels'            => $labels,
@@ -267,12 +282,11 @@ function cptui_register_single_taxonomy( $taxonomy = array() ) {
 		'hierarchical'      => get_disp_boolean( $taxonomy['hierarchical'] ),
 		'show_ui'           => get_disp_boolean( $taxonomy['show_ui'] ),
 		'query_var'         => $taxonomy['query_var'],
-		'query_var_slug'    => $query_var_slug,
 		'rewrite'           => $rewrite,
-		'show_admin_column' => $taxonomy['show_admin_column']
+		'show_admin_column' => get_disp_boolean( $taxonomy['show_admin_column'] )
 	);
 
-	$object_type = ( !empty( $taxonomy['object_type'] ) ) ? $taxonomy['object_type'] : '';
+	$object_type = ( !empty( $taxonomy['object_types'] ) ) ? $taxonomy['object_types'] : '';
 
 	/**
 	 * Filters the arguments used for a taxonomy right before registering.
@@ -391,7 +405,7 @@ function cptui_footer( $original = '' ) {
 	}
 
 	return sprintf(
-		__( '%s version %s by %s - %s %s &middot; %s &middot; %s &middot; %s', 'cpt-plugin' ),
+		__( '%s version %s by %s - %s %s %s &middot; %s &middot; %s', 'cpt-plugin' ),
 		sprintf(
 			'<a target="_blank" href="http://wordpress.org/support/plugin/custom-post-type-ui">%s</a>',
 			__( 'Custom Post Type UI', 'cpt-plugin' )
@@ -558,7 +572,7 @@ function cptui_convert_settings() {
 		foreach( $taxonomies as $tax ) {
             $new_taxonomies[ $tax['name'] ]                 = $tax;    # Yep, still our friend.
             $new_taxonomies[ $tax['name'] ]['labels']       = $tax[0]; # Taxonomies are the only thing with
-            $new_taxonomies[ $tax['name'] ]['post_types']   = $tax[1]; # "tax" in the name that I like.
+            $new_taxonomies[ $tax['name'] ]['object_types'] = $tax[1]; # "tax" in the name that I like.
 			unset(
 				$new_taxonomies[ $tax['name'] ][0],
 				$new_taxonomies[ $tax['name'] ][1]

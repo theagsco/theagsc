@@ -1,17 +1,5 @@
 
 # BEGIN WordPress
-
-# WPhtc: Begin Custom htaccess
-php_value upload_max_filesize 20M
-php_value post_max_size 20M
-php_value max_execution_time 200
-php_value max_input_time 200
-php_value allow_url_fopen On
-# WPhtc: End Custom htaccess
-
-# WPhtC: Disable directory browsing
-Options All -Indexes
-
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /theagsc/
