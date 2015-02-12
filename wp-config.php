@@ -64,6 +64,7 @@ switch(ENVIRONMENT){
 		define('DB_PASSWORD', 'root');
 		define('DB_HOST', 'localhost');
 		define('WP_DEBUG', false);
+		define('WP_ENV', 'development');
 
 /*
 		define('WP_SITEURL', 'http://localhost:8888/theagsc/');
