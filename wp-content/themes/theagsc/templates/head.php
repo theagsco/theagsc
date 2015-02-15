@@ -8,4 +8,8 @@
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo esc_url(get_feed_link()); ?>">
 
   <?php wp_head(); ?>
+  
+	<script src="//use.typekit.net/vbl2tej.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+  
 </head>
