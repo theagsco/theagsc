@@ -14,8 +14,22 @@
 
 
 // Define Environments - may be a string or array of options for an environment
+
+/*
+
+
+$s = empty($_SERVER['HTTPS']) ? '' : ($_SERVER['HTTPS'] == 'on') ? 's' : '';
+$port = ($_SERVER['SERVER_PORT'] == '80') ? '' : (":".$_SERVER['SERVER_PORT']);
+$url = "http$s://" . $_SERVER['HTTP_HOST'] . $port;
+define('WP_HOME', $url . '/theagsc');
+define('WP_SITEURL', $url . '/theagsc');
+unset($s, $port, $url);
+*/
+
+
+
 $environments = array(
-	'local'       => '192.168.1.10',
+	'local'       => 'localhost',
 	'development' => 'dev.',
 );
 
@@ -66,8 +80,8 @@ switch(ENVIRONMENT){
 		define('WP_DEBUG', false);
 		define('WP_ENV', 'development');
 
-		define('WP_SITEURL', 'http://192.168.1.10:8888/theagsc/');
-		define('WP_HOME', 'http://192.168.1.10:8888/theagsc/');
+		define('WP_SITEURL', 'http://localhost:8888/theagsc');
+		define('WP_HOME', 'http://localhost:8888/theagsc');
 		
 		define('WP_LOCAL_DEV', true );  // Used by disable plugin for local dev plugin in /mu-plugins
 
@@ -170,6 +184,9 @@ if(!defined('WPLANG'))
  */
 if(!defined('WP_DEBUG'))
 	define('WP_DEBUG', false);
+
+define( 'WP_MEMORY_LIMIT', '64M' );
+
 	
 /* That's all, stop editing! Happy blogging. */
 
