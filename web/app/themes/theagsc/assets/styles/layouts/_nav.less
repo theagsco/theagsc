@@ -1,0 +1,77 @@
+span.nav-hamburger svg {
+	position:absolute;
+	display: block;
+	.icon32;
+	fill: @black;
+	right:10px;
+	top:7px;
+}
+.navbar-default .container .navbar-header .navbar-toggle {
+	border: 0;
+	border-radius:0;
+	margin: 0;
+	padding: 5px;
+	background-color: transparent !important;
+	z-index: 998;
+	top:1px;
+	right: 2px;
+		
+	.icon-bar {background-color:white;}
+	
+	&:hover {
+		background-color: transparent !important;
+	}
+}
+
+header.navbar {
+	position: fixed;
+	left:0;
+	right:0;
+	top:0;
+	z-index: 9999;	
+	
+	.container {
+	
+		.navbar-collapse {
+			display: block;
+			position: absolute;
+			top:0;
+			left:0;
+			right:0;
+			background: white;
+			margin-left: 0;
+			height: auto;
+			border: 0;
+			
+			.nav {
+				margin: 0;
+				
+				.dropdown a {display: block;}
+				
+				li a {display: inline-block;}
+			}
+			
+			ul {
+				position: relative;
+				list-style: none;
+				
+				a {
+					font-family: @museo;
+					font-size: 1.1em;
+				}
+			}
+			
+			span.nav-close {
+				position: absolute;
+				display: block;
+				top:14px;
+				right: 12px;
+				fill:@light-grey;
+				.icon32;
+				pointer-events: none;
+				z-index: 999;
+				
+			}
+		}
+	}
+}

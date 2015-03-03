@@ -1,0 +1,70 @@
+article {
+	header {
+		img {
+			width:100%;
+			height: auto;
+			margin-bottom:20px;
+		}
+	}
+	
+	.entry-content {
+		position: relative;
+		background: white;
+		padding:20px;
+		margin-left: -20px;
+		margin-right: -20px;
+		
+		ul {margin-bottom:18px; li {font-size: 1.2em; margin-bottom: 8px;}}
+		
+		.entry-share {
+			position: relative;
+			width:320px;
+			border-bottom: solid 1px @lightest-grey;
+			padding-bottom:62px;
+			height: 40px;
+			margin: -15px auto 25px auto;
+			ul {
+				li {
+					background: none;
+					margin: 10px;
+					
+					a {
+						display: block;
+						position: relative;
+						
+						svg {
+							.icon40;
+							fill:@light-grey;
+						}
+						
+						&:hover svg {fill:@black;}
+						
+						.count {
+							display: block;
+							top:11px;
+							position: absolute;
+							height:18px;
+							border:solid 1px @lighter-grey;
+							border-radius: 18px;
+							color:@light-grey;
+							padding: 0 5px;
+							font-size: 0.6em;
+							line-height: 17px;
+							font-family: @museo;
+							font-weight: 300;
+						}
+					}
+					
+				}
+
+				li.entry-share-btn-facebook a .count 	{right:-5px;}
+				li.entry-share-btn-twitter a .count 	{right:-10px;}
+				li.entry-share-btn-google-plus a .count {right:-8px;}
+				li.entry-share-btn-pinterest a .count 	{right:-11px;}
+			}
+		}
+		
+		.entry-share:nth-of-type(2) {border-top: solid 1px @lightest-grey; border-bottom: 0; margin: 25px auto -18px auto;}
+
+	}
+}
