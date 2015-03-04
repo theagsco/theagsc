@@ -98,9 +98,9 @@ function assets() {
   wp_enqueue_style('sage_css', asset_path('styles/main.css'), false, null);
   
 /*
-  if( is_frontpage() ) {
+  if( is_frontpage() ) :
     wp_enqueue_script('touch_carousel', asset_path('../assets/scripts/swiper.js'), false, null);
-  }
+  endif;
 */
 
   /**

@@ -9,7 +9,7 @@ body, input {-webkit-font-smoothing: antialiased;}
 h1 {
 	font-family:@museo, sans-serif;
 	margin-top: 10px;
-	font-size: 2.7em;
+	font-size: 3em;
 	font-weight: 500;
 }
 time {
@@ -23,7 +23,11 @@ time {
 p {
 	font-size: 1.3em;
 	line-height: 27px;
-	margin-bottom: 16px;
+	margin:0 auto 16px auto;
+	
+	@media @sm {
+		line-height: 29px;
+	}
 }
 
 a {color:@green;}
@@ -54,3 +58,5 @@ a:hover {
 svg, img.svg {
 	.icon32;
 }
+img.svg {display: none !important;}
+			

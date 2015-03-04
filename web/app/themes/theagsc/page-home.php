@@ -50,7 +50,6 @@
 
 </div><!-- community -->
 
-
 Lorem ipsum dolor sit amet, sed ei ubique appareat, cum in mazim qualisque inciderint. Ius in delenit nostrum assueverit. An mea postea platonem, id vix phaedrum similique. Vim cu sint mollis docendi, ea sale doming discere est.
 
 Populo habemus sed te. In instructior conclusionemque his. Munere aliquid percipit ut duo. Populo partiendo ex qui. Nam in accusam tractatos dignissim, ius ut quas scripserit.

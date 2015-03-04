@@ -1,5 +1,15 @@
+.single {
+	.main {
+		margin: 0 auto;
+		float: none;
+		width:auto;
+	}
+}
+
 article {
 	header {
+		max-width: 900px;
+		margin: 20px auto 0 auto;
 		img {
 			width:100%;
 			height: auto;
@@ -9,12 +19,17 @@ article {
 	
 	.entry-content {
 		position: relative;
+		width:100%;
 		background: white;
 		padding:20px;
 		margin-left: -20px;
 		margin-right: -20px;
 		
 		ul {margin-bottom:18px; li {font-size: 1.2em; margin-bottom: 8px;}}
+		
+		p {
+			max-width: 700px;
+		}
 		
 		.entry-share {
 			position: relative;
@@ -66,5 +81,12 @@ article {
 		
 		.entry-share:nth-of-type(2) {border-top: solid 1px @lightest-grey; border-bottom: 0; margin: 25px auto -18px auto;}
 
+	@media @sm {
+		padding:40px;
+		margin-left:20px;
+		margin-right: 20px;
+		width:auto;
+	}
+	
 	}
 }

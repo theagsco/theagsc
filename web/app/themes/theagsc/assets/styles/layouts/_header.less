@@ -1,5 +1,6 @@
 header.navbar-default  {
-	height: 45px;
+	height: @header-height;
+	min-height: @header-height;
 	background:white;
 	border: 0;
 	
@@ -16,7 +17,8 @@ a.navbar-brand {
 	height: 22px;
 	text-indent: -9999px;
 	padding: 0;
-	margin: 13px 0 0 13px;
+	margin: 10px 0 0 0 !important;
+	z-index: 9999;
 }
 
 .container {

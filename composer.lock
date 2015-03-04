@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f150f89c8ab78eaf8d91cf82aaa60dc3",
+    "hash": "6950614fb7374bfe940579db177440fb",
     "packages": [
         {
             "name": "composer/installers",
@@ -173,6 +173,92 @@
             "time": "2013-09-09 15:04:54"
         },
         {
+            "name": "roots/soil",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/soil.git",
+                "reference": "f4cb5aff4a781b1e739eb4f019eaaf11694635a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/soil/zipball/f4cb5aff4a781b1e739eb4f019eaaf11694635a9",
+                "reference": "f4cb5aff4a781b1e739eb4f019eaaf11694635a9",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Walkinshaw",
+                    "email": "scott.walkinshaw@gmail.com",
+                    "homepage": "https://github.com/swalkinshaw"
+                },
+                {
+                    "name": "Ben Word",
+                    "email": "ben@benword.com",
+                    "homepage": "https://github.com/retlehs"
+                }
+            ],
+            "description": "Clean up WordPress markup, relative URLs, nice search",
+            "homepage": "http://roots.io/plugins/soil/",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2015-01-24 16:42:29"
+        },
+        {
+            "name": "roots/wp-h5bp-htaccess",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/wp-h5bp-htaccess.git",
+                "reference": "d0f9b5bdadec33169b0074c9a26f610886c61864"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/wp-h5bp-htaccess/zipball/d0f9b5bdadec33169b0074c9a26f610886c61864",
+                "reference": "d0f9b5bdadec33169b0074c9a26f610886c61864",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Walkinshaw",
+                    "email": "scott.walkinshaw@gmail.com",
+                    "homepage": "https://github.com/swalkinshaw",
+                    "role": "Roots/Bedrock developer"
+                },
+                {
+                    "name": "Ben Word",
+                    "email": "ben@benword.com",
+                    "homepage": "https://github.com/retlehs",
+                    "role": "Roots/Bedrock developer"
+                }
+            ],
+            "description": "HTML5 Boilerplate's .htaccess for WordPress",
+            "homepage": "http://roots.io/plugins/html5-boilerplate-htaccess/",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2014-06-07 21:14:41"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v1.0.9",
             "source": {
@@ -243,13 +329,57 @@
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/advanced-custom-fields/",
             "time": "2015-02-05 02:10:31"
+        },
+        {
+            "name": "wpackagist-plugin/cloudflare",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/cloudflare/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/cloudflare.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cloudflare/",
+            "time": "2015-01-21 19:53:05"
+        },
+        {
+            "name": "wpackagist-plugin/disqus-comment-system",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/disqus-comment-system/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/disqus-comment-system.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/disqus-comment-system/",
+            "time": "2014-12-09 00:15:49"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wpackagist-plugin/advanced-custom-fields": 20
+        "wpackagist-plugin/advanced-custom-fields": 20,
+        "wpackagist-plugin/cloudflare": 20,
+        "wpackagist-plugin/disqus-comment-system": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

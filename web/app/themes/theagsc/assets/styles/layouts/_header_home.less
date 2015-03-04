@@ -1,7 +1,7 @@
 .home {
 		
 	header.navbar {
-		height:460px;
+		height:440px;
 		background:url("@{images}/clouds.jpg");
 		background-size: cover;
 		padding:30px 20px;
@@ -21,6 +21,7 @@
 		height: 93px;
 		text-indent: -9999px;
 		margin: 0;
+		z-index: auto;
 		
 		@media @sm {margin-left:12px !important;}
 	}
@@ -34,11 +35,12 @@
 			font-weight: 500;
 			font-size: 1.9em;
 			margin-top:26px;
+			max-width: 440px;
+			margin: 0 auto;
 			
 			@media @sm {
 				font-size:3em;
 				max-width: 700px;
-				margin: 0 auto;
 				line-height: 54px;
 			}
 		}
@@ -57,28 +59,17 @@
 			}
 		}
 		a {
-			display: inline-block;
-			color:white;
-			height: 32px;
-			margin-top: 0;
-			font-size: 1.3em;
-			font-family: @museo;
+			margin-top: -20px; 
+			background: none;
+			font-size: 1.2em;
+			font-weight: 700;
 			
-			img.svg {display: none !important;}
-			
-			span {
-				display: block;
-				float: left;
-				line-height: 32px;
-				margin-right: 8px;
-			}
-			.svg {
-				display: block;
-				float: left;
-				.icon32;
-				fill: white;
+			&:hover {
+				color:white; 
 				
-				path {width:100%;}
+				span {border-bottom:solid 2px white; padding-bottom:3px;}
+				
+				svg {fill:white;}
 			}
 		}
 	}
@@ -100,7 +91,7 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 		
 		@media @sm {
-			height: 160px;
+			height: 140px;
 		}
 				
 	}

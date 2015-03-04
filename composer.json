@@ -44,7 +44,11 @@
     "composer/installers": "v1.0.12",
     "johnpbloch/wordpress": "4.1.1",
     "vlucas/phpdotenv": "1.0.9",
-    "wpackagist-plugin/advanced-custom-fields":"dev-trunk"
+    "wpackagist-plugin/advanced-custom-fields":"dev-trunk",
+    "wpackagist-plugin/cloudflare":"dev-trunk",
+    "wpackagist-plugin/disqus-comment-system":"dev-trunk",
+    "roots/soil": "3.0.3",
+    "roots/wp-h5bp-htaccess": "1.1.0"
   },
   "extra": {
     "installer-paths": {

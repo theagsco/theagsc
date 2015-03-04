@@ -26,7 +26,7 @@
 		<div id="blurb">
 			<h1>A proudly Australian graphic design studio & creative community.</h1>
 			<h3>We are a husband and wife duo, passionate about lettering, illustration, web design and creating strong brands for businesses we believe in.</h3>
-			<a href=""><span>Read More</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_go.svg"/></a>	
+			<a class="btn-green" href=""><span>Read More</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_go.svg"/></a>	
 		</div><!--blurb-->
 		
 		<span id="fade"></span>
