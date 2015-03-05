@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d3d6652216ec28c4057e2c712b7d734a",
+    "hash": "0b9639439b74d64510794bc34b0bae7d",
     "packages": [
         {
             "name": "composer/installers",
@@ -310,27 +310,6 @@
             "time": "2014-10-16 14:50:21"
         },
         {
-            "name": "wpackagist-plugin/add-from-server",
-            "version": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/add-from-server/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/add-from-server.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/add-from-server/",
-            "time": "2014-11-30 03:49:48"
-        },
-        {
             "name": "wpackagist-plugin/advanced-custom-fields",
             "version": "dev-trunk",
             "source": {
@@ -466,7 +445,6 @@
         "wpackagist-plugin/disqus-comment-system": 20,
         "wpackagist-plugin/custom-post-type-ui": 20,
         "wpackagist-plugin/wp-no-category-base": 20,
-        "wpackagist-plugin/add-from-server": 20,
         "wpackagist-plugin/image-elevator": 20
     },
     "prefer-stable": false,

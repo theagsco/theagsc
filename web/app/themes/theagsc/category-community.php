@@ -1,3 +1,9 @@
+<nav class="sub-nav">
+	<ul>
+		<li><a href="<?= esc_url(home_url('/')); ?>"></a></li>
+	</ul>
+</nav>
+
 <div id="community" data-columns>
 
 <?php 

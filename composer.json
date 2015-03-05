@@ -49,7 +49,6 @@
     "wpackagist-plugin/disqus-comment-system":"dev-trunk",
     "wpackagist-plugin/custom-post-type-ui":"dev-trunk",
 	"wpackagist-plugin/wp-no-category-base": "dev-trunk",
-	"wpackagist-plugin/add-from-server": "dev-trunk",
 	"wpackagist-plugin/image-elevator": "dev-trunk",
     "roots/soil": "3.0.3",
     "roots/wp-h5bp-htaccess": "1.1.0"
