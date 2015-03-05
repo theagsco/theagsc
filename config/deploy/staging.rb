@@ -8,7 +8,12 @@ set :stage, :staging
 
 # Extended Server Syntax
 # ======================
-server 'example.com', user: 'deploy', roles: %w{web app db}
+server 's173785.gridserver.com', user: 'theagsc.com', roles: %w{web app db}
+
+set :ssh_options, {
+  keys: %w(~/.ssh/id_rsa),
+}
+
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
@@ -19,6 +24,8 @@ server 'example.com', user: 'deploy', roles: %w{web app db}
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
+# s173785.gridserver.com
+# theagsc.com
 
 fetch(:default_env).merge!(wp_env: :staging)
 

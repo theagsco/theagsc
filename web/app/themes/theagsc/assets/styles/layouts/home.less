@@ -84,7 +84,12 @@ a.community-post {
 
 		}
 	}
-		
+			
+	a.btn {margin-top: 40px;}
+
+}
+.home-tiles {
+	margin-bottom: 85px;
 	h4 {
 		margin-bottom: 20px;
 		
@@ -95,9 +100,35 @@ a.community-post {
 		}
 		
 		@media @md {width:100%; margin:0 2.5% 0 2.5%;}
+	}
+}
+
+#work-home {
+	position: relative;
+	text-align: center;
+	margin-top: 40px;
+	
+	.item {
+		float: left;
+		width:100%;
+	
+		@media screen and (min-width: 769px) and (max-width: 1199px) {
+			width:50%;
+		}
+		@media screen and (min-width: 1200px) {
+			width:33.333%;
+		}
+		
+		a {
+			display: block;
+			margin:0 20px -15px 20px;
+			opacity: 0.8;
+			
+			@media @sm {margin:0 55px -15px 55px;}
+			
+			&:hover {opacity: 1;}
+		}
 
 	}
-	
-	a.btn {margin-top: 0;}
-
 }
+
