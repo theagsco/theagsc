@@ -1,4 +1,4 @@
-<div id="community" class="carousel slide">
+<div id="community-home" class="carousel slide">
 	
 	<h4>Community Posts</h4>
 
@@ -12,7 +12,7 @@
 			while ( $the_query->have_posts() ) : 
 			$the_query->the_post();
 		?>
-		<li class="item active"><a href="<?php the_permalink();?>">
+		<li class="item active"><a href="<?php the_permalink();?>" class="community-post">
 			<?php the_post_thumbnail('large');?>
 			<div class="title-excerpt">
 				<h2><?php the_title();?></h2>
@@ -33,7 +33,7 @@
 			while ( $the_query->have_posts() ) : 
 			$the_query->the_post();
 		?>
-		<li class="item"><a href="<?php the_permalink();?>">
+		<li class="item"><a href="<?php the_permalink();?>" class="community-post">
 			<?php the_post_thumbnail('large');?>
 			<div class="title-excerpt">
 				<h2><?php the_title();?></h2>
@@ -46,7 +46,7 @@
 		?>
 	</ul><!-- carousel-inner -->
 	
-	<a href="" class="btn-green"><span>Visit the Community</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_community.svg"/></a>
+	<a href="<?= esc_url(home_url('/')); ?>" class="btn btn-green"><span>Visit the Community</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_community.svg"/></a>
 
 </div><!-- community -->
 

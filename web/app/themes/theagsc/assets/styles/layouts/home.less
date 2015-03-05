@@ -4,7 +4,48 @@
 	@media @sm {margin-bottom:-40px;}
 }
 
-#community {
+a.community-post {
+	
+	.title-excerpt {
+		background: white;
+		padding: 20px 25px;
+		
+		@media @sm {padding:30px 35px;}
+		
+		h2 {
+			font-family:@museo;
+			color: @black;
+			font-size: 1.8em;
+			margin-top: 0px;
+			text-align: left;
+			line-height: 30px;
+		}
+		p {
+			color: @grey;
+			font-size: 1.3em;
+			margin-bottom: 0;
+			text-align: left;
+			
+			@media @sm {font-size: 1.1em;line-height: 24px;}
+		}
+	}	
+	
+	img {
+		width:100%;
+		height: auto;
+	}	
+	
+	&:hover {
+	h2 {color:@green;}
+	
+}	
+	
+	
+}
+
+
+
+#community-home {
 	position: relative;
 	text-align: center;
 	z-index: 9999;
@@ -41,51 +82,10 @@
 			border-radius:3px;
 			overflow: hidden;
 
-			a{
-				img {
-					width:100%;
-					height: auto;
-				}		
-				
-				.title-excerpt {
-					background: white;
-					padding: 20px 25px;
-					
-					@media @sm {padding:30px 35px;}
-					
-					h2 {
-						font-family:@museo;
-						color: @black;
-						font-size: 1.8em;
-						margin-top: 0px;
-						text-align: left;
-						line-height: 30px;
-					}
-					p {
-						color: @grey;
-						font-size: 1.3em;
-						margin-bottom: 0;
-						text-align: left;
-						
-						@media @sm {font-size: 1.1em;line-height: 24px;}
-					}
-				}	
-				
-				&:hover {
-					h2 {color:@green;}
-				}	
-			}
 		}
 	}
 		
 	h4 {
-		font-family: @museo;
-		font-size: 0.85em;
-		font-weight: 500;
-		color:@light-grey;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		text-align: left;
 		margin-bottom: 20px;
 		
 		@media @sm {
@@ -97,5 +97,7 @@
 		@media @md {width:100%; margin:0 2.5% 0 2.5%;}
 
 	}
+	
+	a.btn {margin-top: 0;}
 
 }

@@ -1,5 +1,5 @@
 footer {
-	margin: 40px auto 100px auto;
+	margin: 70px auto 90px auto;
 	
 	text-align: center;
 	
@@ -37,17 +37,22 @@ footer {
 		width:345px;
 		margin: 0 auto;
 		list-style: none;
+		
+		@media @sm {width:305px;}
+		
 		li {
 			display: block;
 			float: left;
 			margin: 7px;
 			.icon40;
 			
+			@media @sm {.icon32;}
+			
 			a {display: block;line-height: 14px;}
 
 			a span {text-indent: -9999px; display: block;}
 			
-			a .svg {fill:@light-grey; .icon40;}
+			a .svg {fill:@light-grey; .icon40; @media @sm {.icon32;}}
 			
 			a:hover .svg {fill:@black;}
 
@@ -56,5 +61,23 @@ footer {
 	
 	@media @sm {
 		margin: 60px auto 130px auto;
+	}
+	
+	p {
+		width:340px;
+		margin: 40px auto 0 auto;
+		text-align: center;
+		font-size: 1em;
+		line-height: 22px;
+		color: @light-grey;
+		.spacing;
+		
+		&:before {
+			display: block;
+			content:"";
+			margin: 0 auto 30px auto;
+			width:30%;
+			border-top:solid 2px @lightest-grey;
+		}
 	}
 }

@@ -4,7 +4,7 @@ span.nav-hamburger svg {
 	.icon32;
 	fill: @black;
 	right:10px;
-	top:7px;
+	top:5px;
 }
 .navbar-default .container .navbar-header .navbar-toggle {
 	border: 0;
@@ -12,9 +12,10 @@ span.nav-hamburger svg {
 	margin: 0;
 	padding: 5px;
 	background-color: transparent !important;
-	z-index: 998;
 	top:1px;
 	right: 2px;
+	.icon40;
+	z-index: 9999;
 		
 	.icon-bar {background-color:white;}
 	
@@ -28,22 +29,33 @@ header.navbar {
 	left:0;
 	right:0;
 	top:0;
-	z-index: 9999;	
 	
 	.container {
+		
+		.navbar-header {
+			.icon40;
+			float:right;
+		}
+		
+		a.navbar-brand {margin: 10px 0 0 10px !important;}
 	
 		.navbar-collapse {
 			display: block;
 			position: absolute;
-			top:0;
+			top:44px;
 			left:0;
 			right:0;
 			background: white;
 			margin-left: 0;
 			padding: 0;
-			height: @header-height !important;
+			border:0;
 			border-bottom: solid 1px fade(@lightest-grey, 40%);
-// 			box-shadow: 0px -1px 7px fade(black, 3%);
+			z-index: 9998;
+
+			@media @sm {
+				top:0;
+				height: @header-height !important;
+			}
 						
 			.nav {
 				margin: 0;
@@ -56,8 +68,17 @@ header.navbar {
 			ul {
 				position: relative;
 				list-style: none;
-				float:right;
-				height: @header-height;
+				
+				
+				@media @sm {
+					float:right;
+					height: @header-height;
+				}
+				
+				li.active a {
+						background: none;
+						color:@light-grey;
+				}
 								
 				a {
 					font-family: @museo;
@@ -65,6 +86,9 @@ header.navbar {
 					padding: 0 15px;
 					height: @header-height;
 					line-height: @header-height;
+					color: @black;
+					
+					&:hover {color:@green;}
 				}
 			}
 			

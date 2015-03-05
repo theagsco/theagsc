@@ -44,6 +44,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 /**
  * Register sidebars
  */
+/*
 function widgets_init() {
   register_sidebar([
     'name'          => __('Primary', 'sage'),
@@ -64,3 +65,4 @@ function widgets_init() {
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
+*/

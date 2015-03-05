@@ -1,16 +1,15 @@
-.btn-green {
+.btn {
 	position: relative;
 	display: inline-block;
 	text-align: center;
 	padding:0 22px;
-	background: @green;
 	height: 60px;
 	color:white;
 	font-family: @museo;
 	font-size: 1.5em;
 	.spacing;
 	margin-top: 20px;
-	border-radius:3px; 
+	.border;
 	
 	span {
 		line-height: 60px;
@@ -23,3 +22,5 @@
 		margin-left: 10px;
 	}
 }
+.btn-green {background: @green; &:hover {color:@dark-green;}}
+.btn-grey {background: @lighter-grey; &:hover {color:@dark-grey;}}

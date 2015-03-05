@@ -22,6 +22,21 @@
         "scripts/scroll-up-bar.js"
       ]
     },
+    "post-nav.js": {
+      "files": [
+        "scripts/post-nav.js"
+      ]
+    },
+    "scroll-top.js": {
+      "files": [
+        "scripts/scroll-top.js"
+      ]
+    },
+    "pin.js": {
+      "files": [
+        "scripts/pin.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     },

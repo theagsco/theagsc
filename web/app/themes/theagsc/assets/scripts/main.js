@@ -139,12 +139,8 @@ $(document).ready(function() {
 		}
 		
 	});
-});
-
-
 	
-
-
+});
 
 
 

@@ -16,9 +16,11 @@ function body_class($classes) {
   }
 
   // Add class if sidebar is active
+/*
   if (Config\display_sidebar()) {
     $classes[] = 'sidebar-primary';
   }
+*/
 
   return $classes;
 }
@@ -46,3 +48,18 @@ function add_custom($items, $args) {
 }
 add_filter('wp_nav_menu_items', __NAMESPACE__ . '\\add_custom', 10, 2);
 */
+
+// Convert absolute URLs in content to site relative ones
+// Inspired by http://thisismyurl.com/6166/replace-wordpress-static-urls-dynamic-urls/
+function sp_clean_static_url($content) {
+   $thisURL = get_bloginfo('url');
+   $stuff = str_replace(' src=\"'.$thisURL, ' src=\"', $content );
+   $stuff = str_replace(' href=\"'.$thisURL, ' href=\"', $stuff );
+	return $stuff;
+}
+add_filter('content_save_pre', __NAMESPACE__ . '\\sp_clean_static_url','99');
+
+
+
+
+

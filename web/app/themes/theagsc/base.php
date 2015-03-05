@@ -24,9 +24,11 @@ use Roots\Sage\Wrapper;
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Config\display_sidebar()) : ?>
+<!--
           <aside class="sidebar" role="complementary">
             <?php include Wrapper\sidebar_path(); ?>
-          </aside><!-- /.sidebar -->
+          </aside>
+-->
         <?php endif; ?>
       </div><!-- /.content -->
     </div><!-- /.wrap -->

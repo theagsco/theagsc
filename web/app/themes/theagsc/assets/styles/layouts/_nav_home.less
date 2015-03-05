@@ -13,13 +13,15 @@
 					@media @sm {display: none;}
 				}
 			}
-			
+			.navbar-default .container .navbar-header .navbar-toggle {
+				top:2px;
+			}
+
 			span.nav-hamburger svg {
 				top:3px;
 				right:12px;
 				fill: white;
 			}
-			
 			.navbar-collapse {
 				display: block;
 				position: absolute;
@@ -30,7 +32,7 @@
 				margin-left: -35px;
 				padding: 20px;
 				height: auto !important;
-				border-radius:3px;
+				.border;
 				border: 0;
 				
 				.nav {
@@ -45,11 +47,12 @@
 					position: relative;
 					list-style: none;
 					float:left;
+					height: auto;
 					
 					a {
 						font-size: 1.1em;
 						
-						@media @sm {background: none; padding:15px 1px 3px 1px; margin: 0 11px}
+						@media @sm {background: none; padding:15px 1px 3px 1px; margin: 0 11px; line-height: normal; height: auto;}
 						
 						&:hover {
 							@media @sm {border-bottom:2px solid fade(white, 90%); margin-bottom: -2px; }

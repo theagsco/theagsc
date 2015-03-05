@@ -132,6 +132,12 @@ function assets() {
   if( !is_front_page() ) :
 	  wp_enqueue_script('sage_scroll-up-bar_js', asset_path('scripts/scroll-up-bar.js'), [], null, true);
   endif;
+  
+  if( !is_single() ) :
+	  wp_enqueue_script('sage_pin_js', asset_path('scripts/pin.js'), [], null, true);
+	  wp_enqueue_script('sage_post-nav_js', asset_path('scripts/post-nav.js'), [], null, true);
+	  wp_enqueue_script('sage_scroll-top_js', asset_path('scripts/scroll-top.js'), [], null, true);
+  endif;
 
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
