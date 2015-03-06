@@ -1,5 +1,5 @@
-set :application, 'The AGSC'
-set :repo_url, 'theagsc@bitbucket.org/theagsc/theagsc.git'
+set :application, 'dev.theagsc.com'
+set :repo_url, 'git@bitbucket.org:theagsc/theagsc.git'
 
 # Branch options
 # Prompts for the branch name (defaults to current branch)
@@ -9,10 +9,12 @@ set :branch, -> { `git rev-parse --abbrev-ref HEAD`.chomp }
 # This could be overridden in a stage config file
 # set :branch, :master
 
-set :deploy_to, -> { "/nfs/c07/h03/mnt/173785/domains/#{fetch(:application)}" }
+set :deploy_to, -> { "/nfs/c07/h03/mnt/173785/domains/#{fetch(:application)}/html" }
 
 # Use :debug for more verbose output when troubleshooting
 set :log_level, :info
+
+set ssh_options[:forward_agent] = true
 
 # Apache users with .htaccess files:
 # it needs to be added to linked_files so it persists across deploys:
