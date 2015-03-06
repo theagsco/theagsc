@@ -14,8 +14,6 @@ set :deploy_to, -> { "/nfs/c07/h03/mnt/173785/domains/#{fetch(:application)}/htm
 # Use :debug for more verbose output when troubleshooting
 set :log_level, :info
 
-set ssh_options[:forward_agent] = true
-
 # Apache users with .htaccess files:
 # it needs to be added to linked_files so it persists across deploys:
 # set :linked_files, fetch(:linked_files, []).push('.env', 'web/.htaccess')

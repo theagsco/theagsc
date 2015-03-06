@@ -12,6 +12,7 @@ server 's173785.gridserver.com', user: 'theagsc.com', roles: %w{web app db}
 
 set :ssh_options, {
   keys: %w(~/.ssh/authorized_keys),
+  forward_agent: true
 }
 
 # you can set custom ssh options
