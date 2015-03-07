@@ -8,7 +8,7 @@ set :stage, :staging
 
 # Extended Server Syntax
 # ======================
-server 's173785.gridserver.com', user: 'theagsc.com', roles: %w{web app db}
+server '128.199.68.154', user: 'root', roles: %w{web app db}
 
 set :ssh_options, {
   keys: %w(~/.ssh/authorized_keys),

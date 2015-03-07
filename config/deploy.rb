@@ -1,5 +1,5 @@
-set :application, 'dev.theagsc.com'
-set :repo_url, 'git@bitbucket.org:theagsc/theagsc.git'
+set :application, 'theagsc.com.au'
+set :repo_url, 'git@github.com:theagsco/theagsc.git'
 
 # Branch options
 # Prompts for the branch name (defaults to current branch)
@@ -9,7 +9,7 @@ set :branch, -> { `git rev-parse --abbrev-ref HEAD`.chomp }
 # This could be overridden in a stage config file
 # set :branch, :master
 
-set :deploy_to, -> { "/nfs/c07/h03/mnt/173785/domains/#{fetch(:application)}/html" }
+set :deploy_to, -> { "/var/www/#{fetch:application}" }
 
 # Use :debug for more verbose output when troubleshooting
 set :log_level, :info
@@ -32,7 +32,7 @@ end
 
 # The above restart task is not run by default
 # Uncomment the following line to run it on deploys if needed
-# after 'deploy:publishing', 'deploy:restart'
+after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
   desc 'Update WordPress template root paths to point to the new release'
@@ -58,4 +58,4 @@ end
 # The above update_option_paths task is not run by default
 # Note that you need to have WP-CLI installed on your server
 # Uncomment the following line to run it on deploys if needed
-# after 'deploy:publishing', 'deploy:update_option_paths'
+after 'deploy:publishing', 'deploy:update_option_paths'
