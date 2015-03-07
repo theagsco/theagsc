@@ -1,2 +1,0 @@
-jQuery(window).scroll(function(){jQuery(this).scrollTop()>400?jQuery(".top").fadeIn(300):jQuery(".top").fadeOut(400)}),jQuery(".top").click(function(e){e.preventDefault(),jQuery("html, body").animate({scrollTop:0},300)});
-//# sourceMappingURL=scroll-top.js.map
