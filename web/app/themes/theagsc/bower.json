@@ -11,7 +11,6 @@
     "jquery": "1.11.2",
     "bootstrap": "3.3.2",
     "bootstrap-touch-carousel": "~0.8.0",
-    "masonry": "~3.2.2",
     "imagesloaded": "~3.1.8",
     "salvattore": "~1.0.7"
   },

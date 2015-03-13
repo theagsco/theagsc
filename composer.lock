@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b9639439b74d64510794bc34b0bae7d",
+    "hash": "3d779bb03c73459b70360eb356a5ecc0",
     "packages": [
         {
             "name": "composer/installers",
@@ -310,6 +310,27 @@
             "time": "2014-10-16 14:50:21"
         },
         {
+            "name": "wpackagist-plugin/add-from-server",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/add-from-server/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/add-from-server.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/add-from-server/",
+            "time": "2014-11-30 03:49:48"
+        },
+        {
             "name": "wpackagist-plugin/advanced-custom-fields",
             "version": "dev-trunk",
             "source": {
@@ -319,7 +340,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/advanced-custom-fields.zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -340,7 +361,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/cloudflare.zip",
+                "url": "https://downloads.wordpress.org/plugin/cloudflare.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -370,7 +391,7 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/",
-            "time": "2015-02-12 15:35:14"
+            "time": "2015-03-06 03:49:11"
         },
         {
             "name": "wpackagist-plugin/disqus-comment-system",
@@ -382,7 +403,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/disqus-comment-system.zip",
+                "url": "https://downloads.wordpress.org/plugin/disqus-comment-system.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -445,7 +466,8 @@
         "wpackagist-plugin/disqus-comment-system": 20,
         "wpackagist-plugin/custom-post-type-ui": 20,
         "wpackagist-plugin/wp-no-category-base": 20,
-        "wpackagist-plugin/image-elevator": 20
+        "wpackagist-plugin/image-elevator": 20,
+        "wpackagist-plugin/add-from-server": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

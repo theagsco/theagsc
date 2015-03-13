@@ -1,17 +1,18 @@
 # Application
-#web/app/plugins/*
-#!web/app/plugins/.gitkeep
-#web/app/mu-plugins/*
-#!web/app/mu-plugins/.gitkeep
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*
+!web/app/mu-plugins/.gitkeep
 web/app/upgrade
-#web/app/uploads/*
+web/app/uploads/*
 !web/app/uploads/.gitkeep
 !web/app/mu-plugins/disallow-indexing.php
 !web/app/mu-plugins/register-theme-directory.php
 !web/app/mu-plugins/bedrock-autoloader.php
+db/*
 
 # WordPress
-#web/wp
+web/wp
 web/.htaccess
 
 # WP-CLI
@@ -19,9 +20,9 @@ db-sync
 sql-dump-*.sql
 
 # Dotenv
-#.env
-#.env.*
-#!.env.example
+.env
+.env.*
+!.env.example
 
 # Vendor (e.g. Composer)
 vendor/*
