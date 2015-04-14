@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3d779bb03c73459b70360eb356a5ecc0",
+    "hash": "93cd197ab1a75b4c5c1b71261633b574",
     "packages": [
         {
             "name": "composer/installers",
@@ -332,7 +332,7 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "dev-trunk",
+            "version": "4.4.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/advanced-custom-fields/",
@@ -348,8 +348,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/",
-            "time": "2015-02-05 02:10:31"
+            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
         },
         {
             "name": "wpackagist-plugin/cloudflare",
@@ -461,7 +460,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wpackagist-plugin/advanced-custom-fields": 20,
         "wpackagist-plugin/cloudflare": 20,
         "wpackagist-plugin/disqus-comment-system": 20,
         "wpackagist-plugin/custom-post-type-ui": 20,

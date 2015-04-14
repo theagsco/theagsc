@@ -62,4 +62,20 @@ add_filter('content_save_pre', __NAMESPACE__ . '\\sp_clean_static_url','99');
 
 
 
+// Fix child category template issue
 
+function is_subcategory($category = null) {
+    if (is_category()) {
+        if (null != $category){
+            $cat = get_category($category);
+        }else{
+            $cat = get_category(get_query_var('cat'),false);
+        }
+        if ($cat->parent == 0 ){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    return false;
+}
