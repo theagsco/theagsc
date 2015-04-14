@@ -60,8 +60,6 @@ function sp_clean_static_url($content) {
 add_filter('content_save_pre', __NAMESPACE__ . '\\sp_clean_static_url','99');
 
 
-
-
 // Fix child category template issue
 
 function is_subcategory($category = null) {
