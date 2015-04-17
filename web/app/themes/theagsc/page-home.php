@@ -46,7 +46,7 @@
 		?>
 	</ul><!-- carousel-inner -->
 	
-	<a href="<?= esc_url(home_url('/')); ?>/community" class="btn btn-green"><span>Visit the Community</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_community.svg"/></a>
+	<a href="<?= esc_url(home_url('/')); ?>community" class="btn btn-green"><span>Visit the Community</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_community.svg"/></a>
 
 </div><!-- community -->
 
@@ -72,6 +72,6 @@
 		?>
 		
 	
-	<a href="<?= esc_url(home_url('/')); ?>/work" class="btn btn-green"><span>View more Work</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_work.svg"/></a>
+	<a href="<?= esc_url(home_url('/')); ?>work" class="btn btn-green"><span>View more Work</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_work.svg"/></a>
 
 </div><!-- community -->
