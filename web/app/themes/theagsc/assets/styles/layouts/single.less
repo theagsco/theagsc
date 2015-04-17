@@ -25,7 +25,7 @@ article {
 		padding:20px;
 		.border;
 				
-		ul {
+		ul, ol {
 			margin-bottom:18px; font-size: 1.3em;
 			.articlewidth;
 			.center;
@@ -84,7 +84,7 @@ article {
 				margin: 50px auto 60px auto;
 				display: table;
 				
-				img {display:block; margin: 0 auto; max-width:1050px;}
+				img {display:block; margin: 0 auto; max-width:1000px;}
 				
 				p {
 					position: absolute;
@@ -102,6 +102,9 @@ article {
 					
 					code {-webkit-font-smoothing:subpixel-antialiased;}
 				}
+				
+				p:first-of-type::first-letter {.nodrop; float: none !important;}
+
 			}
 		}
 		p+ul {max-width:600px; margin: 0 auto 20px auto;}

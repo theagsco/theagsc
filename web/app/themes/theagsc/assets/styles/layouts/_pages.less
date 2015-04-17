@@ -1,20 +1,33 @@
 .about {
 	section {
+		-webkit-column-width: 100%;
+		   -moz-column-width: 100%;
+		        column-width: 100%;
+		-webkit-column-count: 1;
+		   -moz-column-count: 1;
+		        column-count: 1;
+		  -webkit-column-gap: 80px;
+		     -moz-column-gap: 80px;
+		          column-gap: 80px;
+		
+		@media @md {
 		-webkit-column-width: 50%;
 		   -moz-column-width: 50%;
 		        column-width: 50%;
 		-webkit-column-count: 2;
 		   -moz-column-count: 2;
 		        column-count: 2;
-		  -webkit-column-gap: 80px;
-		     -moz-column-gap: 80px;
-		          column-gap: 80px;
-		padding:0 40px;
+			
+		}          
+		
+		padding:0 60px;
 	}
 	
-	h1 {max-width:none !important; padding-left:40px; margin-top: 20px !important;}
+	h1 {max-width:none !important; padding-left:60px; margin-top: 20px !important;}
 	
-	hr {margin: 100px auto 100px auto;}
+	hr {margin: 80px auto 60px auto;}
+	
+	img#dave-laura {margin-top: 60px;}
 }
 
 
@@ -66,6 +79,13 @@ nav.sub-nav {
 		}
 	}
 }
+
+.category-tutorials #tutorials,
+.category-articles #articles,
+.category-tips #tips,
+.category-interviews #interviews,
+.category-news #news 
+{color:@grey !important;}
 
 .column { float: left; }
 

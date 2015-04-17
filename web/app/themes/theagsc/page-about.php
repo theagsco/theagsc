@@ -19,8 +19,9 @@
 				endwhile; 
 				wp_reset_postdata();
 			?>
-		
 		</section>
+		
+		<img src="<?php bloginfo("template_directory"); ?>/assets/images/dave-laura.jpg" id="dave-laura">
 		
 		<hr>
 		
@@ -55,6 +56,29 @@
 				$the_query = new WP_Query(array(
 					'post_type' => 'site_content',
 					'p' => '2495'
+				
+				)); 
+				while ( $the_query->have_posts() ) : 
+				$the_query->the_post();
+			?>
+					<p><?php the_content();?></p>
+			<?php 
+				endwhile; 
+				wp_reset_postdata();
+			?>
+		
+		</section>
+		
+		<hr>
+
+		<h1>Notable Clients</h1>
+		
+		<section>
+		
+			<?php 
+				$the_query = new WP_Query(array(
+					'post_type' => 'site_content',
+					'p' => '2539'
 				
 				)); 
 				while ( $the_query->have_posts() ) : 

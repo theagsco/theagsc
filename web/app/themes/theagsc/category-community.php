@@ -1,10 +1,10 @@
 <nav class="sub-nav">
 	<ul>
-		<li><a href="<?= esc_url(home_url('/')); ?>community/tutorials">Tutorials</a></li>
-		<li><a href="<?= esc_url(home_url('/')); ?>community/articles">Articles</a></li>
-		<li><a href="<?= esc_url(home_url('/')); ?>community/quick-tips">Quick Tips</a></li>
-		<li><a href="<?= esc_url(home_url('/')); ?>community/interviews">Interviews</a></li>
-		<li><a href="<?= esc_url(home_url('/')); ?>community/news">News</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>community/tutorials" id="tutorials">Tutorials</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>community/articles" id="articles">Articles</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>community/quick-tips" id="tips">Quick Tips</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>community/interviews" id="interviews">Interviews</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>community/news" id="news">News</a></li>
 	</ul>
 </nav>
 <div style="clear: both;"></div>

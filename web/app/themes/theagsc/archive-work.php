@@ -52,7 +52,7 @@
 				<span class="circle-red"></span>
 				<span class="circle-yellow"></span>
 				<span class="circle-green"></span>
-			<?php if( get_field('work_main_image') ): ?><img src="<?php the_field('work_main_image'); ?>" alt="" class="work_image" /><?php endif; ?>
+			<?php if( get_field('thumbnail') ): ?><img src="<?php the_field('thumbnail'); ?>" alt="" class="work_image" /><?php endif; ?>
 			</a>
 		</div>
 	
@@ -83,7 +83,7 @@
 		?>
 		<div class="item">
 			<a href="<?php the_permalink();?>" class="community-post">
-			<?php if( get_field('work_main_image') ): ?><img src="<?php the_field('work_main_image'); ?>" alt="" class="work_image" /><?php endif; ?>
+			<?php if( get_field('thumbnail') ): ?><img src="<?php the_field('thumbnail'); ?>" alt="" class="work_image" /><?php endif; ?>
 			</a>
 		</div>
 	
