@@ -1,0 +1,2 @@
+$(document).ready(function(){jQuery(document).keydown(function(e){if(jQuery("input, textarea").is(":focus"))return!0;var r=!1;if(37==e.which)r=jQuery(".keyboardleft a").attr("href");else{if(39!=e.which)return!0;r=jQuery(".keyboardright a").attr("href")}r="string"!=typeof r?!1:r,r?window.location=r:DisableKeyboardShake||jQuery("article").effect("shake",{times:1,distance:9,direction:"right"},200)})});
+//# sourceMappingURL=post-nav.js.map

@@ -1,0 +1,134 @@
+.home header {
+	margin-bottom: -15px;
+	
+	@media @sm {margin-bottom:-40px;}
+}
+
+a.community-post {
+	
+	.title-excerpt {
+		background: white;
+		padding: 20px 25px;
+		
+		@media @sm {padding:30px 35px;}
+		
+		h2 {
+			font-family:@museo;
+			color: @black;
+			font-size: 1.8em;
+			margin-top: 0px;
+			text-align: left;
+			line-height: 30px;
+		}
+		p {
+			color: @grey;
+			font-size: 1.3em;
+			margin-bottom: 0;
+			text-align: left;
+			
+			@media @sm {font-size: 1.1em;line-height: 24px;}
+		}
+	}	
+	
+	img {
+		width:100%;
+		height: auto;
+	}	
+	
+	&:hover {
+	h2 {color:@green;}
+	
+}	
+	
+	
+}
+
+
+
+#community-home {
+	position: relative;
+	text-align: center;
+	z-index: 9999;
+	
+	ul {
+		list-style: none;
+		padding: 0;
+		
+		@media @sm {
+			width:540px;
+			margin: 0 auto;
+		}
+		@media @md {width: auto;}
+		
+		li {
+			display: table;
+			float: left;
+			width:100%;
+			margin-bottom:30px;
+			
+			@media @sm {
+				width:100%;
+				margin: 0 auto 40px auto;
+			}
+			@media @md {
+				width:45%;
+				margin: 2.5%;				
+			}
+			@media @lg {
+				width:30%;
+				margin: 1.66%;				
+			}
+			
+			border-radius:3px;
+			overflow: hidden;
+
+		}
+	}
+			
+	a.btn {margin-top: 40px;}
+
+}
+.home-tiles {
+	margin-bottom: 85px;
+	h4 {
+		margin-bottom: 20px;
+		
+		@media @sm {
+			width:540px;
+			margin:0px auto 20px auto;
+			padding-left:20px;
+		}
+		
+		@media @md {width:100%; margin:0 2.5% 0 2.5%;}
+	}
+}
+
+#work-home {
+	position: relative;
+	text-align: center;
+	margin-top: 40px;
+	
+	.item {
+		float: left;
+		width:100%;
+	
+		@media screen and (min-width: 769px) and (max-width: 1199px) {
+			width:50%;
+		}
+		@media screen and (min-width: 1200px) {
+			width:33.333%;
+		}
+		
+		a {
+			display: block;
+			margin:0 20px -15px 20px;
+			opacity: 0.8;
+			
+			@media @sm {margin:0 55px -15px 55px;}
+			
+			&:hover {opacity: 1;}
+		}
+
+	}
+}
+

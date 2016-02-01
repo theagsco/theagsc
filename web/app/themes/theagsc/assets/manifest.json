@@ -1,0 +1,50 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.less"
+      ],
+      "main": true
+    },
+    "editor-style.css": {
+      "files": [
+        "styles/editor-style.less"
+      ]
+    },
+    "scroll-up-bar.js": {
+      "files": [
+        "scripts/scroll-up-bar.js"
+      ]
+    },
+    "post-nav.js": {
+      "files": [
+        "scripts/post-nav.js"
+      ]
+    },
+    "scroll-top.js": {
+      "files": [
+        "scripts/scroll-top.js"
+      ]
+    },
+    "pin.js": {
+      "files": [
+        "scripts/pin.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "modernizr.js": {
+      "bower": ["modernizr"]
+    }
+  },
+  "config": {
+    "devUrl": "theagsc.dev"
+  }
+}

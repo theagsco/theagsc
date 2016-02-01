@@ -1,0 +1,98 @@
+span.nav-hamburger svg {
+	position:absolute;
+	display: block;
+	.icon32;
+	fill: @black;
+	right:10px;
+	top:5px;
+}
+.navbar-default .container .navbar-header .navbar-toggle {
+	border: 0;
+	border-radius:0;
+	margin: 0;
+	padding: 5px;
+	background-color: transparent !important;
+	top:1px;
+	right: 2px;
+	.icon40;
+	z-index: 9999;
+		
+	.icon-bar {background-color:white;}
+	
+	&:hover {
+		background-color: transparent !important;
+	}
+}
+
+header.navbar {
+	position: fixed;
+	left:0;
+	right:0;
+	top:0;
+	
+	.container {
+		
+		.navbar-header {
+			.icon40;
+			float:right;
+		}
+		
+		a.navbar-brand {margin: 10px 0 0 10px !important;}
+	
+		.navbar-collapse {
+			display: block;
+			position: absolute;
+			top:44px;
+			left:0;
+			right:0;
+			background: white;
+			margin-left: 0;
+			padding: 0;
+			border:0;
+			border-bottom: solid 1px fade(@lightest-grey, 40%);
+			z-index: 9998;
+
+			@media @sm {
+				top:0;
+				height: @header-height !important;
+			}
+						
+			.nav {
+				margin: 0;
+				
+				.dropdown a {display: block;}
+				
+				li a {display: inline-block;}
+			}
+			
+			ul {
+				position: relative;
+				list-style: none;
+				
+				
+				@media @sm {
+					float:right;
+					height: @header-height;
+				}
+				
+				li.active a {
+						background: none;
+						color:@light-grey;
+				}
+								
+				a {
+					font-family: @museo;
+					font-size: 1.1em;
+					padding: 0 15px;
+					height: @header-height;
+					line-height: @header-height;
+					color: @black;
+					
+					&:hover {color:@green;}
+				}
+			}
+			
+			span.nav-close {display: none;}
+		}
+	}
+}
