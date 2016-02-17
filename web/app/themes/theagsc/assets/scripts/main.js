@@ -8,16 +8,7 @@
  * .noConflict()
  * The routing is enclosed within an anonymous function so that you can
  * always reference jQuery with $, even when in .noConflict() mode.
- *
- * Google CDN, Latest jQuery
- * To use the default WordPress version of jQuery, go to lib/config.php and
- * remove or comment out: add_theme_support('jquery-cdn');
  * ======================================================================== */
-
-
-/*
- * Replace all SVG images with inline SVG
- */
 
 (function($) {
 
@@ -82,9 +73,8 @@
 
   // Load Events
   $(document).ready(UTIL.loadEvents);
-  
-})(jQuery); // Fully reference jQuery after this point.
 
+})(jQuery); // Fully reference jQuery after this point.
 
 /*
  * Replace all SVG images with inline SVG
@@ -95,11 +85,11 @@ $( document ).ready(function() {
 	    var imgID = $img.attr('id');
 	    var imgClass = $img.attr('class');
 	    var imgURL = $img.attr('src');
-	
+
 	    jQuery.get(imgURL, function(data) {
 	        // Get the SVG tag, ignore the rest
 	        var $svg = jQuery(data).find('svg');
-	
+
 	        // Add replaced image's ID to the new SVG
 	        if(typeof imgID !== 'undefined') {
 	            $svg = $svg.attr('id', imgID);
@@ -108,17 +98,17 @@ $( document ).ready(function() {
 	        if(typeof imgClass !== 'undefined') {
 	            $svg = $svg.attr('class', imgClass+' replaced-svg');
 	        }
-	
+
 	        // Remove any invalid XML tags as per http://validator.w3.org
 	        $svg = $svg.removeAttr('xmlns:a');
-	
+
 	        // Replace image with new SVG
 	        $img.replaceWith($svg);
-	
+
 	    }, 'xml');
-	
+
 	});
-	
+
 });
 
 $(document).ready(function() {
@@ -126,9 +116,9 @@ $(document).ready(function() {
 	$('.carousel').carousel({
 		wrap: true
 	});
-	
+
 	$('header.navbar').scrollupbar();
-		
+
 	// make home header fixed
 	jQuery(window).scroll(function() {
 		if (jQuery(this).scrollTop() < 450) {
@@ -137,13 +127,9 @@ $(document).ready(function() {
 		else if ($(this).scrollTop() > 450) {
 			jQuery('body').removeClass('scrolling_header');
 		}
-		
+
 	});
-	
+
 	$('p:empty').remove();
-	
+
 });
-
-
-
-

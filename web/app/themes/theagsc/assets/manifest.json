@@ -12,39 +12,16 @@
       ],
       "main": true
     },
-    "editor-style.css": {
+    "customizer.js": {
       "files": [
-        "styles/editor-style.less"
-      ]
-    },
-    "scroll-up-bar.js": {
-      "files": [
-        "scripts/scroll-up-bar.js"
-      ]
-    },
-    "post-nav.js": {
-      "files": [
-        "scripts/post-nav.js"
-      ]
-    },
-    "scroll-top.js": {
-      "files": [
-        "scripts/scroll-top.js"
-      ]
-    },
-    "pin.js": {
-      "files": [
-        "scripts/pin.js"
+        "scripts/customizer.js"
       ]
     },
     "jquery.js": {
       "bower": ["jquery"]
-    },
-    "modernizr.js": {
-      "bower": ["modernizr"]
     }
   },
   "config": {
-    "devUrl": "theagsc.dev"
+    "devUrl": "http://theagsc.dev"
   }
 }

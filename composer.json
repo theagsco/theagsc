@@ -17,21 +17,14 @@
     }
   ],
   "keywords": [
-    "wordpress", "stack", "capistrano", "composer", "vagrant", "wp"
+    "bedrock", "roots", "wordpress", "stack", "composer", "vagrant", "wp"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
     "forum": "http://discourse.roots.io/category/bedrock"
   },
   "config": {
-    "preferred-install": "dist",
-    "generate-salts": true
-  },
-  "autoload": {
-    "psr-0": {"Roots\\Bedrock\\Installer": "scripts"}
-  },
-  "scripts": {
-    "post-root-package-install": ["Roots\\Bedrock\\Installer::addSalts"]
+    "preferred-install": "dist"
   },
   "repositories": [
     {
@@ -40,19 +33,19 @@
     }
   ],
   "require": {
-    "php": ">=5.4",
-    "composer/installers": "v1.0.23",
+    "php": ">=5.5",
+    "composer/installers": "~1.0.12",
+    "vlucas/phpdotenv": "^2.0.1",
     "johnpbloch/wordpress": "4.4.2",
-    "vlucas/phpdotenv": "2.2.0",
-    "wpackagist-plugin/advanced-custom-fields":"dev-trunk",
-    "wpackagist-plugin/cloudflare":"dev-trunk",
-    "wpackagist-plugin/disqus-comment-system":"dev-trunk",
-    "wpackagist-plugin/custom-post-type-ui":"dev-trunk",
-	"wpackagist-plugin/wp-no-category-base": "dev-trunk",
-	"wpackagist-plugin/image-elevator": "dev-trunk",
-	"wpackagist-plugin/add-from-server": "dev-trunk",
+    "oscarotero/env": "^1.0",
+      "wpackagist-plugin/advanced-custom-fields":"dev-trunk",
+      "wpackagist-plugin/cloudflare":"dev-trunk",
+      "wpackagist-plugin/disqus-comment-system":"dev-trunk",
+      "wpackagist-plugin/custom-post-type-ui":"dev-trunk",
+    	"wpackagist-plugin/wp-no-category-base": "dev-trunk",
+    	"wpackagist-plugin/image-elevator": "dev-trunk",
+    	"wpackagist-plugin/add-from-server": "dev-trunk",
     "roots/soil": "3.6.2",
-    "roots/wp-h5bp-htaccess": "2.0.1"
   },
   "extra": {
     "installer-paths": {
