@@ -36,3 +36,6 @@ vendor/*
 # Vagrant
 bin
 .vagrant
+
+# General
+db
