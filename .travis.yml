@@ -1,18 +1,48 @@
 sudo: false
 language: php
 php:
-  - nightly
-  - 5.6
-  - 5.5
+  # aliased to 5.2.17
+  - 5.2
+  # aliased to 5.3.29
+  - 5.3
+  # aliased to a recent 5.4.x version
   - 5.4
+  # aliased to a recent 5.5.x version
+  - 5.5
+  # aliased to a recent 5.6.x version
+  - 5.6
+  # aliased to a recent 7.x version
+  - 7.0
+  # aliased to a recent hhvm version
+  - hhvm
 
-matrix:
-  allow_failures:
-    - php: nightly
+env:
+  global:
+    - THEME_DIR=./web/app/themes/theagsc/
 
 before_install:
-  - pyrus install pear/PHP_CodeSniffer
-  - phpenv rehash
+    - apt-get install -y nodejs npm
+    - npm install --global bower gulp
+
+install:
+      - composer install --no-dev --no-scripts --quiet --optimize-autoloader
+      - cd $THEME_DIR
+      - npm install --devDependencies --silent --no-spin
+      - bower install
+      - gulp --production
+
+matrix:
+  exclude:
+    - php: hhvm
+  allow_failures:
+    - php: 7.0
+    - php: hhvm
+
+cache:
+  directories:
+    - bower_components
+    - node_modules
 
 script:
-  - phpcs --standard=ruleset.xml --extensions=php --ignore=web/wp/,vendor/ -n -s .
+  - cd $TRAVIS_BUILD_DIR
+  - phpcs --standard=ruleset.xml --extensions=php --ignore=web/wp/,web/app/plugins/,vendor/ -n -s .
