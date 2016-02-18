@@ -7,6 +7,22 @@ php:
   - 5.4
   - hhvm
 
+env:
+  global:
+    - THEME_DIR=./web/app/themes/theagsc/
+
+
+before_install:
+    - apt-get install -y nodejs npm
+    - npm install --global bower gulp
+
+install:
+      - composer install --no-dev --no-scripts --quiet --optimize-autoloader
+      - cd $THEME_DIR
+      - npm install --devDependencies --silent --no-spin
+      - bower install
+      - gulp --production
+
 matrix:
   allow_failures:
     - php: nightly
@@ -16,16 +32,6 @@ cache:
     - bower_components
     - node_modules
 
-install:
-  - npm install -g npm@latest
-  - npm install -g bower gulp jscs
-  - npm install
-  - composer self-update && composer --version
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer global require squizlabs/php_codesniffer
-
 script:
-  - npm run build
-  - npm run jshint
-  - npm run jscs
-  - phpcs --standard=ruleset.xml --extensions=php -n -s .
+  - cd $TRAVIS_BUILD_DIR
+  - phpcs --standard=ruleset.xml --extensions=php --ignore=web/wp/,web/app/plugins/,vendor/ -n -s .
