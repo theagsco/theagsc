@@ -16,9 +16,9 @@ span.nav-hamburger svg {
 	right: 2px;
 	.icon40;
 	z-index: 9999;
-		
+
 	.icon-bar {background-color:white;}
-	
+
 	&:hover {
 		background-color: transparent !important;
 	}
@@ -29,16 +29,16 @@ header.navbar {
 	left:0;
 	right:0;
 	top:0;
-	
+
 	.container {
-		
+
 		.navbar-header {
 			.icon40;
 			float:right;
 		}
-		
+
 		a.navbar-brand {margin: 10px 0 0 10px !important;}
-	
+
 		.navbar-collapse {
 			display: block;
 			position: absolute;
@@ -56,30 +56,32 @@ header.navbar {
 				top:0;
 				height: @header-height !important;
 			}
-						
+
 			.nav {
 				margin: 0;
-				
+
+				li {float: left;}
+
 				.dropdown a {display: block;}
-				
+
 				li a {display: inline-block;}
 			}
-			
+
 			ul {
 				position: relative;
 				list-style: none;
-				
-				
+
+
 				@media @sm {
 					float:right;
 					height: @header-height;
 				}
-				
+
 				li.active a {
 						background: none;
 						color:@light-grey;
 				}
-								
+
 				a {
 					font-family: @museo;
 					font-size: 1.1em;
@@ -87,11 +89,11 @@ header.navbar {
 					height: @header-height;
 					line-height: @header-height;
 					color: @black;
-					
+
 					&:hover {color:@green;}
 				}
 			}
-			
+
 			span.nav-close {display: none;}
 		}
 	}

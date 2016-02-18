@@ -10,7 +10,6 @@
     "modernizr": "2.8.2",
     "jquery": "1.11.2",
     "bootstrap": "3.3.2",
-    "bootstrap-touch-carousel": "~0.8.0",
     "imagesloaded": "~3.1.8",
     "salvattore": "~1.0.7"
   },
@@ -58,7 +57,6 @@
             "./js/transition.js",
             "./js/alert.js",
             "./js/button.js",
-            "./js/carousel.js",
             "./js/collapse.js",
             "./js/dropdown.js",
             "./js/modal.js",

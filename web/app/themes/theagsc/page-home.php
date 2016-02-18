@@ -7,34 +7,13 @@
 		<?php
 			$the_query = new WP_Query(array(
 			'category_name' => 'community',
-			'posts_per_page' => 1
-			));
-			while ( $the_query->have_posts() ) :
-			$the_query->the_post();
-		?>
-		<li class="item active"><a href="<?php the_permalink();?>" class="community-post">
-			<?php the_post_thumbnail('large');?>
-			<div class="title-excerpt">
-				<h2><?php the_title();?></h2>
-				<p><?php the_excerpt();?></p>
-			</div>
-		</a></li><!-- item active -->
-		<?php
-			endwhile;
-			wp_reset_postdata();
-		?>
-
-		<?php
-			$the_query = new WP_Query(array(
-			'category_name' => 'community',
-			'posts_per_page' => 2,
-			'offset' => 1
+			'posts_per_page' => 3
 			));
 			while ( $the_query->have_posts() ) :
 			$the_query->the_post();
 		?>
 		<li class="item"><a href="<?php the_permalink();?>" class="community-post">
-			<?php the_post_thumbnail('large');?>
+			<div><?php the_post_thumbnail('large');?></div>
 			<div class="title-excerpt">
 				<h2><?php the_title();?></h2>
 				<p><?php the_excerpt();?></p>
@@ -44,7 +23,8 @@
 			endwhile;
 			wp_reset_postdata();
 		?>
-	</ul><!-- carousel-inner -->
+
+	</ul>
 
 	<a href="<?= esc_url(home_url('/')); ?>community" class="btn btn-green"><span>Visit the Community</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_community.svg"/></a>
 
