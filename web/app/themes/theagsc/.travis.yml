@@ -13,6 +13,8 @@ env:
 
 
 before_install:
+    - apt-get install php-pear
+    - pear install PHP_CodeSniffer
     - apt-get install -y nodejs npm
     - npm install --global bower gulp
 
