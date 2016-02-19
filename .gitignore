@@ -15,7 +15,8 @@ notes
 
 # WordPress
 #web/wp
-#web/.htaccess
+web/.htaccess
+web/.htaccess.*
 
 # WP-CLI
 #db-sync
@@ -24,6 +25,8 @@ notes
 # Dotenv
 .env
 .env.*
+
+
 
 # Vendor (e.g. Composer)
 vendor/*

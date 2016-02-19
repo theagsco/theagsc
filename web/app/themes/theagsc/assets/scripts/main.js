@@ -113,10 +113,6 @@ $( document ).ready(function() {
 
 $(document).ready(function() {
 
-	$('.carousel').carousel({
-		wrap: true
-	});
-
 	$('header.navbar').scrollupbar();
 
 	// make home header fixed

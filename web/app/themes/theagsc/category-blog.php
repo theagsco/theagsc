@@ -1,4 +1,4 @@
-Archive
+Category Blog
 <nav class="sub-nav">
 	<ul>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/tutorials" id="tutorials">Tutorials</a></li>
@@ -10,14 +10,17 @@ Archive
 </nav>
 <div style="clear: both;"></div>
 
-<!-- <h1 class="entry-title"><?php echo single_cat_title('',false) ?></h1> -->
-
 <div id="blog" data-columns>
 
 <?php
-if ( have_posts() ) :
-	while ( have_posts() ) : the_post(); ?>
-
+		$the_query = new WP_Query(array(
+		'category_name' => 'blog',
+		'posts_per_page' => 15,
+		'paged' => $paged
+		));
+		while ( $the_query->have_posts() ) :
+		$the_query->the_post();
+	?>
 	<div class="item"><a href="<?php the_permalink();?>" class="blog-post">
 		<?php the_post_thumbnail('large');?>
 		<div class="title-excerpt">
@@ -26,15 +29,17 @@ if ( have_posts() ) :
 		</div>
 	</a></div>
 
-	<?php endwhile;
-else :
-	get_template_part('templates/no-posts');
 
-endif;
-?>
+	<?php
+		endwhile;
+		wp_reset_postdata();
+	?>
+	</div>
+</div>
+
+<span class="next"><?php next_posts_link( 'Next Page', $the_query->max_num_pages ); ?></span>
+<span class="prev"><?php previous_posts_link( 'Previous Page' ); ?></span>
 
 
-	</div><!-- div one -->
-</div><!-- div two -->
 
-</div><!-- blog -->
+</div><!--  -->

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ee83cbcff53ab4033dc25d9f5ca5c141",
-    "content-hash": "0d9f145f5e8d398d8384492a138cc5a9",
+    "hash": "6fa6d7e4380726ab2600105a987733c6",
+    "content-hash": "ea153c1fb683fff032013dcb03496199",
     "packages": [
         {
             "name": "composer/installers",
@@ -275,48 +275,6 @@
             "time": "2015-12-24 19:42:34"
         },
         {
-            "name": "roots/wp-h5bp-htaccess",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/wp-h5bp-htaccess.git",
-                "reference": "0df13d083b2d579f13f9aa3d639ed59c746d6a91"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-h5bp-htaccess/zipball/0df13d083b2d579f13f9aa3d639ed59c746d6a91",
-                "reference": "0df13d083b2d579f13f9aa3d639ed59c746d6a91",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0.12",
-                "php": ">=5.4.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "Ben Word",
-                    "email": "ben@benword.com",
-                    "homepage": "https://github.com/retlehs"
-                }
-            ],
-            "description": "HTML5 Boilerplate's .htaccess for WordPress",
-            "homepage": "http://roots.io/plugins/html5-boilerplate-htaccess/",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2015-04-28 16:34:17"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v2.2.0",
             "source": {
@@ -494,16 +452,16 @@
             "time": "2015-02-08 19:17:52"
         },
         {
-            "name": "wpackagist-plugin/wp-no-category-base",
+            "name": "wpackagist-plugin/redirection",
             "version": "dev-trunk",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-no-category-base/",
+                "url": "http://plugins.svn.wordpress.org/redirection/",
                 "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-no-category-base.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -511,8 +469,8 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-no-category-base/",
-            "time": "2012-07-29 13:52:23"
+            "homepage": "https://wordpress.org/plugins/redirection/",
+            "time": "2015-10-25 11:02:26"
         }
     ],
     "packages-dev": [],
@@ -523,9 +481,9 @@
         "wpackagist-plugin/cloudflare": 20,
         "wpackagist-plugin/disqus-comment-system": 20,
         "wpackagist-plugin/custom-post-type-ui": 20,
-        "wpackagist-plugin/wp-no-category-base": 20,
         "wpackagist-plugin/image-elevator": 20,
-        "wpackagist-plugin/add-from-server": 20
+        "wpackagist-plugin/add-from-server": 20,
+        "wpackagist-plugin/redirection": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

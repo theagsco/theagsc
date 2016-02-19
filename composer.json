@@ -42,9 +42,9 @@
       "wpackagist-plugin/cloudflare":"dev-trunk",
       "wpackagist-plugin/disqus-comment-system":"dev-trunk",
       "wpackagist-plugin/custom-post-type-ui":"dev-trunk",
-    	"wpackagist-plugin/wp-no-category-base": "dev-trunk",
     	"wpackagist-plugin/image-elevator": "dev-trunk",
     	"wpackagist-plugin/add-from-server": "dev-trunk",
+      "wpackagist-plugin/redirection": "dev-trunk",
     "roots/soil": "3.6.2"
   },
   "extra": {

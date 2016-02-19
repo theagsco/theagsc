@@ -17,7 +17,7 @@
 			$the_query->the_post();
 		?>
 		<div class="item">
-			<a href="<?php the_permalink();?>" class="community-post">
+			<a href="<?php the_permalink();?>" class="blog-post">
 			<?php if( get_field('thumbnail') ): ?><img src="<?php the_field('thumbnail'); ?>" alt="" class="work_image" /><?php endif; ?>
 			</a>
 		</div>
@@ -28,7 +28,7 @@
 		?>
 		<div style="clear: both;"></div>
 	</div>
-	
+
 	<div id="illustration" class="work-type">
 		<h2>Illustration</h2>
 
@@ -48,7 +48,7 @@
 			$the_query->the_post();
 		?>
 		<div class="item">
-			<a href="<?php the_permalink();?>" class="community-post">
+			<a href="<?php the_permalink();?>" class="blog-post">
 			<?php if( get_field('thumbnail') ): ?><img src="<?php the_field('thumbnail'); ?>" alt="" class="work_image" /><?php endif; ?>
 			</a>
 		</div>
