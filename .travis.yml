@@ -1,4 +1,4 @@
-sudo: true
+sudo: false
 language: php
 php:
   # aliased to 5.2.17
@@ -21,7 +21,7 @@ env:
     - THEME_DIR=./web/app/themes/theagsc/
 
 before_install:
-    - apt-get install -y nodejs npm
+    - sudo apt-get install -y nodejs npm
     - npm install --global bower gulp
 
 install:
