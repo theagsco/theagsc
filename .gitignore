@@ -26,15 +26,13 @@ web/.htaccess.*
 .env
 .env.*
 
-
-
 # Vendor (e.g. Composer)
 vendor/*
 !vendor/.gitkeep
 #!vendor/autoload.php
 
 # Node Package Manager
-#node_modules
+node_modules
 
 # Vagrant
 bin
@@ -42,3 +40,4 @@ bin
 
 # General
 db
+.DS_Store
