@@ -25,7 +25,7 @@ before_install:
     - npm install --global bower gulp
 
 install:
-      - composer install --no-dev --no-scripts --quiet --optimize-autoloader
+      - sudo composer install --no-dev --no-scripts --quiet --optimize-autoloader
       - cd $THEME_DIR
       - npm install --devDependencies --silent --no-spin
       - bower install
