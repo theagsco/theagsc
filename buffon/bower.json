@@ -1,8 +1,8 @@
 {
-  "name": "front-end-template",
-  "homepage": "https://roots.io/sage/",
+  "name": "Buffon Mini Site",
+  "homepage": "http://theagsc.com/buffon",
   "authors": [
-    "Julien Melissas <julien@jmlabs.io>"
+    "Dave Coleman <hello@theagsc.com>"
   ],
   "license": "WTFPL",
   "dependencies": {

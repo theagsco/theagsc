@@ -1,15 +1,15 @@
 {
-  "name": "front-end-template",
-  "description": "A front-end project template based off of the workflow from the Sage WordPress starter theme and HTML5BP.",
-  "version": "2.0.0",
-  "author": "Julien Melissas <julien@jmlabs.io>",
-  "homepage": "https://github.com/JulienMelissas/front-end-template/",
+  "name": "Buffon Mini Site",
+  "description": "Introducing Buffon: A playful reverse contrast typeface from The AGSC.",
+  "version": "1.0.0",
+  "author": "Dave Coleman <hello@theagsc.com>",
+  "homepage": "http://theagsc.com/buffon",
   "repository": {
     "type": "git",
-    "url": "git://github.com/JulienMelissas/front-end-template.git"
+    "url": "git://github.com/theagsco/theagsc.git"
   },
   "bugs": {
-    "url": "https://github.com/JulienMelissas/front-end-template/issues"
+    "url": "https://github.com/theagsco/theagsc/issues"
   },
   "licenses": [
     {
