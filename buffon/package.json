@@ -1,5 +1,5 @@
 {
-  "name": "Buffon Mini Site",
+  "name": "buffon",
   "description": "Introducing Buffon: A playful reverse contrast typeface from The AGSC.",
   "version": "1.0.0",
   "author": "Dave Coleman <hello@theagsc.com>",
@@ -11,12 +11,6 @@
   "bugs": {
     "url": "https://github.com/theagsco/theagsc/issues"
   },
-  "licenses": [
-    {
-      "type": "WTFPL",
-      "url": "http://www.wtfpl.net/"
-    }
-  ],
   "scripts": {
     "build": "bower install && gulp",
     "jshint": "gulp jshint",
