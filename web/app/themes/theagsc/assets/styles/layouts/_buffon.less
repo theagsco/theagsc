@@ -6,18 +6,103 @@
   p, h1 {
     color:white;
     font-family: Buffon-Regular;
-  }
-  h1.buffonTitle {
-    font-size: 60pt;
+    outline: 0px solid transparent;
+  	-webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+    -webkit-font-feature-settings: "kern";
+  	font-feature-settings: "kern";
+  	font-kerning: normal;
   }
   p.islaScript {
-    font-family: IslaScriptBeta-Regular;
+    font-size: 26pt;
+    text-align: center;
+    margin-bottom: 40px;
   }
-
-  #burst {
+  h1.buffonTitle {
+    font-size: 100pt;
+    text-align: center;
+  }
+  #buffonTitleWrapper {
+    width: 700px;
+    height:240px;
+    position: absolute;
+    left:50%;
+    margin-left: -350px;
+    top:100px;
+    // background-color: grey;
+    p.islaScript {
+      font-family: IslaScriptBeta-Regular;
+    }
     .svg {
       display:block;
+      position: absolute;
     }
-    svg#red {fill:red;}
+    svg.red {fill:#f0432f;}
+    svg.yellow {fill:#ffe64b;}
+    svg.blue {fill:#92dfc2;}
+    svg.pink {fill:#e58aa3;}
+    svg.white {fill:white;}
+    svg#yellowDrop {
+      width:75px;
+      height: auto;
+      left:145px;
+      top:-50px;
+      @pink-rotate: 132deg;
+      -ms-transform: rotate(@pink-rotate);
+      -webkit-transform: rotate(@pink-rotate);
+      transform: rotate(@pink-rotate);
+    }
+    svg#pinkDrop {
+      width:65px;
+      height: auto;
+      right:170px;
+      top:-25px;
+      @pink-rotate: -132deg;
+      -ms-transform: rotate(@pink-rotate);
+      -webkit-transform: rotate(@pink-rotate);
+      transform: rotate(@pink-rotate);
+    }
+    svg#redDrop {
+      width:90px;
+      height: auto;
+      right:135px;
+      bottom:-105px;
+      @pink-rotate: -51deg;
+      -ms-transform: rotate(@pink-rotate);
+      -webkit-transform: rotate(@pink-rotate);
+      transform: rotate(@pink-rotate);
+    }
+    svg#blueDrop {
+      width:40px;
+      height: auto;
+      left:330px;
+      bottom:-55px;
+      @pink-rotate: 15deg;
+      -ms-transform: rotate(@pink-rotate);
+      -webkit-transform: rotate(@pink-rotate);
+      transform: rotate(@pink-rotate);
+    }
+    svg#whiteDrop {
+      width:70px;
+      height: auto;
+      left:150px;
+      bottom:-75px;
+      @pink-rotate: 58deg;
+      -ms-transform: rotate(@pink-rotate);
+      -webkit-transform: rotate(@pink-rotate);
+      transform: rotate(@pink-rotate);
+    }
+    svg#blueBurst {
+      width:70px;
+      height: auto;
+      right:75px;
+      top:50px;
+    }
+    svg#pinkBurst {
+      width:65px;
+      height: auto;
+      left:55px;
+      top:120px;
+    }
   }
 }
