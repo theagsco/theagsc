@@ -1,6 +1,7 @@
 .buffon {
   * {outline: 0px solid transparent;}
 
+  p {line-height: normal;}
 
   // Main
   background:@buffon-black;
@@ -8,6 +9,12 @@
   .wrap.container {padding:20px 10px 0}
   header.banner, footer.content-info {display: none;}
   section {margin-bottom:100px;}
+
+  svg.red {fill:#f0432f;}
+  svg.yellow {fill:#ffe64b;}
+  svg.blue {fill:#92dfc2;}
+  svg.pink {fill:#e58aa3;}
+  svg.white {fill:white;}
 
   // Variables
   @buffon-pink: #e58aa3;
@@ -17,11 +24,12 @@
 
   // Header
   a.theagsc_logo {
-    position: absolute;
+    position: fixed;
     fill:white;
-    top:-55px;
+    top:9px;
     left:10px;
-    svg {width:110px;height: auto;}
+
+    svg {position: relative;width:110px;height: auto; z-index: 99999;}
     &:hover svg {fill:@buffon-pink;color:@buffon-pink;}
   }
 
@@ -67,11 +75,6 @@
       display:block;
       position: absolute;
     }
-    svg.red {fill:#f0432f;}
-    svg.yellow {fill:#ffe64b;}
-    svg.blue {fill:#92dfc2;}
-    svg.pink {fill:#e58aa3;}
-    svg.white {fill:white;}
     svg#yellowDrop {
       width:75px;
       height: auto;
@@ -145,10 +148,33 @@
       strong {font-family: Buffon-Heavy;}
     }
   }
-  #cloud {
+  section#weights {
+    text-align: center;
+    svg {
+      display: inline-block;
+      width:35px;
+      height: auto;
+      margin: -2px auto 5px auto;
+
+      @media @md {
+        width:50px;
+        margin: 5px auto 15px auto;
+      }
+    }
+    p {
+      display: inline-block;
+      width:100%;
+      text-align: center;
+      font-size: 60pt;
+    }
+    .thin {font-family: Buffon-Thin;}
+    .regular {font-family: Buffon-Regular;}
+    .bold {font-family: Buffon-Bold;}
+    .heavy {font-family: Buffon-Heavy;}
+  }
+  section#cloud {
     svg {width:100%;height:auto;}
   }
-
   section#buyNow {
     #buyText {
       float: left;

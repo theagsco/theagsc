@@ -130,4 +130,6 @@ $(document).ready(function() {
 
   $(".lettering").lettering();
 
+  jQuery("#weights p").fitText(1.6);
+
 });

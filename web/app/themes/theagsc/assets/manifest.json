@@ -6,7 +6,8 @@
       ],
       "vendor": [
           "assets/scripts/scroll-up-bar.js",
-          "assets/scripts/lettering.js"
+          "assets/scripts/lettering.js",
+          "assets/scripts/fittext.js"
       ],
       "main": true
     },
