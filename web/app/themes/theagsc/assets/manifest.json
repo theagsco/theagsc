@@ -4,6 +4,10 @@
       "files": [
         "scripts/main.js"
       ],
+      "vendor": [
+          "assets/scripts/scroll-up-bar.js",
+          "assets/scripts/lettering.js"
+      ],
       "main": true
     },
     "main.css": {
@@ -12,13 +16,11 @@
       ],
       "main": true
     },
-    "customizer.js": {
-      "files": [
-        "scripts/customizer.js"
-      ]
-    },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "modernizr.js": {
+      "bower": ["modernizr"]
     }
   },
   "config": {

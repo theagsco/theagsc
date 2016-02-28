@@ -128,4 +128,6 @@ $(document).ready(function() {
 
 	$('p:empty').remove();
 
+  $(".lettering").lettering();
+
 });
