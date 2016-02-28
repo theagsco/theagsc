@@ -5,7 +5,6 @@
         "scripts/main.js"
       ],
       "vendor": [
-          "assets/scripts/scroll-top.js",
           "assets/scripts/lettering.js",
           "assets/scripts/fittext.js"
       ],
