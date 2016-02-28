@@ -8,13 +8,10 @@
 
   .wrap.container {padding:10px 10px 0; overflow: hidden; margin: 0;}
   header.banner, footer.content-info {display: none;}
-  section {margin-bottom:100px;}
-
-  .red {fill:@buffon-red; color:@buffon-red}
-  .yellow {fill:@buffon-yellow; color:@buffon-yellow}
-  .blue {fill:@buffon-blue; color:@buffon-blue}
-  .pink {fill:@buffon-pink; color:@buffon-pink}
-  .white {fill:white;}
+  section {
+    margin-bottom:50px;
+    @media @sm {margin-bottom:100px;}
+  }
 
   // Variables
   @buffon-pink: #e58aa3;
@@ -22,11 +19,77 @@
   @buffon-blue: #92dfc2;
   @buffon-red: #f0432f;
 
+  .kern-liga {
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+  	font-kerning: normal;
+  }
+
+  .islaScript {
+    font-family: IslaScriptBeta-Regular;
+  }
+
+  .ss01 {
+    -moz-font-feature-settings: "ss01";
+    -webkit-font-feature-settings: "ss01";
+    font-feature-settings: "ss01";
+  }
+  .ss02 {
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
+    font-feature-settings: "ss02";
+  }
+  .ss03 {
+    -moz-font-feature-settings: "ss03";
+    -webkit-font-feature-settings: "ss03";
+    font-feature-settings: "ss03";
+  }
+  .onum {
+    -moz-font-feature-settings:"onum=1";
+    -moz-font-feature-settings:"onum";
+    -ms-font-feature-settings:"onum";
+    -webkit-font-feature-settings:"onum";
+    font-feature-settings:"onum";
+  }
+  .onumss01 {
+    -moz-font-feature-settings:"ss01=1, onum=1";
+    -moz-font-feature-settings:"ss01", "onum";
+    -ms-font-feature-settings:"ss01", "onum";
+    -webkit-font-feature-settings:"ss01", "onum";
+    font-feature-settings:"ss01", "onum";
+  }
+  .onumss02 {
+    -moz-font-feature-settings:"ss02=1, onum=1";
+    -moz-font-feature-settings:"ss02", "onum";
+    -ms-font-feature-settings:"ss02", "onum";
+    -webkit-font-feature-settings:"ss02", "onum";
+    font-feature-settings:"ss02", "onum";
+  }
+  .onumss03 {
+    -moz-font-feature-settings:"ss03=1, onum=1";
+    -moz-font-feature-settings:"ss03", "onum";
+    -ms-font-feature-settings:"ss03", "onum";
+    -webkit-font-feature-settings:"ss03", "onum";
+    font-feature-settings:"ss03", "onum";
+  }
+
+
+  .red {fill:@buffon-red; color:@buffon-red}
+  .yellow {fill:@buffon-yellow; color:@buffon-yellow}
+  .blue {fill:@buffon-blue; color:@buffon-blue}
+  .pink {fill:@buffon-pink; color:@buffon-pink}
+  .white {fill:white;}
+
+  .thin {font-family: Buffon-Thin;}
+  .regular {font-family: Buffon-Regular;}
+  .bold {font-family: Buffon-Bold;}
+  .heavy {font-family: Buffon-Heavy;}
+
   // Header
   a.theagsc_logo {
     position: absolute;
     fill:white;
-    top:-56px;
+    top:-60px;
 
     svg {position:relative;width:110px; z-index: 99999;}
     &:hover svg {fill:@buffon-pink;color:@buffon-pink;}
@@ -39,14 +102,23 @@
   }
 
   // Typography
-  p, h1 {
-    color:white;
+  p, h1, h2 {
     font-family: Buffon-Regular;
-  	-webkit-font-variant-ligatures: common-ligatures;
+    -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
-    -webkit-font-feature-settings: "kern";
-  	font-feature-settings: "kern";
   	font-kerning: normal;
+    color:white;
+  }
+  h2 {
+    .islaScript;
+    font-size: 26pt;
+    text-align: center;
+    margin-bottom: 36px;
+
+    @media @sm {
+      font-size: 34pt;
+      margin-bottom: 50px;
+    }
   }
 
   // Sections
@@ -54,23 +126,19 @@
     position: relative;
     width:100%;
     max-width: 700px;
-    margin: 65px auto 20px auto;
+    margin: 60px auto 25px auto;
     // text-align: center;
     // background-color: grey;
 
-    @media @sm {margin-top: 80px;}
+    @media @sm {margin: 80px auto 50px auto;}
 
-    p.islaScript {
-      font-family: IslaScriptBeta-Regular;
-      font-size: 18pt;
+    h2 {
+      font-size: 20pt;
       text-align: center;
       margin-bottom: -10px;
-      -moz-font-feature-settings: "ss01";
-      -webkit-font-feature-settings: "ss01";
-      font-feature-settings: "ss01";
 
       @media @sm {
-        font-size: 26pt;
+        font-size: 32pt;
         margin-bottom: -30px;
       }
     }
@@ -88,30 +156,31 @@
       font-size: 22pt;
       line-height:30pt;
       strong {font-family: Buffon-Heavy;}
-      @media @sm {font-size: 26pt;line-height:36pt;}
+      @media @sm {
+        font-size: 30pt;
+        line-height:44pt;
+        max-width:510px;
+      }
     }
   }
   section#weights {
-    svg {
-      display: block;
-      width:35px;
-      margin: -2px auto 5px auto;
-
-      @media @md {
-        width:50px;
-        margin: 5px auto 15px auto;
-      }
-    }
     p {
       display: inline-block;
       width:100%;
       text-align: center;
-      font-size: 60pt;
     }
-    .thin {font-family: Buffon-Thin;}
-    .regular {font-family: Buffon-Regular;}
-    .bold {font-family: Buffon-Bold;}
-    .heavy {font-family: Buffon-Heavy;}
+
+    svg {
+      display: block;
+      width:35px;
+      margin: -2px auto 10px auto;
+
+      @media @sm {
+        width:50px;
+        margin: 5px auto 15px auto;
+      }
+    }
+
   }
   section#cloud {
     svg {width:100%;}
@@ -121,13 +190,23 @@
     p#availNow {
       font-family: Buffon-Thin;
       font-size: 22pt;
+
+      @media @sm {font-size: 30pt;}
     }
     a {
       p {
         font-size: 68pt;
+        width:300px;
+        display: inline-block;
         font-family: Buffon-Heavy;
         text-transform: uppercase;
-        margin-bottom: -20px;
+        margin-bottom:-20px;
+
+        @media @sm {
+          font-size:94pt;
+          width:335px;
+          margin-bottom:-30px;
+        }
       }
       #lt-lost {
         .char1 {.longshad-blue;}
@@ -150,6 +229,18 @@
     }
   }
   section#ligatures {
+    p {text-align: center;}
     p span {color:white;}
+    p span.nolig {
+      -webkit-font-variant-ligatures: no-common-ligatures;
+      font-variant-ligatures: no-common-ligatures;
+    }
+  }
+  section#alternates {
+    p {text-align: center;}
+  }
+
+  section#figures {
+    p {text-align: center;}
   }
 }

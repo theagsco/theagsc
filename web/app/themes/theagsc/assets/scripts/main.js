@@ -113,6 +113,7 @@ $( document ).ready(function() {
 
   $(".lettering").lettering();
 
-  $(".fitText").fitText(1.6);
+  $(".fitText").fitText(1.6, { maxFontSize: '56pt' });
+  $(".fitTextLiga").fitText(1.1, { maxFontSize: '56pt' });
 
 });
