@@ -109,27 +109,10 @@ $( document ).ready(function() {
 
 	});
 
-});
-
-$(document).ready(function() {
-
-	$('header.navbar').scrollupbar();
-
-	// make home header fixed
-	jQuery(window).scroll(function() {
-		if (jQuery(this).scrollTop() < 450) {
-			jQuery('body').addClass('scrolling_header');
-		}
-		else if ($(this).scrollTop() > 450) {
-			jQuery('body').removeClass('scrolling_header');
-		}
-
-	});
-
 	$('p:empty').remove();
 
   $(".lettering").lettering();
 
-  jQuery("#weights p").fitText(1.6);
+  $("#weights p").fitText(1.6);
 
 });
