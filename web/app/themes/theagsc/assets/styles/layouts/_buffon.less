@@ -6,15 +6,15 @@
   // Main
   background:@buffon-black;
 
-  .wrap.container {padding:20px 10px 0;}
+  .wrap.container {padding:10px 10px 0; overflow: hidden; margin: 0;}
   header.banner, footer.content-info {display: none;}
   section {margin-bottom:100px;}
 
-  svg.red {fill:#f0432f;}
-  svg.yellow {fill:#ffe64b;}
-  svg.blue {fill:#92dfc2;}
-  svg.pink {fill:#e58aa3;}
-  svg.white {fill:white;}
+  .red {fill:@buffon-red; color:@buffon-red}
+  .yellow {fill:@buffon-yellow; color:@buffon-yellow}
+  .blue {fill:@buffon-blue; color:@buffon-blue}
+  .pink {fill:@buffon-pink; color:@buffon-pink}
+  .white {fill:white;}
 
   // Variables
   @buffon-pink: #e58aa3;
@@ -24,13 +24,18 @@
 
   // Header
   a.theagsc_logo {
-    position: fixed;
+    position: absolute;
     fill:white;
-    top:9px;
-    left:10px;
+    top:-56px;
 
-    svg {position: relative;width:110px;height: auto; z-index: 99999;}
+    svg {position:relative;width:110px; z-index: 99999;}
     &:hover svg {fill:@buffon-pink;color:@buffon-pink;}
+
+    @media @sm {
+      position: fixed;
+      top:9px;
+      left:10px;
+    }
   }
 
   // Typography
@@ -47,106 +52,49 @@
   // Sections
   #buffonTitleWrapper {
     position: relative;
-    height:240px;
-    margin-bottom: 160px;
+    width:100%;
+    max-width: 700px;
+    margin: 65px auto 20px auto;
     // text-align: center;
     // background-color: grey;
+
+    @media @sm {margin-top: 80px;}
+
     p.islaScript {
       font-family: IslaScriptBeta-Regular;
-      font-size: 26pt;
+      font-size: 18pt;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: -10px;
       -moz-font-feature-settings: "ss01";
       -webkit-font-feature-settings: "ss01";
       font-feature-settings: "ss01";
+
+      @media @sm {
+        font-size: 26pt;
+        margin-bottom: -30px;
+      }
     }
-    svg.buffonTitle {
-      width:80%;
-      display: block;
-      margin: auto 0;
-    }
-    .svg {
-      display:block;
-      position: absolute;
-    }
-    svg#yellowDrop {
-      width:75px;
-      left:5%;
-      top:-122px;
-      @pink-rotate: 132deg;
-      -ms-transform: rotate(@pink-rotate);
-      -webkit-transform: rotate(@pink-rotate);
-      transform: rotate(@pink-rotate);
-    }
-    svg#pinkDrop {
-      width:65px;
-      height: auto;
-      right:10%;
-      top:-94px;
-      @pink-rotate: -132deg;
-      -ms-transform: rotate(@pink-rotate);
-      -webkit-transform: rotate(@pink-rotate);
-      transform: rotate(@pink-rotate);
-    }
-    svg#redDrop {
-      width:80px;
-      height: auto;
-      right:1%;
-      bottom:-124px;
-      @pink-rotate: -51deg;
-      -ms-transform: rotate(@pink-rotate);
-      -webkit-transform: rotate(@pink-rotate);
-      transform: rotate(@pink-rotate);
-    }
-    svg#blueDrop {
-      width:50px;
-      height: auto;
-      left:42%;
-      bottom:-93px;
-      @pink-rotate: 18deg;
-      -ms-transform: rotate(@pink-rotate);
-      -webkit-transform: rotate(@pink-rotate);
-      transform: rotate(@pink-rotate);
-    }
-    svg#whiteDrop {
-      width:74px;
-      height: auto;
-      left:1%;
-      bottom:-115px;
-      @pink-rotate: 58deg;
-      -ms-transform: rotate(@pink-rotate);
-      -webkit-transform: rotate(@pink-rotate);
-      transform: rotate(@pink-rotate);
-    }
-    svg#blueBurst {
-      position: absolute;
-      width:70px;
-      height: auto;
-      right:-70px;
-      top:0;
-    }
-    svg#pinkBurst {
-      width:68px;
-      height: auto;
-      left:-95px;
-      top:70px;
+    div {
+      svg#buffonTitle {
+        width:100%;
+        display: block;
+      }
     }
   }
-  // #blurb {
-  //   text-align: center;
-  //   p {
-  //     font-size: 26pt;
-  //     line-height:36pt;
-  //     width:510px;
-  //     strong {font-family: Buffon-Heavy;}
-  //   }
-  // }
+  #blurb {
+    padding:0 5px;
+    p {
+      text-align: center;
+      font-size: 22pt;
+      line-height:30pt;
+      strong {font-family: Buffon-Heavy;}
+      @media @sm {font-size: 26pt;line-height:36pt;}
+    }
+  }
   section#weights {
-    text-align: center;
     svg {
-      display: inline-block;
+      display: block;
       width:35px;
-      height: auto;
       margin: -2px auto 5px auto;
 
       @media @md {
@@ -166,40 +114,20 @@
     .heavy {font-family: Buffon-Heavy;}
   }
   section#cloud {
-    svg {width:100%;height:auto;}
+    svg {width:100%;}
   }
-  section#buyNow {
-    #buyText {
-      float: left;
-      margin-left: 100px;
-
-      p {
-        position: relative;
-        font-size: 100pt;
-        font-family: Buffon-Heavy;
-        .char1 {
-          font-family: Buffon-Regular;
-          font-size: 45pt;
-          vertical-align: baseline;
-          position: relative;
-          top: -0.9em;
-          font-variant-numeric: oldstyle-nums;
-        	-moz-font-feature-settings: "onum", "ss03";
-        	-webkit-font-feature-settings: "onum", "ss03";
-        	font-feature-settings: "onum", "ss03";
-        }
-      }
+  section#lostType {
+    text-align: center;
+    p#availNow {
+      font-family: Buffon-Thin;
+      font-size: 22pt;
     }
-    #lostType {
-      margin-right: 100px;
-      float: right;
-
+    a {
       p {
+        font-size: 68pt;
         font-family: Buffon-Heavy;
         text-transform: uppercase;
-        font-size: 120pt;
-        line-height: 94pt;
-        text-align: right;
+        margin-bottom: -20px;
       }
       #lt-lost {
         .char1 {.longshad-blue;}
@@ -213,6 +141,15 @@
         .char3 {.longshad-blue;}
         .char4 {.longshad-pink;}
       }
+      &:hover #lt-lost, &:hover #lt-type {
+        .char1 {.longshad-pink;}
+        .char2 {.longshad-pink;}
+        .char3 {.longshad-pink;}
+        .char4 {.longshad-pink;}
+      }
     }
+  }
+  section#ligatures {
+    p span {color:white;}
   }
 }
