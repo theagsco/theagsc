@@ -11,7 +11,7 @@
 
 
 <section id="blurb">
-<p contenteditable="true">A playful reverse-contrast typeface from <strong>The AGSC</strong>.</p>
+<p>A playful reverse-contrast typeface from <strong>The AGSC</strong>, available on <a href="http://losttype.com">LostType</a>.</p>
 </section>
 
 <section id="weights">
@@ -34,6 +34,18 @@
   <p class="pink fitTextLiga"><span class="nolig">kerfuffle <span class="thin">&rarr;</span></span> <span>kerfu</span>ffl<span>e</span></p>
   <p class="yellow fitTextLiga"><span class="nolig">fatty <span class="thin">&rarr;</span></span> <span>fa</span>tt<span>y</span></p>
 </section>
+
+<section id="creativeSouth">
+  <h2>Proudly Sponsored by</h2>
+  <p class="heavy" id="creativeSouthTitle">Creative South</p>
+  <p>Huge thanks to Mike Jones and the wonderful staff and volunteers at <a href="http://creativesouthga.com">Creative South</a>, for sponsoring Dave’s trip to <a href="http://typeparis.com">Paris</a> and making Buffon possible!</p>
+</section>
+
+<section id="poster">
+  <img src="<?php echo get_template_directory_uri(); ?>/dist/images/poster.jpg">
+</section>
+
+
 
 <section id="alternates">
   <h2>Alternates</h2>

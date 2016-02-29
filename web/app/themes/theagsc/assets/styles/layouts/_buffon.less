@@ -1,8 +1,6 @@
 .buffon {
   * {outline: 0px solid transparent;}
 
-  p {line-height: normal;}
-
   // Main
   background:@buffon-black;
 
@@ -103,13 +101,15 @@
   }
 
   // Typography
-  p, h1, h2, ul li {
+    p {line-height: normal;}
+    p, h1, h2, ul li {
     font-family: Buffon-Regular;
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
   	font-kerning: normal;
     color:white;
   }
+  p a {color:@buffon-pink; &:hover {color:@buffon-red}}
   h2 {
     .islaScript;
     font-size: 26pt;
@@ -247,6 +247,7 @@
   section#menu {
     position: relative;
     width:80%;
+    max-width: 700px;
     margin: 0 auto 60px auto;
     padding:80px 0;
     border:solid 1px white;
@@ -338,6 +339,24 @@
       right:-30px;
       top:50%;
       margin-top: -40px;
+    }
+  }
+  section#creativeSouth {
+    &:before {}
+    p {
+      width:80%;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 26pt;
+    }
+  }
+  section#poster {
+    position: relative;
+    img {
+      width:90%;
+      height:auto;
+      margin: 0 auto;
+      display: block;
     }
   }
 }
