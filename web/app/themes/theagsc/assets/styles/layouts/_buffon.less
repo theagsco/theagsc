@@ -7,6 +7,7 @@
   .wrap.container {padding:10px 10px 0; overflow: hidden; margin: 0;}
   header.banner, footer.content-info {display: none;}
   section {
+    position: relative;
     margin-bottom:50px;
     @media @sm {margin-bottom:100px;}
   }
@@ -114,7 +115,7 @@
     .islaScript;
     font-size: 26pt;
     text-align: center;
-    margin-bottom: 36px;
+    margin-bottom: 30px;
 
     @media @sm {
       font-size: 34pt;
@@ -166,6 +167,7 @@
   }
   section#weights {
     p {
+      font-size: 28pt;
       display: inline-block;
       width:100%;
       text-align: center;
@@ -230,7 +232,8 @@
     }
   }
   section#ligatures {
-    p {text-align: center;}
+    h2 {margin-top: -10px;}
+    p {text-align: center; font-size: 22pt;}
     p span {color:white;}
     p span.nolig {
       -webkit-font-variant-ligatures: no-common-ligatures;
@@ -238,21 +241,51 @@
     }
   }
   section#alternates {
-    p {text-align: center;}
+    h2 {margin-bottom: 10px;}
+    p {
+      font-size: 22pt;
+      text-align: center;
+      margin-left: 20px;
+      height: 35px;
+      svg {
+        height:42px;
+        width:auto;
+        top:13px;
+        left:-9px;
+        position: relative;
+      }
+    }
+
   }
 
   section#figures {
-    p {text-align: center;}
+    p, p > a {
+      text-align: center;
+      font-size: 38pt;
+      color:white !important;
+      pointer-events: none;
+    }
+    svg {
+      width:310px;
+      top:-20px;
+      left:-9px;
+      position: relative;
+      margin: 0 auto;
+      display: block;
+    }
   }
   section#menu {
     position: relative;
-    width:80%;
+    width:90%;
     max-width: 700px;
     margin: 0 auto 60px auto;
-    padding:80px 0;
+    padding:40px 0;
     border:solid 1px white;
     text-align: center;
-
+    @media @sm {
+      width:80%;
+      padding:80px 0;
+    }
     &:before {
       content: " ";
       position: absolute;
@@ -265,9 +298,12 @@
     }
     #menuTitle {
       text-align: center;
-      font-size: 50pt;
+      font-size: 26pt;
       .heavy;
       text-transform: uppercase;
+      @media @sm {
+        font-size: 50pt
+      }
     }
     #menuTitle span:nth-child(even) {
       vertical-align: baseline;
@@ -277,77 +313,123 @@
     h2 {
       position: relative;
       display: inline-block;
-      font-size: 42pt;
+      font-size: 30pt;
+      margin:0 auto 17px auto;
+      @media @sm {font-size: 42pt;}
       svg {
         position: absolute;
-        bottom:-28px;
+        bottom:-20px;
         width:100%;
         left: 0;
+        @media @sm {bottom:-28px;}
       }
     }
     ul {
       position: relative;
-      width:500px;
+      width:280px;
       text-align: left;
       margin: 0 auto;
+      padding:0 0 0 15px;
+      @media@sm {width:500px;}
       li {
         display: block;
-        font-size: 30pt;
+        font-size: 16pt;
 
-        svg {width:40px;}
+        @media @sm {font-size: 30pt;}
+
+        svg {
+          position: relative;
+          width:30px;
+          top:7px;
+          @media @sm {width:40px}
+        }
       }
     }
     svg.border {
-      width:100px;
+      width:60px;
       position: absolute;
       fill:white;
       background-color: @buffon-black;
       padding:5px;
+      @media @sm {
+        width:100px;
+      }
     }
     #topright {
-      top:-30px;right:-30px;
+      top:-20px;right:-20px;
       -ms-transform: rotate(90deg);
       -webkit-transform: rotate(90deg);
       transform: rotate(90deg);
+      @media @sm {
+        top:-30px;right:-30px;
+      }
     }
     #topleft {
-      top:-30px;left:-30px;
+      top:-20px;left:-20px;
       -ms-transform: rotate(0deg);
       -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
+      @media @sm {
+        top:-30px;left:-30px;
+      }
     }
     #bottomright {
-      bottom:-30px;right:-30px;
+      bottom:-20px;right:-20px;
       -ms-transform: rotate(180deg);
       -webkit-transform: rotate(180deg);
       transform: rotate(180deg);
+      @media @sm {
+        bottom:-30px;right:-30px;
+      }
     }
     #bottomleft {
-      bottom:-30px;left:-30px;
+      bottom:-20px;left:-20px;
       -ms-transform: rotate(-90deg);
       -webkit-transform: rotate(-90deg);
       transform: rotate(-90deg);
+      @media @sm {
+        bottom:-30px;left:-30px;
+      }
     }
     #middleleft {
-      width:70px;
-      left:-30px;
+      width:50px;
+      left:-22px;
       top:50%;
       margin-top: -40px;
+      @media @sm {
+        width:70px;
+        left:-30px;
+      }
     }
     #middleright {
-      width:70px;
-      right:-30px;
+      width:50px;
+      right:-24px;
       top:50%;
       margin-top: -40px;
+      @media @sm {
+        width:70px;
+        right:-30px;
+      }
     }
   }
   section#creativeSouth {
-    &:before {}
+    h2 {margin-bottom: 10px;}
+    p#creativeSouthTitle {
+      font-family: Buffon-Heavy;
+      text-align: center;
+      font-size: 48pt;
+      color:@buffon-yellow;
+      line-height: 46pt;
+      margin-bottom: 20px;
+      width:100%;
+    }
+    svg {position: absolute;}
     p {
-      width:80%;
+      font-family: Buffon-Regular;
+      width:85%;
       max-width: 700px;
-      margin: 0 auto;
-      font-size: 26pt;
+      font-size: 17pt;
+      line-height: 22pt;
     }
   }
   section#poster {

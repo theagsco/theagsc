@@ -14,61 +14,77 @@
 <p>A playful reverse-contrast typeface from <strong>The AGSC</strong>, available on <a href="http://losttype.com">LostType</a>.</p>
 </section>
 
-<section id="weights">
-  <p class="thin fitText" contenteditable="true">In a light-footed, delicate Thin</p>
-  <img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg">
-  <p class="regular fitText" contenteditable="true">A spirited, friendly Regular</p>
-  <img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg">
-  <p class="bold fitText" contenteditable="true">A hearty, big-boned Bold</p>
-  <img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg">
-  <p class="heavy fitText" contenteditable="true">&amp; a fat, sassy Heavy.</p>
-</section>
-
-
-<section id="ligatures">
-  <h2>Ligatures</h2>
-  <p class="pink fitTextLiga"><span class="nolig">satisfied <span class="thin">&rarr;</span></span> <span>satis</span>fi<span>ed</span></p>
-  <p class="yellow fitTextLiga"><span class="nolig">trifling <span class="thin">&rarr;</span></span> <span>tri</span>fl<span>ing</span></p>
-  <p class="blue fitTextLiga"><span class="nolig">toffee <span class="thin">&rarr;</span></span> <span>to</span>ff<span>ee</span></p>
-  <p class="red fitTextLiga"><span class="nolig">coffin <span class="thin">&rarr;</span></span> <span>co</span>ffi<span>n</span></p>
-  <p class="pink fitTextLiga"><span class="nolig">kerfuffle <span class="thin">&rarr;</span></span> <span>kerfu</span>ffl<span>e</span></p>
-  <p class="yellow fitTextLiga"><span class="nolig">fatty <span class="thin">&rarr;</span></span> <span>fa</span>tt<span>y</span></p>
-</section>
-
 <section id="creativeSouth">
   <h2>Proudly Sponsored by</h2>
   <p class="heavy" id="creativeSouthTitle">Creative South</p>
-  <p>Huge thanks to Mike Jones and the wonderful staff and volunteers at <a href="http://creativesouthga.com">Creative South</a>, for sponsoring Dave’s trip to <a href="http://typeparis.com">Paris</a> and making Buffon possible!</p>
+  <!-- <img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_circle.svg"> -->
+  <p>Huge thanks to Mike Jones and the staff at <a href="http://creativesouthga.com">Creative South</a>, for sponsoring Dave’s trip to <a href="http://typeparis.com">Paris</a> and making Buffon possible!</p>
 </section>
 
-<section id="poster">
-  <img src="<?php echo get_template_directory_uri(); ?>/dist/images/poster.jpg">
+<section id="weights">
+  <h2>Weights</h2>
+  <p class="thin" contenteditable="true">A light-footed, delicate Thin</p>
+  <img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg">
+  <p class="regular" contenteditable="true">A spirited, friendly Regular</p>
+  <img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg">
+  <p class="bold" contenteditable="true">A hearty, big-boned Bold</p>
+  <img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg">
+  <p class="heavy" contenteditable="true">&amp; a fat, sassy Heavy.</p>
 </section>
 
-
+<section id="ligatures">
+  <h2>Ligatures</h2>
+  <p class="pink"><span class="nolig">satisfied <span class="thin">&rarr;</span></span> <span>satis</span>fi<span>ed</span></p>
+  <p class="yellow"><span class="nolig">trifling <span class="thin">&rarr;</span></span> <span>tri</span>fl<span>ing</span></p>
+  <p class="blue"><span class="nolig">toffee <span class="thin">&rarr;</span></span> <span>to</span>ff<span>ee</span></p>
+  <p class="red"><span class="nolig">coffin <span class="thin">&rarr;</span></span> <span>co</span>ffi<span>n</span></p>
+  <p class="pink"><span class="nolig">kerfuffle <span class="thin">&rarr;</span></span> <span>kerfu</span>ffl<span>e</span></p>
+  <p class="yellow"><span class="nolig">fatty <span class="thin">&rarr;</span></span> <span>fa</span>tt<span>y</span></p>
+</section>
 
 <section id="alternates">
   <h2>Alternates</h2>
-  <p class="fitTextLiga">sc <span class="thin">&rarr;</span> <span class="pink ss01">sc</span></p>
-  <p class="fitTextLiga">
-    $<span class="onum">$</span>&cent; <span class="thin">&rarr;</span>
-    <span class="yellow ss01">$</span><span class="yellow onumss01">$</span>
-    <span class="yellow ss02">$</span><span class="yellow onumss02">$</span>
-    <span class="yellow onumss03">$</span><span class="yellow ss03">&cent;</span>
+  <p>
+    sc <span class="thin">&rarr;</span>
+    <img class="svg pink" id="topright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_sc.svg">
   </p>
-  <p class="fitTextLiga">* <span class="thin">&rarr;</span> <span class="red ss01">*</span></p>
-  <p class="fitTextLiga">!? <span class="thin">&rarr;</span> <span class="blue ss01">!?</span></p>
-</section>
-
-<section id="cloud">
-  <img class="svg" src="<?php echo get_template_directory_uri(); ?>/dist/images/buffon_cloud.svg">
+  <p>
+    $<span class="onum">$</span>&cent; <span class="thin">&rarr;</span>
+    <img class="svg yellow" id="topright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_dollar.svg">
+  </p>
+  <p>
+    * <span class="thin">&rarr;</span>
+    <img class="svg red" id="topright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_asterisk.svg">
+  </p>
+  <p>
+    !? <span class="thin">&rarr;</span>
+    <img class="svg blue" id="topright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_exclam.svg">
+  </p>
+  <p>
+    &uarr;&rarr;&darr;&larr; <span class="thin">&rarr;</span>
+    <img class="svg pink" id="topright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_arrows.svg">
+  </p>
 </section>
 
 <section id="figures">
   <h2>Figures</h2>
-  <p class="fitTextLiga">0123456789</p>
-  <p class="fitTextLiga onum">0123456789</p>
+  <p>0123456789</p>
+  <img class="svg blue" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_onum.svg">
 </section>
+
+
+
+<section id="poster">
+  <img src="<?php bloginfo('template_directory'); ?>/dist/images/poster.jpg">
+</section>
+
+
+
+
+<section id="cloud">
+  <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_cloud.svg">
+</section>
+
 
 <section id="menu">
   <img class="svg border" id="topright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_corner.svg">
