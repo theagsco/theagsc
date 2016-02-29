@@ -1,5 +1,5 @@
-Category Blog
-<nav class="sub-nav">
+<!-- This is the code for the main Blog page -->
+<!-- <nav class="sub-nav">
 	<ul>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/tutorials" id="tutorials">Tutorials</a></li>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/articles" id="articles">Articles</a></li>
@@ -7,7 +7,7 @@ Category Blog
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/interviews" id="interviews">Interviews</a></li>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/news" id="news">News</a></li>
 	</ul>
-</nav>
+</nav> -->
 <div style="clear: both;"></div>
 
 <div id="blog" data-columns>

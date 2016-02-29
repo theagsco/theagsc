@@ -90,6 +90,7 @@
     position: absolute;
     fill:white;
     top:-60px;
+    z-index: 99999;
 
     svg {position:relative;width:110px; z-index: 99999;}
     &:hover svg {fill:@buffon-pink;color:@buffon-pink;}
@@ -102,7 +103,7 @@
   }
 
   // Typography
-  p, h1, h2 {
+  p, h1, h2, ul li {
     font-family: Buffon-Regular;
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
@@ -242,5 +243,101 @@
 
   section#figures {
     p {text-align: center;}
+  }
+  section#menu {
+    position: relative;
+    width:80%;
+    margin: 0 auto 60px auto;
+    padding:80px 0;
+    border:solid 1px white;
+    text-align: center;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      z-index: -1;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+      border: solid 1px white;
+    }
+    #menuTitle {
+      text-align: center;
+      font-size: 50pt;
+      .heavy;
+      text-transform: uppercase;
+    }
+    #menuTitle span:nth-child(even) {
+      vertical-align: baseline;
+      position: relative;
+      top: -0.08em;
+    }
+    h2 {
+      position: relative;
+      display: inline-block;
+      font-size: 42pt;
+      svg {
+        position: absolute;
+        bottom:-28px;
+        width:100%;
+        left: 0;
+      }
+    }
+    ul {
+      position: relative;
+      width:500px;
+      text-align: left;
+      margin: 0 auto;
+      li {
+        display: block;
+        font-size: 30pt;
+
+        svg {width:40px;}
+      }
+    }
+    svg.border {
+      width:100px;
+      position: absolute;
+      fill:white;
+      background-color: @buffon-black;
+      padding:5px;
+    }
+    #topright {
+      top:-30px;right:-30px;
+      -ms-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+    #topleft {
+      top:-30px;left:-30px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    #bottomright {
+      bottom:-30px;right:-30px;
+      -ms-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    #bottomleft {
+      bottom:-30px;left:-30px;
+      -ms-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+    #middleleft {
+      width:70px;
+      left:-30px;
+      top:50%;
+      margin-top: -40px;
+    }
+    #middleright {
+      width:70px;
+      right:-30px;
+      top:50%;
+      margin-top: -40px;
+    }
   }
 }

@@ -48,14 +48,31 @@
   <p class="fitTextLiga">!? <span class="thin">&rarr;</span> <span class="blue ss01">!?</span></p>
 </section>
 
+<section id="cloud">
+  <img class="svg" src="<?php echo get_template_directory_uri(); ?>/dist/images/buffon_cloud.svg">
+</section>
+
 <section id="figures">
   <h2>Figures</h2>
   <p class="fitTextLiga">0123456789</p>
   <p class="fitTextLiga onum">0123456789</p>
 </section>
 
-<section id="cloud">
-  <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_cloud.svg">
+<section id="menu">
+  <img class="svg border" id="topright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_corner.svg">
+  <img class="svg border" id="topleft" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_corner.svg">
+  <img class="svg border" id="bottomright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_corner.svg">
+  <img class="svg border" id="bottomleft" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_corner.svg">
+  <img class="svg border" id="middleleft" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg">
+  <img class="svg border" id="middleright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg">
+  <p class="lettering" id="menuTitle">Menu Del D&iacute;a</p>
+  <h2>Primeros<img class="svg blue" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_underline.svg"></h2>
+  <ul>
+    <li><img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg"> Fabada Asturiana</li>
+    <li><img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg"> Fabes con almejas</li>
+    <li><img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg"> Ensalada de quesos</li>
+  </ul>
+  <div style="clear:both"></div>
 </section>
 
 <section id="lostType">

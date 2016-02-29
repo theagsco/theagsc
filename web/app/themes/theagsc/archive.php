@@ -1,4 +1,3 @@
-Archive
 <nav class="sub-nav">
 	<ul>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/tutorials" id="tutorials">Tutorials</a></li>
