@@ -3,7 +3,7 @@
  * Template Name: Buffon
  */
 ?>
-<a href="<?= esc_url(home_url('/')); ?>" class="theagsc_logo"><img class="svg" id="pinkBurst" src="<?php bloginfo('template_directory'); ?>/dist/images/theagsc_small.svg"></a>
+<a href="<?= esc_url(home_url('/')); ?>" class="theagscLogo"><img class="svg" id="pinkBurst" src="<?php bloginfo('template_directory'); ?>/dist/images/theagsc_small.svg"></a>
 <section id="buffonTitleWrapper">
   <h2>Introducing</h2>
   <img class="svg" id="buffonTitle" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_title.svg">
@@ -11,7 +11,7 @@
 
 
 <section id="blurb">
-<p>A playful reverse-contrast typeface from <strong>The AGSC</strong>, available on <a href="http://losttype.com">LostType</a>.</p>
+<p>A playful reverse-contrast typeface from <strong>The AGSC</strong>, available on <a href="http://www.losttype.com/font/?name=buffon">LostType</a>.</p>
 </section>
 
 <section id="creativeSouth">
@@ -72,19 +72,13 @@
   <img class="svg blue" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_onum.svg">
 </section>
 
-
-
 <section id="poster">
+  <h2>A Buffon Poster!</h2>
+  <p><a href="http://www.losttype.com/font/?name=buffon" title="Buffon on LostType">Purchase</a> a commercial license for $60 and receive a sweet A3 poster!</p>
   <img src="<?php bloginfo('template_directory'); ?>/dist/images/poster.jpg">
+  <img src="<?php bloginfo('template_directory'); ?>/dist/images/folded-poster.jpg">
+  <img src="<?php bloginfo('template_directory'); ?>/dist/images/inside-poster.jpg">
 </section>
-
-
-
-
-<section id="cloud">
-  <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_cloud.svg">
-</section>
-
 
 <section id="menu">
   <img class="svg border" id="topright" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_corner.svg">
@@ -100,13 +94,26 @@
     <li><img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg"> Fabes con almejas</li>
     <li><img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg"> Ensalada de quesos</li>
   </ul>
+  <h2>Segundos<img class="svg blue" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_underline.svg"></h2>
+  <ul>
+    <li><img class="svg red" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg"> Cachopo con patatas</li>
+    <li><img class="svg red" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg"> Paella de marisco</li>
+    <li><img class="svg red" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_burst.svg"> Escalopines al cabrales</li>
+  </ul>
+  <p class="drinks">Pan, Vino, Agua, Postre</p>
+  <p class="price">10&euro;<img class="svg yellow" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_underline.svg"></h2></p>
   <div style="clear:both"></div>
 </section>
 
+<section id="cloud">
+  <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_cloud.svg">
+</section>
+
 <section id="lostType">
-  <p id="availNow">Available now on</p>
-  <a href="http://losttype.com">
-    <p class="lettering" id="lt-lost">Lost</p><br />
-    <p class="lettering" id="lt-type">Type</p>
+    <a href="http://losttype.com">
+      <p id="availNow">Get Buffon now on</p>
+      <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/buffon_losttype.svg">
   </a>
 </section>
+
+<a href="<?= esc_url(home_url('/')); ?>" class="theagscLogoFooter white"><img class="svg" id="pinkBurst" src="<?php bloginfo('template_directory'); ?>/dist/images/theagsc_small.svg"></a>
