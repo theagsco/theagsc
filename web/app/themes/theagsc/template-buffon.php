@@ -75,9 +75,9 @@
 <section id="poster">
   <h2>A Buffon Poster!</h2>
   <p><a href="http://www.losttype.com/font/?name=buffon" title="Buffon on LostType">Purchase</a> a commercial license for $60 and receive a sweet A3 poster!</p>
-  <img src="<?php bloginfo('template_directory'); ?>/dist/images/poster.jpg">
-  <img src="<?php bloginfo('template_directory'); ?>/dist/images/folded-poster.jpg">
-  <img src="<?php bloginfo('template_directory'); ?>/dist/images/inside-poster.jpg">
+  <img src="<?php bloginfo('template_directory'); ?>/dist/images/poster-1.jpg">
+  <img src="<?php bloginfo('template_directory'); ?>/dist/images/poster-3.jpg">
+  <img src="<?php bloginfo('template_directory'); ?>/dist/images/poster-2.jpg">
 </section>
 
 <section id="menu">
