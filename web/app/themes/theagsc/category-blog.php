@@ -1,5 +1,6 @@
 <nav class="sub-nav">
 	<ul>
+		<li><p><em>Filter:</em></p></li>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/tutorials" id="tutorials">Tutorials</a></li>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/articles" id="articles">Articles</a></li>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/quick-tips" id="tips">Quick Tips</a></li>

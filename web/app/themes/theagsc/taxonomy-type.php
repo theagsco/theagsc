@@ -1,9 +1,11 @@
 <nav class="sub-nav">
 	<ul>
-		<li><a href="<?= esc_url(home_url('/')); ?>type/type-design" id="articles">Type Design</a></li>
-		<li><a href="<?= esc_url(home_url('/')); ?>type/lettering" id="tips">Lettering</a></li>
-		<li><a href="<?= esc_url(home_url('/')); ?>type/branding" id="interviews">Branding</a></li>
-		<li><a href="<?= esc_url(home_url('/')); ?>type/illustration" id="news">Illustration</a></li>
+		<li><p><em>Filter:</em></p></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>work" id="all">All</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>type/type-design" id="type-design">Type Design</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>type/lettering" id="lettering">Lettering</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>type/branding" id="branding">Branding</a></li>
+		<li><a href="<?= esc_url(home_url('/')); ?>type/illustration" id="illustration">Illustration</a></li>
 	</ul>
 </nav>
 <div style="clear: both;"></div>

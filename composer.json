@@ -29,14 +29,14 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "http://wpackagist.org"
+      "url": "https://wpackagist.org"
     }
   ],
   "require": {
     "php": ">=5.5",
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "4.4.2",
+    "johnpbloch/wordpress": "4.5.2",
     "oscarotero/env": "^1.0",
       "wpackagist-plugin/advanced-custom-fields":"dev-trunk",
       "wpackagist-plugin/cloudflare":"dev-trunk",
@@ -44,6 +44,7 @@
       "wpackagist-plugin/custom-post-type-ui":"dev-trunk",
     	"wpackagist-plugin/image-elevator": "dev-trunk",
     	"wpackagist-plugin/add-from-server": "dev-trunk",
+      "wpackagist-plugin/remove-category-url": "dev-trunk",  
     "roots/soil": "3.6.2"
   },
   "extra": {
