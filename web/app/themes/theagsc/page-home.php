@@ -1,3 +1,30 @@
+<h4>Recent Work</h4>
+
+<div id="work-home" class="home-tiles masonry" data-columns>
+
+		<?php
+			$the_query = new WP_Query(array(
+			'post_type' => 'work',
+			'posts_per_page' => 6,
+			'tag' => 'featured'
+			));
+			while ( $the_query->have_posts() ) :
+			$the_query->the_post();
+		?>
+		<div class="item">
+			<a href="<?php the_permalink();?>" class="blog-post">
+			<?php if( get_field('thumbnail') ): ?><img src="<?php the_field('thumbnail'); ?>" alt="" class="work_image" /><?php endif; ?>
+			</a>
+		</div><!-- item active -->
+		<?php
+			endwhile;
+			wp_reset_postdata();
+		?>
+
+</div><!-- work -->
+<a href="<?= esc_url(home_url('/')); ?>work" class="btn btn-green"><span>View more Work</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_work.svg"/></a>
+
+
 <div id="blog-home" class="home-tiles">
 
 	<h4>Blog Posts</h4>
@@ -29,29 +56,3 @@
 	<a href="<?= esc_url(home_url('/')); ?>blog" class="btn btn-green"><span>Visit the Blog</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_community.svg"/></a>
 
 </div><!-- blog -->
-
-<div id="work-home" class="home-tiles">
-
-	<h4>Recent Work</h4>
-
-		<?php
-			$the_query = new WP_Query(array(
-			'post_type' => 'work',
-			'posts_per_page' => 6,
-			'tag' => 'featured'
-			));
-			while ( $the_query->have_posts() ) :
-			$the_query->the_post();
-		?>
-		<div class="item"><a href="<?php the_permalink();?>" class="blog-post">
-			<?php if( get_field('thumbnail') ): ?><img src="<?php the_field('thumbnail'); ?>" alt="" class="work_image" /><?php endif; ?>
-		</a></div><!-- item active -->
-		<?php
-			endwhile;
-			wp_reset_postdata();
-		?>
-
-
-	<a href="<?= esc_url(home_url('/')); ?>work" class="btn btn-green"><span>View more Work</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_work.svg"/></a>
-
-</div><!-- work -->
