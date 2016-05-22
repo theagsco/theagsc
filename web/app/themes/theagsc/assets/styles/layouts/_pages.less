@@ -40,7 +40,7 @@
 }
 
 
-#blog {
+.masonry {
 	margin: -5px -20px;
 	.item {
 		padding:20px;
@@ -55,18 +55,18 @@
 	}
 }
 @media screen and (max-width: 768px){
-	#blog[data-columns]::before {
+	.masonry[data-columns]::before {
 		content: '1 .column.size-1of1';
 	}
 }
 
 @media screen and (min-width: 769px) and (max-width: 1199px) {
-	#blog[data-columns]::before {
+	.masonry[data-columns]::before {
 		content: '2 .column.size-1of2';
 	}
 }
 @media screen and (min-width: 1200px) {
-	#blog[data-columns]::before {
+	.masonry[data-columns]::before {
 		content: '3 .column.size-1of3';
 	}
 }

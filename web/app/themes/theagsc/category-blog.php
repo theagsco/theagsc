@@ -1,4 +1,3 @@
-Category Blog
 <nav class="sub-nav">
 	<ul>
 		<li><a href="<?= esc_url(home_url('/')); ?>blog/tutorials" id="tutorials">Tutorials</a></li>
@@ -10,7 +9,7 @@ Category Blog
 </nav>
 <div style="clear: both;"></div>
 
-<div id="blog" data-columns>
+<div id="blog" class="masonry" data-columns>
 
 <?php
 		$the_query = new WP_Query(array(
