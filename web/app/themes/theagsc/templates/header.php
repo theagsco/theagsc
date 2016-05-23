@@ -22,8 +22,7 @@
     <?php if (is_front_page()) : ?>
 
 		<div id="blurb">
-			<h1>A proudly Australian graphic design studio & creative community.</h1>
-			<h3>We are a husband and wife duo, passionate about lettering, illustration, web design and creating strong brands for businesses we believe in.</h3>
+			<h2>We are an Australian husband and wife, passionate about type design, lettering, illustration and creating strong brands for businesses we believe in.</h2>
 			<a class="btn" href="<?= esc_url(home_url('/')); ?>about"><span>Read More</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_go.svg"/></a>
 		</div><!--blurb-->
 
