@@ -45,6 +45,7 @@
     	"wpackagist-plugin/image-elevator": "dev-trunk",
     	"wpackagist-plugin/add-from-server": "dev-trunk",
       "wpackagist-plugin/remove-category-url": "dev-trunk",
+      "wpackagist-plugin/simple-custom-post-order": "2.3",
     "roots/soil": "3.6.2"
   },
   "extra": {

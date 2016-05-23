@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fc61a60c9079aeb2c28890e1559a4c74",
-    "content-hash": "e72200861b14c9341616ddfa01217991",
+    "hash": "61019f58250adb607da0134688539211",
+    "content-hash": "fd5fd90695a534f2befffaf9b29d6f58",
     "packages": [
         {
             "name": "composer/installers",
@@ -468,6 +468,26 @@
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/remove-category-url/",
             "time": "2015-09-17 02:46:19"
+        },
+        {
+            "name": "wpackagist-plugin/simple-custom-post-order",
+            "version": "2.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simple-custom-post-order/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-custom-post-order.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-custom-post-order/"
         }
     ],
     "packages-dev": [],

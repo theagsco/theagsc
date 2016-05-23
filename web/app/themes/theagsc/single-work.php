@@ -1,14 +1,15 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
     <header>
+      <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php the_post_thumbnail();?>
     </header>
-    
+
     <div class="entry-content">
 		<?php the_content(); ?>
     </div>
     <footer>
-	    
+
 <?php $prev_post = get_previous_post();
 if($prev_post) {
 $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
