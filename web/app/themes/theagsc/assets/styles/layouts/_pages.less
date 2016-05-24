@@ -1,3 +1,5 @@
+.post-type-archive-work .wrap, .category-blog .wrap {margin-top:75px;}
+
 .about {
 	section {
 		-webkit-column-width: 100%;
@@ -28,22 +30,15 @@
 
 	hr {margin: 80px auto 60px auto;}
 
-	img#dave-laura {
-		max-width: 100%;
-		height: auto;
-		width:100%;
-
-		@media @sm {
-			margin-top: 60px;
-		}
-	}
 }
 
 
-#blog {
+.masonry {
 	margin: -5px -20px;
 	.item {
-		padding:20px;
+		padding:15px 20px;
+
+		@media@sm {padding:20px;}
 
 		img {
 			width:100%;
@@ -54,24 +49,29 @@
 		.title-excerpt {}
 	}
 }
+
 @media screen and (max-width: 768px){
-	#blog[data-columns]::before {
+	.masonry[data-columns]::before {
 		content: '1 .column.size-1of1';
 	}
+
 }
 
 @media screen and (min-width: 769px) and (max-width: 1199px) {
-	#blog[data-columns]::before {
+	.masonry[data-columns]::before {
 		content: '2 .column.size-1of2';
 	}
 }
 @media screen and (min-width: 1200px) {
-	#blog[data-columns]::before {
+	.masonry[data-columns]::before {
 		content: '3 .column.size-1of3';
 	}
 }
 
 nav.sub-nav {
+	position: absolute;
+	right:0;
+	top:-28px;
 	ul {
 		float: right;
 		li {
@@ -85,6 +85,12 @@ nav.sub-nav {
 
 				&:hover {color:@green;}
 			}
+			p {
+				font-family: @museo;
+				color: @lighter-grey;
+				font-size: 14px;
+				line-height: 1.52857143;
+			}
 		}
 	}
 }
@@ -93,7 +99,11 @@ nav.sub-nav {
 .category-articles #articles,
 .category-tips #tips,
 .category-interviews #interviews,
-.category-news #news
+.category-news #news,
+.term-illustration #illustration,
+.term-lettering #lettering,
+.term-type-design #type-design,
+.term-branding #branding
 {color:@grey !important;}
 
 .column { float: left; }
@@ -102,13 +112,19 @@ nav.sub-nav {
 .size-1of2 { width: 50%; }
 .size-1of3 { width: 33.333%; }
 
+.single-work header h1 {
+	max-width:700px;
+	margin: 0 auto 25px auto;
+}
 .page {
 	#page-header {
 		max-width: 992px;
 		margin: 10px auto 0 auto;
 		text-align: center;
 
-		h1 {margin-bottom: 25px;}
+		h1 {
+			margin-bottom: 25px;
+		}
 
 		@media @sm {margin: 20px auto 20px auto;}
 

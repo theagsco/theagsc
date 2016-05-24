@@ -29,21 +29,23 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "http://wpackagist.org"
+      "url": "https://wpackagist.org"
     }
   ],
   "require": {
     "php": ">=5.5",
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "4.4.2",
+    "johnpbloch/wordpress": "4.5.2",
     "oscarotero/env": "^1.0",
-      "wpackagist-plugin/advanced-custom-fields":"dev-trunk",
-      "wpackagist-plugin/cloudflare":"dev-trunk",
-      "wpackagist-plugin/disqus-comment-system":"dev-trunk",
-      "wpackagist-plugin/custom-post-type-ui":"dev-trunk",
+      "wpackagist-plugin/advanced-custom-fields":"4.4.7",
+      "wpackagist-plugin/cloudflare":"1.3.24",
+      "wpackagist-plugin/disqus-comment-system":"2.85",
+      "wpackagist-plugin/custom-post-type-ui":"1.3.4",
     	"wpackagist-plugin/image-elevator": "dev-trunk",
     	"wpackagist-plugin/add-from-server": "dev-trunk",
+      "wpackagist-plugin/remove-category-url": "dev-trunk",
+      "wpackagist-plugin/simple-custom-post-order": "2.3",
     "roots/soil": "3.6.2"
   },
   "extra": {

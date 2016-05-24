@@ -1,13 +1,14 @@
+foter.footer-main {background:white;}
 footer {
-	margin: 70px auto 90px auto;
-	
+	margin: 0 auto;
+	padding:70px 0;
 	text-align: center;
-	
+
 	a.footer-brand {
 		position: relative;
 		display: block;
 		background:url("@{images}/logo_small.png");
-		background-size: 101px; 
+		background-size: 101px;
 		width:101px;
 		height: 22px;
 		text-indent: -9999px;
@@ -15,12 +16,12 @@ footer {
 		margin: 0 auto;
 		opacity: 0.4;
 		left:-3px;
-		
+
 		&:hover {
 			opacity: 1;
 		}
 	}
-	
+
 	.footer-email {
 		display: inline-block;
 		margin-top: 23px;
@@ -28,50 +29,51 @@ footer {
 		padding:0 1px 0 1px;
 		font-size: 1.1em;
 		font-family: @museo;
-		
+
 		&:hover {color:@black; border-bottom: solid 2px fade(@black, 90%); margin-bottom: -2px;}
 	}
-	
-	
+
+
 	ul {
 		width:345px;
 		margin: 0 auto;
 		list-style: none;
-		
+
 		@media @sm {width:305px;}
-		
+
 		li {
 			display: block;
 			float: left;
 			margin: 7px;
 			.icon40;
-			
+
 			@media @sm {.icon32;}
-			
+
 			a {display: block;line-height: 14px;}
 
 			a span {text-indent: -9999px; display: block;}
-			
+
 			a .svg {fill:@light-grey; .icon40; @media @sm {.icon32;}}
-			
+
 			a:hover .svg {fill:@black;}
 
 		}
 	}
-	
+
 	@media @sm {
-		margin: 60px auto 130px auto;
+		margin: 60px auto 0 auto;
 	}
-	
+
 	p {
-		width:340px;
+		max-width:440px;
 		margin: 40px auto 0 auto;
 		text-align: center;
 		font-size: 1em;
 		line-height: 22px;
 		color: @light-grey;
 		.spacing;
-		
+		padding:0 40px;
+
 		&:before {
 			display: block;
 			content:"";

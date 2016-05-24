@@ -113,7 +113,7 @@ $( document ).ready(function() {
 
 $(document).ready(function() {
 
-	$('header.navbar').scrollupbar();
+	// $('header.navbar').scrollupbar();
 
 	// make home header fixed
 	jQuery(window).scroll(function() {
@@ -127,5 +127,8 @@ $(document).ready(function() {
 	});
 
 	$('p:empty').remove();
+
+  // Fitvids: Target your .container, .wrapper, .post, etc.
+  $(".entry-content-asset").fitVids();
 
 });

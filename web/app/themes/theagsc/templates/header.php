@@ -1,6 +1,9 @@
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
   <div class="container">
-    <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+    <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>">
+      <img class="svg logo-main" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_logo.svg"/>
+      <img class="svg logo-small" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_logo-small.svg"/>
+    </a>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only"><?= __('Toggle navigation', 'sage'); ?></span>
@@ -22,14 +25,12 @@
     <?php if (is_front_page()) : ?>
 
 		<div id="blurb">
-			<h1>A proudly Australian graphic design studio & creative community.</h1>
-			<h3>We are a husband and wife duo, passionate about lettering, illustration, web design and creating strong brands for businesses we believe in.</h3>
+			<h2>We are an Australian husband and wife, passionate about type design, lettering, illustration and creating strong brands for businesses we believe in.</h2>
 			<a class="btn" href="<?= esc_url(home_url('/')); ?>about"><span>Read More</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_go.svg"/></a>
 		</div><!--blurb-->
-
-		<span id="fade"></span>
 
 	 <?php endif; ?>
 
   </div>
 </header>
+<div style="clear:both;"></div>
