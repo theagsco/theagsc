@@ -19,7 +19,10 @@
 			wp_reset_postdata();
 		?>
 </div><!-- work -->
-<a href="<?= esc_url(home_url('/')); ?>work" class="btn"><span>View more Work</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_work.svg"/></a>
+<div style="clear:both"></div>
+<div class="home-btn">
+	<a href="<?= esc_url(home_url('/')); ?>work" class="btn"><span>View more Work</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_work.svg"/></a>
+</div>
 
 <div id="blog-home" class="home-tiles masonry" data-columns>
 
@@ -45,4 +48,7 @@
 			wp_reset_postdata();
 		?>
 </div><!-- blog -->
-<a href="<?= esc_url(home_url('/')); ?>blog" class="btn"><span>Visit the Blog</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_community.svg"/></a>
+<div style="clear:both"></div>
+<div class="home-btn">
+	<a href="<?= esc_url(home_url('/')); ?>blog" class="btn"><span>Visit the Blog</span><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_community.svg"/></a>
+</div>
