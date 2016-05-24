@@ -1,6 +1,6 @@
 <a href="#" class="top" title="Go to Top"><img class="svg" src="<?php bloginfo('template_directory'); ?>/assets/images/icons_go.svg"/></a>
 
-<footer class="content-info" role="contentinfo">
+<footer class="content-info footer-main" role="contentinfo">
   <div class="container">
     <?php dynamic_sidebar('sidebar-footer'); ?>
   </div>
