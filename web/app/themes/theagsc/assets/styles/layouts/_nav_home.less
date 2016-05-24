@@ -3,12 +3,12 @@
 	header.navbar {
 		border:0; position: relative;
 		z-index: 9997;
-	
+
 		.container {
-			
+
 			.navbar-header {
 				margin-left: 0; margin-right: 0;
-				
+
 				button {
 					@media @sm {display: none;}
 				}
@@ -20,7 +20,7 @@
 			span.nav-hamburger svg {
 				top:3px;
 				right:12px;
-				fill: white;
+				fill: @black;
 			}
 			.navbar-collapse {
 				display: block;
@@ -34,33 +34,32 @@
 				height: auto !important;
 				.border;
 				border: 0;
-				
+
 				.nav {
 					margin: 0;
-					
+
 					.dropdown a {display: block;}
-					
-					li a {display: inline-block;}
+
+					li a {display: inline-block;
+						&hover {color:@green;}
+					}
 				}
-				
+
 				ul {
 					position: relative;
 					list-style: none;
 					float:left;
 					height: auto;
-					
+
 					a {
 						font-size: 1.1em;
-						
+
 						@media @sm {background: none; padding:15px 1px 3px 1px; margin: 0 11px; line-height: normal; height: auto;}
-						
-						&:hover {
-							@media @sm {border-bottom:2px solid fade(white, 90%); margin-bottom: -2px; }
-						}
+
 					}
-					
+
 					@media @sm {
-					
+
 						li ul.dropdown-menu {
 							position: absolute;
 							background: @dark-grey;
@@ -69,22 +68,23 @@
 							min-width: 140px;
 							padding:10px;
 							margin: 0;
-							
+
 							a {
-								font-size: 1.05em; 
-								padding:4px 10px; 
+								font-size: 1.05em;
+								padding:4px 10px;
 								color:@lighter-grey;
 								font-weight: 500;
 								.spacing;
-								
-								&:hover {color:white; border-bottom: 0; margin-bottom: 0;}
+
+								&:hover {
+									color:@green !important;
+									border-bottom: 0;
+									margin-bottom: 0;}
 							}
 						}
 					}
-					
-					
 				}
-				
+
 				span.nav-close {
 					position: absolute;
 					display: block;
@@ -94,11 +94,11 @@
 					.icon32;
 					pointer-events: none;
 					z-index: 999;
-					
+
 					@media @sm {display: none;}
 
 				}
-		
+
 				@media @sm {
 					position: relative;
 					background: none;
@@ -106,14 +106,22 @@
 					margin-left:185px;
 					padding: 0;
 					top:0;
-					
+
 					ul {
 						float: right;
-						
-						li a {color:white; font-weight: 700; font-size: 1.2em; .spacing;}
+
+						li a {
+							color:@black;
+							font-weight: 500;
+							font-size: 1.2em;
+							.spacing;
+						}
 					}
-				}	
+				}
 			}
+		}
+		@media@sm {
+			.container .navbar-collapse ul li a:hover {color:@green;}
 		}
 	}
 }

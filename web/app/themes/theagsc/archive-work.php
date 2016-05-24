@@ -6,8 +6,8 @@
 		<li><a href="<?= esc_url(home_url('/')); ?>type/branding" id="interviews">Branding</a></li>
 		<li><a href="<?= esc_url(home_url('/')); ?>type/illustration" id="news">Illustration</a></li>
 	</ul>
+	<div style="clear: both;"></div>
 </nav>
-<div style="clear: both;"></div>
 
 <div id="work" class="masonry" data-columns>
 
