@@ -1,0 +1,549 @@
+.buffon {
+  // @media@sm {
+  //   background-color:pink;
+  // }
+  // @media@md {
+  //   background-color:orange;
+  // }
+  // @media@lg {
+  //   background-color:red;
+  // }
+  * {outline: 0px solid transparent;}
+
+  // Main
+  background:black;
+
+  .wrap.container {padding:10px 10px 0; overflow: hidden; margin: 0;}
+  header.banner {display: none;}
+  section {
+    position: relative;
+    margin-bottom:50px;
+    @media @sm {margin-bottom:100px;}
+  }
+
+  // Variables
+  @buffon-pink: #e58aa3;
+  @buffon-yellow: #ffe64b;
+  @buffon-blue: #92dfc2;
+  @buffon-red: #f0432f;
+
+  .kern-liga {
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+  	font-kerning: normal;
+  }
+
+  .islaScript {
+    font-family: IslaScriptBeta-Regular;
+  }
+
+  .ss01 {
+    -moz-font-feature-settings: "ss01";
+    -webkit-font-feature-settings: "ss01";
+    font-feature-settings: "ss01";
+  }
+  .ss02 {
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
+    font-feature-settings: "ss02";
+  }
+  .ss03 {
+    -moz-font-feature-settings: "ss03";
+    -webkit-font-feature-settings: "ss03";
+    font-feature-settings: "ss03";
+  }
+  .onum {
+    -moz-font-feature-settings:"onum=1";
+    -moz-font-feature-settings:"onum";
+    -ms-font-feature-settings:"onum";
+    -webkit-font-feature-settings:"onum";
+    font-feature-settings:"onum";
+  }
+  .onumss01 {
+    -moz-font-feature-settings:"ss01=1, onum=1";
+    -moz-font-feature-settings:"ss01", "onum";
+    -ms-font-feature-settings:"ss01", "onum";
+    -webkit-font-feature-settings:"ss01", "onum";
+    font-feature-settings:"ss01", "onum";
+  }
+  .onumss02 {
+    -moz-font-feature-settings:"ss02=1, onum=1";
+    -moz-font-feature-settings:"ss02", "onum";
+    -ms-font-feature-settings:"ss02", "onum";
+    -webkit-font-feature-settings:"ss02", "onum";
+    font-feature-settings:"ss02", "onum";
+  }
+  .onumss03 {
+    -moz-font-feature-settings:"ss03=1, onum=1";
+    -moz-font-feature-settings:"ss03", "onum";
+    -ms-font-feature-settings:"ss03", "onum";
+    -webkit-font-feature-settings:"ss03", "onum";
+    font-feature-settings:"ss03", "onum";
+  }
+
+
+  .red {fill:@buffon-red; color:@buffon-red}
+  .yellow {fill:@buffon-yellow; color:@buffon-yellow}
+  .blue {fill:@buffon-blue; color:@buffon-blue}
+  .pink {fill:@buffon-pink; color:@buffon-pink}
+  .white {fill:white;}
+
+  .thin {font-family: Buffon-Thin;}
+  .regular {font-family: Buffon-Regular;}
+  .bold {font-family: Buffon-Bold;}
+  .heavy {font-family: Buffon-Heavy;}
+
+  // Header
+  a.theagscLogo {
+    position: absolute;
+    fill:white;
+    top:-60px;
+    z-index: 99999;
+
+    svg {position:relative;width:110px; z-index: 99999;}
+    &:hover svg {fill:@buffon-pink;color:@buffon-pink;}
+
+    @media @sm {
+      position: fixed;
+      top:19px;
+      left:20px;
+    }
+  }
+
+  // Typography
+  p {line-height: normal;}
+  p, h1, h2, ul li {
+  font-family: Buffon-Regular;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures;
+	font-kerning: normal;
+  color:white;
+  }
+  p a {color:@buffon-pink; &:hover {color:@buffon-red}}
+  h2 {
+    .islaScript;
+    font-size: 26pt;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @media @sm {
+      font-size: 34pt;
+      margin-bottom: 50px;
+    }
+  }
+
+  // Sections
+  #buffonTitleWrapper {
+    position: relative;
+    width:100%;
+    max-width: 700px;
+    margin: 60px auto 25px auto;
+    // text-align: center;
+    // background-color: grey;
+
+    @media @sm {margin: 80px auto 50px auto;}
+
+    h2 {
+      font-size: 20pt;
+      text-align: center;
+      margin-bottom: -10px;
+
+      @media @sm {
+        font-size: 32pt;
+        margin-bottom: -30px;
+      }
+    }
+    div {
+      svg#buffonTitle {
+        width:100%;
+        display: block;
+      }
+    }
+  }
+  #blurb {
+    padding:0 5px;
+    p {
+      text-align: center;
+      font-size: 22pt;
+      line-height:30pt;
+      strong {font-family: Buffon-Heavy;}
+      @media @sm {
+        font-size: 32pt;
+        line-height:44pt;
+        max-width:540px;
+      }
+    }
+  }
+  section#weights {
+    p {
+      font-size: 28pt;
+      display: inline-block;
+      width:100%;
+      text-align: center;
+      @media@sm {
+        font-size: 40pt;
+      }
+      @media@md {
+        font-size:54pt;
+      }
+      @media@lg {
+        font-size: 56pt;
+      }
+    }
+
+    svg {
+      display: block;
+      width:35px;
+      margin: -2px auto 10px auto;
+
+      @media @sm {
+        width:50px;
+        margin: 5px auto 15px auto;
+      }//media
+    }//svg
+
+  }//section
+  section#cloud {
+    svg {width:100%;}
+  }
+  section#lostType {
+    text-align: center;
+    a {
+      display: block;
+      width:260px;
+      margin: 0 auto;
+      &:hover p {color:@buffon-pink}
+      @media@sm {
+        width:520px;
+      }
+      p#availNow {
+        font-family: Buffon-Thin;
+        font-size: 22pt;
+        @media@sm {font-size: 40pt;margin-bottom: 20px;}
+      }
+      svg {
+        left:0;
+        width:490px;
+        @media@sm {
+          width:1200px;
+        }
+      }
+    }
+  }//lostType
+  section#ligatures {
+    h2 {margin-top: -10px;}
+    p {text-align: center; font-size: 22pt;
+    @media@sm {
+      font-size: 56pt;
+    }
+    }
+    p span {color:white;}
+    p span.nolig {
+      -webkit-font-variant-ligatures: no-common-ligatures;
+      font-variant-ligatures: no-common-ligatures;
+    }
+  }
+  section#alternates {
+    margin-bottom: 120px;
+    h2 {margin-bottom: 10px;}
+    p {
+      font-size: 22pt;
+      text-align: center;
+      margin-left: 20px;
+      height: 35px;
+      @media@sm {
+        font-size: 56pt;
+        height:90px;
+      }
+      svg {
+        height:42px;
+        width:auto;
+        top:13px;
+        left:-9px;
+        position: relative;
+        @media@sm {
+          height: 106px;
+          top: 33px;
+          left:-19px;
+        }
+      }
+    }
+
+  }
+  section#figures {
+    p, p > a {
+      text-align: center;
+      font-size: 38pt;
+      color:white !important;
+      pointer-events: none;
+      @media@sm {
+        font-size: 64pt;
+      }
+    }
+    svg {
+      width:310px;
+      top:-20px;
+      left:-9px;
+      position: relative;
+      margin: 0 auto;
+      display: block;
+      @media@sm {
+        width:509px;
+        margin: 0 auto -20px auto;
+      }
+    }
+  }
+  section#menu {
+    position: relative;
+    width:90%;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    padding:40px 0;
+    border:solid 1px white;
+    text-align: center;
+    @media @sm {
+      width:80%;
+      padding:80px 0;
+    }
+    &:before {
+      content: " ";
+      position: absolute;
+      z-index: -1;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+      border: solid 1px white;
+    }
+    #menuTitle {
+      text-align: center;
+      font-size: 38pt;
+      .heavy;
+      text-transform: uppercase;
+      margin-bottom: -14px;
+      @media @sm {
+        font-size: 50pt;
+      }
+    }
+    #menuTitle span:nth-child(even) {
+      vertical-align: baseline;
+      position: relative;
+      top: -0.08em;
+    }
+    h2 {
+      position: relative;
+      display: inline-block;
+      font-size: 26pt;
+      margin:24px auto 17px auto;
+      @media @sm {
+        font-size: 42pt;
+        margin:50px auto 40px auto;
+      }
+      svg {
+        position: absolute;
+        bottom:-18px;
+        width:100%;
+        left: 0;
+        @media @sm {bottom:-28px;}
+      }
+    }
+    ul {
+      position: relative;
+      width:235px;
+      text-align: left;
+      margin: 0 auto 20px auto;
+      padding-left:5px;
+      @media@sm {
+        width:500px;
+      }
+      li {
+        display: block;
+        font-size: 13pt;
+        margin-bottom: 5px;
+
+        @media @sm {font-family: Buffon-Thin;font-size: 30pt;}
+
+        svg {
+          position: relative;
+          width:30px;
+          top:7px;
+          @media @sm {width:40px;}
+        }
+      }
+    }
+    p.drinks {
+      margin-top: 30px;
+      @media@sm {
+        font-size: 20pt;
+      }
+    }
+    p.price {
+      position: relative;
+      font-size: 30pt;
+      display: inline-block;
+      margin-top: 20px;
+      @media@sm {
+        font-size: 50pt;
+      }
+      svg {
+        position: absolute;
+        bottom:-10px;
+        width:100%;
+        left: 0;
+        display: block;
+        @media @sm {bottom:-10px;}
+      }
+    }
+    svg.border {
+      width:60px;
+      position: absolute;
+      fill:white;
+      background-color: black;
+      padding:5px;
+      @media @sm {
+        width:100px;
+      }
+    }
+    #topright {
+      top:-20px;right:-20px;
+      -ms-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      @media @sm {
+        top:-30px;right:-30px;
+      }
+    }
+    #topleft {
+      top:-20px;left:-20px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      @media @sm {
+        top:-30px;left:-30px;
+      }
+    }
+    #bottomright {
+      bottom:-20px;right:-20px;
+      -ms-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      @media @sm {
+        bottom:-30px;right:-30px;
+      }
+    }
+    #bottomleft {
+      bottom:-20px;left:-20px;
+      -ms-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      @media @sm {
+        bottom:-30px;left:-30px;
+      }
+    }
+    #middleleft {
+      width:50px;
+      left:-22px;
+      top:50%;
+      margin-top: -40px;
+      @media @sm {
+        width:70px;
+        left:-30px;
+      }
+    }
+    #middleright {
+      width:50px;
+      right:-24px;
+      top:50%;
+      margin-top: -40px;
+      @media @sm {
+        width:70px;
+        right:-30px;
+      }
+    }
+  }
+  section#creativeSouth {
+    h2 {
+      margin-bottom: 10px;
+      @media@sm {margin-bottom:20px;}
+    }
+    p#creativeSouthTitle {
+      font-family: Buffon-Heavy;
+      text-align: center;
+      font-size: 48pt;
+      color:@buffon-yellow;
+      line-height: 46pt;
+      margin-bottom: 20px;
+      width:100%;
+      @media@sm {margin-bottom: 40px;}
+    }
+    svg {position: absolute;}
+    p {
+      font-family: Buffon-Regular;
+      width:85%;
+      max-width: 700px;
+      font-size: 17pt;
+      line-height: 22pt;
+      @media@sm {
+        font-size: 24pt;
+        line-height: 30pt;
+      }
+    }
+  }
+  section#poster {
+    position: relative;
+    p {
+      width:85%;
+      max-width: 700px;
+      font-size: 17pt;
+      line-height: 22pt;
+      @media@sm {
+        font-size: 24pt;
+        line-height: 30pt;
+        margin-bottom: 50px;
+      }
+    }
+    img {
+      width:90%;
+      height:auto;
+      margin: 30px auto 10px auto;
+      display: block;
+    }
+  }
+  a.theagscLogoFooter {
+    position: relative;
+    display: block;
+    margin-top: -130px;
+    @media@sm {
+      margin-top:-370px;
+      padding-bottom:165px;
+    }
+    svg {
+      position:relative;
+      width:160px;
+      margin: 0 auto;
+      display: block;
+    }
+    &:hover svg {fill:@buffon-pink;color:@buffon-pink;}
+  }
+  footer {
+    position: relative;
+    margin-top: -14px;
+    padding:0;
+    z-index:99999;
+    margin-bottom: 0;
+    background:none;
+    @media@sm {
+      margin-top:-170px;
+    }
+    .footer-brand, p:last-of-type {display: none;}
+    .footer-email, ul li a svg {color:white;fill:white;}
+    .footer-email:hover {color:@buffon-pink;}
+    ul li a:hover svg {fill:@buffon-pink;}
+    ul {
+      position:relative;
+      padding:0;
+      width:272px;
+      @media@sm {width:235px;}
+    }
+  }
+}
