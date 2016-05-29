@@ -38,6 +38,7 @@ a:hover {
 	color:@green;
 	text-decoration: none;
 }
+svg {height: auto;}
 article {
 	p a:hover, ul a:hover, h1 a:hover, h2 a:hover {border-bottom: solid 2px fade(@green, 80%);}
 }
@@ -77,7 +78,7 @@ a:focus {text-decoration: none !important; color:@green;}
 }
 
 .home .wrap {margin-top: auto;}
-svg, img.svg {
+.btn svg {
 	.icon32;
 }
 img.svg {display: none !important;}
@@ -131,7 +132,7 @@ article img {
 	.center;
 	margin-top: 20px;
 	margin-bottom: 30px;
-	max-width: 900px;
+	max-width: 100%;
 }
 article.type-post .entry-content p:first-of-type::first-letter {
 	float: left;

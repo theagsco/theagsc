@@ -1,0 +1,20 @@
+{
+  "name": "buffon",
+  "homepage": "http://theagsc.com/buffon",
+  "authors": [
+    "Dave Coleman <hello@theagsc.com>"
+  ],
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "jquery": "1.11.2",
+    "normalize.css": "~3.0.3"
+  },
+  "overrides": {
+    "modernizr": {
+      "main": "./modernizr.js"
+    },
+    "normalize.css": {
+      "main": "./normalize.css"
+    }
+  }
+}

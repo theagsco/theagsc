@@ -15,5 +15,4 @@
     ga('send', 'pageview');
 
   </script>
-
 </head>
