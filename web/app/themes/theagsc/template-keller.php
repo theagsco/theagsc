@@ -9,14 +9,14 @@
 
   <img class="svg" id="introducing" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_introducing.svg">
   <h1>
-    <span>Keller Script</span>
+    <span contenteditable="true">Keller Script</span>
     <img class="svg" id="newBadge" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_new.svg">
   </h1>
 
 </section>
 
 <section id="blurb">
-  <p>Keller Script was created to help raise much-needed funds for our dear friends Dave &amp; Ellie Keller. They are in the process of adopting, and it’s not cheap. We believe they will make incredible parents, and deserve this opportunity, so the money from every Pay-What-You-Want sale of Keller Script will go to towards their fundraising efforts. Thanks for your generosity!</p>
+  <p>Keller Script was created to help raise much-needed funds for our dear friends <a href="http://www.daveandellieadopt.com/">Dave &amp; Ellie Keller</a>. They are in the process of adopting, and it’s not cheap. We believe they will make incredible parents, and deserve this opportunity, so the money from every Pay-What-You-Want sale of Keller Script will go to towards their fundraising efforts. Thanks for your generosity!</p>
   <a href="" class="btn">Purchase now</a>
 </section>
 
@@ -29,7 +29,7 @@
   <section id="kellerTester">
     <div>
       <img class="svg" id="editMe" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_edit.svg">
-      <p contenteditable="true">Jaunty, with a brisk energy and script-next-door curves. Keller comes equipped with a useful toolkit of ligatures and alternate letterforms, and support for a wide variety of languages.</p>
+      <p contenteditable="true">Jaunty, with a brisk energy and disarming curves. Comes with a toolkit of ligatures and alternate letterforms, and support for a wide variety of languages.</p>
     </div>
   </section>
 
@@ -46,7 +46,7 @@
         <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_20.svg">
         or more
       </h2>
-      <p>Entering $20 at the <a href="http://gumroad.com">checkout</a> entitles you to a Commercial License. This includes life-time access to any updates made to Keller Script in the future, such as even broader language support, more OT features and other tweaks and improvements.</p>
+      <p>Entering $20 at the checkout entitles you to a Commercial License. This includes life-time access to any updates made to Keller Script in the future, such as even broader language support, more OT features and other tweaks and improvements.</p>
     </div>
     <div id="thirty">
       <h2>

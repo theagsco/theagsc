@@ -8,7 +8,7 @@ body {text-align: center;}
     position: relative;
     margin-bottom:30px;
     padding: 20px;
-    @media @sm {margin-bottom:100px;}
+    @media @sm {margin-bottom:40px;}
   }
   * {outline: 0px solid transparent;}
 
@@ -16,7 +16,19 @@ body {text-align: center;}
   background:@keller-pink;
 
 
-  p {color:@keller-black; text-align: left; padding:0 10px;}
+  p {
+    color:@keller-black;
+    text-align:
+    left; padding:0 10px;
+    font-size: 1.35em;
+    line-height: 1.35em;
+    @media@sm {
+      width:80%;
+      max-width:700px;
+      font-size: 1.7em;
+      line-height: 1.35em;
+    }
+  }
   p a {color:@keller-red;}
   img {
       width:100%;
@@ -37,6 +49,8 @@ body {text-align: center;}
     display: inline-block;
     margin: 0 auto;
     letter-spacing: normal;
+    z-index: 99998;
+    @media@sm {font-size: 2.3em;}
   }
   a.btn:hover {color:@keller-yellow;}
 
@@ -44,6 +58,7 @@ body {text-align: center;}
 
 // Variables
   @keller-pink: #ffd6db;
+  @keller-pink-dark: #ffc7ce;
   @keller-green: #11bd75;
   @keller-yellow: #ffee5f;
   @keller-black: #262626;
@@ -82,57 +97,92 @@ body {text-align: center;}
     &:hover svg {fill:@keller-red;color:@keller-red;}
 
     @media @sm {
-      position: fixed;
-      top:19px;
+      top:3px;
       left:20px;
     }
   }
 
   #kellerTitleWrapper {
     margin-bottom: 0;
+    @media@sm {
+      margin-top: 80px;
+    }
     #introducing {
       display: block;
       width:240px;
-      margin: 20px auto;
+      margin: -10px auto 20px;
+      @media@sm {
+      }
     }
     h1 {
       text-align: center;
+
+      @media@sm {position: relative;display: inline-block;}
       span {
         font-size: 1.4em;
         text-align: center;
         color:@keller-red;
         .kellerScript;
-        display: inline-block;
-        margin: 0 auto;
+
+        @media@sm {
+          position: relative;
+          font-size: 2.9em;
+          z-index:99998;
+        }
       }
       #newBadge {
         position: absolute;
-        left: -16px;
-        top:-97px;
-        width:100px;
+        left: -14px;
+        top:-92px;
+        width:85px;
+        @media@sm {
+          left:-40px;
+          top:-56px;
+        }
       }
     }
   }
   section#blurb {
     margin-top: -20px;
+    @media@sm {margin-bottom: 10px;}
     p {color:white;}
-    a.btn {margin-top: 30px;margin-bottom: 25px;}
+    a.btn {margin-top: 30px;margin-bottom: 30px;}
   }
   section#kellerTester {
     padding-top:90px;
     margin-bottom: -10px;
+    @media@sm {
+      padding-top:110px;
+      margin-bottom: 10px;
+    }
+    div {
+      @media@sm {
+        position: relative;
+        width:80%;
+        margin: 0 auto;
+      }
+    }
     svg#editMe {
       position: absolute;
       width:90px;
       top:-20px;
       left:20px;
+      @media@sm {
+        left:-80px;
+      }
     }
     p {
-      color:@keller-pink;
+      color:@keller-pink-dark;
       font-size: 2.2em;
       text-align: center;
       .kellerScript;
       line-height: 1.3em;
+      @media@sm {
+        width:100%;
+        max-width: 100%;
+        font-size: 4.4em;
+        line-height: 1.7em;
+      }
     }
   }
   section#kellerInUse {
@@ -153,22 +203,37 @@ body {text-align: center;}
   }
   section#kellerTiers {
     margin-top: -30px;
-    margin-bottom: 80px;
+    padding-bottom: 80px;
+    @media@sm {padding-bottom:140px;}
+    #thirty {@media@sm{margin-top: -30px;}}
      h2 {
        margin-top: 0;
        margin-bottom: 40px;
        .kellerScript;
        color:@keller-pink;
+       @media@sm {
+         font-size: 3.4em;
+         margin-bottom: 60px;
+       }
        svg {
          position: relative;
          width:90px;
-         bottom: -35px;
+         bottom:-35px;
          left:1px;
+         @media@sm {
+           width:160px;
+           bottom:-60px;
+         }
        }
      }
+     a.btn {margin-top: 30px; margin-bottom: 30px;
+     @media@sm {margin-top: 50px;margin-bottom:50px;}}
+  }
+  section#glyphCloud {
   }
 
   .wavyWrapper {
+    width:100%;
     position: relative;
     margin-right: 500px;
     svg {
@@ -178,6 +243,9 @@ body {text-align: center;}
       left:50%;
       top:-30px;
       margin-left: -500px;
+      @media@sm {
+        top:-70px;
+      }
     }
     @media@sm {
       margin-right: 1500px;
@@ -188,9 +256,7 @@ body {text-align: center;}
     }
   }
   .wavyBottom {
-    svg {top:-50px;}
-    @media@sm {
-    }
+    svg {top:-50px;@media@sm {top:-100px;}}
   }
 
   a.theagscLogoFooter {
