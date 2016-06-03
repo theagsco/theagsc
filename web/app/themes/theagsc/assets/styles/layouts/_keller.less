@@ -1,0 +1,234 @@
+body {text-align: center;}
+
+.page-template-template-keller {
+
+  .wrap.container {padding: 0; overflow: hidden; margin: 0;}
+  header.banner {display: none;}
+  section {
+    position: relative;
+    margin-bottom:30px;
+    padding: 20px;
+    @media @sm {margin-bottom:100px;}
+  }
+  * {outline: 0px solid transparent;}
+
+  // Main
+  background:@keller-pink;
+
+
+  p {color:@keller-black; text-align: left; padding:0 10px;}
+  p a {color:@keller-red;}
+  img {
+      width:100%;
+      height:auto;
+      margin: 30px auto 10px auto;
+      display: block;
+
+      @media@sm {max-width:900px;}
+  }
+  p a:hover {color:@keller-green;}
+  a.btn {
+    background:@keller-green;
+    font-size: 2em;
+    height: auto;
+    .fraser;
+    color:white;
+    padding:10px 22px 17px;
+    display: inline-block;
+    margin: 0 auto;
+    letter-spacing: normal;
+  }
+  a.btn:hover {color:@keller-yellow;}
+
+  .whiteBg {background:white;}
+
+// Variables
+  @keller-pink: #ffd6db;
+  @keller-green: #11bd75;
+  @keller-yellow: #ffee5f;
+  @keller-black: #262626;
+  @keller-red: #ff5029;
+
+  .kern-liga {
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+  	font-kerning: normal;
+  }
+  .kellerScript {
+    font-family: KellerScriptBeta-Regular;
+  }
+  .fraser {
+    font-family: FraserBeta-Bold;
+  }
+
+
+  // Header
+  a.theagscLogo {
+    position:relative;
+    margin: 20px auto;
+    width:110px;
+    fill:white;
+    z-index: 99999;
+    display: block;
+
+    @media@sm {
+      position: absolute;
+    }
+
+    svg {
+      position:relative;
+      z-index: 99999;
+    }
+    &:hover svg {fill:@keller-red;color:@keller-red;}
+
+    @media @sm {
+      position: fixed;
+      top:19px;
+      left:20px;
+    }
+  }
+
+  #kellerTitleWrapper {
+    margin-bottom: 0;
+    #introducing {
+      display: block;
+      width:240px;
+      margin: 20px auto;
+    }
+    h1 {
+      text-align: center;
+      span {
+        font-size: 1.4em;
+        text-align: center;
+        color:@keller-red;
+        .kellerScript;
+        display: inline-block;
+        margin: 0 auto;
+      }
+      #newBadge {
+        position: absolute;
+        left: -16px;
+        top:-97px;
+        width:100px;
+      }
+    }
+  }
+  section#blurb {
+    margin-top: -20px;
+    p {color:white;}
+    a.btn {margin-top: 30px;margin-bottom: 25px;}
+  }
+  section#kellerTester {
+    padding-top:90px;
+    margin-bottom: -10px;
+    svg#editMe {
+      position: absolute;
+      width:90px;
+      top:-20px;
+      left:20px;
+    }
+    p {
+      color:@keller-pink;
+      font-size: 2.2em;
+      text-align: center;
+      .kellerScript;
+      line-height: 1.3em;
+    }
+  }
+  section#kellerInUse {
+    svg {
+      margin: 0 auto;
+      max-width: 700px;
+    }
+    svg.desktop {display: none;}
+    svg.mobile {
+      display: block
+    }
+    @media@sm {
+      svg.mobile {display: none;}
+      svg.desktop {
+        display: block;
+      }
+    }
+  }
+  section#kellerTiers {
+    margin-top: -30px;
+    margin-bottom: 80px;
+     h2 {
+       margin-top: 0;
+       margin-bottom: 40px;
+       .kellerScript;
+       color:@keller-pink;
+       svg {
+         position: relative;
+         width:90px;
+         bottom: -35px;
+         left:1px;
+       }
+     }
+  }
+
+  .wavyWrapper {
+    position: relative;
+    margin-right: 500px;
+    svg {
+      position: absolute;
+      display: block;
+      width:1000px;
+      left:50%;
+      top:-30px;
+      margin-left: -500px;
+    }
+    @media@sm {
+      margin-right: 1500px;
+      svg {
+        width:3000px;
+        margin-left: -1500px;
+      }
+    }
+  }
+  .wavyBottom {
+    svg {top:-50px;}
+    @media@sm {
+    }
+  }
+
+  a.theagscLogoFooter {
+    position: relative;
+    display: block;
+    margin-top: 80px;
+    text-align: center;
+    @media@sm {
+    }
+    svg {
+      fill:white;
+      position:relative;
+      width:160px;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    &:hover svg {fill:@keller-red;color:@keller-red;}
+  }
+  footer {
+    position: relative;
+    margin-top: -10px;
+    padding:0;
+    z-index:99999;
+    margin-bottom: 100px;
+    background:none;
+    @media@sm {
+    }
+    .footer-brand, p:last-of-type {display: none;}
+    .footer-email, ul li a svg {color:white;fill:white;}
+    .footer-email:hover {color:@keller-red; border:0;}
+    ul li a:hover svg {fill:@keller-red;}
+    ul {
+      position:relative;
+      padding:0;
+      width:272px;
+      @media@sm {width:235px;}
+    }
+  }
+
+
+}
