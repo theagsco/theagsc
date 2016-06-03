@@ -28,7 +28,7 @@
 
   <section id="kellerTester">
     <div>
-      <img class="svg" id="editMe" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_edit.svg">
+      <img class="svg" id="editMe" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_edit-me.svg">
       <p contenteditable="true">Jaunty, with a brisk energy and disarming curves. Comes with a toolkit of ligatures and alternate letterforms, and support for a wide variety of languages.</p>
     </div>
   </section>
