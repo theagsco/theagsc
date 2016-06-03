@@ -111,7 +111,9 @@ body {text-align: center;}
       display: block;
       width:240px;
       margin: -10px auto 20px;
-      @media@sm {
+      @media@md {
+        margin: 10px auto 20px;
+        width:300px;
       }
     }
     h1 {
@@ -129,6 +131,7 @@ body {text-align: center;}
           font-size: 2.9em;
           z-index:99998;
         }
+        @media@md {font-size: 4em;}
       }
       #newBadge {
         position: absolute;
@@ -139,14 +142,32 @@ body {text-align: center;}
           left:-40px;
           top:-56px;
         }
+        @media@md {
+          width:140px;
+          left:-77px;
+          top:-96px;
+        }
       }
+    }
+    p.redBlurb {
+      .kellerScript;
+      color:@keller-red;
+      font-size: 2em;
+      text-align: center;
+      margin-top: 20px;
+      max-width: 300px;
+      @media@sm {font-size: 3em;max-width:420px;}
+      @media@md {font-size: 3.4em;max-width: 500px;margin: 10px auto 25px;}
     }
   }
   section#blurb {
     margin-top: -20px;
     @media@sm {margin-bottom: 10px;}
+
     p {color:white;}
-    a.btn {margin-top: 30px;margin-bottom: 30px;}
+    a.btn {margin-top: 30px;margin-bottom: 30px;
+      @media@md {margin-top: 50px;margin-bottom: 50px;}
+    }
   }
   section#kellerTester {
     padding-top:90px;
@@ -155,6 +176,7 @@ body {text-align: center;}
       padding-top:110px;
       margin-bottom: 10px;
     }
+    @media@md {padding-top:130px;}
     div {
       @media@sm {
         position: relative;
@@ -170,6 +192,7 @@ body {text-align: center;}
       @media@sm {
         left:-80px;
       }
+      @media@md {width:120px;top:-45px;left:-85px;}
     }
     p {
       color:@keller-pink-dark;
@@ -183,12 +206,14 @@ body {text-align: center;}
         font-size: 4.4em;
         line-height: 1.7em;
       }
+      @media@md {font-size: 5.1em;line-height: 1.8em;}
     }
   }
   section#kellerInUse {
     svg {
+      width:95%;
       margin: 0 auto;
-      max-width: 700px;
+      max-width: 1000px;
     }
     svg.desktop {display: none;}
     svg.mobile {
@@ -197,7 +222,9 @@ body {text-align: center;}
     @media@sm {
       svg.mobile {display: none;}
       svg.desktop {
+        position: relative;
         display: block;
+        left:-2%;
       }
     }
   }
@@ -205,7 +232,21 @@ body {text-align: center;}
     margin-top: -30px;
     padding-bottom: 80px;
     @media@sm {padding-bottom:140px;}
-    #thirty {@media@sm{margin-top: -30px;}}
+    @media@lg {width:88%; margin-left:auto; margin-right:auto;}
+    .kellerTile {
+      @media@md {margin-top: -30px;}
+      @media@lg {
+        margin-top: 40px;
+        width:48%;
+        float: left;
+      }
+    }
+    #twenty {
+      @media@lg {padding-right:1%;}
+    }
+    #thirty {
+      @media@lg {padding-left:1%;}
+    }
      h2 {
        margin-top: 0;
        margin-bottom: 40px;
@@ -230,6 +271,7 @@ body {text-align: center;}
      @media@sm {margin-top: 50px;margin-bottom:50px;}}
   }
   section#glyphCloud {
+    svg {margin: 0 auto; max-width: 1000px;}
   }
 
   .wavyWrapper {

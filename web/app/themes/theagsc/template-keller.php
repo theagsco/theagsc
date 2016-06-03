@@ -12,7 +12,7 @@
     <span contenteditable="true">Keller Script</span>
     <img class="svg" id="newBadge" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_new.svg">
   </h1>
-
+  <p class="redBlurb">A light &amp; friendly brush script from The AGSC.</p>
 </section>
 
 <section id="blurb">
@@ -40,7 +40,7 @@
 
   <section id="kellerTiers">
     <img src="<?php bloginfo('template_directory'); ?>/dist/images/keller_dave-ellie.jpg">
-    <div id="twenty">
+    <div id="twenty" class="kellerTile">
       <h2>
         Spend
         <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_20.svg">
@@ -48,7 +48,7 @@
       </h2>
       <p>Entering $20 at the checkout entitles you to a Commercial License. This includes life-time access to any updates made to Keller Script in the future, such as even broader language support, more OT features and other tweaks and improvements.</p>
     </div>
-    <div id="thirty">
+    <div id="thirty" class="kellerTile">
       <h2>
         Spend
         <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_30.svg">
@@ -56,6 +56,7 @@
       </h2>
       <p>Spend $30 or more and Dave &amp; Ellie will send you a sweet journal, designed by Dave himself. You’ll also recieve the Commercial License and life-time updates.</p>
     </div>
+    <div style="clear:both"></div>
     <a href="" class="btn">Purchase now</a>
     <img src="<?php bloginfo('template_directory'); ?>/dist/images/keller_journal.jpg">
   </section>
