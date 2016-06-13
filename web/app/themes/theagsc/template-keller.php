@@ -16,8 +16,8 @@
 </section>
 
 <section id="blurb">
-  <p>Keller Script was created to help raise much-needed funds for our dear friends <a href="http://www.daveandellieadopt.com/">Dave &amp; Ellie Keller</a>. They are in the process of adopting, and it’s not cheap. We believe they will make incredible parents, and deserve this opportunity, so the money from every Pay-What-You-Want sale of Keller Script will go to towards their fundraising efforts. Thanks for your generosity!</p>
-  <a href="" class="btn">Purchase now</a>
+  <p>Keller Script was created to help raise much-needed funds for our dear friends <a href="http://www.daveandellieadopt.com/">Dave &amp; Ellie Keller</a>. They are in the process of adopting, and it’s not cheap. We believe they will make incredible parents, and deserve this opportunity, so the money from every Pay-What-You-Want sale of Keller Script will go towards their fundraising efforts. Thanks for your generosity!</p>
+  <a href="https://gumroad.com/l/kellerscript" class="btn">Purchase now</a>
 </section>
 
 
@@ -54,10 +54,10 @@
         <img class="svg" src="<?php bloginfo('template_directory'); ?>/dist/images/keller_30.svg">
         or more
       </h2>
-      <p>Spend $30 or more and Dave &amp; Ellie will send you a sweet journal, designed by Dave himself. You’ll also recieve the Commercial License and life-time updates.</p>
+      <p>Spend $30 or more and Dave &amp; Ellie will send you a sweet two-pack of journals, designed by <a href="https://dribbble.com/Dave_Keller">Dave himself</a> and <a href="https://dribbble.com/hudlow">Lindsay Charles</a>. You’ll also recieve the Commercial License and life-time updates.</p>
     </div>
     <div style="clear:both"></div>
-    <a href="" class="btn">Purchase now</a>
+    <a href="https://gumroad.com/l/kellerscript" class="btn">Purchase now</a>
     <img src="<?php bloginfo('template_directory'); ?>/dist/images/keller_journal.jpg">
   </section>
 
