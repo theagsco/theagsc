@@ -1,0 +1,343 @@
+body {text-align: center;}
+
+.page-template-template-keller {
+
+  .wrap.container {padding: 0; overflow: hidden; margin: 0;}
+  header.banner {display: none;}
+  section {
+    position: relative;
+    margin-bottom:30px;
+    padding: 20px;
+    @media @sm {margin-bottom:40px;}
+  }
+  * {outline: 0px solid transparent;}
+
+  // Main
+  background:@keller-pink;
+
+
+  p {
+    color:@keller-black;
+    text-align:
+    left; padding:0 10px;
+    font-size: 1.35em;
+    line-height: 1.35em;
+    @media@sm {
+      width:80%;
+      max-width:700px;
+      font-size: 1.7em;
+      line-height: 1.35em;
+    }
+  }
+  p a {color:@keller-red;}
+  img {
+      width:100%;
+      height:auto;
+      margin: 30px auto 10px auto;
+      display: block;
+
+      @media@sm {max-width:900px;}
+  }
+  p a:hover {color:@keller-green;}
+  a.btn {
+    background:@keller-green;
+    font-size: 2em;
+    height: auto;
+    .fraser;
+    color:white;
+    padding:10px 22px 17px;
+    display: inline-block;
+    margin: 0 auto;
+    letter-spacing: normal;
+    z-index: 99998;
+    @media@sm {font-size: 2.3em;}
+    @media@lg {font-size: 3em;padding:14px 30px 22px;}
+  }
+  a.btn:hover {color:@keller-yellow;}
+
+  .whiteBg {background:white;}
+
+// Variables
+  @keller-pink: #ffd6db;
+  @keller-pink-dark: #ffc7ce;
+  @keller-green: #11bd75;
+  @keller-yellow: #ffee5f;
+  @keller-black: #262626;
+  @keller-red: #ff5029;
+
+  .kern-liga {
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+  	font-kerning: normal;
+  }
+  .kellerScript {
+    font-family: KellerScriptBeta-Regular;
+  }
+  .fraser {
+    font-family: FraserBeta-Bold;
+  }
+
+
+  // Header
+  a.theagscLogo {
+    position:relative;
+    margin: 20px auto;
+    width:110px;
+    fill:white;
+    z-index: 99999;
+    display: block;
+
+    @media@sm {
+      position: absolute;
+    }
+
+    svg {
+      position:relative;
+      z-index: 99999;
+    }
+    &:hover svg {fill:@keller-red;color:@keller-red;}
+
+    @media @sm {
+      top:3px;
+      left:20px;
+    }
+  }
+
+  #kellerTitleWrapper {
+    margin-bottom: 0;
+    @media@sm {
+      margin-top: 80px;
+    }
+    #introducing {
+      display: block;
+      width:240px;
+      margin: -10px auto 20px;
+      @media@md {
+        margin: 10px auto 20px;
+        width:300px;
+      }
+    }
+    h1 {
+      text-align: center;
+
+      @media@sm {position: relative;display: inline-block;}
+      span {
+        font-size: 1.4em;
+        text-align: center;
+        color:@keller-red;
+        .kellerScript;
+
+        @media@sm {
+          position: relative;
+          font-size: 2.9em;
+          z-index:99998;
+        }
+        @media@md {font-size: 4em;}
+      }
+      #newBadge {
+        position: absolute;
+        left: -14px;
+        top:-92px;
+        width:85px;
+        @media@sm {
+          left:-40px;
+          top:-56px;
+        }
+        @media@md {
+          width:140px;
+          left:-77px;
+          top:-96px;
+        }
+      }
+    }
+    p.redBlurb {
+      .kellerScript;
+      color:@keller-red;
+      font-size: 2em;
+      text-align: center;
+      margin-top: 20px;
+      max-width: 300px;
+      @media@sm {font-size: 3em;max-width:420px;}
+      @media@md {font-size: 3.4em;max-width: 500px;margin: 10px auto 25px;}
+    }
+  }
+  section#blurb {
+    margin-top: -20px;
+    @media@sm {margin-bottom: 10px;}
+
+    p {color:white;}
+    a.btn {margin-top: 30px;margin-bottom: 30px;
+      @media@md {margin-top: 50px;margin-bottom: 50px;}
+    }
+  }
+  section#kellerTester {
+    padding-top:90px;
+    margin-bottom: -10px;
+    @media@sm {
+      padding-top:110px;
+      margin-bottom: 10px;
+    }
+    @media@md {padding-top:130px;}
+    div {
+      @media@sm {
+        position: relative;
+        width:80%;
+        margin: 0 auto;
+      }
+    }
+    svg#editMe {
+      position: absolute;
+      width:90px;
+      top:-20px;
+      left:20px;
+      @media@sm {
+        left:-80px;
+      }
+      @media@md {width:120px;top:-45px;left:-85px;}
+    }
+    p {
+      color:@keller-pink-dark;
+      font-size: 2.2em;
+      text-align: center;
+      .kellerScript;
+      line-height: 1.3em;
+      @media@sm {
+        width:100%;
+        max-width: 100%;
+        font-size: 4.4em;
+        line-height: 1.7em;
+      }
+      @media@md {font-size: 5.1em;line-height: 1.8em;}
+    }
+  }
+  section#kellerInUse {
+    svg {
+      width:95%;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+    svg.desktop {display: none;}
+    svg.mobile {
+      display: block
+    }
+    @media@sm {
+      svg.mobile {display: none;}
+      svg.desktop {
+        position: relative;
+        display: block;
+        left:-2%;
+      }
+    }
+  }
+  section#kellerTiers {
+    margin-top: -30px;
+    padding-bottom: 80px;
+    @media@sm {padding-bottom:140px;}
+    @media@lg {width:88%; margin-left:auto; margin-right:auto;}
+    .kellerTile {
+      @media@md {margin-top: -30px;}
+      @media@lg {
+        margin-top: 20px;
+        width:48%;
+        float: left;
+      }
+    }
+    #twenty {
+      @media@lg {padding-right:1%;}
+    }
+    #thirty {
+      @media@lg {padding-left:1%;}
+    }
+     h2 {
+       margin-top: 0;
+       margin-bottom: 40px;
+       .kellerScript;
+       color:@keller-pink;
+       @media@sm {
+         font-size: 3.4em;
+         margin-bottom: 60px;
+       }
+       svg {
+         position: relative;
+         width:90px;
+         bottom:-35px;
+         left:1px;
+         @media@sm {
+           width:160px;
+           bottom:-60px;
+         }
+       }
+     }
+     a.btn {margin-top: 30px; margin-bottom: 30px;
+     @media@sm {margin-top: 50px;margin-bottom:60px;}}
+  }
+  section#glyphCloud {
+    svg {margin: 0 auto; }
+  }
+
+  .wavyWrapper {
+    width:100%;
+    position: relative;
+    margin-right: 500px;
+    svg {
+      position: absolute;
+      display: block;
+      width:1000px;
+      left:50%;
+      top:-30px;
+      margin-left: -500px;
+      @media@sm {
+        top:-70px;
+      }
+    }
+    @media@sm {
+      margin-right: 1500px;
+      svg {
+        width:3000px;
+        margin-left: -1500px;
+      }
+    }
+  }
+  .wavyBottom {
+    svg {top:-50px;@media@sm {top:-100px;}}
+  }
+
+  a.theagscLogoFooter {
+    position: relative;
+    display: block;
+    margin-top: 80px;
+    text-align: center;
+    @media@sm {
+    }
+    svg {
+      fill:white;
+      position:relative;
+      width:160px;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    &:hover svg {fill:@keller-red;color:@keller-red;}
+  }
+  footer {
+    position: relative;
+    margin-top: -10px;
+    padding:0;
+    z-index:99999;
+    margin-bottom: 100px;
+    background:none;
+    @media@sm {
+    }
+    .footer-brand, p:last-of-type {display: none;}
+    .footer-email, ul li a svg {color:white;fill:white;}
+    .footer-email:hover {color:@keller-red; border:0;}
+    ul li a:hover svg {fill:@keller-red;}
+    ul {
+      position:relative;
+      padding:0;
+      width:272px;
+      @media@sm {width:235px;}
+    }
+  }
+
+
+}
