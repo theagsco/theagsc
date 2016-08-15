@@ -63,7 +63,10 @@ header.navbar {
 			.nav {
 				margin: 0 25px 0;
 
-				li {float: left; border:red;}
+				li {border:red;
+
+					@media@sm {float:left;}
+				}
 
 				.dropdown a {display: block;}
 
@@ -73,6 +76,7 @@ header.navbar {
 			ul {
 				position: relative;
 				list-style: none;
+				padding:0;
 
 
 				@media @sm {
