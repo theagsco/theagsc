@@ -30,6 +30,11 @@
             <script src="https://gumroad.com/js/gumroad-embed.js"></script>
             <div class="gumroad-product-embed" data-gumroad-product-id="sparse"><a href="https://gumroad.com/l/sparse">Loading...</a></div>
           </div>
+
+          <div class="item">
+            <script src="https://gumroad.com/js/gumroad-embed.js"></script>
+            <div class="gumroad-product-embed" data-gumroad-product-id="fade-pack"><a href="https://gumroad.com/l/fade-pack">Loading...</a></div>
+          </div>
         </div>
 
 <?php endwhile; ?>
